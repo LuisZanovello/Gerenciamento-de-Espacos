@@ -1,0 +1,22 @@
+mapeamento
+atributos
+get e seters
+
+divisao:
+iza:
+Cliente
+Telefone
+Reserva
+Lista de reserva
+
+Luis:
+Espaco
+tipo de espaco
+denuncia
+disponibilidade
+
+victor:
+reembolso
+pagamento
+lista x
+cartoes
