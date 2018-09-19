@@ -1,8 +1,6 @@
 package model;
 
 
-import java.util.Scanner;
-
 public class Cartao{
     private Long id;
     private String bandeira;

@@ -4,6 +4,37 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
+ .estrelas1 input[type=radio]{
+	display: none;
+}.estrelas1 label i.fa:before{
+	content: '\f005';
+	color: #FC0;
+}.estrelas1  input[type=radio]:checked  ~ label i.fa:before{
+	color: #CCC;
+}
+
+.estrelas2 input[type=radio]{
+	display: none;
+}.estrelas2 label i.fa:before{
+	content: '\f005';
+	color: #FC0;
+}.estrelas2  input[type=radio]:checked  ~ label i.fa:before{
+	color: #CCC;
+}
+
+.estrelas3 input[type=radio]{
+	display: none;
+}.estrelas3 label i.fa:before{
+	content: '\f005';
+	color: #FC0;
+}.estrelas3  input[type=radio]:checked  ~ label i.fa:before{
+	color: #CCC;
+}
+
+.checked{
+	color: #FC0;
+}
+
 body {
   padding-top: 54px;
 }
@@ -26,4 +57,9 @@ body {
 
 .portfolio-item {
   margin-bottom: 30px;
+}
+
+ul {
+	display: block;
+	list-style-type: none;
 }

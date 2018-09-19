@@ -5,8 +5,17 @@ public class Reserva {
     private String dataLocacao;
     private String horaInicioLocacao;
     private String horaFimLocacao;
+    private Long qtPessoas;
     private Float valorLocacao;
-    private int NotaAvaliacao;
+    private Integer NotaAvaliacao;
+
+    public Long getQtPessoas() {
+        return qtPessoas;
+    }
+
+    public void setQtPessoas(Long qtPessoas) {
+        this.qtPessoas = qtPessoas;
+    }
 
     public String getDataLocacao() {
         return dataLocacao;
@@ -33,6 +42,7 @@ public class Reserva {
     }
 
     public Float getValorLocacao() {
+
         return valorLocacao;
     }
 
@@ -41,6 +51,7 @@ public class Reserva {
     }
 
     public int getNotaAvaliacao() {
+
         return NotaAvaliacao;
     }
 

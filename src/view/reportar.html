@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Reportar Irregularidades</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+<style>
+    .footer{
+        bottom: 0;
+          position: fixed; 
+          bottom: 0; 
+          left: 0px; 
+          right: 0px;
+          width: 100%;
+          text-align: center;
+    }
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .button {
+        text-align: center;
+        padding: 2%;
+    }
+</style>
+<script type="text/javascript">
+  function redirecionar(){
+      if(confirm("Tem certeza que deseja reportar?")){
+        window.location="index.html"
+
+      }
+  }
+  </script>
+  </head>
+
+  <body>
+ <!-- Navigation -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="cadastroDeEspacos.html">Cadastre seu Espaço</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Configurações
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="meusDadosIndex.html">Meus Dados</a>
+              <a class="dropdown-item" href="meuEspaco.html">Meus Espaços</a>
+            </div>
+          </li>
+        
+      
+        
+      
+          <li class="nav-item">
+              <a class="nav-link" href="cadastroLogin.html">Registrar/Logar</a>
+            </li>
+        <li>
+          <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
+        </li>
+       
+    </ul>
+  </div>
+</div>
+</nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Reportar Irregularidades</h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Reportar</li>
+      </ol>
+      <div class="form-group">
+        <label for="sel1">Selecione a opção desejada:</label>
+        <select class="form-control" id="sel1">
+          <option>Selecione uma opção</option>
+          <option id="denuncia1">Local incompatível com as fotos</option>
+          <option id="denuncia2">Ambiente impuro anti-higiênico</option>
+          <option id="denuncia3">Endereço não condiz com a realidade</option>
+          <option id="denuncia4">Qualidade do ambiente abaixo do aceitável</option>
+          <option id="denuncia5">Espaço e aparelhos danificados</option>
+          <option id="denuncia6">Risco de vida ou saúde</option>
+          <option></option>
+        </select>
+        <div class="control-group form-group">
+            <div class="controls">
+                <label>Informações adicionais:</label>
+                <textarea rows="10" cols="100" class="form-control" id="message" placeholder="Digite aqui"></textarea>
+            </div>
+        </div>
+        <div id="success"></div>
+    <div id="checkboxSelectCombo"></div>
+        <div id="success"></div>
+        <!-- For success/fail messages -->
+        <button type="submit" class="btn btn-primary" id="sendMessageButton" onclick="redirecionar();">Reportar</button>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <div class="footer">
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>

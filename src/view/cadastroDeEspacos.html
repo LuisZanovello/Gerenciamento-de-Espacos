@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>Cadastro de Espaços</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <style>
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+      
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+      .button1 {
+          padding: 1%;
+          position: relative;
+          top: 0px;
+          left: 0px;
+      }
+      .button4 {
+          padding: 1%;
+          position: relative;
+          top: -560px;
+          left: 0px;
+      }
+      .row1{
+        position: relative;
+        top: 15px;
+        left: 0px;
+      }
+
+      </style>
+  </head>
+
+  <body>
+
+ <!-- Navigation -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="cadastroDeEspacos.html">Cadastre seu Espaço</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Configurações
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="meusDadosIndex.html">Meus Dados</a>
+              <a class="dropdown-item" href="meuEspaco.html">Meus Espaços</a>
+            </div>
+          </li>
+        
+      
+        
+      
+          <li class="nav-item">
+              <a class="nav-link" href="cadastroLogin.html">Registrar/Logar</a>
+            </li>
+        <li>
+          <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
+        </li>
+       
+    </ul>
+  </div>
+</div>
+</nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Cadastro de Espaços
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Cadastro de Espaços</li>
+      </ol>
+
+      <form class="form-horizontal">
+        <fieldset>
+        
+        <!-- Form Name -->
+
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="txtproduto">Nome do Estabelecimento: </label>  
+          <div class="col-md-6">
+          <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+
+                
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="txtcodigo_produto_id">Cep : </label>  
+          <div class="col-md-2">
+          <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
+            
+          </div>
+        </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="txtproduto">Rua: </label>  
+            <div class="col-md-6">
+            <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                
+            </div>
+          </div>
+
+                  <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="txtproduto">Bairro: </label>  
+          <div class="col-md-6">
+          <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+                <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="txtproduto">Cidade: </label>  
+            <div class="col-md-6">
+                <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                    
+            </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="txtproduto">Estado: </label>  
+              <div class="col-md-6">
+              <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                    
+            </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="txtcodigo_produto_id">Número : </label>  
+              <div class="col-md-2">
+             <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
+            
+            </div>
+            </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="txtproduto">Complemento: </label>  
+                          <div class="col-md-6">
+                          <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                                
+                        </div>
+                        </div>
+
+                           <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="txtcodigo_produto_id">Telefone : </label>  
+              <div class="col-md-2">
+             <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
+            
+            </div>
+            </div>
+        <table>
+          <tr>
+              <th></th>
+              <th>Horário --:-- à --:--</th>
+              <th>Horário --:-- à --:--</th>
+            </tr>
+          <tr>
+          <tr>
+            <th>Segunda</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Terça</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Quarta</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Quinta</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Sexta</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Sábado</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Domingo</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+          <tr>
+            <th>Feriado</th>
+            <th>R$ 00,00</th>
+            <th>R$ 00,00</th>
+          </tr>
+        </table>
+        
+        <div class="row1">
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                </div>
+              </div>
+            </div>
+        <div class="button1">
+          <button type="button" class="btn btn-primary">Alterar</button>
+          <button type="button" class="btn btn-danger">Excluir</button>
+        </div>
+
+
+            <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+
+
+      <form class="form-horizontal">
+        <fieldset>
+        
+        <!-- Form Name -->
+
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="txtproduto">Qual é o principal destino do seu espaço? </label>  
+          <div class="col-md-6">
+              <select class="form-control">
+                  <option>Eventos</option>
+                  <option>Esportes</option>
+                  <option>Ambos</option>
+                  <option>Outro</option>
+                </select>
+            
+          </div>
+        </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="txtproduto">Quais as modalidades pretendidas? </label>  
+                    <div class="col-md-6">
+                        <select class="form-control">
+                            <option>Modalidade 1</option>
+                            <option>Modalidade 2</option>
+                            <option>Modalidade 3</option>
+                            <option>Modalidade 4</option>
+                          </select>
+                          <p>
+                              <input type="checkbox"> Mais modalidades
+                            </p>  
+                    </div>
+                  </div>
+
+                
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="txtcodigo_produto_id">Seu espaço possui aproximadamente quantos metros quadrados: </label>  
+          <div class="col-md-2">
+          <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
+            
+          </div>
+        </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="txtproduto">Rua: </label>  
+            <div class="col-md-6">
+            <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                
+            </div>
+          </div>
+
+                  <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="txtproduto">Cite algumas características sobre o seu espaço: </label>  
+          <div class="col-md-6">
+          <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+                <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="txtproduto">Quantidade aproximada de pessoas que o ambiente suporta: </label>  
+            <div class="col-md-6">
+                <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                    
+            </div>
+            </div>
+          
+            <label class="col-md-4 control-label" for="txtproduto">Seu cliente poderá cancelar a reserva?: </label> 
+            <input type="radio" value="cancelamento">Sim
+            <input type="radio" value="cancelamento">Não
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="txtproduto">Tempo de antecedência do pedido para adquirir reembolso total: </label>  
+              <div class="col-md-6">
+              <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                    
+            </div>
+            </div>
+
+                   <!-- Text input-->
+                   <div class="form-group">
+                      <label class="col-md-4 control-label" for="txtproduto">Tempo de antecedência do pedido para adquirir reembolso parcial: </label>
+                      <div class="col-md-6">
+                      <input id="txtproduto" name="txtproduto" type="text" class="form-control input-md" required="">
+                            
+                    </div>
+                    </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="txtcodigo_produto_id">Porcentagem de reembolso parcial : </label>  
+              <div class="col-md-2">
+             <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
+                </div>
+            <div>
+              <input type="checkbox"> Adicionar regras para reembolso parcial
+            </div>
+                       
+       
+        <div class="button">
+            <a href="meusDadosIndex.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastrar</a>
+        </div>
+
+
+    </div>
+    
+    </div>
+  </div>
+  
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
