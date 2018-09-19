@@ -23,6 +23,7 @@ public class CartaoDAO {
             comando.setString   (5, cartao.getBandeira());
 
 
+
   /* é possível usar setObject
             comando.setObject(6, cartao.getBandeira());
 
@@ -51,11 +52,31 @@ public class CartaoDAO {
 
             comando = conexao.prepareStatement(sql);
 
-            comando.setInt      (2, cartao.getNumeroCartao());
-            comando.setString   (4, cartao.getValidade());
-            comando.setInt      (5, cartao.getCodigoSeguranca());
-            comando.setString   (6, cartao.getBandeira());
+            comando.setInt(2, cartao.getNumeroCartao());
+            comando.setString(4, cartao.getValidade());
+            comando.setInt(5, cartao.getCodigoSeguranca());
+            comando.setString(6, cartao.getBandeira());
 
+        } catch (SQLException e) {
+            throw e;
+        }
+
+    }
+
+
+    public Boolean excluir(Cartao cartao) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "delete from cartao where id=?";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong(1, cartao.getId());
+
+
+            comando.execute();
+            BD.fecharConexao(conexao, comando);
+            return true;
         } catch (SQLException e) {
             throw e;
         }

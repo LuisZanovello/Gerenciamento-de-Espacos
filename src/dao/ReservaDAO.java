@@ -51,4 +51,23 @@ public class ReservaDAO {
             throw e;
         }
     }
+
+    public Boolean excluir(Reserva reserva) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "delete from reserva where id=?";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong(1, reserva.getId());
+
+
+            comando.execute();
+            BD.fecharConexao(conexao, comando);
+            return true;
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
 }

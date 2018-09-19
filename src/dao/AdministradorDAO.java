@@ -44,4 +44,23 @@ public class AdministradorDAO {
                 throw e;
             }
         }
+
+    public Boolean excluir(Administrador admin) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "delete from administrador where id=?";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong(1, admin.getId());
+
+
+            comando.execute();
+            BD.fecharConexao(conexao, comando);
+            return true;
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
     }

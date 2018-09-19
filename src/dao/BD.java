@@ -10,7 +10,7 @@ public class BD {
         Connection conexao = null;
         Class.forName("com.mysql.jdbc.Driver");
         return DriverManager.getConnection
-                ("jdbc:mysql://localhost/bancox", "root", "");
+                ("jdbc:mysql://localhost/bancoisport", "root", "");
     }
 
     public static void fecharConexao(Connection conexao, PreparedStatement comando){

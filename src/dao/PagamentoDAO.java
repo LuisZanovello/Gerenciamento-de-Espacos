@@ -44,12 +44,30 @@ public class PagamentoDAO {
 
                 comando.setString   (2, pagamento.getDiasExpiracao());
                 comando.setLong     (3, pagamento.getNumeroCodBarras());
-                comando.setFloat  (4, pagamento.getValorTotal());
+                comando.setDouble  (4, pagamento.getValorTotal());
 
 
             } catch (SQLException e) {
                 throw e;
             }
         }
+
+    public Boolean excluir(Pagamento pagamento) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "delete from pagamento where id=?";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong(1, pagamento.getId());
+
+
+            comando.execute();
+            BD.fecharConexao(conexao, comando);
+            return true;
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
 
 }

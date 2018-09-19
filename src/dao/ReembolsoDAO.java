@@ -40,4 +40,24 @@ public class ReembolsoDAO {
             throw e;
         }
     }
+
+
+    public Boolean excluir(Reembolso reembolso) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "delete from reembolso where id=?";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong(1, reembolso.getId());
+
+
+            comando.execute();
+            BD.fecharConexao(conexao, comando);
+            return true;
+        } catch (SQLException e) {
+            throw e;
+        }
+    }
+
 }
