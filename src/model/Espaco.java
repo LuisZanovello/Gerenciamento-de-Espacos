@@ -4,8 +4,8 @@ public class Espaco {
     private Long id;
     private String nome;
     private String descricao;
-    private Integer area;
-    private Integer QuantidadePessoas;
+    private Double area;
+    private Integer quantidadePessoas;
 
     public Long getId() {
         return id;
@@ -31,19 +31,19 @@ public class Espaco {
         this.descricao = descricao;
     }
 
-    public Integer getArea() {
+    public Double getArea() {
         return area;
     }
 
-    public void setArea(Integer area) {
+    public void setArea(Double area) {
         this.area = area;
     }
 
     public Integer getQuantidadePessoas() {
-        return QuantidadePessoas;
+        return quantidadePessoas;
     }
 
     public void setQuantidadePessoas(Integer quantidadePessoas) {
-        QuantidadePessoas = quantidadePessoas;
+        this.quantidadePessoas = quantidadePessoas;
     }
 }

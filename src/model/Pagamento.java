@@ -1,11 +1,11 @@
 package model;
 
-public class Pagamento {
+public class Pagamento {    //antiga classe Boleto
 
     private Long id;
     private String diasExpiracao;
     private Long numeroCodBarras;
-    private Float valorTotal;
+    private Double valorTotal;
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Pagamento {
         this.numeroCodBarras = numeroCodBarras;
     }
 
-    public Float getValorTotal() {
+    public Double getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(Float valorTotal) {
+    public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
     }
 }

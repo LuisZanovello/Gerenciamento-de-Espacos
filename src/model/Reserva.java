@@ -6,7 +6,7 @@ public class Reserva {
     private String horaInicioLocacao;
     private String horaFimLocacao;
     private Long qtPessoas;
-    private Float valorLocacao;
+    private Double valorLocacao;
     private Integer NotaAvaliacao;
 
     public Long getQtPessoas() {
@@ -41,25 +41,28 @@ public class Reserva {
         this.horaFimLocacao = horaFimLocacao;
     }
 
-    public Float getValorLocacao() {
-
-        return valorLocacao;
-    }
-
-    public void setValorLocacao(Float valorLocacao) {
-        this.valorLocacao = valorLocacao;
-    }
-
-    public int getNotaAvaliacao() {
-
-        return NotaAvaliacao;
-    }
-
-    public void setNotaAvaliacao(int notaAvaliacao) {
-        NotaAvaliacao = notaAvaliacao;
-    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getValorLocacao() {
+        return valorLocacao;
+    }
+
+    public void setValorLocacao(Double valorLocacao) {
+        this.valorLocacao = valorLocacao;
+    }
+
+    public Integer getNotaAvaliacao() {
+        return NotaAvaliacao;
+    }
+
+    public void setNotaAvaliacao(Integer notaAvaliacao) {
+        NotaAvaliacao = notaAvaliacao;
     }
 }

@@ -25,8 +25,7 @@ public class CartaoDAO {
 
   /* é possível usar setObject
             comando.setObject(6, cartao.getBandeira());
-*/
-            /*
+
              if (curso.getCoordenador() == null) {
              comando.setNull(6, Types.NULL);
              } else{
