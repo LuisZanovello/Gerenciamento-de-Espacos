@@ -36,6 +36,9 @@ public class ReportarIrregularidadesDAO {
             comando = conexao.prepareStatement(sql);
 
             comando.setString   (1, irregularidade.getInformacao());
+
+            comando.setLong(2,irregularidade.getId());
+            BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
             throw e;
         }
@@ -56,6 +59,8 @@ public class ReportarIrregularidadesDAO {
             return true;
         } catch (SQLException e) {
             throw e;
+        }finally {
+            BD.fecharConexao(conexao, comando);
         }
     }
 }

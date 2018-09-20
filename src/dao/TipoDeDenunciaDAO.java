@@ -40,6 +40,8 @@ public class TipoDeDenunciaDAO {
 
                 comando.setString   (1, tpd.getNome());
                 comando.setString   (2, tpd.getDescricao());
+                comando.setLong(3,tpd.getId());
+                BD.fecharConexao(conexao, comando);
             } catch (SQLException e) {
                 throw e;
             }
@@ -50,7 +52,7 @@ public class TipoDeDenunciaDAO {
             PreparedStatement comando = null;
             try {
                 conexao = BD.getConexao();
-                String sql = "delete from tpd where id=?";
+                String sql = "delete from tpd where id=tpd.getId()";
                 comando = conexao.prepareStatement(sql);
                 comando.setLong(1, tpd.getId());
 
@@ -60,6 +62,8 @@ public class TipoDeDenunciaDAO {
                 return true;
             } catch (SQLException e) {
                 throw e;
+            }finally {
+                BD.fecharConexao(conexao, comando);
             }
         }
 }
