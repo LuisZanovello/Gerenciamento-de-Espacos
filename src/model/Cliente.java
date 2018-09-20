@@ -8,6 +8,13 @@ public class Cliente {
     private String dataNascimento;
     private String email;
 
+    public Long getId(){
+        return id;
+    }
+
+    public Long setId(Long id){
+        return this.id = id;
+    }
     public String getNome(){
         return nome;
     }
