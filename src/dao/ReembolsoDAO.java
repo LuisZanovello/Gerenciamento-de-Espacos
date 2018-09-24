@@ -15,7 +15,7 @@ public class ReembolsoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into reembolso(id, status)"
+            String sql = "insert into reembolso(id, estado)"
                     + " values(?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, reembol.getId());
@@ -34,7 +34,7 @@ public class ReembolsoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update reembolso set status=? where id=?";
+            String sql = "update reembolso set estado=? where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setString   (1, reembol.getStatus());
 
@@ -79,7 +79,7 @@ public class ReembolsoDAO {
 
             reembol = new Reembolso (rs.getLong("id"),
 
-                    rs.getString("status")); /*  null ? */
+                    rs.getString("estado")); /*  null ? */
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -95,7 +95,7 @@ public class ReembolsoDAO {
         Connection conexao = null;
         Statement comando = null;
 
-        /* List<Reembolso> admin = new ArrayList<Reembolso>();  essa linha esta dando erro pq ? */
+        /* List<Reembolso> resv = new ArrayList<Reembolso>();  essa linha esta dando erro pq ? */
         Reembolso reembol = null;
 
         try{
@@ -106,7 +106,7 @@ public class ReembolsoDAO {
 
             while(rs.next()) {
                 reembol = new Reembolso (rs.getLong("id"),
-                        rs.getString("status"));
+                        rs.getString("estado"));
                 reembol.add(reembol);
             }
         }catch (SQLException e){

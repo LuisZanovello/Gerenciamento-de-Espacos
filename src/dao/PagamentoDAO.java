@@ -14,7 +14,7 @@ public class PagamentoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into pagametno(id, vencimento, num_cod_barras, valor_total)"
+            String sql = "insert into pagamento(id, vencimento, num_cod_barras, valor_total)"
                     + " values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, pag.getId());
@@ -102,13 +102,13 @@ public class PagamentoDAO {
         Connection conexao = null;
         Statement comando = null;
 
-        /* List<Pagamento> admin = new ArrayList<Pagamento>();  essa linha esta dando erro pq ? */
+        /* List<Pagamento> pag = new ArrayList<Pagamento>();  essa linha esta dando erro pq ? */
         Pagamento pag = null;
 
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "select * from administrador";
+            String sql = "select * from pagamento";
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {

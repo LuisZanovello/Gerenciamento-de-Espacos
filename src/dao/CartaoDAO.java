@@ -13,7 +13,7 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into cartoes (id, numero, validade, cod_seguranca, tipo)" // tipo = bandeira do cartão
+            String sql = "insert into cartoes (id, numero, validade, cod_seguranca, bandeira)"
                     + " values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, cartao.getId());
@@ -48,7 +48,7 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update cartoes set numero=?, validade=?,cod_seguranca=?,tipo=?,Cliente_id=? where id=?";
+            String sql = "update cartoes set numero=?, validade=?,cod_seguranca=?,bandeira=?,Cliente_id=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
@@ -121,7 +121,7 @@ public class CartaoDAO {
         Connection conexao = null;
         Statement comando = null;
 
-        /* List<Cartao> admin = new ArrayList<Cartao>();  essa linha esta dando erro pq ? */
+        /* List<Cartao> cartao = new ArrayList<Cartao>();  essa linha esta dando erro pq ? */
         Cartao cartao = null;
 
         try{

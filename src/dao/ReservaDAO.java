@@ -77,7 +77,7 @@ public class ReservaDAO {
 
         try {
             conexao = BD.getConexao();
-            String sql = "select * from administrador where id=?";
+            String sql = "select * from reserva where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, resv.getId());
             ResultSet rs = comando.executeQuery(sql);
@@ -85,12 +85,12 @@ public class ReservaDAO {
 
             resv = new Reserva(rs.getLong("id"),
 
-                    rs.getString("dt_reserva"),
-                    rs.getString("hr_inicio"),
-                    rs.getString("hr_fim]"),
-                    rs.getLong("qt_pessoas"),
-                    rs.getDouble("valor_espaco"),
-                    rs.getLong("nota_avaliacao")); /*  null ? */
+                    rs.getString    ("dt_reserva"),
+                    rs.getString    ("hr_inicio"),
+                    rs.getString    ("hr_fim]"),
+                    rs.getLong      ("qt_pessoas"),
+                    rs.getDouble    ("valor_espaco"),
+                    rs.getLong      ("nota_avaliacao")); /*  null ? */
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -106,7 +106,7 @@ public class ReservaDAO {
         Connection conexao = null;
         Statement comando = null;
 
-        /* List<Reserva> admin = new ArrayList<Reserva>();  essa linha esta dando erro pq ? */
+        /* List<Reserva> resv = new ArrayList<Reserva>();  essa linha esta dando erro pq ? */
         Reserva resv = null;
 
         try{

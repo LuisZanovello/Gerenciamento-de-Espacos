@@ -3,11 +3,12 @@ package model;
 public class Reembolso {
 
     private Long id;
-    private String status;
+    private String estado;
+
 
     public Reembolso(Long id, String status) {
         this.id = id;
-        this.status = status;
+        this.estado = status;
     }
 
     public Reembolso(){
@@ -15,11 +16,11 @@ public class Reembolso {
     }
 
     public String getStatus() {
-        return status;
+        return estado;
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.estado = status;
     }
 
     public Long getId() {
