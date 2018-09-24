@@ -13,7 +13,7 @@ public class BD {
                 ("jdbc:mysql://localhost/bancoisport", "root", "");
     }
 
-    public static void fecharConexao(Connection conexao, PreparedStatement comando){
+    public static void fecharConexao(Connection conexao, Statement comando){
         try{
             if (comando != null){
                 comando.close();

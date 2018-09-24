@@ -1,6 +1,5 @@
 package dao;
 
-import model.ClienteLocador;
 import model.ClienteLocatario;
 
 import java.sql.Connection;

@@ -2,9 +2,9 @@ package dao;
 
 import model.Cartao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CartaoDAO {
 
@@ -13,11 +13,11 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into cartao(id, numero, validade, cod_seguranca, tipo)" // tipo = bandeira do cartão
+            String sql = "insert into cartoes (id, numero, validade, cod_seguranca, tipo)" // tipo = bandeira do cartão
                     + " values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, cartao.getId());
-            comando.setInt      (2, cartao.getNumeroCartao());
+            comando.setLong     (2, cartao.getNumeroCartao());
             comando.setString   (3, cartao.getValidade());
             comando.setInt      (4, cartao.getCodigoSeguranca());
             comando.setString   (5, cartao.getBandeira());
@@ -52,10 +52,13 @@ public class CartaoDAO {
 
             comando = conexao.prepareStatement(sql);
 
-            comando.setInt(2, cartao.getNumeroCartao());
-            comando.setString(4, cartao.getValidade());
-            comando.setInt(5, cartao.getCodigoSeguranca());
-            comando.setString(6, cartao.getBandeira());
+            comando.setLong     (1, cartao.getNumeroCartao());
+            comando.setString   (2, cartao.getValidade());
+            comando.setInt      (3, cartao.getCodigoSeguranca());
+            comando.setString   (4, cartao.getBandeira());
+            comando.setLong     (5, cartao.getId());
+
+            comando.execute();
 
         } catch (SQLException e) {
             throw e;
@@ -64,21 +67,87 @@ public class CartaoDAO {
     }
 
 
-    public Boolean excluir(Cartao cartao) throws SQLException, ClassNotFoundException {
+    public static void excluir(Cartao cartao) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "delete from cartao where id=?";
+            String sql = "delete from cartoes where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cartao.getId());
 
 
             comando.execute();
-            BD.fecharConexao(conexao, comando);
-            return true;
+
         } catch (SQLException e) {
             throw e;
+        }finally {
+            BD.fecharConexao(conexao, comando);
+
         }
     }
+
+    public Cartao obterCartao (Long id) throws ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        Cartao cartao = null;
+
+        try {
+            conexao = BD.getConexao();
+            String sql = "select * from cartoes where id=?";
+            comando = conexao.prepareStatement(sql);
+            comando.setLong     (1, cartao.getId());
+            ResultSet rs = comando.executeQuery(sql);
+            rs.first();
+
+            cartao = new Cartao(rs.getLong("id"),
+
+                    rs.getString("bandeira"),
+                    rs.getString("validade"),
+                    rs.getLong("numero"),
+                    rs.getInt("cod_seguranca")); /*  null ? */
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            BD.fecharConexao(conexao, comando);
+
+        }
+        return cartao;
+    }
+
+    public List<Cartao> obterTodosCartoes() throws ClassNotFoundException{
+
+        Connection conexao = null;
+        Statement comando = null;
+
+        /* List<Cartao> admin = new ArrayList<Cartao>();  essa linha esta dando erro pq ? */
+        Cartao cartao = null;
+
+        try{
+            conexao = BD.getConexao();
+            comando = conexao.createStatement();
+            String sql = "select * from cartoes";
+            ResultSet rs = comando.executeQuery(sql);
+
+            while(rs.next()) {
+                cartao = new Cartao(rs.getLong("id"),
+                        rs.getString("bandeira"),
+                        rs.getString("validade"),
+                        rs.getLong("numero"),
+                        rs.getInt("cod_seguranca")); /*  null ? */
+                cartao.add(cartao);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            BD.fecharConexao(conexao, comando);
+
+            return (List<Cartao>) cartao;
+        }
+    }
+
+
+
+
 }
