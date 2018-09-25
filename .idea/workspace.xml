@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1131f77c-b692-43a6-8551-41eab7225a0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/principal/PrincipalCartao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gerenciamento-de-Espacos/model/Denuncia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gerenciamento-de-Espacos/model/Endereco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gerenciamento-de-Espacos/model/Espaco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gerenciamento-de-Espacos/model/ReportarIrregularidades.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gerenciamento-de-Espacos/model/TipoDeDenuncia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Gerenciamento-de-Espacos/model/TipoDeEspaco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/AdministradorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/AdministradorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/CartaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CartaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PagamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PagamentoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReservaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReservaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Cartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cartao.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,35 +24,50 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1876788994">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.43" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="291" />
+          <entry key="java" value="392" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="291" />
+          <entry key="JAVA" value="392" />
         </counts>
       </usages-collector>
     </session>
@@ -73,34 +101,17 @@
     </session>
   </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
-    <leaf />
-=======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Cliente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/Administrador.java">
+        <entry file="file://$PROJECT_DIR$/src/principal/PrincipalAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding>
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#210#211#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="138">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
->>>>>>> 5e234aaebbac8dddf7570063d0b304238b8af52f
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -122,6 +133,16 @@
         <option value="$PROJECT_DIR$/src/model/Cartao.java" />
         <option value="$PROJECT_DIR$/src/model/Boleto.java" />
         <option value="$PROJECT_DIR$/src/model/Administrador.java" />
+        <option value="$PROJECT_DIR$/src/model/ClienteLocador.java" />
+        <option value="$PROJECT_DIR$/src/dao/EnderecoDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/CartaoDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/AdministradorDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/PagamentoDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/ReservaDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" />
+        <option value="$PROJECT_DIR$/src/principal/PrincipalCartao.java" />
+        <option value="$PROJECT_DIR$/src/principal/PrincipalAdmin.java" />
+        <option value="$PROJECT_DIR$/src/dao/TipoDeEspacoDAO.java" />
       </list>
     </option>
   </component>
@@ -168,25 +189,22 @@
       <list />
     </option>
   </component>
-<<<<<<< HEAD
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/src/view/outros/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-139" />
-    <option name="y" value="25" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
-=======
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-32000" />
-    <option name="y" value="-32000" />
-    <option name="width" value="199" />
-    <option name="height" value="48" />
->>>>>>> 5e234aaebbac8dddf7570063d0b304238b8af52f
+    <option name="x" value="845" />
+    <option name="width" value="1085" />
+    <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,21 +221,26 @@
               <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gerenciamento-de-Espacos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gerenciamento-de-Espacos" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="principal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536239912560" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537898489093" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/GitHubDesktop.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -236,7 +259,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.PrincipalAdmin">
+    <configuration name="PrincipalAdmin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="principal.PrincipalAdmin" />
+      <module name="Gerenciamento-de-Espacos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="principal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="web:war exploded">
@@ -251,6 +287,21 @@
       <predefined_log_file id="Tomcat Manager" enabled="false" />
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -258,6 +309,15 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 9.0.11" />
+      <item itemvalue="Application.PrincipalAdmin" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PrincipalAdmin" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -273,25 +333,17 @@
       <workItem from="1536240334092" duration="170000" />
       <workItem from="1536614329696" duration="622000" />
       <workItem from="1536666671061" duration="735000" />
+      <workItem from="1537898339157" duration="493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="2809000" />
+    <option name="totallyTimeSpent" value="6417000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
-=======
-    <option name="totallyTimeSpent" value="3049000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-25600" y="-25600" width="159" height="38" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="1.0" />
->>>>>>> 5e234aaebbac8dddf7570063d0b304238b8af52f
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17114094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -299,6 +351,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32968536" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -306,19 +359,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.32718122" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.29001367" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.0" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="1" weight="0.05838926" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24966443" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -341,14 +394,6 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/src/model/ClienteLocador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ClienteLocatario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -363,18 +408,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Modalidade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-=======
+    <entry file="file://$PROJECT_DIR$/src/model/Modalidade.java" />
     <entry file="file://$PROJECT_DIR$/src/model/Reserva.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="619">
           <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#1197#1198#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -382,9 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#283#284#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -392,50 +427,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-          <folding>
-            <element signature="e#954#955#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Boleto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding>
-            <element signature="e#544#545#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ClienteLocador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
->>>>>>> 5e234aaebbac8dddf7570063d0b304238b8af52f
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Boleto.java" />
     <entry file="file://$PROJECT_DIR$/src/model/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="230">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-=======
-        <state relative-caret-position="506">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="230" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="203" column="18" lean-forward="true" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Administrador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-          </folding>
->>>>>>> 5e234aaebbac8dddf7570063d0b304238b8af52f
+        <state relative-caret-position="621">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ClienteLocador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/EnderecoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ReservaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ReembolsoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/PagamentoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/principal/PrincipalCartao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/CartaoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="119" column="11" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/AdministradorDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/TipoDeEspacoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="88" column="26" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/principal/PrincipalAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
     </entry>
