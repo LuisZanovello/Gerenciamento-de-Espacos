@@ -25,7 +25,7 @@ public class EspacoDAO {
             if (espaco.getId() == null) {
                 comando.setNull(6, Types.NULL);
             } else {
-                comando.setString(6, espaco.getId().getNome());
+                comando.setString(6, espaco.getId());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);

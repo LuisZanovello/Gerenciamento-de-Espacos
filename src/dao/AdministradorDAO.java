@@ -40,7 +40,7 @@ public class AdministradorDAO {
                 comando.setString   (1, admin.getNome());
                 comando.setString   (2, admin.getEmail());
                 comando.setString   (3, admin.getSenha());
-                comando.setLong(4, admin.getId());
+                comando.setLong     (4, admin.getId());
                 comando.execute();
 
 
@@ -96,11 +96,11 @@ public class AdministradorDAO {
         return admin;
     }
 
-    public List<Administrador> obterTodosAdministradores() throws ClassNotFoundException{
+    public ArrayList<Administrador> obterTodosAdministradores() throws ClassNotFoundException{
 
         Connection conexao = null;
         Statement comando = null;
-        /* List<Administrador> admin = new ArrayList<Administrador>();  essa linha esta dando erro pq ? */
+        ArrayList<Administrador> lista = new ArrayList<Administrador>();
         Administrador admin = null;
         try{
             conexao = BD.getConexao();
@@ -113,13 +113,13 @@ public class AdministradorDAO {
                         rs.getString    ("nome"),
                         rs.getString    ("email"),
                         rs.getString    ("senha"));
-                admin.add(admin);
+                lista.add(admin);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-return (List<Administrador>) admin;
+return lista;
         }
     }
 }

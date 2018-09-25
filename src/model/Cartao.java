@@ -15,40 +15,41 @@ public class Cartao{
         this.numeroCartao = numeroCartao;
         this.codigoSeguranca = codigoSeguranca;
     }
-    public Cartao(){
-
-    }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public Cartao setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getBandeira() {
         return bandeira;
     }
 
-    public void setBandeira(String bandeira) {
+    public Cartao setBandeira(String bandeira) {
         this.bandeira = bandeira;
+        return this;
     }
 
     public String getValidade() {
         return validade;
     }
 
-    public void setValidade(String validade) {
+    public Cartao setValidade(String validade) {
         this.validade = validade;
+        return this;
     }
 
     public Long getNumeroCartao() {
         return numeroCartao;
     }
 
-    public void setNumeroCartao(Long numeroCartao) {
+    public Cartao setNumeroCartao(Long numeroCartao) {
         this.numeroCartao = numeroCartao;
+        return this;
     }
 
     public Integer getCodigoSeguranca() {
@@ -59,8 +60,7 @@ public class Cartao{
         this.codigoSeguranca = codigoSeguranca;
     }
 
-    public void add(Cartao cartao) {
-    }
+
 
 
     public void setIdCliente(long cliente) {

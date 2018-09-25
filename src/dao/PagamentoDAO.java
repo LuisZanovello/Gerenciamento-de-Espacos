@@ -5,6 +5,7 @@ import model.Administrador;
 import model.Pagamento;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PagamentoDAO {
@@ -98,12 +99,12 @@ public class PagamentoDAO {
         return pag;
     }
 
-    public List<Pagamento> obterTodosAdministradores() throws ClassNotFoundException{
+    public ArrayList<Pagamento> obterTodosPagamentos() throws ClassNotFoundException{
 
         Connection conexao = null;
         Statement comando = null;
 
-        /* List<Pagamento> pag = new ArrayList<Pagamento>();  essa linha esta dando erro pq ? */
+        ArrayList<Pagamento> lista = new ArrayList<Pagamento>();
         Pagamento pag = null;
 
         try{
@@ -118,14 +119,14 @@ public class PagamentoDAO {
                         rs.getLong("num_cod_barras"),
                         rs.getDouble("valor_total")); /*  null ? */
                 pag.setIdReserva(rs.getLong("reservas"));
-                pag.add(pag);
+                lista.add(pag);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 
-            return (List<Pagamento>) pag;
+            return lista;
         }
     }
 

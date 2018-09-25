@@ -1,53 +1,58 @@
 package dao;
 
+import model.Espaco;
 import model.TipoDeEspaco;
 
 import java.awt.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class TipoDeEspacoDAO {
 
-    public static void gravar(TipoDeEspaco tp) throws SQLException, ClassNotFoundException{
+    public static void gravar(TipoDeEspaco tp) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        try{
+        Espaco espaco = new Espaco();
+        try {
             conexao = BD.getConexao();
             String sql = "insert into tp(id, nome, descricao,espaco)"
                     + " values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1,tp.getId());
-            comando.setString(2,tp.getNome());
-            comando.setString(3,tp.getDescricao());
+            comando.setLong(1, tp.getId());
+            comando.setString(2, tp.getNome());
+            comando.setString(3, tp.getDescricao());
 
-            if(espaco.getId() == null){
+            if (espaco.getId() == null) {
                 comando.setNull(4, Types.NULL);
-            }else{
-                comando.setString(4,espaco.getId());
+            } else {
+                comando.setString(4, espaco.getNome());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw e;
         }
     }
+
     public static void alterar(TipoDeEspaco tp) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
+        Espaco espaco = new Espaco();
         try {
             conexao = BD.getConexao();
             String sql = "update tp set nome = ?, descricao = ?, espaco=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
-            comando.setString(1,tp.getNome());
-            comando.setString(2,tp.getDescricao());
+            comando.setString(1, tp.getNome());
+            comando.setString(2, tp.getDescricao());
 
-            if(espaco.getId() == null){
+            if (espaco.getId() == null) {
                 comando.setNull(3, Types.NULL);
-            }else{
-                comando.setString(3,espaco.getId());
+            } else {
+                comando.setString(3, espaco.getNome());
             }
-            comando.setLong(4,tp.getId());
+            comando.setLong(4, tp.getId());
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
             throw e;
@@ -65,69 +70,61 @@ public class TipoDeEspacoDAO {
             comando.execute();
         } catch (SQLException e) {
             throw e;
-        }finally {
+        } finally {
             BD.fecharConexao(conexao, comando);
         }
     }
-    public TipoDeEspaco tp (Long id) throws ClassNotFoundException {
+
+    public TipoDeEspaco tp(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
+        Espaco espaco = new Espaco();
         TipoDeEspaco tp = null;
 
         try {
             conexao = BD.getConexao();
             String sql = "select * from tp where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, tp.getId());
+            comando.setLong(1, tp.getId());
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
 
-            tp = new TipoDeEspaco(rs.getLong("id"),
-
-                    rs.getString("nome"),
-                    rs.getString("descricao"),
-                    espaco null;
-            espaco.setId(rs.getLong("id"));
+            tp = new TipoDeEspaco();
+                    tp.setDescricao(rs.getString("descricao"));
+                    tp.setNome(rs.getString("nome"));
+                    tp.setId(rs.getLong("id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             BD.fecharConexao(conexao, comando);
 
         }
         return tp;
     }
 
-    public List<TipoDeEspaco> obterTodosTiposEspacos) throws ClassNotFoundException{
+    public static ArrayList<TipoDeEspaco> obterTodosEspacos() throws ClassNotFoundException {
 
         Connection conexao = null;
         Statement comando = null;
-
-        /* List<Espaco> espaco = new ArrayList<Espaco>();  essa linha esta dando erro pq ? */
-        TipoDeEspaco tp = null;
-
-        try{
+        ArrayList<TipoDeEspaco> lista = new ArrayList<>();
+        try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "select * from tp";
+            String sql = "SELECT * FROM espaco";
             ResultSet rs = comando.executeQuery(sql);
-
-            while(rs.next()) {
-                tp = new TipoDeEspaco()rs.getLong("id"),
-                        rs.getString("nome"),
-                        rs.getString("descricao"),
-                        espaco null;
-                tp.setId(rs.getLong("nome"));
-                tp.add(tp);
+            while (rs.next()) {
+                lista.add(new TipoDeEspaco()
+                        .setDescricao(rs.getString("descricao"))
+                        .setNome(rs.getString("nome"))
+                        .setId(rs.getLong("id")));
             }
-        }catch (SQLException e){
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 
         }
-        return (List<TipoDeEspaco>) tp;
+        return lista;
     }
 }

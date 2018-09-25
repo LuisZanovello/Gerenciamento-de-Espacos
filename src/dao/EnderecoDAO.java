@@ -91,10 +91,11 @@ public class EnderecoDAO {
 
             endereco = new Endereco(rs.getLong("id"),
 
-                    rs.getString("nome"),
-                    rs.getString("descricao"),
-                    rs.getInt("area"), /*  null ? */
-                    rs.getInt("quantidadePessoas"),
+                    rs.getString("cep"),
+                    rs.getString("logradouro"),
+                    rs.getString("bairro"), /*  null ? */
+                    rs.getString("cidade"),
+                    rs.getString("uf"),
                     espaco null;
             endereco.setId(rs.getLong("nome"));
 
@@ -123,10 +124,11 @@ public class EnderecoDAO {
 
             while(rs.next()) {
                 endereco = new Endereco(rs.getLong("id"),
-                        rs.getString("nome"),
-                        rs.getString("descricao"),
-                        rs.getInt("area"),
-                        rs.getInt("quantidadePessoas"),
+                        rs.getString("cep"),
+                        rs.getString("logradouro"),
+                        rs.getString("bairro"),
+                        rs.getString("cidade"),
+                        rs.getString("uf"),
                         espaco null;
                 endereco.setId(rs.getLong("nome"));
                 endereco.add(endereco);
