@@ -4,6 +4,9 @@ public class Contato {
     private Long id;
     private String numero;
 
+    public Contato(long id, String numero) {
+    }
+
     public Long getId() {
         return id;
     }

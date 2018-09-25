@@ -4,6 +4,10 @@ public class ClienteLocador extends Cliente{
     private Long id;
     private String cnpj;
 
+    public ClienteLocador(long id, String cnpj) {
+        super();
+    }
+
     public Long getId() {
         return id;
     }
