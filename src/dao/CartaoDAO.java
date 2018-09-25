@@ -91,7 +91,6 @@ public class CartaoDAO {
         Connection conexao = null;
         PreparedStatement comando = null;
         Cartao cartao = null;
-
         try {
             conexao = BD.getConexao();
             String sql = "select * from cartoes where id=?";
@@ -101,12 +100,11 @@ public class CartaoDAO {
             rs.first();
 
             cartao = new Cartao(rs.getLong("id"),
-
                     rs.getString("bandeira"),
                     rs.getString("validade"),
                     rs.getLong("numero"),
                     rs.getInt("cod_seguranca")); /*  null ? */
-
+            cartao.setIdCliente(rs.getLong("cliente"));
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -117,10 +115,8 @@ public class CartaoDAO {
     }
 
     public List<Cartao> obterTodosCartoes() throws ClassNotFoundException{
-
         Connection conexao = null;
         Statement comando = null;
-
         /* List<Cartao> cartao = new ArrayList<Cartao>();  essa linha esta dando erro pq ? */
         Cartao cartao = null;
 
@@ -132,17 +128,17 @@ public class CartaoDAO {
 
             while(rs.next()) {
                 cartao = new Cartao(rs.getLong("id"),
-                        rs.getString("bandeira"),
-                        rs.getString("validade"),
-                        rs.getLong("numero"),
-                        rs.getInt("cod_seguranca")); /*  null ? */
+                        rs.getString    ("bandeira"),
+                        rs.getString    ("validade"),
+                        rs.getLong      ("numero"),
+                        rs.getInt       ("cod_seguranca")); /*  null ? */
+                cartao.setIdCliente(rs.getLong("cliente"));
                 cartao.add(cartao);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-
             return (List<Cartao>) cartao;
         }
     }

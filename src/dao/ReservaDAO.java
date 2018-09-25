@@ -91,6 +91,7 @@ public class ReservaDAO {
                     rs.getLong      ("qt_pessoas"),
                     rs.getDouble    ("valor_espaco"),
                     rs.getLong      ("nota_avaliacao")); /*  null ? */
+                    resv.setIdCliente(rs.getLong("cliente_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -123,6 +124,7 @@ public class ReservaDAO {
                         rs.getLong("qt_pessoas"),
                         rs.getDouble("valor_espaco"),
                         rs.getLong("nota_avaliacao"));
+                resv.setIdCliente(rs.getLong("cliente_id"));
                 resv.add(resv);
             }
         }catch (SQLException e){

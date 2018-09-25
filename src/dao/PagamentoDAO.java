@@ -87,6 +87,7 @@ public class PagamentoDAO {
                     rs.getString("vencimento"),
                     rs.getLong("num_cod_barras"),
                     rs.getDouble("valor_total")); /*  null ? */
+            pag.setIdReserva(rs.getLong("reservas"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,6 +117,7 @@ public class PagamentoDAO {
                         rs.getString("vencimento"),
                         rs.getLong("num_cod_barras"),
                         rs.getDouble("valor_total")); /*  null ? */
+                pag.setIdReserva(rs.getLong("reservas"));
                 pag.add(pag);
             }
         }catch (SQLException e){

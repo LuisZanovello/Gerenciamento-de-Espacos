@@ -61,4 +61,9 @@ public class Cartao{
 
     public void add(Cartao cartao) {
     }
+
+
+    public void setIdCliente(long cliente) {
+
+    }
 }

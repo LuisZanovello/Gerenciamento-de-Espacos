@@ -29,4 +29,7 @@ public class Reembolso {
 
     public void add(Reembolso reembolso) {
     }
+
+    public void setIdPagamento(long pagamento) {
+    }
 }

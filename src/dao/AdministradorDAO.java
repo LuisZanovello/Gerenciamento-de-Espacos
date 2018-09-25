@@ -85,15 +85,13 @@ public class AdministradorDAO {
 
             admin = new Administrador(rs.getLong("id"),
 
-                    rs.getString("nome"),
-                    rs.getString("email"),
-                    rs.getString("senha")); /*  null ? */
-
+                    rs.getString    ("nome"),
+                    rs.getString    ("email"),
+                    rs.getString    ("senha")); /*  null ? */
         } catch (SQLException e) {
          e.printStackTrace();
         }finally {
             BD.fecharConexao(conexao, comando);
-
         }
         return admin;
     }
@@ -102,10 +100,8 @@ public class AdministradorDAO {
 
         Connection conexao = null;
         Statement comando = null;
-
         /* List<Administrador> admin = new ArrayList<Administrador>();  essa linha esta dando erro pq ? */
         Administrador admin = null;
-
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
@@ -114,16 +110,15 @@ public class AdministradorDAO {
 
             while(rs.next()) {
                 admin = new Administrador(rs.getLong("id"),
-                        rs.getString("nome"),
-                        rs.getString("email"),
-                        rs.getString("senha"));
+                        rs.getString    ("nome"),
+                        rs.getString    ("email"),
+                        rs.getString    ("senha"));
                 admin.add(admin);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-
 return (List<Administrador>) admin;
         }
     }

@@ -80,6 +80,7 @@ public class ReembolsoDAO {
             reembol = new Reembolso (rs.getLong("id"),
 
                     rs.getString("estado")); /*  null ? */
+            reembol.setIdPagamento(rs.getLong("pagamento"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -107,6 +108,7 @@ public class ReembolsoDAO {
             while(rs.next()) {
                 reembol = new Reembolso (rs.getLong("id"),
                         rs.getString("estado"));
+                reembol.setIdPagamento(rs.getLong("pagamento"));
                 reembol.add(reembol);
             }
         }catch (SQLException e){

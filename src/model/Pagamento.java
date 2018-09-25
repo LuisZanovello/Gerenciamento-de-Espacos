@@ -52,4 +52,7 @@ public class Pagamento {    //antiga classe Boleto
 
     public void add(Pagamento pag) {
     }
+
+    public void setIdReserva(long reservas) {
+    }
 }
