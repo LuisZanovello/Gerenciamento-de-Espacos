@@ -5,7 +5,7 @@ public class TipoDeEspaco {
     private String nome;
     private String descricao;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

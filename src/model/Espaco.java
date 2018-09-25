@@ -19,4 +19,5 @@ public class Espaco {
     }
     public Integer getQuantidadePessoas() { return quantidadePessoas; }
     public void setQuantidadePessoas(Integer quantidadePessoas) { this.quantidadePessoas = quantidadePessoas; }
+
 }
