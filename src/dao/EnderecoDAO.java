@@ -22,7 +22,7 @@ public class EnderecoDAO {
             comando.setString   (5, endereco.getCidade());
             comando.setString   (6, endereco.getUf());
 
-            if(endereco.getEspaco() == null){
+            if(endereco() == null){
                 comando.setNull(7, Types.NULL);
             }else{
                 comando.setString(7,endereco.getId());
