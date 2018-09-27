@@ -4,12 +4,10 @@ import model.Cartao;
 import model.Reembolso;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReembolsoDAO {
-
-
-
     public static void gravar(Reembolso reembol) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -20,9 +18,8 @@ public class ReembolsoDAO {
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, reembol.getId());
             comando.setString   (2, reembol.getStatus());
-
-
             comando.execute();
+
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
             throw e;
@@ -43,7 +40,6 @@ public class ReembolsoDAO {
         }
     }
 
-
     public Boolean excluir(Reembolso reembol) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -52,9 +48,8 @@ public class ReembolsoDAO {
             String sql = "delete from reembolso where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, reembol.getId());
-
-
             comando.execute();
+
             BD.fecharConexao(conexao, comando);
             return true;
         } catch (SQLException e) {
@@ -67,8 +62,6 @@ public class ReembolsoDAO {
         Connection conexao = null;
         PreparedStatement comando = null;
         Reembolso reembol = null;
-
-
         try {
             conexao = BD.getConexao();
             String sql = "select * from reembolso where id=?";
@@ -78,27 +71,23 @@ public class ReembolsoDAO {
             rs.first();
 
             reembol = new Reembolso (rs.getLong("id"),
-
-                    rs.getString("estado")); /*  null ? */
+                        rs.getString("estado")); /*  null ? */
             reembol.setIdPagamento(rs.getLong("pagamento"));
 
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
             BD.fecharConexao(conexao, comando);
-
         }
         return reembol;
     }
 
-    public List<Reembolso> obterTodosReembolsos() throws ClassNotFoundException{
-
+    public static ArrayList<Reembolso> obterTodosReembolsos() throws ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
 
-        /* List<Reembolso> resv = new ArrayList<Reembolso>();  essa linha esta dando erro pq ? */
+        ArrayList<Reembolso> lista = new ArrayList<Reembolso>();
         Reembolso reembol = null;
-
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
@@ -109,14 +98,14 @@ public class ReembolsoDAO {
                 reembol = new Reembolso (rs.getLong("id"),
                         rs.getString("estado"));
                 reembol.setIdPagamento(rs.getLong("pagamento"));
-                reembol.add(reembol);
+                lista.add(reembol);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 
-            return (List<Reembolso>) reembol;
+            return lista;
         }
     }
 

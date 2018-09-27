@@ -50,8 +50,6 @@ public class Pagamento {    //antiga classe Boleto
         this.valorTotal = valorTotal;
     }
 
-    public void add(Pagamento pag) {
-    }
 
     public void setIdReserva(long reservas) {
     }

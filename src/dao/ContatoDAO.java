@@ -1,11 +1,10 @@
 package dao;
 
-import model.Cliente;
 import model.Contato;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class ContatoDAO {
     public static void gravar(Contato contato) throws SQLException, ClassNotFoundException{
@@ -17,11 +16,7 @@ public class ContatoDAO {
                     + "values(?,?)";
             comando = ((Connection) conexao).prepareStatement(sql);
             comando.setLong(1, contato.getId());
-            if(Contato.getIdCliente() == null){
-                comando.setNull(6, Types.NULL);
-            }else{
-                comando.setInt(6, Contato.getIdCliente());
-            }
+
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch(SQLException e){
@@ -40,82 +35,11 @@ public class ContatoDAO {
             comando = conexao.prepareStatement(sql);
             comando.setString(1, contato.getNumero());
             comando.setLong(2, contato.getId());
-            if(Contato.getIdCliente() == null){
-                comando.setNull(6, Types.NULL);
-            }else{
-                comando.setInt(6, Contato.getIdCliente());
-            }
+
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch(SQLException e){
             throw e;
         }
-    }
-
-    public static void excluir (Contato contato) throws SQLException, ClassNotFoundException{
-        Connection conexao = null;
-        PreparedStatement comando = null;
-
-        try{
-            conexao = BD.getConexao();
-            String sql = "delete from contato where id = ?";
-            comando = conexao.prepareStatement(sql);
-            comando.setLong(1, contato.getId());
-            comando.execute();
-        }catch (SQLException e){
-            throw e;
-        }finally {
-            BD.fecharConexao(conexao, comando);
-        }
-    }
-
-    public static Contato obterContato(long id) throws  ClassNotFoundException{
-        Connection conexao = null;
-        PreparedStatement comando = null;
-        Contato contato = null;
-
-        try{
-            conexao = BD.getConexao();
-            String sql = "select * from contato where id = ?";
-            comando = conexao.prepareStatement(sql);
-            comando.setLong(1, id);
-            ResultSet rs = comando.executeQuery(sql);
-            rs.first();
-            contato = new Contato();
-            contato.setId(rs.getLong("id"));
-            contato.setNumero(rs.getString("nome"));
-
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }finally {
-            BD.fecharConexao(conexao, comando);
-        }
-        return contato;
-    }
-
-
-    public static List<Contato> obterTodosOsContatos() throws  ClassNotFoundException{
-        Connection conexao = null;
-        Statement comando = null;
-        List<Contato> contatos = new ArrayList<Contato>();
-        try{
-            conexao = BD.getConexao();
-            comando = conexao.createStatement();
-            String sql = "SELECT * FROM contato";
-            ResultSet rs = comando.executeQuery(sql);
-            while(rs.next()){
-                contatos.add(new Contato()
-                        .setId(rs.getLong("id"))
-                        .setNumero(rs.getString("numero")));
-
-            }
-        }catch(SQLException e){
-            e.printStackTrace();
-        }finally{
-            BD.fecharConexao(conexao, comando);
-        }
-
-        return contatos;
     }
 }

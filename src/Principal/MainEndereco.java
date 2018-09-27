@@ -1,8 +1,5 @@
 package Principal;
 
-import dao.EnderecoDAO;
-import model.Endereco;
-
 public class MainEndereco {
 
     public static void main(String[] args) {

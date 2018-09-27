@@ -48,8 +48,6 @@ public class Administrador {
         this.senha = senha;
     }
 
-    public void add(Administrador admin) {
-    }
 
 
     // baixar o plugin lombok

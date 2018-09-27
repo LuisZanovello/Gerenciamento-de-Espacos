@@ -100,10 +100,10 @@ public class CartaoDAO {
             rs.first();
 
             cartao = new Cartao(rs.getLong("id"),
-                    rs.getString("bandeira"),
-                    rs.getString("validade"),
-                    rs.getLong("numero"),
-                    rs.getInt("cod_seguranca")); /*  null ? */
+                    rs.getString    ("bandeira"),
+                    rs.getString    ("validade"),
+                    rs.getLong      ("numero"),
+                    rs.getInt       ("cod_seguranca")); /*  null ? */
             cartao.setIdCliente(rs.getLong("cliente"));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -114,10 +114,10 @@ public class CartaoDAO {
         return cartao;
     }
 
-    public List<Cartao> obterTodosCartoes() throws ClassNotFoundException{
+    public static ArrayList<Cartao> obterTodosCartoes() throws ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-        /* List<Cartao> cartao = new ArrayList<Cartao>();  essa linha esta dando erro pq ? */
+       ArrayList<Cartao> lista = new ArrayList<Cartao>();
         Cartao cartao = null;
 
         try{
@@ -132,14 +132,14 @@ public class CartaoDAO {
                         rs.getString    ("validade"),
                         rs.getLong      ("numero"),
                         rs.getInt       ("cod_seguranca")); /*  null ? */
-                cartao.setIdCliente(rs.getLong("cliente"));
-                cartao.add(cartao);
+                cartao.setIdCliente(rs.getLong("cliente")); /* De onde vem o Set ? "SetMatriculaProfessorCoordenador"*/
+                lista.add(cartao);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-            return (List<Cartao>) cartao;
+            return lista;
         }
     }
 

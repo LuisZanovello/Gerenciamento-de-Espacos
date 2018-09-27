@@ -3,21 +3,164 @@ package model;
 public class Espaco {
     private Long id;
     private String nome;
-    private String descricao;
+    private String cnpj;
+    private String cep;
+    private String logradouro;
+    private Integer numero;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String uf;
     private Double area;
     private Integer quantidadePessoas;
+    private String horaFuncionamentoInicio;
+    private String horaFuncionamentoFinal;
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
-    public Double getArea() { return area; }
-    public void setArea(Double area) {
+    public Espaco(Long id, String nome, String cnpj, String cep, String logradouro, Integer numero, String complemento,
+                  String bairro, String cidade, String uf, Double area, Integer quantidadePessoas,
+                  String horaFuncionamentoInicio, String horaFuncionamentoFinal) {
+        this.id = id;
+        this.nome = nome;
+        this.cnpj = cnpj;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
         this.area = area;
+        this.quantidadePessoas = quantidadePessoas;
+        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
+        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
     }
-    public Integer getQuantidadePessoas() { return quantidadePessoas; }
-    public void setQuantidadePessoas(Integer quantidadePessoas) { this.quantidadePessoas = quantidadePessoas; }
 
+    public Espaco() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Espaco setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Espaco setNome(String nome) {
+        this.nome = nome;
+        return this;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public Espaco setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+        return this;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public Espaco setCep(String cep) {
+        this.cep = cep;
+        return this;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public Espaco setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+        return this;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public Espaco setNumero(Integer numero) {
+        this.numero = numero;
+        return this;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public Espaco setComplemento(String complemento) {
+        this.complemento = complemento;
+        return this;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public Espaco setBairro(String bairro) {
+        this.bairro = bairro;
+        return this;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public Espaco setCidade(String cidade) {
+        this.cidade = cidade;
+        return this;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public Espaco setUf(String uf) {
+        this.uf = uf;
+        return this;
+    }
+
+    public Double getArea() {
+        return area;
+    }
+
+    public Espaco setArea(Double area) {
+        this.area = area;
+        return this;
+    }
+
+    public Integer getQuantidadePessoas() {
+        return quantidadePessoas;
+    }
+
+    public Espaco setQuantidadePessoas(Integer quantidadePessoas) {
+        this.quantidadePessoas = quantidadePessoas;
+        return this;
+    }
+
+    public String getHoraFuncionamentoInicio() {
+        return horaFuncionamentoInicio;
+    }
+
+    public Espaco setHoraFuncionamentoInicio(String horaFuncionamentoInicio) {
+        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
+        return this;
+    }
+
+    public String getHoraFuncionamentoFinal() {
+        return horaFuncionamentoFinal;
+    }
+
+    public Espaco setHoraFuncionamentoFinal(String horaFuncionamentoFinal) {
+        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
+        return this;
+    }
 }

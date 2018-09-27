@@ -5,7 +5,6 @@ import model.Denuncia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Types;
 
 public class DenunciaDAO {
 
@@ -21,11 +20,11 @@ public class DenunciaDAO {
             comando.setString   (2, denuncia.getDescricao());
             comando.setString   (3, denuncia.getAutor());
 
-          /*  if(denuncia.getEspaco() == null){
+            if(denuncia.getEspaco() == null){
                 comando.setNull(4, Types.NULL);
             }else{
                 comando.setString(4,espaco.getId());
-            }*/
+            }
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -46,11 +45,11 @@ public class DenunciaDAO {
             comando.setString   (1, denuncia.getDescricao());
             comando.setString   (2, denuncia.getAutor());
 
-            /*if(denuncia.getEspaco() == null){
+            if(denuncia.getEspaco() == null){
                 comando.setNull(3,Types.NULL);
             }else{
                 comando.setString(3,espaco.getId());
-            }*/
+            }
             comando.setLong(4,denuncia.getId());
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
@@ -58,18 +57,19 @@ public class DenunciaDAO {
         }
     }
 
-    public static void excluir(Denuncia denuncia) throws SQLException, ClassNotFoundException {
+    public Boolean excluir(Denuncia denuncia) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "delete from denuncia where id=?";
+            String sql = "delete from denuncia where id=denuncia.getId()";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, denuncia.getId());
+
+
             comando.execute();
-
             BD.fecharConexao(conexao, comando);
-
+            return true;
         } catch (SQLException e) {
             throw e;
         }finally {

@@ -78,7 +78,7 @@ public class EspacoDAO {
             }
             comando.setLong(15, espaco.getId());
             BD.fecharConexao(conexao, comando);
-        } catch (   SQLException e) {
+        } catch (SQLException e) {
             throw e;
         }
     }
@@ -92,7 +92,6 @@ public class EspacoDAO {
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, espaco.getId());
             comando.execute();
-
         } catch (SQLException e) {
             throw e;
         } finally {

@@ -2,8 +2,9 @@ package dao;
 
 import model.ReportarIrregularidades;
 
-import java.sql.*;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class ReportarIrregularidadesDAO {
 
@@ -43,7 +44,7 @@ public class ReportarIrregularidadesDAO {
         }
     }
 
-    public static void excluir(ReportarIrregularidades irregularidade) throws SQLException, ClassNotFoundException {
+    public Boolean excluir(ReportarIrregularidades irregularidade) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
@@ -51,68 +52,15 @@ public class ReportarIrregularidadesDAO {
             String sql = "delete from irregularidade where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, irregularidade.getId());
+
+
             comando.execute();
+            BD.fecharConexao(conexao, comando);
+            return true;
         } catch (SQLException e) {
             throw e;
         }finally {
             BD.fecharConexao(conexao, comando);
         }
-    }
-    public ReportarIrregularidades obterIrregularidade (Long id) throws ClassNotFoundException {
-        Connection conexao = null;
-        PreparedStatement comando = null;
-        ReportarIrregularidades irregularidade = null;
-
-        try {
-            conexao = BD.getConexao();
-            String sql = "select * from irregularidade where id=?";
-            comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, irregularidade.getId());
-            ResultSet rs = comando.executeQuery(sql);
-            rs.first();
-
-            irregularidade = new ReportarIrregularidades(rs.getLong("id"),
-
-                    rs.getString("informacao"),
-                    espaco null;
-            irregularidade.setId(rs.getLong("nome"));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            BD.fecharConexao(conexao, comando);
-
-        }
-        return ReportarIrregularidades;
-    }
-
-    public List<ReportarIrregularidades> obterTodasIrregularidades() throws ClassNotFoundException{
-
-        Connection conexao = null;
-        Statement comando = null;
-
-        /* List<ReportarIrregularidades> irregularidade = new ArrayList<ReportarIrregularidades>();  essa linha esta dando erro pq ? */
-        ReportarIrregularidades irregularidade = null;
-
-        try{
-            conexao = BD.getConexao();
-            comando = conexao.createStatement();
-            String sql = "select * from irregularidade";
-            ResultSet rs = comando.executeQuery(sql);
-
-            while(rs.next()) {
-                irregularidade = new ReportarIrregularidades()rs.getLong("id"),
-                        rs.getString("informacao"),
-                        espaco null;
-                irregularidade.setId(rs.getLong("nome"));
-                irregularidade.add(irregularidade);
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        } finally {
-            BD.fecharConexao(conexao, comando);
-
-        }
-        return (List<ReportarIrregularidades>) irregularidade;
     }
 }

@@ -8,8 +8,6 @@ public class Cliente {
     private String dataNascimento;
     private String email;
 
-    public Cliente() {
-    }
 
     public Long getId() {
         return id;
@@ -63,6 +61,14 @@ public class Cliente {
     public Cliente setEmail(String email) {
         this.email = email;
         return this;
+    }
+    public Cliente(Long id, String nome, String sobrenome, String cpf, String dataNascimento, String email) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
     }
 }
 
