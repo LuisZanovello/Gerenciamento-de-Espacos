@@ -18,7 +18,14 @@ public class ContatoDAO {
             comando.setLong(1, contato.getId());
             comando.setString(2, contato.getNumero());
 
-            comando.setLong(3, contato.getIdCliente());
+            if(contato.getIdCliente() == null){
+                comando.setNull(3, Types.NULL);
+            }
+            else{
+                comando.setLong(3, contato.getIdCliente());
+            }
+
+            //comando.setLong(3, contato.getIdCliente());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
