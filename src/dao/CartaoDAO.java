@@ -13,7 +13,7 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into cartao (id, bandeira, validade, numero, cod_seguranca)"
+            String sql = "insert into cartao (id, bandeira, validade, numero, codigo_seguranca, cliente_id)"
                     + " values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, cartao.getId());
@@ -24,10 +24,10 @@ public class CartaoDAO {
 
 
             if(cartao.getCliente() == null){
-                comando.setNull(2, Types.NULL);
+                comando.setNull(6, Types.NULL);
             }
             else{
-                comando.setLong(2, cartao.getCliente().getId());
+                comando.setLong(6, cartao.getCliente().getId());
             }
 
   /* é possível usar setObject

@@ -12,17 +12,13 @@ public class ContatoDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "insert into contato (id, numero)"
-                    + "values(?,?)";
+            String sql = "insert into contato (id, numero, cliente_id)"
+                    + "values(?,?, ?)";
             comando = ((Connection) conexao).prepareStatement(sql);
             comando.setLong(1, contato.getId());
+            comando.setString(2, contato.getNumero());
 
-            if(contato.getCliente() == null){
-                comando.setNull(2, Types.NULL);
-            }
-            else{
-                comando.setLong(2, contato.getCliente().getId());
-            }
+            comando.setLong(3, contato.getIdCliente());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
