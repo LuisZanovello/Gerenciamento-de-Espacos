@@ -7,6 +7,16 @@ public class Cartao{
     private String validade;
     private Long numeroCartao;
     private Integer codigoSeguranca;
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Cartao setCliente(Cliente cliente) {
+        this.cliente = cliente;
+        return this;
+    }
 
     public Cartao(Long id, String bandeira, String validade, Long numeroCartao, Integer codigoSeguranca) {
         this.id = id;
@@ -59,9 +69,6 @@ public class Cartao{
     public void setCodigoSeguranca(Integer codigoSeguranca) {
         this.codigoSeguranca = codigoSeguranca;
     }
-
-
-
 
     public void setIdCliente(long cliente) {
 

@@ -10,5 +10,10 @@ public class PrincipalAdmin {
         Administrador admin = new Administrador((long)132,"Victor", "viictor.wagmer@lul.br", "123123");
                                                 /*ID        NOME            EMAIL                           SENHA*/
         AdministradorDAO.gravar(admin);
+        AdministradorDAO.alterar(admin);
+        AdministradorDAO.obterAdministrador((long)132);
+        AdministradorDAO.obterTodosAdministradores();
+        AdministradorDAO.excluir(admin);
+
     }
 }

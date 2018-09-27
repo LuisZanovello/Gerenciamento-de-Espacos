@@ -70,7 +70,7 @@ public class AdministradorDAO {
     }
 
 
-    public Administrador obterAdministrador (Long id) throws ClassNotFoundException {
+    public static Administrador obterAdministrador (Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Administrador admin = null;
@@ -96,7 +96,7 @@ public class AdministradorDAO {
         return admin;
     }
 
-    public ArrayList<Administrador> obterTodosAdministradores() throws ClassNotFoundException{
+    public static ArrayList<Administrador> obterTodosAdministradores() throws ClassNotFoundException{
 
         Connection conexao = null;
         Statement comando = null;
@@ -113,6 +113,7 @@ public class AdministradorDAO {
                         rs.getString    ("nome"),
                         rs.getString    ("email"),
                         rs.getString    ("senha"));
+
                 lista.add(admin);
             }
         }catch (SQLException e){

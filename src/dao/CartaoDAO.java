@@ -22,7 +22,12 @@ public class CartaoDAO {
             comando.setInt      (4, cartao.getCodigoSeguranca());
             comando.setString   (5, cartao.getBandeira());
 
-
+            if(cartao.getCliente() == null){
+                comando.setNull(2, Types.NULL);
+            }
+            else{
+                comando.setLong(2, cartao.getCliente().getId());
+            }
 
   /* é possível usar setObject
             comando.setObject(6, cartao.getBandeira());
@@ -57,6 +62,13 @@ public class CartaoDAO {
             comando.setInt      (3, cartao.getCodigoSeguranca());
             comando.setString   (4, cartao.getBandeira());
             comando.setLong     (5, cartao.getId());
+
+            if(cartao.getCliente() == null){
+                comando.setNull(2, Types.NULL);
+            }
+            else{
+                comando.setLong(2, cartao.getCliente().getId());
+            }
 
             comando.execute();
 

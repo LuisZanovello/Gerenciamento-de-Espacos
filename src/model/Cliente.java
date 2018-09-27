@@ -8,6 +8,9 @@ public class Cliente {
     private String dataNascimento;
     private String email;
 
+    public Cliente(long id, String nome, String sobrenome, String dataNascimento, String email) {
+    }
+
 
     public Long getId() {
         return id;
