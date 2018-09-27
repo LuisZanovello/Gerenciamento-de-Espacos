@@ -9,12 +9,16 @@ import java.util.List;
 
 public class EspacoDAO {
 
-    public static void gravar(Espaco espaco) throws SQLException, ClassNotFoundException {
+    public static void gravar(Espaco espaco) throws SQLException{
         Connection conexao = null;
         PreparedStatement comando = null;
         TipoDeEspaco tipoEspaco = new TipoDeEspaco();
         try {
             conexao = BD.getConexao();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
             String sql = "insert into espaco(id, nome, cnpj, cep, logradouro, numero, complemento, bairro, cidade, uf, " +
                     "area, quantidadePessoas,horaFuncionamentoInicio, horaFuncionamentoFinal,tipoEspaco)"
                     + " values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -169,7 +173,7 @@ public class EspacoDAO {
                         .setHoraFuncionamentoFinal(rs.getString("horaFunccionamentoFinal"))
                         .setArea(rs.getDouble("area"))
                         .setQuantidadePessoas(rs.getInt("quantidadePessoas"))
-
+                        .setIdTipoEspaco(rs.getLong("id"))
                         );
             }
         }catch (SQLException e){
