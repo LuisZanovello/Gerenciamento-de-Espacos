@@ -13,14 +13,15 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into cartoes (id, numero, validade, cod_seguranca, bandeira)"
+            String sql = "insert into cartao (id, bandeira, validade, numero, cod_seguranca)"
                     + " values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, cartao.getId());
-            comando.setLong     (2, cartao.getNumeroCartao());
+            comando.setString   (2, cartao.getBandeira());
             comando.setString   (3, cartao.getValidade());
-            comando.setInt      (4, cartao.getCodigoSeguranca());
-            comando.setString   (5, cartao.getBandeira());
+            comando.setLong     (4, cartao.getNumeroCartao());
+            comando.setInt      (5, cartao.getCodigoSeguranca());
+
 
             if(cartao.getCliente() == null){
                 comando.setNull(2, Types.NULL);
