@@ -100,10 +100,10 @@ public class CartaoDAO {
             rs.first();
 
             cartao = new Cartao(rs.getLong("id"),
-                    rs.getString("bandeira"),
-                    rs.getString("validade"),
-                    rs.getLong("numero"),
-                    rs.getInt("cod_seguranca")); /*  null ? */
+                    rs.getString    ("bandeira"),
+                    rs.getString    ("validade"),
+                    rs.getLong      ("numero"),
+                    rs.getInt       ("cod_seguranca")); /*  null ? */
             cartao.setIdCliente(rs.getLong("cliente"));
         } catch (SQLException e) {
             e.printStackTrace();

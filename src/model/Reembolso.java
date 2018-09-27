@@ -27,8 +27,6 @@ public class Reembolso {
         return id;
     }
 
-    public void add(Reembolso reembolso) {
-    }
 
     public void setIdPagamento(long pagamento) {
     }

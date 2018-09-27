@@ -78,9 +78,6 @@ public class Reserva {
         this.notaAvaliacao = notaAvaliacao;
     }
 
-    public void add(Reserva resv) {
-    }
-
     public void setIdCliente(long cliente_id) {
     }
 }
