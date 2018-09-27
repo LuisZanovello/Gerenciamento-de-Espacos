@@ -3,9 +3,20 @@ package model;
 public class Pagamento {    //antiga classe Boleto
 
     private Long id;
-    private String diasExpiracao;
+    private String vencimento;
     private Long numeroCodBarras;
     private Double valorTotal;
+
+    public Pagamento(Long id, String vencimento, Long numeroCodBarras, Double valorTotal) {
+        this.id = id;
+        this.vencimento = vencimento;
+        this.numeroCodBarras = numeroCodBarras;
+        this.valorTotal = valorTotal;
+    }
+
+    public Pagamento() {
+
+    }
 
     public Long getId() {
         return id;
@@ -15,12 +26,12 @@ public class Pagamento {    //antiga classe Boleto
         this.id = id;
     }
 
-    public String getDiasExpiracao() {
-        return diasExpiracao;
+    public String getVencimento() {
+        return vencimento;
     }
 
-    public void setDiasExpiracao(String diasExpiracao) {
-        this.diasExpiracao = diasExpiracao;
+    public void setVencimento(String diasExpiracao) {
+        this.vencimento = diasExpiracao;
     }
 
     public Long getNumeroCodBarras() {
@@ -37,5 +48,11 @@ public class Pagamento {    //antiga classe Boleto
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public void add(Pagamento pag) {
+    }
+
+    public void setIdReserva(long reservas) {
     }
 }

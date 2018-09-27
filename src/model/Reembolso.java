@@ -3,18 +3,33 @@ package model;
 public class Reembolso {
 
     private Long id;
-    private String status;
+    private String estado;
 
+
+    public Reembolso(Long id, String status) {
+        this.id = id;
+        this.estado = status;
+    }
+
+    public Reembolso(){
+
+    }
 
     public String getStatus() {
-        return status;
+        return estado;
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.estado = status;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void add(Reembolso reembolso) {
+    }
+
+    public void setIdPagamento(long pagamento) {
     }
 }

@@ -1,7 +1,5 @@
 package dao;
 
-import model.Cliente;
-import model.Contato;
 import model.Modalidade;
 
 import java.sql.Connection;

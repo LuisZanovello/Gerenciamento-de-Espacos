@@ -17,7 +17,11 @@ public class ContatoDAO {
                     + "values(?,?)";
             comando = ((Connection) conexao).prepareStatement(sql);
             comando.setLong(1, contato.getId());
-
+            if(Contato.getIdCliente() == null){
+                comando.setNull(6, Types.NULL);
+            }else{
+                comando.setInt(6, Contato.getIdCliente());
+            }
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch(SQLException e){
@@ -36,7 +40,11 @@ public class ContatoDAO {
             comando = conexao.prepareStatement(sql);
             comando.setString(1, contato.getNumero());
             comando.setLong(2, contato.getId());
-
+            if(Contato.getIdCliente() == null){
+                comando.setNull(6, Types.NULL);
+            }else{
+                comando.setInt(6, Contato.getIdCliente());
+            }
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch(SQLException e){
@@ -73,8 +81,9 @@ public class ContatoDAO {
             comando.setLong(1, id);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
-            contato = new Contato (rs.getLong("id"),
-                    rs.getString("numero"));
+            contato = new Contato();
+            contato.setId(rs.getLong("id"));
+            contato.setNumero(rs.getString("nome"));
 
 
         }catch (SQLException e){
@@ -96,10 +105,10 @@ public class ContatoDAO {
             String sql = "SELECT * FROM contato";
             ResultSet rs = comando.executeQuery(sql);
             while(rs.next()){
-                Contato contato = new Contato(rs.getLong("id"),
-                        rs.getString("numero"));
+                contatos.add(new Contato()
+                        .setId(rs.getLong("id"))
+                        .setNumero(rs.getString("numero")));
 
-                contatos.add(contato);
             }
         }catch(SQLException e){
             e.printStackTrace();

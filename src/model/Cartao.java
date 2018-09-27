@@ -5,38 +5,65 @@ public class Cartao{
     private Long id;
     private String bandeira;
     private String validade;
-    private int numeroCartao;
-    private int codigoSeguranca;
+    private Long numeroCartao;
+    private Integer codigoSeguranca;
 
-
-
-    /*Gets e Sets*/
-    public String getBandeira() {
-        return bandeira;
-    }
-    public void setBandeira(String bandeira) {
+    public Cartao(Long id, String bandeira, String validade, Long numeroCartao, Integer codigoSeguranca) {
+        this.id = id;
         this.bandeira = bandeira;
-    }
-    public String getValidade() {
-        return validade;
-    }
-    public void setValidade(String validade) {
         this.validade = validade;
-    }
-    public int getNumeroCartao() {
-        return numeroCartao;
-    }
-    public void setNumeroCartao(final int numeroCartao) {
         this.numeroCartao = numeroCartao;
-    }
-    public int getCodigoSeguranca() {
-        return codigoSeguranca;
-    }
-    public void setCodigoSeguranca(final int codigoSeguranca) {
         this.codigoSeguranca = codigoSeguranca;
+    }
+    public Cartao(){
+
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getBandeira() {
+        return bandeira;
+    }
+
+    public void setBandeira(String bandeira) {
+        this.bandeira = bandeira;
+    }
+
+    public String getValidade() {
+        return validade;
+    }
+
+    public void setValidade(String validade) {
+        this.validade = validade;
+    }
+
+    public Long getNumeroCartao() {
+        return numeroCartao;
+    }
+
+    public void setNumeroCartao(Long numeroCartao) {
+        this.numeroCartao = numeroCartao;
+    }
+
+    public Integer getCodigoSeguranca() {
+        return codigoSeguranca;
+    }
+
+    public void setCodigoSeguranca(Integer codigoSeguranca) {
+        this.codigoSeguranca = codigoSeguranca;
+    }
+
+    public void add(Cartao cartao) {
+    }
+
+
+    public void setIdCliente(long cliente) {
+
     }
 }

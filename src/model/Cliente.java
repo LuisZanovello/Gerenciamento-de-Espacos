@@ -8,54 +8,61 @@ public class Cliente {
     private String dataNascimento;
     private String email;
 
-    public Cliente(long id, String nome, String sobrenome, String dataNascimento, String email) {
+    public Cliente() {
     }
 
-    public Long getId(){
+    public Long getId() {
         return id;
     }
 
-    public Long setId(Long id){
-        return this.id = id;
+    public Cliente setId(Long id) {
+        this.id = id;
+        return this;
     }
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
 
-    public String setNome(String nome){
-        return this.nome = nome;
+    public Cliente setNome(String nome) {
+        this.nome = nome;
+        return this;
     }
 
-    public String getSobrenome(){
+    public String getSobrenome() {
         return sobrenome;
     }
 
-    public String setSobrenome(String sobreome){
-        return this.sobrenome = sobrenome;
+    public Cliente setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+        return this;
     }
 
-    public String getCpf(){
+    public String getCpf() {
         return cpf;
     }
 
-    public String setCpf(String cpf){
-        return this.cpf = cpf;
+    public Cliente setCpf(String cpf) {
+        this.cpf = cpf;
+        return this;
     }
 
-    public String getDataNascimento(){
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public String setDataNascimento(String dataNascimento){
-        return this.dataNascimento = dataNascimento;
+    public Cliente setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+        return this;
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
 
-    public String setEmail(String email){
-        return this.email = email;
+    public Cliente setEmail(String email) {
+        this.email = email;
+        return this;
     }
 }
 

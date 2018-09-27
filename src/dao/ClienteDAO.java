@@ -1,11 +1,10 @@
 package dao;
 
-import com.sun.security.ntlm.Client;
+
 import model.Cliente;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteDAO {
     public static void gravar(Cliente cliente) throws SQLException, ClassNotFoundException{
@@ -82,12 +81,12 @@ public class ClienteDAO {
             comando.setLong(1, id);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
-            cliente = new Cliente (rs.getLong("id"),
-                    rs.getString("nome"),
-                    rs.getString("sobrenome"),
-                    rs.getString("dataNascimento"),
-                    rs.getString("email"));
-
+            cliente = new Cliente();
+                    cliente.setId(rs.getLong("id"));
+                    cliente.setNome(rs.getString("nome"));
+                    cliente.setSobrenome(rs.getString("sobrenome"));
+                    cliente.setDataNascimento(rs.getString("dataNascimento"));
+                    cliente.setEmail(rs.getString("email"));
 
         }catch (SQLException e){
             e.printStackTrace();
@@ -98,23 +97,24 @@ public class ClienteDAO {
     }
 
 
-    public static List<Cliente> obterTodosOsClientes() throws  ClassNotFoundException{
+    public static ArrayList<Cliente> obterTodosOsClientes() throws  ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-        List<Cliente> clientes = new ArrayList<Cliente>();
+        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM cliente";
             ResultSet rs = comando.executeQuery(sql);
             while(rs.next()){
-                Cliente cliente = new Cliente(rs.getLong("id"),
-                        rs.getString("nome"),
-                        rs.getString("sobrenome"),
-                        rs.getString("dataNascimento"),
-                        rs.getString("email"));
+                clientes.add(new Cliente()
+                .setId(rs.getLong("id"))
+                .setNome(rs.getString("nome"))
+                .setSobrenome(rs.getString("sobrenome"))
+                .setDataNascimento(rs.getString("dataNascimento"))
+                .setEmail(rs.getString("email")));
 
-                 clientes.add(cliente);
+
             }
         }catch(SQLException e){
             e.printStackTrace();
@@ -123,7 +123,7 @@ public class ClienteDAO {
         }
 
         return clientes;
-        }
     }
+}
 
 

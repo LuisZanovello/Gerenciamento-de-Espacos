@@ -7,7 +7,19 @@ public class Reserva {
     private String horaFimLocacao;
     private Long qtPessoas;
     private Double valorLocacao;
-    private Integer NotaAvaliacao;
+    private Long notaAvaliacao;
+
+    public Reserva(Long id, String dataLocacao, String horaInicioLocacao, String horaFimLocacao, Long qtPessoas, Double valorLocacao, Long notaAvaliacao) {
+        this.id = id;
+        this.dataLocacao = dataLocacao;
+        this.horaInicioLocacao = horaInicioLocacao;
+        this.horaFimLocacao = horaFimLocacao;
+        this.qtPessoas = qtPessoas;
+        this.valorLocacao = valorLocacao;
+        this.notaAvaliacao = notaAvaliacao;
+    }
+    public Reserva() {
+    }
 
     public Long getQtPessoas() {
         return qtPessoas;
@@ -58,11 +70,17 @@ public class Reserva {
         this.valorLocacao = valorLocacao;
     }
 
-    public Integer getNotaAvaliacao() {
-        return NotaAvaliacao;
+    public Long getNotaAvaliacao() {
+        return notaAvaliacao;
     }
 
-    public void setNotaAvaliacao(Integer notaAvaliacao) {
-        NotaAvaliacao = notaAvaliacao;
+    public void setNotaAvaliacao(Long notaAvaliacao) {
+        this.notaAvaliacao = notaAvaliacao;
+    }
+
+    public void add(Reserva resv) {
+    }
+
+    public void setIdCliente(long cliente_id) {
     }
 }

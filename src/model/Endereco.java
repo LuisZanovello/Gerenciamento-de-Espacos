@@ -5,50 +5,72 @@ public class Endereco {
     private String logradouro;
     private String cidade;
     private String bairro;
-    private Integer cep;
+    private String cep;
     private String uf;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public Endereco setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getLogradouro() {
         return logradouro;
     }
 
-    public void setLogradouro(String logradouro) {
+    public Endereco setLogradouro(String logradouro) {
         this.logradouro = logradouro;
+        return this;
     }
 
     public String getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public Endereco setCidade(String cidade) {
         this.cidade = cidade;
+        return this;
     }
 
     public String getBairro() {
         return bairro;
     }
 
-    public void setBairro(String bairro) {
+    public Endereco setBairro(String bairro) {
         this.bairro = bairro;
+        return this;
     }
 
-    public Integer getCep() { return cep; }
+    public int getCep() {
+        return cep;
+    }
 
-    public void setCep(Integer cep) { this.cep = cep; }
+    public Endereco setCep(String cep) {
+        this.cep = cep;
+        return this;
+    }
 
     public String getUf() {
         return uf;
     }
 
-    public void setUf(String uf) {
+    public Endereco setUf(String uf) {
+        this.uf = uf;
+        return this;
+    }
+
+    public Endereco(){
+
+    }
+
+    public Endereco(String logradouro, String cidade, String bairro, String cep, String uf) {
+        this.logradouro = logradouro;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.cep = cep;
         this.uf = uf;
     }
 }
