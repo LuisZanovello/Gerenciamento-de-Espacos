@@ -1,5 +1,6 @@
 package dao;
 
+
 import model.Cliente;
 
 import java.sql.*;
@@ -12,15 +13,15 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "insert into cliente (id, nome, sobrenome, cpf, dt_nascimento, email)"
+            String sql = "insert into cliente (id, nome, sobrenome, data_nascimento, email, cpf)"
                     + "values(?,?,?,?,?,?)";
             comando = ((Connection) conexao).prepareStatement(sql);
             comando.setLong( 1, cliente.getId());
             comando.setString(2, cliente.getNome());
             comando.setString(3, cliente.getSobrenome());
-            comando.setString(4, cliente.getCpf());
-            comando.setString(5, cliente.getDataNascimento());
-            comando.setString(6, cliente.getEmail());
+            comando.setString(4, cliente.getDataNascimento());
+            comando.setString(5, cliente.getEmail());
+            comando.setString(6, cliente.getCpf());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -51,6 +52,7 @@ public class ClienteDAO {
             throw e;
         }
     }
+
     public static void excluir (Cliente cliente) throws SQLException, ClassNotFoundException{
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -123,4 +125,5 @@ public class ClienteDAO {
         return clientes;
     }
 }
+
 
