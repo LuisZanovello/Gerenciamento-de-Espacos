@@ -4,7 +4,6 @@ import model.Administrador;
 import model.Reserva;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReservaDAO {
@@ -23,6 +22,8 @@ public class ReservaDAO {
             comando.setLong     (5, resv.getQtPessoas());
             comando.setDouble   (6, resv.getValorLocacao());
             comando.setLong     (7, resv.getNotaAvaliacao());
+
+
             comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
@@ -38,6 +39,7 @@ public class ReservaDAO {
             String sql = "update reserva set dt_reserva=?, hr_inicio=?, hr_fim=?, qt_pessoas=?, valor_espaco=?, nota_avaliacao=? where id=?";
 
             comando = conexao.prepareStatement(sql);
+
             comando.setString   (1, resv.getDataLocacao());
             comando.setString   (2, resv.getHoraInicioLocacao());
             comando.setString   (3, resv.getHoraFimLocacao());
@@ -57,8 +59,9 @@ public class ReservaDAO {
             String sql = "delete from reserva where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, resv.getId());
-            comando.execute();
 
+
+            comando.execute();
             BD.fecharConexao(conexao, comando);
             return true;
         } catch (SQLException e) {
@@ -71,6 +74,7 @@ public class ReservaDAO {
         Connection conexao = null;
         PreparedStatement comando = null;
         Reserva resv = null;
+
         try {
             conexao = BD.getConexao();
             String sql = "select * from reserva where id=?";
@@ -80,6 +84,7 @@ public class ReservaDAO {
             rs.first();
 
             resv = new Reserva(rs.getLong("id"),
+
                     rs.getString    ("dt_reserva"),
                     rs.getString    ("hr_inicio"),
                     rs.getString    ("hr_fim]"),
@@ -87,20 +92,24 @@ public class ReservaDAO {
                     rs.getDouble    ("valor_espaco"),
                     rs.getLong      ("nota_avaliacao")); /*  null ? */
                     resv.setIdCliente(rs.getLong("cliente_id"));
+
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
             BD.fecharConexao(conexao, comando);
+
         }
         return resv;
     }
 
-    public ArrayList<Reserva> obterTodasReservas() throws ClassNotFoundException{
+    public List<Reserva> obterTodasReservas() throws ClassNotFoundException{
+
         Connection conexao = null;
         Statement comando = null;
 
-        ArrayList<Reserva> lista = new ArrayList<Reserva>();
+        /* List<Reserva> resv = new ArrayList<Reserva>();  essa linha esta dando erro pq ? */
         Reserva resv = null;
+
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
@@ -116,13 +125,15 @@ public class ReservaDAO {
                         rs.getDouble("valor_espaco"),
                         rs.getLong("nota_avaliacao"));
                 resv.setIdCliente(rs.getLong("cliente_id"));
-                lista.add(resv);
+                resv.add(resv);
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-            return lista;
+
+            return (List<Reserva>) resv;
         }
     }
+
 }

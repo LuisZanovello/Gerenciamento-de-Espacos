@@ -1,29 +1,31 @@
 package dao;
 
-import model.ModalidadePredominante;
+import model.Espaco;
 import model.TipoDeEspaco;
 
+import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
 
 public class TipoDeEspacoDAO {
 
-    public static void gravar(TipoDeEspaco tipoEspaco) throws SQLException, ClassNotFoundException {
+    public static void gravar(TipoDeEspaco tp) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
+        Espaco espaco = new Espaco();
         try {
             conexao = BD.getConexao();
-            String sql = "insert into tipo_espaco(id, nome, modalidade_predominante)"
-                    + " values(?,?,?)";
+            String sql = "insert into tp(id, nome, descricao,espaco)"
+                    + " values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, tipoEspaco.getId());
-            comando.setString(2, tipoEspaco.getNome());
+            comando.setLong(1, tp.getId());
+            comando.setString(2, tp.getNome());
+            comando.setString(3, tp.getDescricao());
 
-            if (modalidadePredominante.getId() == null) {
-                comando.setNull(3, Types.NULL);
+            if (espaco.getId() == null) {
+                comando.setNull(4, Types.NULL);
             } else {
-                comando.setString(3, modalidadePredominante.getModalidadePredominante());
+                comando.setString(4, espaco.getNome());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -32,38 +34,39 @@ public class TipoDeEspacoDAO {
         }
     }
 
-    public static void alterar(TipoDeEspaco tipoEspaco) throws SQLException, ClassNotFoundException {
+    public static void alterar(TipoDeEspaco tp) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
+        Espaco espaco = new Espaco();
         try {
             conexao = BD.getConexao();
-            String sql = "update tipo_espaco set nome = ?, modalidade__predominante=? where id=?";
+            String sql = "update tp set nome = ?, descricao = ?, espaco=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
-            comando.setString(1, tipoEspaco.getNome());
+            comando.setString(1, tp.getNome());
+            comando.setString(2, tp.getDescricao());
 
-            if (modalidadePredominante.getId() == null) {
-                comando.setNull(2, Types.NULL);
+            if (espaco.getId() == null) {
+                comando.setNull(3, Types.NULL);
             } else {
-                comando.setString(2, modalidadePredominante.getModalidadePredominante());
+                comando.setString(3, espaco.getNome());
             }
-            comando.setLong(3, tipoEspaco.getId());
+            comando.setLong(4, tp.getId());
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
             throw e;
         }
     }
 
-    public static void excluir(TipoDeEspaco tipoEspaco) throws SQLException, ClassNotFoundException {
+    public static void excluir(TipoDeEspaco tp) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "delete from tipo_espaco where id=?";
+            String sql = "delete from tp where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, tipoEspaco.getId());
+            comando.setLong(1, tp.getId());
             comando.execute();
         } catch (SQLException e) {
             throw e;
@@ -72,31 +75,32 @@ public class TipoDeEspacoDAO {
         }
     }
 
-    public TipoDeEspaco obterTipoEspaco(Long id) throws ClassNotFoundException {
+    public TipoDeEspaco tp(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
-        TipoDeEspaco obterTipoEspaco = null;
+        Espaco espaco = new Espaco();
+        TipoDeEspaco tp = null;
 
         try {
             conexao = BD.getConexao();
-            String sql = "select * from tipo_espaco where id=?";
+            String sql = "select * from tp where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, obterTipoEspaco.getId());
+            comando.setLong(1, tp.getId());
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
 
-            obterTipoEspaco = new TipoDeEspaco();
-                    obterTipoEspaco.setId(rs.getLong("id"));
-                    obterTipoEspaco.setNome(rs.getString("nome"));
-                    modalidadePredominante.setModalidadePredominante(rs.getString("modalidade"));
+            tp = new TipoDeEspaco();
+                    tp.setDescricao(rs.getString("descricao"));
+                    tp.setNome(rs.getString("nome"));
+                    tp.setId(rs.getLong("id"));
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 
         }
-        return obterTipoEspaco;
+        return tp;
     }
 
     public static ArrayList<TipoDeEspaco> obterTodosEspacos() throws ClassNotFoundException {
@@ -104,20 +108,16 @@ public class TipoDeEspacoDAO {
         Connection conexao = null;
         Statement comando = null;
         ArrayList<TipoDeEspaco> lista = new ArrayList<>();
-        TipoDeEspaco tipoDeEspaco = null;
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "SELECT * FROM tipo_espaco";
+            String sql = "SELECT * FROM espaco";
             ResultSet rs = comando.executeQuery(sql);
-
             while (rs.next()) {
                 lista.add(new TipoDeEspaco()
-                        .setId(rs.getLong("id"))
+                        .setDescricao(rs.getString("descricao"))
                         .setNome(rs.getString("nome"))
-
-                );
-
+                        .setId(rs.getLong("id")));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

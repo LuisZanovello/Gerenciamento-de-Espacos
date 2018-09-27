@@ -8,15 +8,17 @@ public class Contato {
         return id;
     }
 
-    public void setId(Long id) {
+    public Contato setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public Contato setNumero(String numero) {
         this.numero = numero;
+        return this;
     }
 }
