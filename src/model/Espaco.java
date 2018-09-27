@@ -16,9 +16,12 @@ public class Espaco {
     private String horaFuncionamentoInicio;
     private String horaFuncionamentoFinal;
 
-    public Espaco(Long id, String nome, String cnpj, String cep, String logradouro, Integer numero, String complemento,
-                  String bairro, String cidade, String uf, Double area, Integer quantidadePessoas,
-                  String horaFuncionamentoInicio, String horaFuncionamentoFinal) {
+    private Long idTipoEspaco;
+    TipoDeEspaco tipoEspaco = new TipoDeEspaco();
+
+    public Espaco(long id, String nome, String cnpj, String cep, String logradouro, int numero, String complemento,
+                  String bairro, String cidade, String uf, double area, int quantidadePessoas, String horaFuncionamentoInicio,
+                  String horaFuncionamentoFinal, long idTipoEspaco) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
@@ -33,7 +36,47 @@ public class Espaco {
         this.quantidadePessoas = quantidadePessoas;
         this.horaFuncionamentoInicio = horaFuncionamentoInicio;
         this.horaFuncionamentoFinal = horaFuncionamentoFinal;
+        this.idTipoEspaco = idTipoEspaco;
     }
+
+    public Long getIdTipoEspaco() {
+        return idTipoEspaco;
+    }
+
+    public Espaco setIdTipoEspaco(Long idTipoEspaco) {
+        this.idTipoEspaco = idTipoEspaco;
+        return this;
+    }
+
+    public TipoDeEspaco getTipoEspaco() {
+        return tipoEspaco;
+    }
+
+    public Espaco setTipoEspaco(TipoDeEspaco tipoEspaco) {
+        this.tipoEspaco = tipoEspaco;
+        return this;
+    }
+/*
+    public Espaco(Long id, String nome, String cnpj, String cep, String logradouro, Integer numero, String complemento,
+                  String bairro, String cidade, String uf, Double area, Integer quantidadePessoas, String horaFuncionamentoInicio,
+                  String horaFuncionamentoFinal, Long idTipoEspaco, TipoDeEspaco tipoEspaco) {
+        this.id = id;
+        this.nome = nome;
+        this.cnpj = cnpj;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.area = area;
+        this.quantidadePessoas = quantidadePessoas;
+        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
+        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
+        this.idTipoEspaco = idTipoEspaco;
+        this.tipoEspaco = tipoEspaco;
+    }*/
 
     public Espaco() {
     }
