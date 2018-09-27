@@ -1,4 +1,4 @@
-package principal;
+package Principal;
 
 import model.Cliente;
 
