@@ -5,6 +5,15 @@ public class Denuncia {
     private String descricao;
     private String autor;
 
+    public Denuncia() {
+    }
+
+    public Denuncia(Long id, String descricao, String autor) {
+        this.id = id;
+        this.descricao = descricao;
+        this.autor = autor;
+    }
+
     public Long getId() {
         return id;
     }

@@ -7,13 +7,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ClienteLocatarioDAO {
-    public static void gravar(ClienteLoatario cliente) throws SQLException, ClassNotFoundException{
+    public static void gravar(ClienteLocatario cliente) throws SQLException, ClassNotFoundException{
         Connection conexao = null;
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
             String sql = "insert into cliente(id, cpf)"
-                    + "values(?,?,?,?,?,?)";
+                    + "values(?,?)";
             comando = ((Connection) conexao).prepareStatement(sql);
             comando.setLong(1, cliente.getId());
 
