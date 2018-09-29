@@ -15,14 +15,20 @@ public class PagamentoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into pagamento(id, vencimento, num_cod_barras, valor_total)"
-                    + " values(?,?,?,?)";
+            String sql = "insert into pagamento(id, vencimento, num_cod_barras, valor_total, reserva_id)"
+                    + " values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, pag.getId());
             comando.setString   (2, pag.getVencimento());
             comando.setLong     (3, pag.getNumeroCodBarras());
             comando.setDouble   (4, pag.getValorTotal());
 
+            if(pag.getIdReserva()== null){
+                comando.setNull(5, Types.NULL);
+            }
+            else{
+                comando.setLong(5, pag.getIdReserva());
+            }
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -43,6 +49,12 @@ public class PagamentoDAO {
             comando.setLong     (2, pag.getNumeroCodBarras());
             comando.setDouble   (3, pag.getValorTotal());
 
+            if(pag.getReserva()== null){
+                comando.setNull(4, Types.NULL);
+            }
+            else{
+                comando.setLong(4, pag.getReserva().getId());
+            }
 
         } catch (SQLException e) {
             throw e;
@@ -69,7 +81,7 @@ public class PagamentoDAO {
     }
 
 
-    public Pagamento obterAdministrador (Long id) throws ClassNotFoundException {
+    public Pagamento obterPagamento (Long id) throws ClassNotFoundException {
 
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -79,7 +91,7 @@ public class PagamentoDAO {
             conexao = BD.getConexao();
             String sql = "select * from pagamento where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, pag.getId());
+            comando.setLong     (1, id);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
 
@@ -87,7 +99,7 @@ public class PagamentoDAO {
 
                     rs.getString("vencimento"),
                     rs.getLong("num_cod_barras"),
-                    rs.getDouble("valor_total")); /*  null ? */
+                    rs.getDouble("valor_total"));
             pag.setIdReserva(rs.getLong("reservas"));
 
         } catch (SQLException e) {

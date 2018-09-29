@@ -6,12 +6,41 @@ public class Pagamento {    //antiga classe Boleto
     private String vencimento;
     private Long numeroCodBarras;
     private Double valorTotal;
+    private Long idReserva;
+    private Reserva reserva;
 
-    public Pagamento(Long id, String vencimento, Long numeroCodBarras, Double valorTotal) {
+    public Pagamento(long id, String vencimento, Long numeroCodBarras, double valorTotal, long idReserva) {
         this.id = id;
         this.vencimento = vencimento;
         this.numeroCodBarras = numeroCodBarras;
         this.valorTotal = valorTotal;
+        this.idReserva = idReserva;
+    }
+
+    /*Contrutor PagamentoDAO*/
+    public Pagamento(long id, String vencimento, Long num_cod_barras, double valor_total) {
+        this.id = id;
+        this.vencimento = vencimento;
+        this.numeroCodBarras = numeroCodBarras;
+        this.valorTotal = valorTotal;
+    }
+
+    public Long getIdReserva() {
+        return idReserva;
+    }
+
+    public Pagamento setIdReserva(Long idReserva) {
+        this.idReserva = idReserva;
+        return this;
+    }
+
+    public Reserva getReserva() {
+        return reserva;
+    }
+
+    public Pagamento setReserva(Reserva reserva) {
+        this.reserva = reserva;
+        return this;
     }
 
     public Pagamento() {
