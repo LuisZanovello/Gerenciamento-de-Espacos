@@ -269,10 +269,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-624" />
-    <option name="y" value="136" />
+    <option name="x" value="-625" />
+    <option name="y" value="135" />
     <option name="width" value="1295" />
-    <option name="height" value="789" />
+    <option name="height" value="790" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -317,7 +317,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538247713725" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538353645138" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -350,7 +350,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.controllerReserva">
+  <component name="RunManager" selected="Application.controllerAdmin">
     <configuration name="MainCliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal.MainCliente" />
       <module name="Gerenciamento-de-Espacos" />
@@ -390,12 +390,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrincipalCartao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="principal.PrincipalCartao" />
+    <configuration name="controllerAdmin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.controllerAdmin" />
       <module name="Gerenciamento-de-Espacos" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="principal.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -488,18 +488,18 @@
     <list>
       <item itemvalue="Tomcat Server.Tomcat 9.0.11" />
       <item itemvalue="Application.MainCliente" />
-      <item itemvalue="Application.PrincipalCartao" />
       <item itemvalue="Application.MainContato" />
       <item itemvalue="Application.controllerReserva" />
       <item itemvalue="Application.MainEspaco" />
+      <item itemvalue="Application.controllerAdmin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.controllerAdmin" />
         <item itemvalue="Application.controllerReserva" />
         <item itemvalue="Application.MainContato" />
         <item itemvalue="Application.MainEspaco" />
         <item itemvalue="Application.MainCliente" />
-        <item itemvalue="Application.PrincipalCartao" />
       </list>
     </recent_temporary>
   </component>
