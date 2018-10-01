@@ -36,7 +36,7 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "update cliente set  nome = ?, sobrenome = ?, cpf = ?, dt_nascimento = ?, email = ?"
+            String sql = "update cliente set  nome = ?, sobrenome = ?, cpf = ?, data_nascimento = ?, email = ?"
                     + "where id = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, cliente.getNome());

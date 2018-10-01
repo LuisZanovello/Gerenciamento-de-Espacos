@@ -7,7 +7,27 @@ public class Cartao{
     private String validade;
     private Long numeroCartao;
     private Integer codigoSeguranca;
+    private  Long idCliente;
     private Cliente cliente;
+
+    public Cartao(Long id, String bandeira, String validade, Long numeroCartao, Integer codigoSeguranca, Long idCliente) {
+        this.id = id;
+        this.bandeira = bandeira;
+        this.validade = validade;
+        this.numeroCartao = numeroCartao;
+        this.codigoSeguranca = codigoSeguranca;
+        this.idCliente = idCliente;
+    }
+
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    public Cartao setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+        return this;
+    }
+
 
     public Cliente getCliente() {
         return cliente;

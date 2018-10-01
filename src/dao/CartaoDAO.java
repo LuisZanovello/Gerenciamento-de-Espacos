@@ -14,7 +14,7 @@ public class CartaoDAO {
         try {
             conexao = BD.getConexao();
             String sql = "insert into cartao (id, bandeira, validade, numero, codigo_seguranca, cliente_id)"
-                    + " values(?,?,?,?,?)";
+                    + " values(?,?,?,?,?, ?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, cartao.getId());
             comando.setString   (2, cartao.getBandeira());
@@ -23,23 +23,12 @@ public class CartaoDAO {
             comando.setInt      (5, cartao.getCodigoSeguranca());
 
 
-            if(cartao.getCliente() == null){
+            if(cartao.getIdCliente() == null){
                 comando.setNull(6, Types.NULL);
             }
             else{
-                comando.setLong(6, cartao.getCliente().getId());
+                comando.setLong(6, cartao.getIdCliente());
             }
-
-  /* é possível usar setObject
-            comando.setObject(6, cartao.getBandeira());
-
-             if (curso.getCoordenador() == null) {
-             comando.setNull(6, Types.NULL);
-             } else{
-             comando.setInt(6, curso.getCoordenador).getMatricula());
-             }
-
-            */
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
