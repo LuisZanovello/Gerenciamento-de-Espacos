@@ -13,11 +13,20 @@ public class ReembolsoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into reembolso(id, estado)"
-                    + " values(?,?)";
+            String sql = "insert into reembolso(id, estado, pagamento_id)"
+                    + " values(?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, reembol.getId());
-            comando.setString   (2, reembol.getStatus());
+            comando.setString   (2, reembol.getEstado());
+
+            if(reembol.getIdPagamento()== null){
+                comando.setNull(3, Types.NULL);
+            }
+            else{
+                comando.setLong(3, reembol.getIdPagamento());
+            }
+
+
             comando.execute();
 
             BD.fecharConexao(conexao, comando);
@@ -33,9 +42,16 @@ public class ReembolsoDAO {
             conexao = BD.getConexao();
             String sql = "update reembolso set estado=? where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setString   (1, reembol.getStatus());
+            comando.setString   (1, reembol.getEstado());
 
+            if(reembol.getPagamento() == null){
+                comando.setNull(2, Types.NULL);
+            }
+            else{
+                comando.setLong(2, reembol.getPagamento().getId());
+            }
         } catch (SQLException e) {
+
             throw e;
         }
     }
@@ -66,13 +82,13 @@ public class ReembolsoDAO {
             conexao = BD.getConexao();
             String sql = "select * from reembolso where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, reembol.getId());
+            comando.setLong     (1, id);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
 
             reembol = new Reembolso (rs.getLong("id"),
-                        rs.getString("estado")); /*  null ? */
-            reembol.setIdPagamento(rs.getLong("pagamento"));
+                        rs.getString("estado"));
+
 
         } catch (SQLException e) {
             e.printStackTrace();
