@@ -46,27 +46,6 @@ public class Espaco {
         this.idTipoEspaco = idTipoEspaco;
         return this;
     }
-/*
-    public Espaco(Long id, String nome, String cnpj, String cep, String logradouro, Integer numero, String complemento,
-                  String bairro, String cidade, String uf, Double area, Integer quantidadePessoas, String horaFuncionamentoInicio,
-                  String horaFuncionamentoFinal, Long idTipoEspaco, TipoDeEspaco tipoEspaco) {
-        this.id = id;
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.cep = cep;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.uf = uf;
-        this.area = area;
-        this.quantidadePessoas = quantidadePessoas;
-        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
-        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
-        this.idTipoEspaco = idTipoEspaco;
-        this.tipoEspaco = tipoEspaco;
-    }*/
 
     public Espaco() {
     }

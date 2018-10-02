@@ -51,4 +51,8 @@ public class Irregularidade {
         this.descricao = descricao;
         return this;
     }
+
+    public long getIdEspaco(long espacoId) {
+        return espacoId;
+    }
 }
