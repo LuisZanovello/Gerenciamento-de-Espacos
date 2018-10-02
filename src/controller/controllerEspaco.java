@@ -1,4 +1,4 @@
-package Principal;
+package controller;
 
 
 import dao.EspacoDAO;
@@ -6,7 +6,7 @@ import model.Espaco;
 
 import java.sql.SQLException;
 
-public class MainEspaco {
+public class controllerEspaco {
 
     public static void main(String[] args) {
         Espaco espaco = new Espaco((long)5,"SportMania" ,"1234567890" ,"36045000",
