@@ -92,15 +92,15 @@ public class PagamentoDAO {
             String sql = "select * from pagamento where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, id);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             pag = new Pagamento(rs.getLong("id"),
 
                     rs.getString("vencimento"),
-                    rs.getLong("num_cod_barras"),
+                    rs.getLong("numero_codigo_barras"),
                     rs.getDouble("valor_total"));
-            pag.setIdReserva(rs.getLong("reservas"));
+            pag.setIdReserva(rs.getLong("reservas_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -111,7 +111,7 @@ public class PagamentoDAO {
         return pag;
     }
 
-    public ArrayList<Pagamento> obterTodosPagamentos() throws ClassNotFoundException{
+    public static ArrayList<Pagamento> obterTodosPagamentos() throws ClassNotFoundException{
 
         Connection conexao = null;
         Statement comando = null;
@@ -128,7 +128,7 @@ public class PagamentoDAO {
             while(rs.next()) {
                 pag = new Pagamento(rs.getLong("id"),
                         rs.getString("vencimento"),
-                        rs.getLong("num_cod_barras"),
+                        rs.getLong("numero_codigo_barras"),
                         rs.getDouble("valor_total")); /*  null ? */
                 pag.setIdReserva(rs.getLong("reservas"));
                 lista.add(pag);
