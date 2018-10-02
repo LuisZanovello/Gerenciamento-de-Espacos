@@ -1,5 +1,12 @@
 package model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+@Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class Espaco {
     private Long id;
     private String nome;
@@ -20,159 +27,10 @@ public class Espaco {
     public Espaco(long id, String nome, String cnpj, String cep, String logradouro, int numero, String complemento,
                   String bairro, String cidade, String uf, double area, int quantidadePessoas, String horaFuncionamentoInicio,
                   String horaFuncionamentoFinal, long idTipoEspaco) {
-        this.id = id;
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.cep = cep;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.uf = uf;
-        this.area = area;
-        this.quantidadePessoas = quantidadePessoas;
-        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
-        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
-        this.idTipoEspaco = idTipoEspaco;
-    }
+     this.setId(id).setNome(nome).setCnpj(cnpj).setCep(cep).setLogradouro(logradouro).setNumero(numero)
+             .setComplemento(complemento).setBairro(bairro).setCidade(cidade).setUf(uf).setArea(area)
+             .setQuantidadePessoas(quantidadePessoas).setHoraFuncionamentoInicio(horaFuncionamentoInicio)
+             .setHoraFuncionamentoFinal(horaFuncionamentoFinal).setIdTipoEspaco(idTipoEspaco);
 
-
-    public Long getIdTipoEspaco() {
-        return idTipoEspaco;
-    }
-
-    public Espaco setIdTipoEspaco(Long idTipoEspaco) {
-        this.idTipoEspaco = idTipoEspaco;
-        return this;
-    }
-
-    public Espaco() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public Espaco setId(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Espaco setNome(String nome) {
-        this.nome = nome;
-        return this;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public Espaco setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-        return this;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public Espaco setCep(String cep) {
-        this.cep = cep;
-        return this;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public Espaco setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-        return this;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public Espaco setNumero(Integer numero) {
-        this.numero = numero;
-        return this;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public Espaco setComplemento(String complemento) {
-        this.complemento = complemento;
-        return this;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public Espaco setBairro(String bairro) {
-        this.bairro = bairro;
-        return this;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public Espaco setCidade(String cidade) {
-        this.cidade = cidade;
-        return this;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public Espaco setUf(String uf) {
-        this.uf = uf;
-        return this;
-    }
-
-    public Double getArea() {
-        return area;
-    }
-
-    public Espaco setArea(Double area) {
-        this.area = area;
-        return this;
-    }
-
-    public Integer getQuantidadePessoas() {
-        return quantidadePessoas;
-    }
-
-    public Espaco setQuantidadePessoas(Integer quantidadePessoas) {
-        this.quantidadePessoas = quantidadePessoas;
-        return this;
-    }
-
-    public String getHoraFuncionamentoInicio() {
-        return horaFuncionamentoInicio;
-    }
-
-    public Espaco setHoraFuncionamentoInicio(String horaFuncionamentoInicio) {
-        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
-        return this;
-    }
-
-    public String getHoraFuncionamentoFinal() {
-        return horaFuncionamentoFinal;
-    }
-
-    public Espaco setHoraFuncionamentoFinal(String horaFuncionamentoFinal) {
-        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
-        return this;
     }
 }

@@ -1,6 +1,5 @@
 package dao;
 
-import model.ModalidadePredominante;
 import model.TipoDeEspaco;
 
 import java.sql.*;
@@ -19,10 +18,10 @@ public class TipoDeEspacoDAO {
             comando.setLong(1, tipoEspaco.getId());
             comando.setString(2, tipoEspaco.getNome());
 
-            if (tipoEspaco.getModalidade_predominante_id() == null) {
+            if (tipoEspaco.getModalidadePredominanteId() == null) {
                 comando.setNull(3, Types.NULL);
             } else {
-                comando.setLong(3, tipoEspaco.getModalidade_predominante_id());
+                comando.setLong(3, tipoEspaco.getModalidadePredominanteId());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -42,10 +41,10 @@ public class TipoDeEspacoDAO {
 
             comando.setString(1, tipoEspaco.getNome());
 
-            if (tipoEspaco.getModalidade_predominante_id() == null) {
+            if (tipoEspaco.getModalidadePredominanteId() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(2, tipoEspaco.getModalidade_predominante_id());
+                comando.setLong(2, tipoEspaco.getModalidadePredominanteId());
             }
             comando.setLong(3, tipoEspaco.getId());
             comando.execute();
@@ -87,7 +86,7 @@ public class TipoDeEspacoDAO {
             obterTipoEspaco = new TipoDeEspaco();
                     obterTipoEspaco.setId(rs.getLong("id"));
                     obterTipoEspaco.setNome(rs.getString("nome"));
-                    obterTipoEspaco.setModalidade_predominante_id(rs.getLong("modalidade_Predominante_Id"));
+                    obterTipoEspaco.setModalidadePredominanteId(rs.getLong("modalidade_Predominante_Id"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -108,15 +107,12 @@ public class TipoDeEspacoDAO {
             comando = conexao.createStatement();
             String sql = "SELECT * FROM tipo_espaco";
             ResultSet rs = comando.executeQuery(sql);
-
             while (rs.next()) {
                 lista.add(new TipoDeEspaco()
                         .setId(rs.getLong("id"))
                         .setNome(rs.getString("nome"))
-                        .setModalidade_predominante_id(rs.getLong("modalidade_Predominante_Id"))
-
+                        .setModalidadePredominanteId(rs.getLong("modalidade_Predominante_Id"))
                 );
-
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

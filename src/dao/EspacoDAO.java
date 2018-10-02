@@ -105,17 +105,17 @@ public class EspacoDAO {
             BD.fecharConexao(conexao, comando);
         }
     }
-    public Espaco obterEspaco (Long id) throws ClassNotFoundException {
+    public static Espaco obterEspaco (Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Espaco espaco = null;
 
         try {
             conexao = BD.getConexao();
-            String sql = "select * from espaco INNER JOIN tipo_espaco ON tipo_espaco.id = espaco.tipo_espaco_id where id=?";
+            String sql = "select * from espaco  where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, espaco.getId());
-            ResultSet rs = comando.executeQuery(sql);
+            comando.setLong     (1, id);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             espaco = new Espaco();
@@ -130,10 +130,10 @@ public class EspacoDAO {
                     espaco.setCidade(rs.getString("cidade"));
                     espaco.setUf(rs.getString("uf"));
                     espaco.setArea(rs.getDouble("area"));
-                    espaco.setQuantidadePessoas(rs.getInt("quantidadePessoas"));
-                    espaco.setHoraFuncionamentoInicio(rs.getString("horaFuncionamentoInicio"));
-                    espaco.setHoraFuncionamentoFinal(rs.getString("horaFunccionamentoFinal"));
-                    espaco.setIdTipoEspaco(rs.getLong("idTipoEspaco"));
+                    espaco.setQuantidadePessoas(rs.getInt("quantidade_Pessoas"));
+                    espaco.setHoraFuncionamentoInicio(rs.getString("hora_Funcionamento_Inicio"));
+                    espaco.setHoraFuncionamentoFinal(rs.getString("hora_Funcionamento_Final"));
+                    espaco.setIdTipoEspaco(rs.getLong("tipo_espaco_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -154,7 +154,7 @@ public class EspacoDAO {
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "select * from espaco INNER JOIN tipo_espaco ON tipo_espaco.id = espaco.tipo_espaco_id";
+            String sql = "select * from espaco";
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {
@@ -170,12 +170,10 @@ public class EspacoDAO {
                         .setCidade(rs.getString("cidade"))
                         .setUf(rs.getString("uf"))
                         .setArea(rs.getDouble("area"))
-                        .setQuantidadePessoas(rs.getInt("quantidadePessoas"))
-                        .setHoraFuncionamentoInicio(rs.getString("horaFuncionamentoInicio"))
-                        .setHoraFuncionamentoFinal(rs.getString("horaFunccionamentoFinal"))
-                        .setArea(rs.getDouble("area"))
-                        .setQuantidadePessoas(rs.getInt("quantidadePessoas"))
-                        .setIdTipoEspaco(rs.getLong("id"))
+                        .setQuantidadePessoas(rs.getInt("quantidade_Pessoas"))
+                        .setHoraFuncionamentoInicio(rs.getString("hora_Funcionamento_Inicio"))
+                        .setHoraFuncionamentoFinal(rs.getString("hora_Funcionamento_Final"))
+                        .setIdTipoEspaco(rs.getLong("tipo_espaco_id"))
                         );
             }
         }catch (SQLException e){

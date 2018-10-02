@@ -61,7 +61,7 @@ public class ModalidadePredominanteDAO {
         }
     }
 
-    public ModalidadePredominante obterModalidade(Long id) throws ClassNotFoundException {
+    public static ModalidadePredominante obterModalidade(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         ModalidadePredominante modalidade = null;
@@ -70,13 +70,13 @@ public class ModalidadePredominanteDAO {
             conexao = BD.getConexao();
             String sql = "select * from modalidade_predominante where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, modalidade.getId());
-            ResultSet rs = comando.executeQuery(sql);
+            comando.setLong(1, id);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             modalidade = new ModalidadePredominante();
             modalidade.setId(rs.getLong("id"));
-            modalidade.setModalidadePredominante(rs.getString("modalidade"));
+            modalidade.setModalidadePredominante(rs.getString("modalidade_predominante"));
             modalidade.setDescricao(rs.getString("descricao"));
         } catch (SQLException e) {
             e.printStackTrace();
@@ -101,7 +101,7 @@ public class ModalidadePredominanteDAO {
             while (rs.next()) {
                 lista.add(new ModalidadePredominante()
                         .setId(rs.getLong("id"))
-                        .setModalidadePredominante(rs.getString("modalidade"))
+                        .setModalidadePredominante(rs.getString("modalidade_predominante"))
                         .setDescricao(rs.getString("descricao"))
 
                 );
@@ -113,6 +113,6 @@ public class ModalidadePredominanteDAO {
             BD.fecharConexao(conexao, comando);
 
         }
-        return obterTodasModalidade() ;
+        return lista ;
     }
 }
