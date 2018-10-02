@@ -12,8 +12,9 @@ public class controllerTipoEspaco {
 
         TipoDeEspaco tipo = new TipoDeEspaco((long)1274,"luiis",(long)124);
 
-        TipoDeEspacoDAO.gravar(tipo);
 
-        System.out.println(TipoDeEspacoDAO.obterTodosEspacos());
+
+       // System.out.println(TipoDeEspacoDAO.obterTodosEspacos().get(0).getNome());
+        System.out.println(TipoDeEspacoDAO.obterTipoEspaco((long)1274).getNome());
     }
 }

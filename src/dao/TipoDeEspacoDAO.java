@@ -71,24 +71,23 @@ public class TipoDeEspacoDAO {
         }
     }
 
-    public TipoDeEspaco obterTipoEspaco(Long id) throws ClassNotFoundException {
+    public static TipoDeEspaco obterTipoEspaco(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         TipoDeEspaco obterTipoEspaco = null;
 
         try {
             conexao = BD.getConexao();
-            String sql = "SELECT * FROM tipo_espaco INNER JOIN modalidade_predominante ON modalidade_predominante.id = " +
-                    "tipo_espaco.modalidade_predominante_id where id=?";
+            String sql = "SELECT * FROM tipo_espaco where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, obterTipoEspaco.getId());
-            ResultSet rs = comando.executeQuery(sql);
+            comando.setLong(1, id);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             obterTipoEspaco = new TipoDeEspaco();
                     obterTipoEspaco.setId(rs.getLong("id"));
                     obterTipoEspaco.setNome(rs.getString("nome"));
-                    obterTipoEspaco.setModalidade_predominante_id(rs.getLong("modalidadePredominanteId"));
+                    obterTipoEspaco.setModalidade_predominante_id(rs.getLong("modalidade_Predominante_Id"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -107,15 +106,14 @@ public class TipoDeEspacoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "SELECT * FROM tipo_espaco INNER JOIN irregularidade ON irregularidade.id = " +
-                    "tipo_espaco.modalidade_predominante_id";
+            String sql = "SELECT * FROM tipo_espaco";
             ResultSet rs = comando.executeQuery(sql);
 
             while (rs.next()) {
                 lista.add(new TipoDeEspaco()
                         .setId(rs.getLong("id"))
                         .setNome(rs.getString("nome"))
-                        .setModalidade_predominante_id(rs.getLong("modalidadePredominanteId"))
+                        .setModalidade_predominante_id(rs.getLong("modalidade_Predominante_Id"))
 
                 );
 
