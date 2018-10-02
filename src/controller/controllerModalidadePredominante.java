@@ -8,8 +8,12 @@ import java.sql.SQLException;
 public class controllerModalidadePredominante {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+
         ModalidadePredominante modalidade = new ModalidadePredominante((long)124,"bbb","ooooo");
         ModalidadePredominante modalidade1 = new ModalidadePredominante((long)1245,"bbb","ooooo");
+
+        ModalidadePredominante modalidade = new ModalidadePredominante((long)123,"bbb","ooooo");
+
 
         //ModalidadePredominanteDAO.gravar(modalidade);
         //ModalidadePredominanteDAO.alterar(modalidade);
