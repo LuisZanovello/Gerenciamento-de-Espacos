@@ -4,11 +4,22 @@ public class Irregularidade {
     private Long id;
     private String autor;
     private String descricao;
+    private Long idEspaco;
 
-    public Irregularidade(Long id, String autor, String descricao) {
+    public Irregularidade(Long id, String autor, String descricao, Long idEspaco) {
         this.id = id;
         this.autor = autor;
         this.descricao = descricao;
+        this.idEspaco = idEspaco;
+    }
+
+    public Long getIdEspaco() {
+        return idEspaco;
+    }
+
+    public Irregularidade setIdEspaco(Long idEspaco) {
+        this.idEspaco = idEspaco;
+        return this;
     }
 
     public Irregularidade() {

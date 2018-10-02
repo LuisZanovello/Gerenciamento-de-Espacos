@@ -10,19 +10,18 @@ public class IrregularidadeDAO {
     public static void gravar(Irregularidade irregularidade) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        Espaco espaco = new Espaco();
         try {
             conexao = BD.getConexao();
-            String sql = "insert into irregularidade(id,autor,descricao) values(?,?,?)";
+            String sql = "insert into irregularidade(id,autor,descricao,espaco_id) values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, irregularidade.getId());
             comando.setString(2,irregularidade.getAutor());
             comando.setString   (3, irregularidade.getDescricao());
 
-            if (espaco.getId() == null) {
-                comando.setNull(3, Types.NULL);
+            if (irregularidade.getIdEspaco() == null) {
+                comando.setNull(4, Types.NULL);
             } else {
-                comando.setString(3, espaco.getNome());
+                comando.setLong(4, irregularidade.getIdEspaco());
             }
 
             comando.execute();

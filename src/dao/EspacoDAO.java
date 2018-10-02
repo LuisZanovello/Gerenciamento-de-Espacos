@@ -12,7 +12,7 @@ public class EspacoDAO {
     public static void gravar(Espaco espaco) throws SQLException{
         Connection conexao = null;
         PreparedStatement comando = null;
-        TipoDeEspaco tipoEspaco = new TipoDeEspaco();
+
         try {
             conexao = BD.getConexao();
         } catch (ClassNotFoundException e) {
@@ -20,7 +20,7 @@ public class EspacoDAO {
         }
         try {
             String sql = "insert into espaco(id, nome, cnpj, cep, logradouro, numero, complemento, bairro, cidade, uf, " +
-                    "area, quantidadePessoas,horaFuncionamentoInicio, horaFuncionamentoFinal,tipoEspaco)"
+                    "area, quantidade_pessoas,hora_funcionamento_inicio, hora_funcionamento_final,tipo_espaco_id)"
                     + " values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, espaco.getId());
@@ -38,10 +38,10 @@ public class EspacoDAO {
             comando.setString(13, espaco.getHoraFuncionamentoInicio());
             comando.setString(14, espaco.getHoraFuncionamentoFinal());
 
-            if (tipoEspaco.getId() == null) {
+            if (espaco.getIdTipoEspaco()== null) {
                 comando.setNull(15, Types.NULL);
             } else {
-                comando.setString(15, tipoEspaco.getNome());
+                comando.setLong(15, espaco.getIdTipoEspaco());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);

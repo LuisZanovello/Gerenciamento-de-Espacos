@@ -11,19 +11,18 @@ public class TipoDeEspacoDAO {
     public static void gravar(TipoDeEspaco tipoEspaco) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
         try {
             conexao = BD.getConexao();
-            String sql = "insert into tipo_espaco(id, nome, modalidade_predominante)"
+            String sql = "insert into tipo_espaco(id, nome, modalidade_predominante_id)"
                     + " values(?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, tipoEspaco.getId());
             comando.setString(2, tipoEspaco.getNome());
 
-            if (modalidadePredominante.getId() == null) {
+            if (tipoEspaco.getModalidade_predominante_id() == null) {
                 comando.setNull(3, Types.NULL);
             } else {
-                comando.setString(3, modalidadePredominante.getModalidadePredominante());
+                comando.setLong(3, tipoEspaco.getModalidade_predominante_id());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -38,7 +37,7 @@ public class TipoDeEspacoDAO {
         ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
         try {
             conexao = BD.getConexao();
-            String sql = "update tipo_espaco set nome = ?, modalidade__predominante=? where id=?";
+            String sql = "update tipo_espaco set nome = ?, modalidade_predominante=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
