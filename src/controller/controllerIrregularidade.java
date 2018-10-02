@@ -7,9 +7,7 @@ import java.sql.SQLException;
 
 public class controllerIrregularidade {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Irregularidade irregularidade = new Irregularidade((long)123,"luis","iiiii",(long)2);
-
-        System.out.println(irregularidade.getAutor());
+        Irregularidade irregularidade = new Irregularidade((long)123,"luiis","é uma descrição",(long)2);
 
         IrregularidadeDAO.gravar(irregularidade);
     }

@@ -8,19 +8,13 @@ import java.sql.SQLException;
 
 public class controllerEspaco {
 
-    public static void main(String[] args) {
-        Espaco espaco = new Espaco((long)5,"SportMania" ,"1234567890" ,"36045000",
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        Espaco espaco = new Espaco((long)6,"SportMania" ,"2234567890" ,"36045000",
                 "Logradouro" ,1 ,"compl" ,"Bairro" ,
                 "Cidade","UF" ,80.5,900 ,
-                "6:00","23:00",(long)12399);
+                "6:00","23:00",(long)1274);
 
-        System.out.println(espaco.getNome());
-
-        try {
-            EspacoDAO.gravar(espaco);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        EspacoDAO.gravar(espaco);
     }
 
 }
