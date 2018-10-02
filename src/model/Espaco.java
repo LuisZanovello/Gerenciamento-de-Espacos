@@ -15,9 +15,7 @@ public class Espaco {
     private Integer quantidadePessoas;
     private String horaFuncionamentoInicio;
     private String horaFuncionamentoFinal;
-
     private Long idTipoEspaco;
-    TipoDeEspaco tipoEspaco = new TipoDeEspaco();
 
     public Espaco(long id, String nome, String cnpj, String cep, String logradouro, int numero, String complemento,
                   String bairro, String cidade, String uf, double area, int quantidadePessoas, String horaFuncionamentoInicio,
@@ -39,21 +37,13 @@ public class Espaco {
         this.idTipoEspaco = idTipoEspaco;
     }
 
+
     public Long getIdTipoEspaco() {
         return idTipoEspaco;
     }
 
     public Espaco setIdTipoEspaco(Long idTipoEspaco) {
         this.idTipoEspaco = idTipoEspaco;
-        return this;
-    }
-
-    public TipoDeEspaco getTipoEspaco() {
-        return tipoEspaco;
-    }
-
-    public Espaco setTipoEspaco(TipoDeEspaco tipoEspaco) {
-        this.tipoEspaco = tipoEspaco;
         return this;
     }
 /*

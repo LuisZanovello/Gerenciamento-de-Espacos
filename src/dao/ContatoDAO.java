@@ -45,6 +45,7 @@ public class ContatoDAO {
             comando = conexao.prepareStatement(sql);
             comando.setString(1, contato.getNumero());
             comando.setLong(2, contato.getId());
+            comando.execute();
 
             if(contato.getCliente() == null){
                 comando.setNull(2, Types.NULL);
@@ -53,7 +54,7 @@ public class ContatoDAO {
                 comando.setLong(2, contato.getCliente().getId());
             }
 
-            comando.execute();
+
             BD.fecharConexao(conexao, comando);
         }catch(SQLException e){
             throw e;

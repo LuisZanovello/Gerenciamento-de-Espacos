@@ -43,21 +43,23 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update cartoes set numero=?, validade=?,cod_seguranca=?,bandeira=?,Cliente_id=? where id=?";
+            String sql = "update cartao set bandeira=?, validade=?,numero=?,codigo_seguranca=?,cliente_id=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
-            comando.setLong     (1, cartao.getNumeroCartao());
+            comando.setString   (1, cartao.getBandeira());
             comando.setString   (2, cartao.getValidade());
-            comando.setInt      (3, cartao.getCodigoSeguranca());
-            comando.setString   (4, cartao.getBandeira());
+            comando.setLong     (3, cartao.getNumeroCartao());
+            comando.setInt      (4, cartao.getCodigoSeguranca());
+
             comando.setLong     (5, cartao.getId());
 
+
             if(cartao.getCliente() == null){
-                comando.setNull(2, Types.NULL);
+                comando.setNull(6, Types.NULL);
             }
             else{
-                comando.setLong(2, cartao.getCliente().getId());
+                comando.setLong(6, cartao.getCliente().getId());
             }
 
             comando.execute();
@@ -74,7 +76,7 @@ public class CartaoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "delete from cartoes where id=?";
+            String sql = "delete from cartao where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cartao.getId());
 

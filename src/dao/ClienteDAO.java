@@ -79,14 +79,15 @@ public class ClienteDAO {
             conexao = BD.getConexao();
             String sql = "select * from cliente where id = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, id);
+            comando.setLong(1, cliente.getId());
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
             cliente = new Cliente (rs.getLong("id"),
                     rs.getString("nome"),
                     rs.getString("sobrenome"),
-                    rs.getString("dataNascimento"),
-                    rs.getString("email"));
+                    rs.getString("data_nascimento"),
+                    rs.getString("email"),
+                    rs.getString("cpf"));
 
 
         }catch (SQLException e){

@@ -1,4 +1,4 @@
-package principal;
+package controller;
 
 import dao.CartaoDAO;
 import model.Cartao;
@@ -6,13 +6,15 @@ import model.Cartao;
 import java.sql.SQLException;
 
 
-public class PrincipalCartao{
+public class controllerCartao {
 
     public static void main (String[] args) throws SQLException, ClassNotFoundException {
 
-        Cartao cartao = new Cartao ((long)1,"visa", "18/08/1994", (long)2, 123, (long)123);
+        Cartao cartao = new Cartao ((long)1,"brrrasdr", "18/08/2004", (long)2, 123, (long)123);
 
-        CartaoDAO.gravar(cartao);
+        //CartaoDAO.gravar(cartao); FUNCIONANDO
+        //CartaoDAO.alterar(cartao);
+        //CartaoDAO.excluir(cartao); FUNCIONANDO
 
 
         /*System.out.println( "Bandeira: "            + cartao.getBandeira() +

@@ -17,22 +17,24 @@ import java.util.List;
 public class DisponibilidadeDAO {
 
 
-    public static class ContatoDAO {
         public static void gravar(Disponibilidade disponibilidade) throws SQLException, ClassNotFoundException{
             Connection conexao = null;
             PreparedStatement comando = null;
             try{
                 conexao = BD.getConexao();
-                String sql = "insert into disponibilidade (id, data, hora_inicio, hora_fim)"
-                        + "values(?,?, ?, ?)";
+                String sql = "insert into disponibilidade (id, data_disponivel, espaco_id, hora_inicio, hora_fim)"
+                        + "values(?,?,?, ?, ?)";
                 comando = ((Connection) conexao).prepareStatement(sql);
                 comando.setLong(1, disponibilidade.getId());
+                comando.setString(2, disponibilidade.getDataDisponivel());
+                comando.setString(4, disponibilidade.getHora_inicio());
+                comando.setString(5, disponibilidade.getHora_fim());
 
-                if(disponibilidade.getEspaco() == null){
-                    comando.setNull(2, Types.NULL);
+                if(disponibilidade.getIdEspaco() == null){
+                    comando.setNull(3, Types.NULL);
                 }
                 else{
-                    comando.setLong(2, disponibilidade.getEspaco().getId());
+                    comando.setLong(3, disponibilidade.getIdEspaco());
                 }
 
                 comando.execute();
@@ -100,8 +102,8 @@ public class DisponibilidadeDAO {
                 ResultSet rs = comando.executeQuery(sql);
                 rs.first();
                 disponibilidade = new Disponibilidade (rs.getLong("id"),
-                        rs.getString("dataDisponivel")),
-                        rs.getString("hora_inicio")),
+                        rs.getString("dataDisponivel"),
+                        rs.getString("hora_inicio"),
                         rs.getString("hora_fim"));
 
 
@@ -114,10 +116,10 @@ public class DisponibilidadeDAO {
         }
 
 
-        public static List<Disponibilidade> obterTodosAsDisponibilidade() throws  ClassNotFoundException{
+        public static List<Disponibilidade> obterTodosAsDisponibilidades() throws  ClassNotFoundException{
             Connection conexao = null;
             Statement comando = null;
-            List<Disponibilidade disponibilidades = new ArrayList<Disponibilidade>();
+            List<Disponibilidade> disponibilidades = new ArrayList<Disponibilidade>();
             try{
                 conexao = BD.getConexao();
                 comando = conexao.createStatement();
@@ -126,8 +128,8 @@ public class DisponibilidadeDAO {
                 while(rs.next()){
                     Disponibilidade disponibilidade = new Disponibilidade(rs.getLong("id"),
                             rs.getString("numero"));
-                    disponibilidade.setEspaco(rs.getInt("cliente"));
-                    Disponibilidades.add(Disponibilidade);
+
+                    disponibilidades.add(disponibilidade);
                 }
             }catch(SQLException e){
                 e.printStackTrace();
@@ -140,4 +142,4 @@ public class DisponibilidadeDAO {
 
     }
 
-}
+
