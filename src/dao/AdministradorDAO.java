@@ -79,8 +79,8 @@ public class AdministradorDAO {
             conexao = BD.getConexao();
             String sql = "select * from administrador where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, admin.getId());
-            ResultSet rs = comando.executeQuery(sql);
+            comando.setLong     (1, id);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             admin = new Administrador(rs.getLong("id"),

@@ -11,7 +11,7 @@ public class ReservaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into reserva(id, data_reserva, hora__inicio, hora_fim, quantidade_pessoas, valor_espaco, nota_avaliacao, espaco_id, cliente_id)"
+            String sql = "insert into reserva(id, data_reserva, hora_inicio, hora_fim, quantidade_pessoas, valor_espaco, nota_avaliacao, espaco_id, cliente_id)"
                     + " values(?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, resv.getId());
@@ -22,11 +22,17 @@ public class ReservaDAO {
             comando.setDouble   (6, resv.getValorLocacao());
             comando.setLong     (7, resv.getNotaAvaliacao());
 
-            if(resv.getIdCliente() == null){
+            if(resv.getIdEspaco() == null){
                 comando.setNull(8, Types.NULL);
             }
             else{
                 comando.setLong(8, resv.getIdCliente());
+            }
+            if(resv.getIdEspaco() == null){
+                comando.setNull(9, Types.NULL);
+            }
+            else{
+                comando.setLong(9, resv.getIdCliente());
             }
 
             comando.execute();
@@ -98,7 +104,7 @@ public class ReservaDAO {
             String sql = "select * from reserva where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, id);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             resv = new Reserva (rs.getLong("id"),
                     rs.getString    ("dataLocacao"),
@@ -106,8 +112,9 @@ public class ReservaDAO {
                     rs.getString    ("horaFimLocacao"),
                     rs.getLong      ("qtPessoas"),
                     rs.getDouble    ("valorLocacao"),
-                    rs.getLong      ("notaAvaliacao")); /*  null ? */
-
+                    rs.getLong      ("notaAvaliacao"), /*  null ? */
+                    rs.getLong      ("espaco_id"),
+                    rs.getLong("cliente_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
