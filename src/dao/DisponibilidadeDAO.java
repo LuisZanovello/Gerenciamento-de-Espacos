@@ -50,8 +50,8 @@ public class DisponibilidadeDAO {
             PreparedStatement comando = null;
             try{
                 conexao = BD.getConexao();
-                String sql = "update disponibilidade set  dt_disponivel = ?, hr_inicio = ?,"
-                        + "hr_fim = ? where id = ?";
+                String sql = "update disponibilidade set  data_disponivel = ?, hora_inicio = ?,"
+                        + "hora_fim = ? where id = ?";
                 comando = conexao.prepareStatement(sql);
                 comando.setString(1, disponibilidade.getDataDisponivel());
                 comando.setString(2, disponibilidade.getHora_inicio());
@@ -98,13 +98,14 @@ public class DisponibilidadeDAO {
                 conexao = BD.getConexao();
                 String sql = "select * from disponibilidade where id = ?";
                 comando = conexao.prepareStatement(sql);
-                comando.setLong(1, id);
-                ResultSet rs = comando.executeQuery(sql);
+                comando.setLong(1,id);
+                ResultSet rs = comando.executeQuery();
                 rs.first();
                 disponibilidade = new Disponibilidade (rs.getLong("id"),
-                        rs.getString("dataDisponivel"),
+                        rs.getString("data_disponivel"),
                         rs.getString("hora_inicio"),
-                        rs.getString("hora_fim"));
+                        rs.getString("hora_fim"),
+                        rs.getLong("espaco_id"));
 
 
             }catch (SQLException e){
@@ -123,13 +124,14 @@ public class DisponibilidadeDAO {
             try{
                 conexao = BD.getConexao();
                 comando = conexao.createStatement();
-                String sql = "SELECT * FROM contato";
+                String sql = "SELECT * FROM disponibilidade";
                 ResultSet rs = comando.executeQuery(sql);
                 while(rs.next()){
-                    Disponibilidade disponibilidade = new Disponibilidade(rs.getLong("id"),
-                            rs.getString("numero"));
-
-                    disponibilidades.add(disponibilidade);
+                    disponibilidades.add(new Disponibilidade (rs.getLong("id"),
+                            rs.getString("data_disponivel"),
+                            rs.getString("hora_inicio"),
+                            rs.getString("hora_fim"),
+                            rs.getLong("espaco_id")));
                 }
             }catch(SQLException e){
                 e.printStackTrace();
