@@ -34,21 +34,21 @@ public class TipoDeEspacoDAO {
     public static void alterar(TipoDeEspaco tipoEspaco) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
         try {
             conexao = BD.getConexao();
-            String sql = "update tipo_espaco set nome = ?, modalidade_predominante=? where id=?";
+            String sql = "update tipo_espaco set nome = ?, modalidade_predominante_id=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
             comando.setString(1, tipoEspaco.getNome());
 
-            if (modalidadePredominante.getId() == null) {
+            if (tipoEspaco.getModalidade_predominante_id() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setString(2, modalidadePredominante.getModalidadePredominante());
+                comando.setLong(2, tipoEspaco.getModalidade_predominante_id());
             }
             comando.setLong(3, tipoEspaco.getId());
+            comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
             throw e;
@@ -74,12 +74,12 @@ public class TipoDeEspacoDAO {
     public TipoDeEspaco obterTipoEspaco(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        ModalidadePredominante modalidadePredominante = new ModalidadePredominante();
         TipoDeEspaco obterTipoEspaco = null;
 
         try {
             conexao = BD.getConexao();
-            String sql = "select * from tipo_espaco where id=?";
+            String sql = "SELECT * FROM tipo_espaco INNER JOIN modalidade_predominante ON modalidade_predominante.id = " +
+                    "tipo_espaco.modalidade_predominante_id where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, obterTipoEspaco.getId());
             ResultSet rs = comando.executeQuery(sql);
@@ -88,7 +88,7 @@ public class TipoDeEspacoDAO {
             obterTipoEspaco = new TipoDeEspaco();
                     obterTipoEspaco.setId(rs.getLong("id"));
                     obterTipoEspaco.setNome(rs.getString("nome"));
-                    modalidadePredominante.setModalidadePredominante(rs.getString("modalidade"));
+                    obterTipoEspaco.setModalidade_predominante_id(rs.getLong("modalidadePredominanteId"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -107,13 +107,15 @@ public class TipoDeEspacoDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "SELECT * FROM tipo_espaco";
+            String sql = "SELECT * FROM tipo_espaco INNER JOIN irregularidade ON irregularidade.id = " +
+                    "tipo_espaco.modalidade_predominante_id";
             ResultSet rs = comando.executeQuery(sql);
 
             while (rs.next()) {
                 lista.add(new TipoDeEspaco()
                         .setId(rs.getLong("id"))
                         .setNome(rs.getString("nome"))
+                        .setModalidade_predominante_id(rs.getLong("modalidadePredominanteId"))
 
                 );
 

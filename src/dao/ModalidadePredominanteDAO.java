@@ -31,7 +31,7 @@ public class ModalidadePredominanteDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update modalidade_predominante set  nome = ?, descricao = ?"
+            String sql = "update modalidade_predominante set  modalidade_predominante = ?, descricao = ?"
                     + "where id = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, modalidade.getModalidadePredominante());
@@ -60,6 +60,7 @@ public class ModalidadePredominanteDAO {
             BD.fecharConexao(conexao, comando);
         }
     }
+
     public ModalidadePredominante obterModalidade(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -85,7 +86,7 @@ public class ModalidadePredominanteDAO {
         }
         return modalidade;
     }
-    public static ArrayList<ModalidadePredominante> obterModalidade() throws ClassNotFoundException {
+    public static ArrayList<ModalidadePredominante> obterTodasModalidade() throws ClassNotFoundException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -102,14 +103,16 @@ public class ModalidadePredominanteDAO {
                         .setId(rs.getLong("id"))
                         .setModalidadePredominante(rs.getString("modalidade"))
                         .setDescricao(rs.getString("descricao"))
+
                 );
             }
+
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 
         }
-        return lista;
+        return obterTodasModalidade() ;
     }
 }

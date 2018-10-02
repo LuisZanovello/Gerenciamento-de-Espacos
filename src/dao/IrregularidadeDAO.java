@@ -34,23 +34,23 @@ public class IrregularidadeDAO {
     public static void alterar(Irregularidade irregularidade) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        Espaco espaco = new Espaco();
         try {
             conexao = BD.getConexao();
-            String sql = "update irregularidade set autor=?,descricao=?,nome=? where id=?";
+            String sql = "update irregularidade set autor=?,descricao=?,espaco_id=? where id=?";
 
             comando = conexao.prepareStatement(sql);
 
             comando.setString   (1, irregularidade.getAutor());
             comando.setString(2,irregularidade.getDescricao());
 
-            if (espaco.getId() == null) {
+            if (irregularidade.getIdEspaco() == null) {
                 comando.setNull(3, Types.NULL);
             } else {
-                comando.setString(3, espaco.getNome());
+                comando.setLong(3, irregularidade.getIdEspaco());
             }
 
             comando.setLong(4,irregularidade.getId());
+            comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
             throw e;
@@ -75,12 +75,12 @@ public class IrregularidadeDAO {
     public Irregularidade obterIrregularidade (Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        Espaco espaco = new Espaco();
         Irregularidade irregularidade = null;
 
         try {
             conexao = BD.getConexao();
-            String sql = "select * from irregularidade where id=?";
+            String sql = "SELECT * FROM irregularidade INNER JOIN espaco ON espaco.id = irregularidade.espaco_id " +
+                    "WHERE id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, irregularidade.getId());
             ResultSet rs = comando.executeQuery(sql);
@@ -90,8 +90,7 @@ public class IrregularidadeDAO {
                     irregularidade.setId(rs.getLong("id"));
                     irregularidade.setAutor(rs.getString("autor"));
                     irregularidade.setDescricao(rs.getString("descricao"));
-            espaco.setNome(rs.getString("nome"));
-
+            irregularidade.setIdEspaco(rs.getLong("espacoId"));
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -111,7 +110,7 @@ public class IrregularidadeDAO {
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "select * from irregularidade";
+            String sql = "SELECT * FROM irregularidade INNER JOIN espaco ON espaco.id = irregularidade.espaco_id";
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {
@@ -119,6 +118,7 @@ public class IrregularidadeDAO {
                         .setId(rs.getLong("id"))
                         .setAutor(rs.getString("autor"))
                         .setDescricao(rs.getString("descricao"))
+                        .setIdEspaco(rs.getLong("espacoId"))
                 );
             }
 
