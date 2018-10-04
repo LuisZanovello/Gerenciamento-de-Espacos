@@ -1,4 +1,4 @@
-package controller;
+package Main;
 
 import dao.TipoDeEspacoDAO;
 import model.ModalidadePredominante;
@@ -6,7 +6,7 @@ import model.TipoDeEspaco;
 
 import java.sql.SQLException;
 
-public class controllerTipoEspaco {
+public class MainTipoEspaco {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 

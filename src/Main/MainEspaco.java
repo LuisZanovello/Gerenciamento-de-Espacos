@@ -1,4 +1,4 @@
-package controller;
+package Main;
 
 
 import dao.EspacoDAO;
@@ -6,7 +6,7 @@ import model.Espaco;
 
 import java.sql.SQLException;
 
-public class controllerEspaco {
+public class MainEspaco {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Espaco espaco = new Espaco((long)6,"SportMania" ,"2234567890" ,"36045000",
