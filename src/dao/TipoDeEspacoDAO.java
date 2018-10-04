@@ -118,8 +118,8 @@ public class TipoDeEspacoDAO {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-
+            return lista;
         }
-        return lista;
+
     }
 }
