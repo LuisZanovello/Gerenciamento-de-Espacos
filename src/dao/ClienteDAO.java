@@ -5,18 +5,17 @@ import model.Cliente;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteDAO {
-    public static void gravar(Cliente cliente) throws SQLException, ClassNotFoundException{
+    public static void gravar(Cliente cliente) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        try{
+        try {
             conexao = BD.getConexao();
             String sql = "insert into cliente (id, nome, sobrenome, data_nascimento, email, cpf)"
                     + "values(?,?,?,?,?,?)";
             comando = ((Connection) conexao).prepareStatement(sql);
-            comando.setLong( 1, cliente.getId());
+            comando.setLong(1, cliente.getId());
             comando.setString(2, cliente.getNome());
             comando.setString(3, cliente.getSobrenome());
             comando.setString(4, cliente.getDataNascimento());
@@ -25,16 +24,16 @@ public class ClienteDAO {
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw e;
         }
 
     }
 
-    public static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException{
+    public static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        try{
+        try {
             conexao = BD.getConexao();
             String sql = "update cliente set  nome = ?, sobrenome = ?, cpf = ?, data_nascimento = ?, email = ?"
                     + "where id = ?";
@@ -45,83 +44,79 @@ public class ClienteDAO {
             comando.setString(4, cliente.getDataNascimento());
             comando.setString(5, cliente.getEmail());
 
-            comando.setLong( 6, cliente.getId());
+            comando.setLong(6, cliente.getId());
             comando.execute();
             BD.fecharConexao(conexao, comando);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw e;
         }
     }
 
-    public static void excluir (Cliente cliente) throws SQLException, ClassNotFoundException{
+    public static void excluir(Cliente cliente) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
 
-        try{
+        try {
             conexao = BD.getConexao();
             String sql = "delete from cliente where id = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cliente.getId());
             comando.execute();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw e;
-        }finally {
+        } finally {
             BD.fecharConexao(conexao, comando);
         }
     }
 
-    public static Cliente obterCliente(long id) throws  ClassNotFoundException{
+    public static Cliente obterCliente(long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Cliente cliente = null;
 
-        try{
+        try {
             conexao = BD.getConexao();
             String sql = "select * from cliente where id = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, id);
             ResultSet rs = comando.executeQuery();
             rs.first();
-            cliente = new Cliente (rs.getLong("id"),
-                    rs.getString("nome"),
-                    rs.getString("sobrenome"),
-                    rs.getString("data_nascimento"),
-                    rs.getString("email"),
-                    rs.getString("cpf"));
-
-
-        }catch (SQLException e){
+            cliente = getClient(rs);
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             BD.fecharConexao(conexao, comando);
         }
         return cliente;
     }
 
+    private static Cliente getClient(ResultSet rs) throws SQLException {
+        return new Cliente(rs.getLong("id"),
+                rs.getString("nome"),
+                rs.getString("sobrenome"),
+                rs.getString("data_nascimento"),
+                rs.getString("email"),
+                rs.getString("cpf"));
+    }
 
-    public static List<Cliente> obterTodosOsClientes() throws  ClassNotFoundException{
+
+    public static ArrayList<Cliente> obterTodosOsClientes() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
-        List<Cliente> clientes = new ArrayList<>();
-        try{
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM cliente";
             ResultSet rs = comando.executeQuery(sql);
-            while(rs.next()){
-                Cliente cliente = (new Cliente(rs.getLong("id"),
-                        rs.getString("nome"),
-                        rs.getString("sobrenome"),
-                        rs.getString("data_nascimento"),
-                        rs.getString("email")));
-                    clientes.add(cliente);
+            while (rs.next()) {
+                clientes.add(getClient(rs));
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             BD.fecharConexao(conexao, comando);
         }
-
         return clientes;
     }
 }

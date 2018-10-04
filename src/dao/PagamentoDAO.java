@@ -15,7 +15,7 @@ public class PagamentoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into pagamento(id, vencimento, num_cod_barras, valor_total, reserva_id)"
+            String sql = "insert into pagamento(id, vencimento, numero_codigo_barras, valor_total, reserva_id)"
                     + " values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, pag.getId());
@@ -42,7 +42,7 @@ public class PagamentoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update pagamento set vencimento=?, num_cod_barras=?, valor_total=? where id=?";
+            String sql = "update pagamento set vencimento=?, numero_cododigo_barras=?, valor_total=? where id=?";
             comando = conexao.prepareStatement(sql);
 
             comando.setString   (1, pag.getVencimento());
