@@ -107,8 +107,8 @@ public class CartaoDAO {
                     rs.getString    ("bandeira"),
                     rs.getString    ("validade"),
                     rs.getLong      ("numero"),
-                    rs.getInt       ("cod_seguranca"),
-            cartao.setIdCliente(rs.getLong("cliente_id"));
+                    rs.getInt       ("codigo_seguranca"),
+                    rs.getLong("cliente_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -122,30 +122,29 @@ public class CartaoDAO {
     public static ArrayList<Cartao> obterTodosCartoes() throws ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-       ArrayList<Cartao> lista = new ArrayList<Cartao>();
-        Cartao cartao = null;
+       ArrayList<Cartao> cartoes = new ArrayList<>();
 
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "select * from cartoes";
+            String sql = "select * from cartao";
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {
-                cartao = new Cartao(rs.getLong("id"),
+                cartoes.add(new Cartao(rs.getLong("id"),
                         rs.getString    ("bandeira"),
                         rs.getString    ("validade"),
                         rs.getLong      ("numero"),
-                        rs.getInt       ("cod_seguranca")); /*  null ? */
-                cartao.setIdCliente(rs.getLong("cliente")); /* De onde vem o Set ? "SetMatriculaProfessorCoordenador"*/
-                lista.add(cartao);
+                        rs.getInt       ("codigo_seguranca"), /*  null ? */
+                        rs.getLong("cliente_id"))); /* De onde vem o Set ? "SetMatriculaProfessorCoordenador"*/
             }
         }catch (SQLException e){
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-            return lista;
+
         }
+        return cartoes;
     }
 
 

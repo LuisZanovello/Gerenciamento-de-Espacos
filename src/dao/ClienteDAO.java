@@ -102,7 +102,7 @@ public class ClienteDAO {
     public static List<Cliente> obterTodosOsClientes() throws  ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-        List<Cliente> clientes = new ArrayList<Cliente>();
+        List<Cliente> clientes = new ArrayList<>();
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
@@ -114,7 +114,7 @@ public class ClienteDAO {
                         rs.getString("sobrenome"),
                         rs.getString("data_nascimento"),
                         rs.getString("email")));
-
+                    clientes.add(cliente);
             }
         }catch(SQLException e){
             e.printStackTrace();

@@ -10,13 +10,13 @@ public class controllerCartao {
 
     public static void main (String[] args) throws SQLException, ClassNotFoundException {
 
-        Cartao cartao = new Cartao ((long)1,"brrrasdr", "18/08/2004", (long)2, 123, (long)123);
+        Cartao cartao = new Cartao ((long)1,"brrrasdr", "18/08/2004", (long)2, 123, (long)124);
 
-        //CartaoDAO.gravar(cartao); FUNCIONANDO
+        //CartaoDAO.gravar(cartao); //FUNCIONANDO
         //CartaoDAO.alterar(cartao);
-        //CartaoDAO.excluir(cartao); FUNCIONANDO
-        System.out.println(CartaoDAO.obterCartao((long)1).getBandeira());
-
+        //CartaoDAO.excluir(cartao); //FUNCIONANDO
+        //System.out.println(CartaoDAO.obterCartao((long)1).getBandeira());
+        System.out.println(CartaoDAO.obterTodosCartoes().get(0).getBandeira()); //FUNCIONANDO
 
         /*System.out.println( "Bandeira: "            + cartao.getBandeira() +
                 "/n validade: "            + cartao.getValidade() +

@@ -39,11 +39,11 @@ public class Cartao{
     }
 
     public Cartao(Long id, String bandeira, String validade, Long numeroCartao, Integer codigoSeguranca) {
-        this.id = id;
+       this.id = id;
         this.bandeira = bandeira;
         this.validade = validade;
         this.numeroCartao = numeroCartao;
-        this.codigoSeguranca = codigoSeguranca;
+       this.codigoSeguranca = codigoSeguranca;
     }
 
     public Long getId() {
