@@ -11,8 +11,10 @@ public class controllerCliente {
         Cliente cliente = new Cliente((long) 124, "issssssa", "ribeiro", "655325484", "22/02/99", "iza@wow.com");
 
         //System.out.println(cliente.getCpf()+"\n"+ cliente.getEmail());
-        //ClienteDAO.gravar(cliente); FUNCIONANDO
-        //ClienteDAO.alterar(cliente); FUNCIONANDO
-        //ClienteDAO.excluir(cliente); FUNCIONANDO
+        //ClienteDAO.gravar(cliente); //FUNCIONANDO
+        //ClienteDAO.alterar(cliente); //FUNCIONANDO
+        //ClienteDAO.excluir(cliente); //FUNCIONANDO
+        //System.out.println(ClienteDAO.obterCliente((long) 124).getNome()); //FUNCIONANDO
+        System.out.println(ClienteDAO.obterTodosOsClientes().get(0).getCpf());
     }
 }

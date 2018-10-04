@@ -88,10 +88,11 @@ public class ContatoDAO {
             String sql = "select * from contato where id = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, id);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             contato = new Contato (rs.getLong("id"),
-                    rs.getString("numero"));
+                    rs.getString("numero"),
+                    rs.getLong("cliente_id"));
 
 
         }catch (SQLException e){

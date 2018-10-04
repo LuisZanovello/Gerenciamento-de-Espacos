@@ -15,6 +15,7 @@ public class controllerCartao {
         //CartaoDAO.gravar(cartao); FUNCIONANDO
         //CartaoDAO.alterar(cartao);
         //CartaoDAO.excluir(cartao); FUNCIONANDO
+        System.out.println(CartaoDAO.obterCartao((long)1).getBandeira());
 
 
         /*System.out.println( "Bandeira: "            + cartao.getBandeira() +

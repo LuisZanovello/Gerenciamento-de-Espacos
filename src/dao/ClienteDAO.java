@@ -79,8 +79,8 @@ public class ClienteDAO {
             conexao = BD.getConexao();
             String sql = "select * from cliente where id = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, cliente.getId());
-            ResultSet rs = comando.executeQuery(sql);
+            comando.setLong(1, id);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             cliente = new Cliente (rs.getLong("id"),
                     rs.getString("nome"),
@@ -109,13 +109,12 @@ public class ClienteDAO {
             String sql = "SELECT * FROM cliente";
             ResultSet rs = comando.executeQuery(sql);
             while(rs.next()){
-                Cliente cliente = new Cliente(rs.getLong("id"),
+                Cliente cliente = (new Cliente(rs.getLong("id"),
                         rs.getString("nome"),
                         rs.getString("sobrenome"),
-                        rs.getString("dataNascimento"),
-                        rs.getString("email"));
+                        rs.getString("data_nascimento"),
+                        rs.getString("email")));
 
-                clientes.add(cliente);
             }
         }catch(SQLException e){
             e.printStackTrace();

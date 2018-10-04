@@ -15,6 +15,6 @@ public class controllerDisponibilidade {
         //DisponibilidadeDAO.alterar(disponibilidade); //FUNCIONANDO
         //DisponibilidadeDAO.excluir(disponibilidade); //FUNCIONANDO
         //System.out.println(DisponibilidadeDAO.obterDisponibilidade((long) 1234567).getDataDisponivel()); //FUNCIONANDO
-        //System.out.println(DisponibilidadeDAO.obterTodosAsDisponibilidades().get(1).getDataDisponivel()); //FUNCIONANDO
+        System.out.println(DisponibilidadeDAO.obterTodosAsDisponibilidades().get(1).getDataDisponivel()); //FUNCIONANDO
     }
 }

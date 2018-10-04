@@ -91,24 +91,25 @@ public class CartaoDAO {
         }
     }
 
-    public Cartao obterCartao (Long id) throws ClassNotFoundException {
+    public static Cartao obterCartao (Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Cartao cartao = null;
         try {
             conexao = BD.getConexao();
-            String sql = "select * from cartoes where id=?";
+            String sql = "select * from cartao where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, cartao.getId());
-            ResultSet rs = comando.executeQuery(sql);
+            comando.setLong     (1, id);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             cartao = new Cartao(rs.getLong("id"),
                     rs.getString    ("bandeira"),
                     rs.getString    ("validade"),
                     rs.getLong      ("numero"),
-                    rs.getInt       ("cod_seguranca")); /*  null ? */
-            cartao.setIdCliente(rs.getLong("cliente"));
+                    rs.getInt       ("cod_seguranca"),
+            cartao.setIdCliente(rs.getLong("cliente_id"));
+
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
