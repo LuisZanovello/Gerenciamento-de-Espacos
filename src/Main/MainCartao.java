@@ -1,4 +1,4 @@
-package controller;
+package Main;
 
 import dao.CartaoDAO;
 import model.Cartao;
@@ -6,7 +6,7 @@ import model.Cartao;
 import java.sql.SQLException;
 
 
-public class controllerCartao {
+public class MainCartao {
 
     public static void main (String[] args) throws SQLException, ClassNotFoundException {
 

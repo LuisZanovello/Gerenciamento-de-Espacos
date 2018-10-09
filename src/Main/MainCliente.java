@@ -1,4 +1,4 @@
-package controller;
+package Main;
 
 import dao.ClienteDAO;
 import model.Cliente;
@@ -6,7 +6,7 @@ import model.Cliente;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class controllerCliente {
+public class MainCliente {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         /*Cliente cliente = new Cliente((long) 1243, "Luis", "Zano", "652195325484", "5/02/98", "luis@wow.com");
