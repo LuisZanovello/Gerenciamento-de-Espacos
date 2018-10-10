@@ -1,8 +1,12 @@
 package model;
 
+import dao.EspacoDAO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+
+import java.sql.SQLException;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -32,5 +36,20 @@ public class Espaco {
              .setQuantidadePessoas(quantidadePessoas).setHoraFuncionamentoInicio(horaFuncionamentoInicio)
              .setHoraFuncionamentoFinal(horaFuncionamentoFinal).setIdTipoEspaco(idTipoEspaco);
 
+    }
+    public void gravar() throws SQLException, ClassNotFoundException {
+        EspacoDAO.gravar(this);
+    }
+    public void alterar() throws SQLException, ClassNotFoundException {
+        EspacoDAO.alterar(this);
+    }
+    public void excluir() throws SQLException, ClassNotFoundException {
+        EspacoDAO.excluir(this);
+    }
+    public Espaco obterEspaco(Long id) throws SQLException, ClassNotFoundException {
+        return  EspacoDAO.obterEspaco((long)id);
+    }
+    public static List<Espaco> obterTodosEspacos() throws  SQLException, ClassNotFoundException {
+        return  EspacoDAO.obterTodosEspacos();
     }
 }
