@@ -26,9 +26,9 @@ public class ReservaDAO {
                 comando.setNull(8, Types.NULL);
             }
             else{
-                comando.setLong(8, resv.getIdCliente());
+                comando.setLong(8, resv.getIdEspaco());
             }
-            if(resv.getIdEspaco() == null){
+            if(resv.getIdCliente() == null){
                 comando.setNull(9, Types.NULL);
             }
             else{
@@ -57,26 +57,30 @@ public class ReservaDAO {
             comando.setDouble   (5, resv.getValorLocacao());
             comando.setLong     (6, resv.getNotaAvaliacao());
 
-            if(resv.getCliente() == null){
+            if(resv.getIdEspaco() == null){
                 comando.setNull(7, Types.NULL);
             }
             else{
-                comando.setLong(7, resv.getCliente().getId());
+                comando.setLong(7, resv.getIdEspaco());
             }
 
-            if(resv.getEspaco() == null){
+            if(resv.getIdCliente()== null){
                 comando.setNull(7, Types.NULL);
             }
             else{
-                comando.setLong(7, resv.getEspaco().getId());
+                comando.setLong(7, resv.getIdCliente());
             }
+
+            comando.setLong(7, resv.getId());
+
+            comando.execute();
 
         } catch (SQLException e) {
             throw e;
         }
     }
 
-    public Boolean excluir(Reserva resv) throws SQLException, ClassNotFoundException {
+    public static void excluir(Reserva resv) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
@@ -87,7 +91,7 @@ public class ReservaDAO {
             comando.execute();
 
             BD.fecharConexao(conexao, comando);
-            return true;
+
         } catch (SQLException e) {
             throw e;
         }
@@ -124,7 +128,7 @@ public class ReservaDAO {
         return resv;
     }
 
-    public ArrayList<Reserva> obterTodasReservas() throws ClassNotFoundException{
+    public static ArrayList<Reserva> obterTodasReservas() throws ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
         ArrayList<Reserva> lista = new ArrayList<Reserva>();

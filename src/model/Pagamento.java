@@ -1,5 +1,14 @@
 package model;
 
+
+import dao.PagamentoDAO;
+import lombok.Data;
+
+import java.sql.SQLException;
+import java.util.List;
+
+@Data
+
 public class Pagamento {    //antiga classe Boleto
 
     private Long id;
@@ -25,61 +34,27 @@ public class Pagamento {    //antiga classe Boleto
         this.valorTotal = valorTotal;
     }
 
-    public Long getIdReserva() {
-        return idReserva;
-    }
-
-    public Pagamento setIdReserva(Long idReserva) {
-        this.idReserva = idReserva;
-        return this;
-    }
-
-    public Reserva getReserva() {
-        return reserva;
-    }
-
-    public Pagamento setReserva(Reserva reserva) {
-        this.reserva = reserva;
-        return this;
-    }
-
-    public Pagamento() {
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getVencimento() {
-        return vencimento;
-    }
-
-    public void setVencimento(String diasExpiracao) {
-        this.vencimento = diasExpiracao;
-    }
-
-    public Long getNumeroCodBarras() {
-        return numeroCodBarras;
-    }
-
-    public void setNumeroCodBarras(Long numeroCodBarras) {
-        this.numeroCodBarras = numeroCodBarras;
-    }
-
-    public Double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(Double valorTotal) {
-        this.valorTotal = valorTotal;
+    public void gravar() throws SQLException, ClassNotFoundException{
+        PagamentoDAO.gravar(this);
     }
 
 
-    public void setIdReserva(long reservas) {
+    public void alterar() throws SQLException, ClassNotFoundException{
+        PagamentoDAO.alterar(this);
+    }
+
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        PagamentoDAO.excluir(this);
+    }
+
+
+    public static Pagamento obterPagamento(Long id) throws SQLException, ClassNotFoundException{
+
+        return PagamentoDAO.obterPagamento((long)id);
+    }
+
+    public static List<Pagamento> obterTodosPagamentos() throws SQLException, ClassNotFoundException{
+        return PagamentoDAO.obterTodosPagamentos();
     }
 }

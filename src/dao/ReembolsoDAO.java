@@ -56,7 +56,7 @@ public class ReembolsoDAO {
         }
     }
 
-    public Boolean excluir(Reembolso reembol) throws SQLException, ClassNotFoundException {
+    public static void excluir(Reembolso reembol) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
@@ -67,14 +67,14 @@ public class ReembolsoDAO {
             comando.execute();
 
             BD.fecharConexao(conexao, comando);
-            return true;
+
         } catch (SQLException e) {
             throw e;
         }
     }
 
 
-    public Reembolso obterReembolso (Long id) throws ClassNotFoundException {
+    public static Reembolso obterReembolso (Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Reembolso reembol = null;

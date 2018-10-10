@@ -1,5 +1,13 @@
 package model;
 
+import dao.ReservaDAO;
+import lombok.Data;
+
+import java.sql.SQLException;
+import java.util.List;
+
+@Data
+
 public class Reserva {
     private Long id;
     private String dataLocacao;
@@ -37,101 +45,31 @@ public class Reserva {
         this.qtPessoas = qtPessoas;
         this.valorLocacao = valorLocacao;
         this.notaAvaliacao = notaAvaliacao;
-       
+
     }
 
 
-
-    public Long getIdEspaco() {
-        return idEspaco;
-    }
-
-    public Reserva setIdEspaco(Long idEspaco) {
-        this.idEspaco = idEspaco;
-        return this;
-    }
-
-    public Espaco getEspaco() {
-        return espaco;
-    }
-
-    public Reserva setEspaco(Espaco espaco) {
-        this.espaco = espaco;
-        return this;
-    }
-
-    public Long getIdCliente() {
-        return idCliente;
-    }
-
-    public Reserva setIdCliente(Long idCliente) {
-        this.idCliente = idCliente;
-        return this;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public Reserva setCliente(Cliente cliente) {
-        this.cliente = cliente;
-        return this;
-    }
-
-    public Long getQtPessoas() {
-        return qtPessoas;
-    }
-
-    public void setQtPessoas(Long qtPessoas) {
-        this.qtPessoas = qtPessoas;
-    }
-
-    public String getDataLocacao() {
-        return dataLocacao;
-    }
-
-    public void setDataLocacao(String dataLocacao) {
-        this.dataLocacao = dataLocacao;
-    }
-
-    public String getHoraInicioLocacao() {
-        return horaInicioLocacao;
-    }
-
-    public void setHoraInicioLocacao(String horaInicioLocacao) {
-        this.horaInicioLocacao = horaInicioLocacao;
-    }
-
-    public String getHoraFimLocacao() {
-        return horaFimLocacao;
-    }
-
-    public void setHoraFimLocacao(String horaFimLocacao) {
-        this.horaFimLocacao = horaFimLocacao;
+    public void gravar() throws SQLException, ClassNotFoundException{
+        ReservaDAO.gravar(this);
     }
 
 
-    public Long getId() {
-        return id;
+    public void alterar() throws SQLException, ClassNotFoundException{
+        ReservaDAO.alterar(this);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        ReservaDAO.excluir(this);
     }
 
-    public Double getValorLocacao() {
-        return valorLocacao;
+
+    public static Reserva obterReserva(Long id) throws SQLException, ClassNotFoundException{
+
+        return ReservaDAO.obterReserva((long)id);
     }
 
-    public void setValorLocacao(Double valorLocacao) {
-        this.valorLocacao = valorLocacao;
-    }
-
-    public Long getNotaAvaliacao() {
-        return notaAvaliacao;
-    }
-
-    public void setNotaAvaliacao(Long notaAvaliacao) {
-        this.notaAvaliacao = notaAvaliacao;
+    public static List<Reserva> obterTodasReservas() throws SQLException, ClassNotFoundException{
+        return ReservaDAO.obterTodasReservas();
     }
 }

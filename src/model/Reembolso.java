@@ -1,5 +1,12 @@
 package model;
 
+import dao.ReembolsoDAO;
+import lombok.Data;
+
+import java.sql.SQLException;
+import java.util.List;
+
+@Data
 public class Reembolso {
 
     private Long id;
@@ -20,39 +27,28 @@ public class Reembolso {
                 this.estado = estado;
     }
 
-    public Long getId() {
-        return id;
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        ReembolsoDAO.gravar(this);
     }
 
-    public Reembolso setId(Long id) {
-        this.id = id;
-        return this;
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        ReembolsoDAO.alterar(this);
     }
 
-    public String getEstado() {
-        return estado;
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        ReembolsoDAO.excluir(this);
     }
 
-    public Reembolso setEstado(String estado) {
-        this.estado = estado;
-        return this;
+
+    public static Reembolso obterReembolso(Long id) throws SQLException, ClassNotFoundException{
+
+        return ReembolsoDAO.obterReembolso((long)id);
     }
 
-    public Long getIdPagamento() {
-        return idPagamento;
-    }
-
-    public Reembolso setIdPagamento(Long idPagamento) {
-        this.idPagamento = idPagamento;
-        return this;
-    }
-
-    public Pagamento getPagamento() {
-        return pagamento;
-    }
-
-    public Reembolso setPagamento(Pagamento pagamento) {
-        this.pagamento = pagamento;
-        return this;
+    public static List<Reembolso> obterTodosReembolsos() throws SQLException, ClassNotFoundException{
+        return ReembolsoDAO.obterTodosReembolsos();
     }
 }

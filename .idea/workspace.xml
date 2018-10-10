@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1131f77c-b692-43a6-8551-41eab7225a0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/pesquisaAdministrador.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pesquisaPagamento.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pesquisaReembolso.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pesquisaReserva.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/controllerAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/controllerPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainPagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/controllerReembolso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainReembolso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/controllerReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainReserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainEspaco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainEspaco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainModalidadePredominante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainModalidadePredominante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainPagamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainReembolso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainReembolso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainReserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainTipoEspaco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainTipoEspaco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PagamentoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PagamentoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReservaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReservaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pagamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Reembolso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Reembolso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view2/administrador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/view2/administrador.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,68 +129,78 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="26" />
-          <entry key="java" value="1364" />
+          <entry key="html" value="45" />
+          <entry key="java" value="2364" />
+          <entry key="jsp" value="647" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1364" />
+          <entry key="HTML" value="45" />
+          <entry key="JAVA" value="2364" />
+          <entry key="JSP" value="647" />
           <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="62" />
+          <entry key="html" value="2" />
+          <entry key="java" value="97" />
+          <entry key="jsp" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="62" />
+          <entry key="HTML" value="2" />
+          <entry key="JAVA" value="97" />
+          <entry key="JSP" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.55" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.82" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/controllerCliente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/ClienteDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2484">
-              <caret line="111" column="3" selection-start-line="111" selection-start-column="3" selection-end-line="111" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/AdministradorDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-715">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/ClienteLocadorDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainCliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="-489">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainPagamento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainReserva.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainTipoEspaco.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -187,32 +212,22 @@
       <list>
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/pesquisaAdministrador.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/dao/EnderecoDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/DenunciaDAO.java" />
-        <option value="$PROJECT_DIR$/src/model/ClienteLocador.java" />
-        <option value="$PROJECT_DIR$/src/model/ClienteLocatario.java" />
-        <option value="$PROJECT_DIR$/src/model/Cartao.java" />
-        <option value="$PROJECT_DIR$/src/dao/ClienteLocatarioDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/AdministradorDAO.java" />
-        <option value="$PROJECT_DIR$/src/principal/PrincipalAdmin.java" />
-        <option value="$PROJECT_DIR$/src/Principal/MainTipoEspaco.java" />
-        <option value="$PROJECT_DIR$/src/Principal/MainModalidadePredominante.java" />
-        <option value="$PROJECT_DIR$/src/Principal/MainIrregularidade.java" />
-        <option value="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_47.xml" />
-        <option value="$PROJECT_DIR$/src/Principal/MainEspaco.java" />
         <option value="$PROJECT_DIR$/.idea/libraries/jdbc.xml" />
         <option value="$PROJECT_DIR$/src/dao/BD.java" />
         <option value="$PROJECT_DIR$/src/Principal/ClienteMain.java" />
-        <option value="$PROJECT_DIR$/src/dao/ClienteDAO.java" />
         <option value="$PROJECT_DIR$/src/Principal/PrincipalAdmin.java" />
         <option value="$PROJECT_DIR$/src/model/Contato.java" />
         <option value="$PROJECT_DIR$/src/Principal/MainCliente.java" />
@@ -220,15 +235,9 @@
         <option value="$PROJECT_DIR$/src/dao/CartaoDAO.java" />
         <option value="$PROJECT_DIR$/out/dao/ContatoDAO.java" />
         <option value="$PROJECT_DIR$/src/controller/controllerReserva.java" />
-        <option value="$PROJECT_DIR$/src/model/Reserva.java" />
         <option value="$PROJECT_DIR$/src/Principal/MainContato.java" />
         <option value="$PROJECT_DIR$/src/controller/controllerReembolso.java" />
-        <option value="$PROJECT_DIR$/src/model/Reembolso.java" />
-        <option value="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" />
         <option value="$PROJECT_DIR$/src/controller/controllerPagamento.java" />
-        <option value="$PROJECT_DIR$/src/dao/PagamentoDAO.java" />
-        <option value="$PROJECT_DIR$/src/dao/ReservaDAO.java" />
-        <option value="$PROJECT_DIR$/src/model/Pagamento.java" />
         <option value="$PROJECT_DIR$/src/controller/controllerAdmin.java" />
         <option value="$PROJECT_DIR$/src/model/Irregularidade.java" />
         <option value="$PROJECT_DIR$/src/controller/controllerIrregularidade.java" />
@@ -247,6 +256,26 @@
         <option value="$PROJECT_DIR$/src/dao/ContatoDAO.java" />
         <option value="$PROJECT_DIR$/src/controller/controllerCliente.java" />
         <option value="$PROJECT_DIR$/src/Main/MainAdmin.java" />
+        <option value="$PROJECT_DIR$/src/view2/administrador.html" />
+        <option value="$PROJECT_DIR$/web/pesquisaReembolso.jsp" />
+        <option value="$PROJECT_DIR$/web/pesquisaReserva.jsp" />
+        <option value="$PROJECT_DIR$/web/pesquisaPagamento.jsp" />
+        <option value="$PROJECT_DIR$/web/pesquisaAdministrador.jsp" />
+        <option value="$PROJECT_DIR$/src/dao/ReembolsoDAO.java" />
+        <option value="$PROJECT_DIR$/src/model/Administrador.java" />
+        <option value="$PROJECT_DIR$/src/dao/PagamentoDAO.java" />
+        <option value="$PROJECT_DIR$/src/model/Pagamento.java" />
+        <option value="$PROJECT_DIR$/src/model/Reembolso.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainModalidadePredominante.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainEspaco.java" />
+        <option value="$PROJECT_DIR$/src/model/Reserva.java" />
+        <option value="$PROJECT_DIR$/src/dao/ReservaDAO.java" />
+        <option value="$PROJECT_DIR$/src/dao/ClienteDAO.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainReembolso.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainPagamento.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainCliente.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainReserva.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainTipoEspaco.java" />
       </list>
     </option>
   </component>
@@ -268,19 +297,19 @@
       <path value="$PROJECT_DIR$/src/view/outros/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="width" value="1387" />
-    <option name="height" value="789" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="1389" />
+    <option name="height" value="790" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,12 +321,6 @@
               <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gerenciamento-de-Espacos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Gerenciamento-de-Espacos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
@@ -316,11 +339,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539045846413" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539210944033" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -349,9 +372,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.controllerCliente">
-    <configuration name="controllerCliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.controllerCliente" />
+  <component name="RunManager" selected="Application.MainCliente">
+    <configuration name="MainCliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainCliente" />
       <module name="Gerenciamento-de-Espacos" />
       <extension name="coverage">
         <pattern>
@@ -363,8 +386,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="controllerContato" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.controllerContato" />
+    <configuration name="MainEspaco" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainEspaco" />
       <module name="Gerenciamento-de-Espacos" />
       <extension name="coverage">
         <pattern>
@@ -376,8 +399,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="controllerDisponibilidade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.controllerDisponibilidade" />
+    <configuration name="MainPagamento" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainPagamento" />
       <module name="Gerenciamento-de-Espacos" />
       <extension name="coverage">
         <pattern>
@@ -389,8 +412,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="controllerEspaco" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.controllerEspaco" />
+    <configuration name="MainReembolso" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainReembolso" />
       <module name="Gerenciamento-de-Espacos" />
       <extension name="coverage">
         <pattern>
@@ -402,8 +425,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="controllerTipoEspaco" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.controllerTipoEspaco" />
+    <configuration name="MainReserva" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainReserva" />
       <module name="Gerenciamento-de-Espacos" />
       <extension name="coverage">
         <pattern>
@@ -486,19 +509,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 9.0.11" />
-      <item itemvalue="Application.controllerTipoEspaco" />
-      <item itemvalue="Application.controllerEspaco" />
-      <item itemvalue="Application.controllerDisponibilidade" />
-      <item itemvalue="Application.controllerContato" />
-      <item itemvalue="Application.controllerCliente" />
+      <item itemvalue="Application.MainCliente" />
+      <item itemvalue="Application.MainReserva" />
+      <item itemvalue="Application.MainEspaco" />
+      <item itemvalue="Application.MainPagamento" />
+      <item itemvalue="Application.MainReembolso" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.controllerCliente" />
-        <item itemvalue="Application.controllerContato" />
-        <item itemvalue="Application.controllerDisponibilidade" />
-        <item itemvalue="Application.controllerTipoEspaco" />
-        <item itemvalue="Application.controllerEspaco" />
+        <item itemvalue="Application.MainCliente" />
+        <item itemvalue="Application.MainReembolso" />
+        <item itemvalue="Application.MainPagamento" />
+        <item itemvalue="Application.MainReserva" />
+        <item itemvalue="Application.MainEspaco" />
       </list>
     </recent_temporary>
   </component>
@@ -522,11 +545,13 @@
       <workItem from="1538449448695" duration="195000" />
       <workItem from="1538480081980" duration="2438000" />
       <workItem from="1539045584520" duration="249000" />
+      <workItem from="1539085804974" duration="7672000" />
+      <workItem from="1539204485930" duration="6632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59905000" />
+    <option name="totallyTimeSpent" value="74209000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -541,7 +566,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13959731" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14362416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -550,9 +575,9 @@
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.08580858" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2653899" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.08481532" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41450068" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3488372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32968536" />
@@ -562,7 +587,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.330033" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32968536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -573,39 +598,6 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17927383" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Web" order="6" side_tool="true" />
-      <window_info id="Image Layers" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.08580858" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26174498" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32968536" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.29001367" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.0" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.330033" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.18275608" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -618,54 +610,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dao/BD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Principal/ClienteMain.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/jdbc.jar!/com/mysql/jdbc/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="70" selection-start-line="70" selection-end-line="70" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Principal/MainModalidadePredominante.java" />
-    <entry file="file://$PROJECT_DIR$/src/Principal/MainIrregularidade.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/Cartao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/CartaoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="141" column="32" lean-forward="true" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-702">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Principal/MainEspaco.java" />
-    <entry file="file://$PROJECT_DIR$/src/Principal/MainTipoEspaco.java" />
     <entry file="file://$PROJECT_DIR$/src/Principal/MainCliente.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/Reserva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Contato.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -674,49 +619,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Principal/MainContato.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/Reembolso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/PagamentoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ReservaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Principal/PrincipalCartao.java" />
-    <entry file="file://$PROJECT_DIR$/src/dao/ReembolsoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-543">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Pagamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="87" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Administrador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/DenunciaDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/dao/ModalidadePredominanteDAO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -753,20 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-287">
           <caret line="88" column="50" lean-forward="true" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Espaco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/EspacoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="181" column="32" lean-forward="true" selection-start-line="181" selection-start-column="32" selection-end-line="181" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -808,48 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/MainPagamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/MainReserva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/MainAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/controllerCartao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/controllerCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ClienteDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="111" column="3" selection-start-line="111" selection-start-column="3" selection-end-line="111" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -867,26 +718,287 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/MainReembolso.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/ClienteLocadorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="414">
+          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view2/administrador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-460">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view2/pagamento.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/controllerCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pesquisaAdministrador.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pesquisaPagamento.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pesquisaReembolso.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pesquisaReserva.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/PagamentoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/AdministradorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-715">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="-851">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ClienteLocadorDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Administrador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state>
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ReembolsoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="50" column="52" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Pagamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Reembolso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainModalidadePredominante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainEspaco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ReservaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="70" column="51" lean-forward="true" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Reserva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="25" column="86" selection-start-line="25" selection-start-column="86" selection-end-line="25" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Espaco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/EspacoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainReembolso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ClienteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainPagamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainReserva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainTipoEspaco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-489">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>web:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Gerenciamento-de-Espacos</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lombok</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

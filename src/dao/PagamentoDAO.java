@@ -81,7 +81,7 @@ public class PagamentoDAO {
     }
 
 
-    public Pagamento obterPagamento (Long id) throws ClassNotFoundException {
+    public static Pagamento obterPagamento (Long id) throws ClassNotFoundException {
 
         Connection conexao = null;
         PreparedStatement comando = null;
