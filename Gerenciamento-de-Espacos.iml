@@ -25,5 +25,6 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.47" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.47" level="project" />
     <orderEntry type="library" name="lombok" level="project" />
+    <orderEntry type="library" name="jstl" level="project" />
   </component>
 </module>
