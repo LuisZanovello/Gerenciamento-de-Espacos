@@ -5,6 +5,15 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
 
+        <servlet>
+            <servlet-name>PesquisaAdminController</servlet-name>
+            <servlet-class>controller.PesquisaAdminController</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>PesquisaAdminController</servlet-name>
+            <url-pattern>/PesquisaAdminController</url-pattern>
+        </servlet-mapping>
+
 
     <servlet>
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
