@@ -11,28 +11,28 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "PesquisaAdminController")
+@WebServlet(name = "PesquisaAdminController", urlPatterns = {"/PesquisaAdminController"})
 public class PesquisaAdminController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        processRequest(request,response );
+        processRequest(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
- processRequest(request,response );
+        processRequest(request, response);
     }
 
     protected void processRequest(HttpServletRequest request,
                                   HttpServletResponse response) throws SecurityException, IOException, ServletException {
-        try{
+        try {
             request.setAttribute("administradores", Administrador.obterTodosAdministradores());
-            RequestDispatcher view = request.getRequestDispatcher("pesquisaAdministrador.jsp");
-            view.forward(request,response );
-        } catch ( ClassNotFoundException e){
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaAdministrador.jsp");
+            view.forward(request, response);
+        } catch (ClassNotFoundException e) {
             throw new ServletException(e);
-        } catch ( SQLException e){
+        } catch (SQLException e) {
             throw new ServletException(e);
-    } catch (ServletException e) {
+        } catch (ServletException e) {
             e.printStackTrace();
         }
     }
