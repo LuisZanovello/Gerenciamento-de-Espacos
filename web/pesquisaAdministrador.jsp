@@ -42,7 +42,7 @@
 <form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
     <input type="submit" name="btnIncluir" value="Incluir">
 </form>
-<a href="index.html">voltar</a>
+<a href="index.jsp">voltar</a>
 
 </body>
 </html>
