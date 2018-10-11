@@ -1,5 +1,10 @@
 package model;
 
+import dao.ContatoDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Contato {
     private Long id;
     private String numero;
@@ -52,5 +57,19 @@ public class Contato {
         this.numero = numero;
     }
 
-
+    public void gravar() throws SQLException, ClassNotFoundException {
+        ContatoDAO.gravar(this);
+    }
+    public void alterar() throws SQLException, ClassNotFoundException {
+        ContatoDAO.alterar(this);
+    }
+    public void excluir() throws SQLException, ClassNotFoundException {
+        ContatoDAO.excluir(this);
+    }
+    public Contato obterContato(Long id) throws SQLException, ClassNotFoundException {
+        return  ContatoDAO.obterContato((long)id);
+    }
+    public static List<Contato> obterTodosEspacos() throws  SQLException, ClassNotFoundException {
+        return  ContatoDAO.obterTodosOsContatos();
+    }
 }

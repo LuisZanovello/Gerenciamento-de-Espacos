@@ -1,5 +1,10 @@
 package model;
 
+import dao.DisponibilidadeDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Disponibilidade {
     private Long id;
     private String dataDisponivel;
@@ -76,4 +81,19 @@ public class Disponibilidade {
         return this;
     }
 
+    public void gravar() throws SQLException, ClassNotFoundException {
+        DisponibilidadeDAO.gravar(this);
+    }
+    public void alterar() throws SQLException, ClassNotFoundException {
+        DisponibilidadeDAO.alterar(this);
+    }
+    public void excluir() throws SQLException, ClassNotFoundException {
+        DisponibilidadeDAO.excluir(this);
+    }
+    public Disponibilidade obterEspaco(Long id) throws SQLException, ClassNotFoundException {
+        return  DisponibilidadeDAO.obterDisponibilidade((long)id);
+    }
+    public static List<Disponibilidade> obterTodosEspacos() throws  SQLException, ClassNotFoundException {
+        return  DisponibilidadeDAO.obterTodosAsDisponibilidades();
+    }
 }

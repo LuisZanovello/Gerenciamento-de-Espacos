@@ -1,6 +1,11 @@
 package model;
 
 
+import dao.CartaoDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Cartao{
     private Long id;
     private String bandeira;
@@ -92,5 +97,21 @@ public class Cartao{
 
     public void setIdCliente(long cliente) {
 
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException {
+        CartaoDAO.gravar(this);
+    }
+    public void alterar() throws SQLException, ClassNotFoundException {
+        CartaoDAO.alterar(this);
+    }
+    public void excluir() throws SQLException, ClassNotFoundException {
+        CartaoDAO.excluir(this);
+    }
+    public Cartao obterEspaco(Long id) throws SQLException, ClassNotFoundException {
+        return  CartaoDAO.obterCartao((long)id);
+    }
+    public static List<Cartao> obterTodosEspacos() throws  SQLException, ClassNotFoundException {
+        return  CartaoDAO.obterTodosCartoes();
     }
 }

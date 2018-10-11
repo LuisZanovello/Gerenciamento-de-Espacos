@@ -5,6 +5,6 @@
     <title></title>
   </head>
   <body>
-<a href=""></a>
+<a href="PesquisaAdminController">PesquisaAdmin</a>
   </body>
 </html>
