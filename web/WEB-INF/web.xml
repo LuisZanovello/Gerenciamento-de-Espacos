@@ -5,4 +5,8 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="4.0">
 
+    <servlet>
+        <servlet-name>PesquisaIrregularidadeController</servlet-name>
+        <servlet-class>controller.PesquisaIrregularidadeController</servlet-class>
+    </servlet>
 </web-app>
