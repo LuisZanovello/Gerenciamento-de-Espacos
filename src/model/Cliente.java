@@ -1,5 +1,11 @@
 package model;
 
+import com.mysql.fabric.xmlrpc.Client;
+import dao.ClienteDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Cliente {
     private Long id;
     private String nome;
@@ -72,6 +78,22 @@ public class Cliente {
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.email = email;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        ClienteDAO.gravar(this);
+    }
+    public void alterar() throws SQLException, ClassNotFoundException{
+        ClienteDAO.alterar(this);
+    }
+    public void excluir() throws SQLException, ClassNotFoundException{
+        ClienteDAO.excluir(this);
+    }
+    public static Cliente obterCliente(Long id) throws SQLException, ClassNotFoundException{
+        return ClienteDAO.obterCliente(id);
+    }
+    public static List<Cliente> obterClientes() throws SQLException, ClassNotFoundException{
+        return ClienteDAO.obterTodosOsClientes();
     }
 }
 
