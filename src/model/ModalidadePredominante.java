@@ -31,7 +31,7 @@ public class ModalidadePredominante {
     public ModalidadePredominante obterModalidade(Long id) throws SQLException, ClassNotFoundException {
         return ModalidadePredominanteDAO.obterModalidade((long)id);
     }
-    public static List<ModalidadePredominante> obterTodasIrregularidades() throws  SQLException, ClassNotFoundException {
+    public static List<ModalidadePredominante> obterTodasAsModalidadesPredominantes() throws  SQLException, ClassNotFoundException {
         return ModalidadePredominanteDAO.obterTodasModalidade();
     }
 }

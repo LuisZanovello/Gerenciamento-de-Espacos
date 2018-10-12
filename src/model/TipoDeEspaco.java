@@ -31,7 +31,7 @@ public class TipoDeEspaco {
     public TipoDeEspaco obterTipoEspaco(Long id) throws SQLException, ClassNotFoundException {
         return TipoDeEspacoDAO.obterTipoEspaco((long)id);
     }
-    public static List<TipoDeEspaco> obterTodasIrregularidades() throws  SQLException, ClassNotFoundException {
+    public static List<TipoDeEspaco> obterTodosOsTiposEspacos() throws  SQLException, ClassNotFoundException {
         return TipoDeEspacoDAO.obterTodosEspacos();
     }
 }

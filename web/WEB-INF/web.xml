@@ -14,9 +14,22 @@
             <url-pattern>/PesquisaAdminController</url-pattern>
         </servlet-mapping>
 
+    <servlet>
+        <servlet-name>PesquisaClienteController</servlet-name>
+        <servlet-class>controller.PesquisaClienteController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaClienteController</servlet-name>
+        <url-pattern>/PesquisaClienteController</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
         <servlet-class>controller.PesquisaIrregularidadeController</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaIrregularidadeController</servlet-name>
+        <url-pattern>/PesquisaIrregularidadeController</url-pattern>
+    </servlet-mapping>
+
 </web-app>

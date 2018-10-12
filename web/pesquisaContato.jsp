@@ -6,8 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%--
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+--%>
+
 <html>
 <head>
     <title>Title</title>
@@ -20,19 +24,21 @@
         <th colspan="2">Ação</th>
     </tr>
 
-    <c: forEach items="${contatos}" var="contato">
+    <c:forEach items="${contatos}" var="contato">
         <tr>
             <td><c: out value="${contato.id}"/></td>
             <td><c: out value="${contato.nome}"/></td>
-            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id=<c: out value="${contato.id}"/>">Editar</a></td>
-            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id=<c: out value="${contato.id}"/>">Excluir</a></td>
+            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id="><c: out value="${contato.id}"/>Editar</a></td>
+            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id="><c: out value="${contato.id}"/>Excluir</a></td>
         </tr>
 
-        </c: forEach>
+        </c:forEach>
 </table>
 
 <form action="ManterContatoController?acao=prepararOperacao&operacao=Incluir" method="post">
     <input type="submit" name="btnIncluir" value="Incluir">
+
+    <a href="index.jsp">voltar</a>
 </form>
 </body>
 </html>

@@ -14,27 +14,27 @@
 
 <html>
 <head>
-    <title>Administrador</title>
+    <title>Cartao</title>
 </head>
 <body>
 
 
 <table border="1">
     <tr>
-        <th colspan="10">Administrador</th>
+        <th colspan="10">Cartao</th>
     </tr>
     <tr>
         <th>Id</th>
-        <th>Nome</th>
-        <th>Email</th>
+        <th>Bandeira</th>
+
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${administrador}" var="admin">
+    <c:forEach items="${cartao}" var="card">
         <tr>
-            <td><c:out value="${admin.id}" /></td>
-            <td><c:out value="${admin.nome}" /></td>
-            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${admin.id}"/>Editar</a></td>
-            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${admin.id}"/>Excluir</a></td>
+            <td><c:out value="${card.id}" /></td>
+            <td><c:out value="${card.bandeira}" /></td>
+            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${card.id}"/>Editar</a></td>
+            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${card.id}"/>Excluir</a></td>
         </tr>
     </c:forEach>
 </table>

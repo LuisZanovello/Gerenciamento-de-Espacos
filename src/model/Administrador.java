@@ -49,7 +49,4 @@ public static List<Administrador> obterTodosAdministradores() throws SQLExceptio
        return AdministradorDAO.obterTodosAdministradores();
 }
 
-    // baixar o plugin lombok
-        //  crtl + shift + alt + L e marcar "Optimize imports" e "Rearrenge Code"
-
 }
