@@ -39,7 +39,7 @@ public class Cliente {
     public static Cliente obterCliente(Long id) throws SQLException, ClassNotFoundException{
         return ClienteDAO.obterCliente(id);
     }
-    public static List<Cliente> obterClientes() throws SQLException, ClassNotFoundException{
+    public static List<Cliente> obterTodosOsClientes() throws SQLException, ClassNotFoundException{
         return ClienteDAO.obterTodosOsClientes();
     }
 }
