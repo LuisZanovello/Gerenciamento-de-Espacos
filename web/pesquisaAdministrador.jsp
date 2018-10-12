@@ -6,8 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%--
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+--%>
 
 <html>
 <head>
@@ -30,8 +33,8 @@
         <tr>
             <td><c:out value="${admin.id}" /></td>
             <td><c:out value="${admin.nome}" /></td>
-            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>">Editar</a></td>
-            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>">Excluir</a></td>
+            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${admin.id}"/>Editar</a></td>
+            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${admin.id}"/>Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
@@ -39,7 +42,7 @@
 <form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
     <input type="submit" name="btnIncluir" value="Incluir">
 </form>
-<a href="index.html">voltar</a>
+<a href="index.jsp">voltar</a>
 
 </body>
 </html>
