@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1131f77c-b692-43a6-8551-41eab7225a0a" name="Default Changelist" comment="" />
+    <list default="true" id="1131f77c-b692-43a6-8551-41eab7225a0a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Main/MainAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/MainCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/MainCliente.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +121,7 @@
         <counts>
           <entry key="dummy" value="26" />
           <entry key="html" value="45" />
-          <entry key="java" value="3260" />
+          <entry key="java" value="3344" />
           <entry key="jsp" value="1358" />
           <entry key="xml" value="14" />
         </counts>
@@ -126,7 +129,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="45" />
-          <entry key="JAVA" value="3260" />
+          <entry key="JAVA" value="3344" />
           <entry key="JSP" value="1358" />
           <entry key="PLAIN_TEXT" value="26" />
           <entry key="XML" value="14" />
@@ -136,7 +139,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="html" value="7" />
-          <entry key="java" value="170" />
+          <entry key="java" value="173" />
           <entry key="jsp" value="113" />
           <entry key="xml" value="3" />
         </counts>
@@ -145,7 +148,7 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="7" />
-          <entry key="JAVA" value="170" />
+          <entry key="JAVA" value="173" />
           <entry key="JSP" value="113" />
           <entry key="XML" value="3" />
         </counts>
@@ -168,10 +171,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dao/ClienteDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainAdmin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1562">
-              <caret line="156" column="11" selection-start-line="156" selection-start-column="11" selection-end-line="156" selection-end-column="11" />
+            <state relative-caret-position="61">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainCartao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-169">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/MainCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -196,14 +217,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/Reembolso.java" />
         <option value="$PROJECT_DIR$/src/Main/MainModalidadePredominante.java" />
         <option value="$PROJECT_DIR$/src/Main/MainEspaco.java" />
         <option value="$PROJECT_DIR$/src/model/Reserva.java" />
         <option value="$PROJECT_DIR$/src/dao/ReservaDAO.java" />
         <option value="$PROJECT_DIR$/src/Main/MainReembolso.java" />
         <option value="$PROJECT_DIR$/src/Main/MainPagamento.java" />
-        <option value="$PROJECT_DIR$/src/Main/MainCliente.java" />
         <option value="$PROJECT_DIR$/src/Main/MainReserva.java" />
         <option value="$PROJECT_DIR$/src/Main/MainTipoEspaco.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/pesquisaDisponibilidade.jsp" />
@@ -227,7 +246,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/controller/PesquisaClienteController.java" />
         <option value="$PROJECT_DIR$/src/controller/PesquisaContatoController.java" />
-        <option value="$PROJECT_DIR$/src/dao/ClienteDAO.java" />
         <option value="$PROJECT_DIR$/src/model/Cliente.java" />
         <option value="$PROJECT_DIR$/src/dao/CartaoDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/ContatoDAO.java" />
@@ -247,6 +265,9 @@
         <option value="$PROJECT_DIR$/web/pesquisaIrregularidade.jsp" />
         <option value="$PROJECT_DIR$/web/pesquisaModalidadePredominante.jsp" />
         <option value="$PROJECT_DIR$/web/pesquisaPagamento.jsp" />
+        <option value="$PROJECT_DIR$/src/dao/ClienteDAO.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainCliente.java" />
+        <option value="$PROJECT_DIR$/src/Main/MainAdmin.java" />
       </list>
     </option>
   </component>
@@ -302,7 +323,7 @@
               <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
               <item name="Gerenciamento-de-Espacos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gerenciamento-de-Espacos" type="b2602c69:ProjectViewProjectNode" />
@@ -334,7 +355,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539445212661" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539447298199" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../apache-tomcat-9.0.11/lib/jsp-api.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -368,7 +389,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.index.jsp">
+  <component name="RunManager" selected="Application.MainAdmin">
+    <configuration name="MainAdmin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainAdmin" />
+      <module name="Gerenciamento-de-Espacos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainCliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.MainCliente" />
+      <module name="Gerenciamento-de-Espacos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -436,84 +483,6 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="index.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index.jsp" />
-      <deployment>
-        <artifact name="web:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="index_jsp_(1)_Gerenciamento-de-Espacos_5" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="web:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <configuration name="index.jsp (2)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index.jsp" />
-      <deployment>
-        <artifact name="web:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="index_jsp_(2)_Gerenciamento-de-Espacos_4" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="web:war exploded" />
-        </option>
       </method>
     </configuration>
     <configuration name="index.jsp (3)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="false">
@@ -636,18 +605,18 @@
     <list>
       <item itemvalue="Tomcat Server.Tomcat 9.0.11" />
       <item itemvalue="Tomcat Server.index.jsp" />
-      <item itemvalue="Tomcat Server.index.jsp (1)" />
-      <item itemvalue="Tomcat Server.index.jsp (2)" />
       <item itemvalue="Tomcat Server.index.jsp (3)" />
       <item itemvalue="Tomcat Server.pesquisaAdministrador.jsp" />
+      <item itemvalue="Application.MainCliente" />
+      <item itemvalue="Application.MainAdmin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainAdmin" />
+        <item itemvalue="Application.MainCliente" />
         <item itemvalue="Tomcat Server.index.jsp" />
         <item itemvalue="Tomcat Server.pesquisaAdministrador.jsp" />
         <item itemvalue="Tomcat Server.index.jsp (3)" />
-        <item itemvalue="Tomcat Server.index.jsp (2)" />
-        <item itemvalue="Tomcat Server.index.jsp (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -682,7 +651,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97880000" />
+    <option name="totallyTimeSpent" value="98957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,10 +673,10 @@
       <window_info id="Capture Tool" order="4" />
       <window_info id="Web" order="5" sideWeight="0.2199074" side_tool="true" weight="0.4299584" />
       <window_info id="Image Layers" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.7800926" visible="true" weight="0.18724832" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.7800926" visible="true" weight="0.18724832" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.08481532" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.48016417" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48016417" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3488372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -775,25 +744,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/model/Reserva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/PesquisaReembolsoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="31" column="5" lean-forward="true" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/reembolso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2354" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/reportar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2277" />
@@ -1124,8 +1074,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ClienteDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1562">
-          <caret line="156" column="11" selection-start-line="156" selection-start-column="11" selection-end-line="156" selection-end-column="11" />
+        <state relative-caret-position="176">
+          <caret line="118" column="28" selection-start-line="118" selection-start-column="28" selection-end-line="118" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainCartao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/MainAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
         </state>
       </provider>
     </entry>
