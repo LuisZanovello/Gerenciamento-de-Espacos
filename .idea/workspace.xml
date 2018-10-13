@@ -7,20 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1131f77c-b692-43a6-8551-41eab7225a0a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gerenciamento-de-Espacos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Gerenciamento-de-Espacos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaAdministrador.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaAdministrador.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaCartao.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaCartao.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaCliente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaContato.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaContato.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaDisponibilidade.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaDisponibilidade.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaEspaco.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaEspaco.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaIrregularidade.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaIrregularidade.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaModalidadePredominante.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaModalidadePredominante.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaPagamento.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaPagamento.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaReembolso.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaReembolso.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaReserva.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaReserva.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pesquisaTipoDeEspaco.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pesquisaTipoDeEspaco.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jstl-impl.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -257,8 +244,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pesquisaPagamento.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="64" />
+            <state>
+              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -770,7 +757,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96643000" />
+    <option name="totallyTimeSpent" value="96842000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -906,9 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,16 +1001,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pesquisaDisponibilidade.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pesquisaCartao.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pesquisaDisponibilidade.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/pesquisaCartao.jsp" />
     <entry file="file://$PROJECT_DIR$/src/controller/PesquisaAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -1221,8 +1197,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pesquisaPagamento.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="64" />
+        <state>
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
