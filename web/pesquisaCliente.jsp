@@ -18,6 +18,9 @@
 </head>
 <body>
     <table border="1">
+        <tr>
+            <th colspan="10">Cliente</th>
+        </tr>
     <tr>
         <th>Código cliente</th>
         <th>Nome cliente</th>
@@ -26,10 +29,10 @@
 
     <c:forEach items="${clientes}" var="cliente">
         <tr>
-        <td><c: out value="${cliente.id}"/></td>
-        <td><c: out value="${cliente.nome}"/></td>
-        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Editar&id="><c: out value="${cliente.id}"/>Editar</a></td>
-        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Excluir&id="><c: out value="${cliente.id}"/>Excluir</a></td>
+        <td><c:out value="${cliente.id}"/></td>
+        <td><c:out value="${cliente.nome}"/></td>
+        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${cliente.id}"/>Editar</a></td>
+        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${cliente.id}"/>Excluir</a></td>
         </tr>
 
     </c:forEach>

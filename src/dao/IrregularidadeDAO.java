@@ -125,8 +125,8 @@ public class IrregularidadeDAO {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-
+            return lista;
         }
-        return lista;
+
     }
 }

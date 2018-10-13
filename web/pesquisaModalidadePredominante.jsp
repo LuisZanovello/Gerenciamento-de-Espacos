@@ -26,10 +26,10 @@
     </tr>
     <c:forEach items="${modalidadesPredominantes}" var="modalidadePredominante">
         <tr>
-            <td><c: out value="${modalidadePredominante.id}" /></td>
-            <td><c: out value="${modalidadePredominante.modalidadePredominante}" /></td>
-            <td><a href="ManterModalidadePredominanteController?acao=prepararOperacao&operacao=Editar&id= "><c: out value="${modalidadePredominante.id}"/>Editar</a></td>
-            <td><a href="ManterModalidadePredominanteController?acao=prepararOperacao&operacao=Excluir&id= "><c: out value="${modalidadePredominante.id}"/>Excluir</a></td>
+            <td><c:out value="${modalidadePredominante.id}" /></td>
+            <td><c:out value="${modalidadePredominante.modalidadePredominante}" /></td>
+            <td><a href="ManterModalidadePredominanteController?acao=prepararOperacao&operacao=Editar&id= "><c:out value="${modalidadePredominante.id}"/>Editar</a></td>
+            <td><a href="ManterModalidadePredominanteController?acao=prepararOperacao&operacao=Excluir&id= "><c:out value="${modalidadePredominante.id}"/>Excluir</a></td>
         </tr>
     </c:forEach>
 </table>

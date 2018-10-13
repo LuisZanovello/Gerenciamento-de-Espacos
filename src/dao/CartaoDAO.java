@@ -142,9 +142,9 @@ public class CartaoDAO {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-
+            return cartoes;
         }
-        return cartoes;
+
     }
 
 

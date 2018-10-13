@@ -111,8 +111,8 @@ public class ModalidadePredominanteDAO {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-
+            return lista ;
         }
-        return lista ;
+
     }
 }

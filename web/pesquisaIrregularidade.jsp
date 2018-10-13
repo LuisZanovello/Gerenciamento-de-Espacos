@@ -26,10 +26,10 @@
     </tr>
     <c:forEach items="${irregularidades}" var="irregularidade">
         <tr>
-            <td><c: out value="${irregularidade.id}" /></td>
-            <td><c: out value="${irregularidade.autor}" /></td>
-            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Editar&id= "><c: out value="${irregularidade.id}"/>Editar</a></td>
-            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id= "><c: out value="${irregularidade.id}"/>Excluir</a></td>
+            <td><c:out value="${irregularidade.id}" /></td>
+            <td><c:out value="${irregularidade.autor}" /></td>
+            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Editar&id= "><c:out value="${irregularidade.id}"/>Editar</a></td>
+            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id= "><c:out value="${irregularidade.id}"/>Excluir</a></td>
         </tr>
     </c:forEach>
 </table>

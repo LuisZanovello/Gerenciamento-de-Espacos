@@ -125,9 +125,10 @@ public class ContatoDAO {
             e.printStackTrace();
         }finally{
             BD.fecharConexao(conexao, comando);
+            return contatos;
         }
 
-        return contatos;
+
     }
 
 }

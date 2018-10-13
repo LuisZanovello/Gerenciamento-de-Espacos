@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.sql.SQLException;
 import java.util.List;
+
 @Data
 public class Cliente {
     private Long id;
@@ -37,11 +38,10 @@ public class Cliente {
         ClienteDAO.excluir(this);
     }
     public static Cliente obterCliente(Long id) throws SQLException, ClassNotFoundException{
-        return ClienteDAO.obterCliente(id);
+        return ClienteDAO.obterCliente((long)id);
     }
     public static List<Cliente> obterTodosOsClientes() throws SQLException, ClassNotFoundException{
         return ClienteDAO.obterTodosOsClientes();
     }
 }
 
-/*teste*/

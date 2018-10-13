@@ -137,9 +137,10 @@ public class DisponibilidadeDAO {
                 e.printStackTrace();
             }finally{
                 BD.fecharConexao(conexao, comando);
+                return disponibilidades;
             }
 
-            return disponibilidades;
+
         }
 
     }

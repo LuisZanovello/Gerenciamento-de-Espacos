@@ -129,10 +129,10 @@ public class ClienteDAO {
 
             */
 
-    public static ArrayList<Cliente> obterTodosOsClientes() throws ClassNotFoundException {
+    public static ArrayList<Cliente> obterTodosOsClientes() throws ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-        ArrayList<Cliente> lista = new ArrayList<Cliente>();
+        ArrayList<Cliente> lista = new ArrayList<>();
         Cliente cliente = null;
         try {
             conexao = BD.getConexao();
@@ -154,8 +154,9 @@ public class ClienteDAO {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
+            return lista;
         }
-        return lista;
+
     }
 }
 

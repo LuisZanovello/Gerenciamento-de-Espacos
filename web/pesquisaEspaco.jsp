@@ -27,10 +27,10 @@
     </tr>
     <c:forEach items="${espacos}" var="espaco">
         <tr>
-            <td><c: out value="${espaco.id}" /></td>
-            <td><c: out value="${espaco.nome}" /></td>
-            <td><a href="ManterEspacoController?acao=prepararOperacao&operacao=Editar&id= "><c: out value="${espaco.id}"/>Editar</a></td>
-            <td><a href="ManterEspacoController?acao=prepararOperacao&operacao=Excluir&id= "><c: out value="${espaco.id}"/>Excluir</a></td>
+            <td><c:out value="${espaco.id}" /></td>
+            <td><c:out value="${espaco.nome}" /></td>
+            <td><a href="ManterEspacoController?acao=prepararOperacao&operacao=Editar&id= "><c:out value="${espaco.id}"/>Editar</a></td>
+            <td><a href="ManterEspacoController?acao=prepararOperacao&operacao=Excluir&id= "><c:out value="${espaco.id}"/>Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
