@@ -84,9 +84,9 @@ public class TipoDeEspacoDAO {
             rs.first();
 
             obterTipoEspaco = new TipoDeEspaco();
-                    obterTipoEspaco.setId(rs.getLong("id"));
-                    obterTipoEspaco.setNome(rs.getString("nome"));
-                    obterTipoEspaco.setModalidadePredominanteId(rs.getLong("modalidade_Predominante_Id"));
+            obterTipoEspaco.setId(rs.getLong("id"));
+            obterTipoEspaco.setNome(rs.getString("nome"));
+            obterTipoEspaco.setModalidadePredominanteId(rs.getLong("modalidade_Predominante_Id"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -108,11 +108,7 @@ public class TipoDeEspacoDAO {
             String sql = "SELECT * FROM tipo_espaco";
             ResultSet rs = comando.executeQuery(sql);
             while (rs.next()) {
-                lista.add(new TipoDeEspaco()
-                        .setId(rs.getLong("id"))
-                        .setNome(rs.getString("nome"))
-                        .setModalidadePredominanteId(rs.getLong("modalidade_Predominante_Id"))
-                );
+                lista.add(new TipoDeEspaco(rs.getLong("id"), rs.getString("nome"), rs.getLong("modalidade_Predominante_Id")));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

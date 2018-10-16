@@ -14,11 +14,11 @@ public class BD {
     public static Connection getConexao() throws ClassNotFoundException
              {
         Connection conexao = null;
-        //Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
 
         try {
             conexao =  DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/bancoisport", "root", "");
+                    ("jdbc:mysql://localhost/bancoisport", "root", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }

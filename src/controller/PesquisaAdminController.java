@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "PesquisaAdminController", urlPatterns = {"/PesquisaAdminController"})
 public class    PesquisaAdminController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

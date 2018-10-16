@@ -158,22 +158,21 @@ public class EspacoDAO {
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {
-                lista.add(new Espaco()
-                .setId(rs.getLong("id"))
-                        .setNome(rs.getString("nome"))
-                        .setCnpj(rs.getString("cnpj"))
-                        .setCep(rs.getString("cep"))
-                        .setLogradouro(rs.getString("logradouro"))
-                        .setNumero(rs.getInt("numero"))
-                        .setComplemento(rs.getString("complemento"))
-                        .setBairro(rs.getString("bairro"))
-                        .setCidade(rs.getString("cidade"))
-                        .setUf(rs.getString("uf"))
-                        .setArea(rs.getDouble("area"))
-                        .setQuantidadePessoas(rs.getInt("quantidade_Pessoas"))
-                        .setHoraFuncionamentoInicio(rs.getString("hora_Funcionamento_Inicio"))
-                        .setHoraFuncionamentoFinal(rs.getString("hora_Funcionamento_Final"))
-                        .setIdTipoEspaco(rs.getLong("tipo_espaco_id"))
+                lista.add(new Espaco(rs.getLong("id"),
+                        rs.getString("nome"),
+                        rs.getString("cnpj"),
+                        rs.getString("cep"),
+                        rs.getString("logradouro"),
+                        rs.getInt("numero"),
+                        rs.getString("complemento"),
+                        rs.getString("bairro"),
+                        rs.getString("cidade"),
+                        rs.getString("uf"),
+                        rs.getDouble("area"),
+                        rs.getInt("quantidade_Pessoas"),
+                        rs.getString("hora_Funcionamento_Inicio"),
+                        rs.getString("hora_Funcionamento_Final"),
+                        rs.getLong("tipo_espaco_id"))
                         );
             }
         }catch (SQLException e){

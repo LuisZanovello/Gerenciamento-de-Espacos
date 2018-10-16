@@ -1,12 +1,12 @@
 package model;
 
 import dao.DisponibilidadeDAO;
-import lombok.Data;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
-@Data
+
 public class Disponibilidade {
     private Long id;
     private String dataDisponivel;
@@ -46,4 +46,53 @@ public class Disponibilidade {
     public static List<Disponibilidade> obterTodasAsDisponibilidades() throws  SQLException, ClassNotFoundException {
         return  DisponibilidadeDAO.obterTodosAsDisponibilidades();
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDataDisponivel() {
+        return dataDisponivel;
+    }
+
+    public void setDataDisponivel(String dataDisponivel) {
+        this.dataDisponivel = dataDisponivel;
+    }
+
+    public String getHora_inicio() {
+        return hora_inicio;
+    }
+
+    public void setHora_inicio(String hora_inicio) {
+        this.hora_inicio = hora_inicio;
+    }
+
+    public String getHora_fim() {
+        return hora_fim;
+    }
+
+    public void setHora_fim(String hora_fim) {
+        this.hora_fim = hora_fim;
+    }
+
+    public Long getIdEspaco() {
+        return idEspaco;
+    }
+
+    public void setIdEspaco(Long idEspaco) {
+        this.idEspaco = idEspaco;
+    }
+
+    public Espaco getEspaco() {
+        return espaco;
+    }
+
+    public void setEspaco(Espaco espaco) {
+        this.espaco = espaco;
+    }
+    
 }

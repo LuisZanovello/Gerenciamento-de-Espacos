@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -34,7 +35,7 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-
+*/
 *,
 *::before,
 *::after {
@@ -5810,7 +5811,7 @@ button.close {
   transform: translateX(0);
 }
 
-@supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+/* @supports (-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
   .carousel-item-next.carousel-item-left,
   .carousel-item-prev.carousel-item-right {
     -webkit-transform: translate3d(0, 0, 0);
@@ -8977,5 +8978,5 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}
+}*/
 /*# sourceMappingURL=bootstrap.css.map */

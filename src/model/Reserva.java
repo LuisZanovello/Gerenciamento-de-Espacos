@@ -1,12 +1,10 @@
 package model;
 
 import dao.ReservaDAO;
-import lombok.Data;
 
 import java.sql.SQLException;
 import java.util.List;
 
-@Data
 
 public class Reserva {
     private Long id;
@@ -72,4 +70,160 @@ public class Reserva {
     public static List<Reserva> obterTodasReservas() throws SQLException, ClassNotFoundException{
         return ReservaDAO.obterTodasReservas();
     }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the dataLocacao
+     */
+    public String getDataLocacao() {
+        return dataLocacao;
+    }
+
+    /**
+     * @param dataLocacao the dataLocacao to set
+     */
+    public void setDataLocacao(String dataLocacao) {
+        this.dataLocacao = dataLocacao;
+    }
+
+    /**
+     * @return the horaInicioLocacao
+     */
+    public String getHoraInicioLocacao() {
+        return horaInicioLocacao;
+    }
+
+    /**
+     * @param horaInicioLocacao the horaInicioLocacao to set
+     */
+    public void setHoraInicioLocacao(String horaInicioLocacao) {
+        this.horaInicioLocacao = horaInicioLocacao;
+    }
+
+    /**
+     * @return the horaFimLocacao
+     */
+    public String getHoraFimLocacao() {
+        return horaFimLocacao;
+    }
+
+    /**
+     * @param horaFimLocacao the horaFimLocacao to set
+     */
+    public void setHoraFimLocacao(String horaFimLocacao) {
+        this.horaFimLocacao = horaFimLocacao;
+    }
+
+    /**
+     * @return the qtPessoas
+     */
+    public Long getQtPessoas() {
+        return qtPessoas;
+    }
+
+    /**
+     * @param qtPessoas the qtPessoas to set
+     */
+    public void setQtPessoas(Long qtPessoas) {
+        this.qtPessoas = qtPessoas;
+    }
+
+    /**
+     * @return the valorLocacao
+     */
+    public Double getValorLocacao() {
+        return valorLocacao;
+    }
+
+    /**
+     * @param valorLocacao the valorLocacao to set
+     */
+    public void setValorLocacao(Double valorLocacao) {
+        this.valorLocacao = valorLocacao;
+    }
+
+    /**
+     * @return the notaAvaliacao
+     */
+    public Long getNotaAvaliacao() {
+        return notaAvaliacao;
+    }
+
+    /**
+     * @param notaAvaliacao the notaAvaliacao to set
+     */
+    public void setNotaAvaliacao(Long notaAvaliacao) {
+        this.notaAvaliacao = notaAvaliacao;
+    }
+
+    /**
+     * @return the idCliente
+     */
+    public Long getIdCliente() {
+        return idCliente;
+    }
+
+    /**
+     * @param idCliente the idCliente to set
+     */
+    public void setIdCliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    /**
+     * @return the cliente
+     */
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    /**
+     * @param cliente the cliente to set
+     */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    /**
+     * @return the idEspaco
+     */
+    public Long getIdEspaco() {
+        return idEspaco;
+    }
+
+    /**
+     * @param idEspaco the idEspaco to set
+     */
+    public void setIdEspaco(Long idEspaco) {
+        this.idEspaco = idEspaco;
+    }
+
+    /**
+     * @return the espaco
+     */
+    public Espaco getEspaco() {
+        return espaco;
+    }
+
+    /**
+     * @param espaco the espaco to set
+     */
+    public void setEspaco(Espaco espaco) {
+        this.espaco = espaco;
+    }
+    
+    
 }

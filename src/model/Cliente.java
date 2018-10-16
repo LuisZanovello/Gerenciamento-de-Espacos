@@ -1,13 +1,11 @@
 package model;
 
-import com.mysql.fabric.xmlrpc.Client;
 import dao.ClienteDAO;
-import lombok.Data;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
-@Data
 public class Cliente {
     private Long id;
     private String nome;
@@ -43,5 +41,55 @@ public class Cliente {
     public static List<Cliente> obterTodosOsClientes() throws SQLException, ClassNotFoundException{
         return ClienteDAO.obterTodosOsClientes();
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
 }
 

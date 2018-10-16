@@ -2,12 +2,10 @@ package model;
 
 
 import dao.PagamentoDAO;
-import lombok.Data;
 
 import java.sql.SQLException;
 import java.util.List;
 
-@Data
 
 public class Pagamento {    //antiga classe Boleto
 
@@ -57,4 +55,90 @@ public class Pagamento {    //antiga classe Boleto
     public static List<Pagamento> obterTodosPagamentos() throws SQLException, ClassNotFoundException{
         return PagamentoDAO.obterTodosPagamentos();
     }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the vencimento
+     */
+    public String getVencimento() {
+        return vencimento;
+    }
+
+    /**
+     * @param vencimento the vencimento to set
+     */
+    public void setVencimento(String vencimento) {
+        this.vencimento = vencimento;
+    }
+
+    /**
+     * @return the numeroCodBarras
+     */
+    public Long getNumeroCodBarras() {
+        return numeroCodBarras;
+    }
+
+    /**
+     * @param numeroCodBarras the numeroCodBarras to set
+     */
+    public void setNumeroCodBarras(Long numeroCodBarras) {
+        this.numeroCodBarras = numeroCodBarras;
+    }
+
+    /**
+     * @return the valorTotal
+     */
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
+    /**
+     * @param valorTotal the valorTotal to set
+     */
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    /**
+     * @return the idReserva
+     */
+    public Long getIdReserva() {
+        return idReserva;
+    }
+
+    /**
+     * @param idReserva the idReserva to set
+     */
+    public void setIdReserva(Long idReserva) {
+        this.idReserva = idReserva;
+    }
+
+    /**
+     * @return the reserva
+     */
+    public Reserva getReserva() {
+        return reserva;
+    }
+
+    /**
+     * @param reserva the reserva to set
+     */
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
+    }
+    
+    
 }

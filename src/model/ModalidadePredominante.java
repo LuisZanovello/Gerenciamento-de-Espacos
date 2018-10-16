@@ -1,23 +1,21 @@
 package model;
 
 import dao.ModalidadePredominanteDAO;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
-
 import java.sql.SQLException;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@Accessors(chain = true)
 public class ModalidadePredominante {
     private Long id;
     private String modalidadePredominante;
     private String descricao;
 
+    public ModalidadePredominante() {
+    }
+
     public ModalidadePredominante(Long id, String modalidadePredominante, String descricao) {
-        this.setId(id).setModalidadePredominante(modalidadePredominante).setDescricao(descricao);
+        this.setId(id);
+        this.setModalidadePredominante(modalidadePredominante);
+        this.setDescricao(descricao);
     }
     public void gravar() throws SQLException, ClassNotFoundException {
         ModalidadePredominanteDAO.gravar(this);
@@ -34,4 +32,47 @@ public class ModalidadePredominante {
     public static List<ModalidadePredominante> obterTodasAsModalidadesPredominantes() throws  SQLException, ClassNotFoundException {
         return ModalidadePredominanteDAO.obterTodasModalidade();
     }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the modalidadePredominante
+     */
+    public String getModalidadePredominante() {
+        return modalidadePredominante;
+    }
+
+    /**
+     * @param modalidadePredominante the modalidadePredominante to set
+     */
+    public void setModalidadePredominante(String modalidadePredominante) {
+        this.modalidadePredominante = modalidadePredominante;
+    }
+
+    /**
+     * @return the descricao
+     */
+    public String getDescricao() {
+        return descricao;
+    }
+
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+    
 }

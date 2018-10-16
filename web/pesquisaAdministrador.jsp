@@ -25,12 +25,12 @@
         <th>Email</th>
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${administrador}" var="admin">
+    <c:forEach items="${administradores}" var="admin">
         <tr>
             <td><c:out value="${admin.id}" /></td>
             <td><c:out value="${admin.nome}" /></td>
-            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${admin.id}"/>Editar</a></td>
-            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${admin.id}"/>Excluir</a></td>
+            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>">Editar</a></td>
+            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table> <br>

@@ -30,8 +30,8 @@
         <tr>
             <td><c:out value="${card.id}" /></td>
             <td><c:out value="${card.bandeira}" /></td>
-            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${card.id}"/>Editar</a></td>
-            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${card.id}"/>Excluir</a></td>
+            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${card.id}"/>">Editar</a></td>
+            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${card.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table>

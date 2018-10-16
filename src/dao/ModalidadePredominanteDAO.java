@@ -99,12 +99,8 @@ public class ModalidadePredominanteDAO {
             ResultSet rs = comando.executeQuery(sql);
 
             while (rs.next()) {
-                lista.add(new ModalidadePredominante()
-                        .setId(rs.getLong("id"))
-                        .setModalidadePredominante(rs.getString("modalidade_predominante"))
-                        .setDescricao(rs.getString("descricao"))
+                lista.add(new ModalidadePredominante(rs.getLong("id"), rs.getString("modalidade_predominante"),rs.getString("descricao")));
 
-                );
             }
 
         } catch (SQLException | ClassNotFoundException e) {

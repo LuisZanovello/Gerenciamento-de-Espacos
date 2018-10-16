@@ -185,3 +185,6 @@ modules.xml
 
 *.xml
 .idea/workspace.xml
+/nbproject/private/
+/build/
+/dist/
