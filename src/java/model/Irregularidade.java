@@ -16,11 +16,13 @@ public class Irregularidade {
     }
 
     public Irregularidade(Long id, String autor, String descricao, Long idEspaco) {
-        this.setId(id);
-        this.setAutor(autor);
-        this.setDescricao(descricao);
-        this.setIdEspaco(idEspaco);
+        this.id = id;
+        this.autor = autor;
+        this.descricao = descricao;
+        this.idEspaco = idEspaco;
     }
+
+  
 
     public void gravar() throws SQLException, ClassNotFoundException {
         IrregularidadeDAO.gravar(this);

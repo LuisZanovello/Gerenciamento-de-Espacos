@@ -14,11 +14,13 @@ import java.sql.SQLException;
 
 @WebServlet(name = "PesquisaContatoController", urlPatterns = {"/PesquisaContatoController"})
 public class    PesquisaContatoController extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         processRequest(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -26,15 +28,12 @@ public class    PesquisaContatoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request,
                                   HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
-            request.setAttribute("contatos", Contato.obterTodosEspacos());
+            request.setAttribute("contatos", Contato.obterTodosContatos());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaContato.jsp");
             view.forward(request, response);
-        } catch (ClassNotFoundException e) {
-            throw new ServletException(e);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             throw new ServletException(e);
         } catch (ServletException e) {
-            e.printStackTrace();
         }
     }
 }

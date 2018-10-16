@@ -12,7 +12,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet(name = "PesquisaCartaoController", urlPatterns = {"/PesquisaCartaoController"})
-public class    PesquisaCartaoController extends HttpServlet {
+public class PesquisaCartaoController extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -25,7 +26,7 @@ public class    PesquisaCartaoController extends HttpServlet {
     }
 
     protected void processRequest(HttpServletRequest request,
-                                  HttpServletResponse response) throws SecurityException, IOException, ServletException {
+            HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
             request.setAttribute("cartoes", Cartao.obterTodosEspacos());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaCartao.jsp");
@@ -35,5 +36,5 @@ public class    PesquisaCartaoController extends HttpServlet {
         } catch (ServletException e) {
         }
     }
-   
+
 }

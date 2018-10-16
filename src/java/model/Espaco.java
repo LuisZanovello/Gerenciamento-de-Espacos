@@ -26,26 +26,24 @@ public class Espaco {
     public Espaco() {
     }
 
-    public Espaco(long id, String nome, String cnpj, String cep, String logradouro, int numero, String complemento,
-            String bairro, String cidade, String uf, double area, int quantidadePessoas, String horaFuncionamentoInicio,
-            String horaFuncionamentoFinal, long idTipoEspaco) {
-        this.setId(id);
-        this.setNome(nome);
-        this.setCnpj(cnpj);
-        this.setCep(cep);
-        this.setLogradouro(logradouro);
-        this.setNumero(numero);
-        this.setComplemento(complemento);
-        this.setBairro(bairro);
-        this.setCidade(cidade);
-        this.setUf(uf);
-        this.setArea(area);
-        this.setQuantidadePessoas(quantidadePessoas);
-        this.setHoraFuncionamentoInicio(horaFuncionamentoInicio);
-        this.setHoraFuncionamentoFinal(horaFuncionamentoFinal);
-        this.setIdTipoEspaco(idTipoEspaco);
-
+    public Espaco(Long id, String nome, String cnpj, String cep, String logradouro, Integer numero, String complemento, String bairro, String cidade, String uf, Double area, Integer quantidadePessoas, String horaFuncionamentoInicio, String horaFuncionamentoFinal, Long idTipoEspaco) {
+        this.id = id;
+        this.nome = nome;
+        this.cnpj = cnpj;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.area = area;
+        this.quantidadePessoas = quantidadePessoas;
+        this.horaFuncionamentoInicio = horaFuncionamentoInicio;
+        this.horaFuncionamentoFinal = horaFuncionamentoFinal;
+        this.idTipoEspaco = idTipoEspaco;
     }
+
 
     public void gravar() throws SQLException, ClassNotFoundException {
         EspacoDAO.gravar(this);

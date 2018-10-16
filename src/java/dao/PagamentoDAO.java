@@ -1,12 +1,10 @@
 package dao;
 
 
-import model.Administrador;
 import model.Pagamento;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class PagamentoDAO {
 
@@ -103,7 +101,6 @@ public class PagamentoDAO {
             pag.setIdReserva(rs.getLong("reservas_id"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
         }finally {
             BD.fecharConexao(conexao, comando);
 
@@ -116,7 +113,7 @@ public class PagamentoDAO {
         Connection conexao = null;
         Statement comando = null;
 
-        ArrayList<Pagamento> lista = new ArrayList<Pagamento>();
+        ArrayList<Pagamento> lista = new ArrayList<>();
         Pagamento pag = null;
 
         try{
@@ -134,7 +131,6 @@ public class PagamentoDAO {
                 lista.add(pag);
             }
         }catch (SQLException e){
-            e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 

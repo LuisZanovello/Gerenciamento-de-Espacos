@@ -13,10 +13,12 @@ public class ModalidadePredominante {
     }
 
     public ModalidadePredominante(Long id, String modalidadePredominante, String descricao) {
-        this.setId(id);
-        this.setModalidadePredominante(modalidadePredominante);
-        this.setDescricao(descricao);
+        this.id = id;
+        this.modalidadePredominante = modalidadePredominante;
+        this.descricao = descricao;
     }
+
+
     public void gravar() throws SQLException, ClassNotFoundException {
         ModalidadePredominanteDAO.gravar(this);
     }

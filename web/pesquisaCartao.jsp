@@ -26,7 +26,7 @@
 
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${cartao}" var="card">
+    <c:forEach items="${cartoes}" var="card">
         <tr>
             <td><c:out value="${card.id}" /></td>
             <td><c:out value="${card.bandeira}" /></td>

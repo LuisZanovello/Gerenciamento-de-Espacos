@@ -13,11 +13,13 @@ public class TipoDeEspaco {
     public TipoDeEspaco() {
     }
 
-    public TipoDeEspaco(Long id, String nome, Long modalidadeId) {
-        this.setId(id);
-        this.setNome(nome);
-        this.setModalidadePredominanteId(modalidadeId);
+    public TipoDeEspaco(Long id, String nome, Long modalidadePredominanteId) {
+        this.id = id;
+        this.nome = nome;
+        this.modalidadePredominanteId = modalidadePredominanteId;
     }
+
+  
     public void gravar() throws SQLException, ClassNotFoundException {
         TipoDeEspacoDAO.gravar(this);
     }

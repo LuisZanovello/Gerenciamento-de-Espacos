@@ -25,12 +25,8 @@ public class Pagamento {    //antiga classe Boleto
     }
 
     /*Contrutor PagamentoDAO*/
-    public Pagamento(long id, String vencimento, Long num_cod_barras, double valor_total) {
-        this.id = id;
-        this.vencimento = vencimento;
-        this.numeroCodBarras = numeroCodBarras;
-        this.valorTotal = valorTotal;
-    }
+
+    
 
     public void gravar() throws SQLException, ClassNotFoundException{
         PagamentoDAO.gravar(this);

@@ -28,8 +28,8 @@
         <tr>
             <td><c:out value="${contato.id}"/></td>
             <td><c:out value="${contato.nome}"/></td>
-            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${contato.id}"/>Editar</a></td>
-            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${contato.id}"/>Excluir</a></td>
+            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${contato.id}"/>">Editar</a></td>
+            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${contato.id}"/>">Excluir</a></td>
         </tr>
 
         </c:forEach>
