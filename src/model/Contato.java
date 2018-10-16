@@ -1,10 +1,12 @@
 package model;
 
 import dao.ContatoDAO;
+import lombok.Data;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Data
 public class Contato {
     private Long id;
     private String numero;
@@ -41,21 +43,6 @@ public class Contato {
         return this;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
 
     public void gravar() throws SQLException, ClassNotFoundException {
         ContatoDAO.gravar(this);

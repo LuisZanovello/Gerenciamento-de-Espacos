@@ -29,5 +29,6 @@
     <orderEntry type="library" name="jstl-1.2" level="project" />
     <orderEntry type="library" name="jsf-api" level="project" />
     <orderEntry type="library" name="taglibs-standard-jstlel-1.2.5" level="project" />
+    <orderEntry type="library" name="jstl-impl" level="project" />
   </component>
 </module>
