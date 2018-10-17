@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class PesquisaAdminController extends HttpServlet {
 
@@ -27,9 +26,7 @@ public class PesquisaAdminController extends HttpServlet {
     protected void processRequest(HttpServletRequest request,
             HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
-            ArrayList<Administrador>  lista = (ArrayList<Administrador>) Administrador.obterTodosAdministradores();
-            
-            request.setAttribute("administradores", lista);
+            request.setAttribute("administradores",Administrador.obterTodosAdministradores());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaAdministrador.jsp");
             view.forward(request, response);
         } catch (ClassNotFoundException | SQLException e) {
