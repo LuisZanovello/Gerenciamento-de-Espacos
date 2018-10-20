@@ -99,7 +99,7 @@ public class AdministradorDAO {
 
         Connection conexao = null;
         Statement comando = null;
-        ArrayList<Administrador> lista = new ArrayList<Administrador>();
+        ArrayList<Administrador> lista = new ArrayList<>();
         Administrador admin = null;
         try{
             conexao = BD.getConexao();
@@ -119,7 +119,8 @@ public class AdministradorDAO {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
-return lista;
+            return lista;
         }
+        
     }
 }
