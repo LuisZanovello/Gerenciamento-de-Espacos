@@ -1,6 +1,6 @@
 package dao;
 
-import model.Espaco;
+
 import model.Irregularidade;
 
 import java.sql.*;
