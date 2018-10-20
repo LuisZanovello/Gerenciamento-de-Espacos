@@ -1,7 +1,7 @@
 package main;
 
-import dao.ModalidadePredominanteDAO;
-import model.ModalidadePredominante;
+import dao.ModalidadeDAO;
+import model.Modalidade;
 
 import java.sql.SQLException;
 
