@@ -1,11 +1,9 @@
 package dao;
 
-import model.Cartao;
 import model.Reembolso;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ReembolsoDAO {
     public static void gravar(Reembolso reembol) throws SQLException, ClassNotFoundException {
@@ -102,7 +100,7 @@ public class ReembolsoDAO {
         Connection conexao = null;
         Statement comando = null;
 
-        ArrayList<Reembolso> lista = new ArrayList<Reembolso>();
+        ArrayList<Reembolso> lista = new ArrayList<>();
         Reembolso reembol = null;
         try{
             conexao = BD.getConexao();
@@ -113,7 +111,7 @@ public class ReembolsoDAO {
             while(rs.next()) {
                 reembol = new Reembolso (rs.getLong("id"),
                         rs.getString("estado"));
-                reembol.setIdPagamento(rs.getLong("pagamento"));
+                reembol.setIdPagamento(rs.getLong("pagamento_id"));
                 lista.add(reembol);
             }
         }catch (SQLException e){
