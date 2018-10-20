@@ -4,7 +4,6 @@ import model.Contato;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ContatoDAO {
     public static void gravar(Contato contato) throws SQLException, ClassNotFoundException{
@@ -24,8 +23,6 @@ public class ContatoDAO {
             else{
                 comando.setLong(3, contato.getIdCliente());
             }
-
-            //comando.setLong(3, contato.getIdCliente());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -78,7 +75,7 @@ public class ContatoDAO {
         }
     }
 
-    public static Contato obterContato(long id) throws  ClassNotFoundException{
+    public static Contato obterContato(Long id) throws  ClassNotFoundException{
         Connection conexao = null;
         PreparedStatement comando = null;
         Contato contato = null;
@@ -104,15 +101,15 @@ public class ContatoDAO {
     }
 
 
-    public static ArrayList<Contato> obterTodosOsContatos() throws  ClassNotFoundException{
+    public static ArrayList<Contato> obterTodosContatos() throws  ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-        ArrayList<Contato> contatos = new ArrayList<Contato>();
+        ArrayList<Contato> contatos = new ArrayList<>();
         Contato contato = null;
         try{
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "SELECT * FROM contato";
+            String sql = "select * from contato";
             ResultSet rs = comando.executeQuery(sql);
             while(rs.next()){
                 contato = new Contato(rs.getLong("id"),
@@ -127,8 +124,6 @@ public class ContatoDAO {
             BD.fecharConexao(conexao, comando);
             return contatos;
         }
-
-
     }
 
 }
