@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     
-        <servlet>
-            <servlet-name>PesquisaAdminController</servlet-name>
-            <servlet-class>controller.PesquisaAdminController</servlet-class>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>PesquisaAdminController</servlet-name>
-            <url-pattern>/PesquisaAdminController</url-pattern>
-        </servlet-mapping>
+    <servlet>
+        <servlet-name>PesquisaAdminController</servlet-name>
+        <servlet-class>controller.PesquisaAdminController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaAdminController</servlet-name>
+        <url-pattern>/PesquisaAdminController</url-pattern>
+    </servlet-mapping>
+        
+    <servlet>
+        <servlet-name>PesquisaCartaoController</servlet-name>
+        <servlet-class>controller.PesquisaCartaoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaCartaoController</servlet-name>
+        <url-pattern>/PesquisaCartaoController</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>PesquisaClienteController</servlet-name>
@@ -17,15 +26,6 @@
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>PesquisaIrregularidadeController</servlet-name>
-        <servlet-class>controller.PesquisaIrregularidadeController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PesquisaIrregularidadeController</servlet-name>
-        <url-pattern>/PesquisaIrregularidadeController</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -38,12 +38,30 @@
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>PesquisaTipoEspacoController</servlet-name>
-        <servlet-class>controller.PesquisaTipoEspacoController</servlet-class>
+        <servlet-name>PesquisaDisponibilidadeController</servlet-name>
+        <servlet-class>controller.PesquisaDisponibilidadeController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>PesquisaTipoEspacoController</servlet-name>
-        <url-pattern>/PesquisaTipoEspacoController</url-pattern>
+        <servlet-name>PesquisaDisponibilidadeController</servlet-name>
+        <url-pattern>/PesquisaDisponibilidadeController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisaEspacoController</servlet-name>
+        <servlet-class>controller.PesquisaEspacoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaEspacoController</servlet-name>
+        <url-pattern>/PesquisaEspacoController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PesquisaIrregularidadeController</servlet-name>
+        <servlet-class>controller.PesquisaIrregularidadeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaIrregularidadeController</servlet-name>
+        <url-pattern>/PesquisaIrregularidadeController</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -54,8 +72,8 @@
         <servlet-name>PesquisaModalidadeController</servlet-name>
         <url-pattern>/PesquisaModalidadeController</url-pattern>
     </servlet-mapping>
-
-<servlet>
+    
+    <servlet>
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <servlet-class>controller.PesquisaPagamentoController</servlet-class>
     </servlet>
@@ -63,4 +81,32 @@
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <url-pattern>/PesquisaPagamentoController</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PesquisaReembolsoController</servlet-name>
+        <servlet-class>controller.PesquisaReembolsoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaReembolsoController</servlet-name>
+        <url-pattern>/PesquisaReembolsoController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisaReservaController</servlet-name>
+        <servlet-class>controller.PesquisaReservaController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaReservaController</servlet-name>
+        <url-pattern>/PesquisaReservaController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisaTipoEspacoController</servlet-name>
+        <servlet-class>controller.PesquisaTipoEspacoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaTipoEspacoController</servlet-name>
+        <url-pattern>/PesquisaTipoEspacoController</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
