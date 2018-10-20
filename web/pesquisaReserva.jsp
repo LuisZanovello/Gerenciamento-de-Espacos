@@ -32,15 +32,15 @@
 
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${reserva}" var="resv">
+    <c:forEach items="${reservas}" var="resv">
         <tr>
             <td><c:out value="${resv.id}" /></td>
             <td><c:out value="${resv.dataLocacao}" /></td>
             <td><c:out value="${resv.horaInicioLocacao}" /></td>
             <td><c:out value="${resv.horaFimLocacao}" /></td>
 
-            <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${resv.id}"/>Editar</a></td>
-            <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${resv.id}"/>Excluir</a></td>
+            <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${resv.id}"/>">Editar</a></td>
+            <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${resv.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
