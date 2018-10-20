@@ -16,25 +16,13 @@ public class Pagamento {    //antiga classe Boleto
     private Long idReserva;
     private Reserva reserva;
 
-    public Pagamento(Long id, String vencimento, Long numeroCodBarras, double valorTotal, Long idReserva) {
+    public Pagamento(long id, String vencimento, long numeroCodBarras, double valorTotal, long idReserva) {
         this.id = id;
         this.vencimento = vencimento;
         this.numeroCodBarras = numeroCodBarras;
         this.valorTotal = valorTotal;
         this.idReserva = idReserva;
     }
-
-    /*Contrutor PagamentoDAO*/
-
-    public Pagamento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
-   
-
-    
 
     public void gravar() throws SQLException, ClassNotFoundException{
         PagamentoDAO.gravar(this);
@@ -51,7 +39,7 @@ public class Pagamento {    //antiga classe Boleto
     }
 
 
-    public static Pagamento obterPagamento(Long id) throws SQLException, ClassNotFoundException{
+    public static Pagamento obterPagamento(long id) throws SQLException, ClassNotFoundException{
 
         return PagamentoDAO.obterPagamento((long)id);
     }
