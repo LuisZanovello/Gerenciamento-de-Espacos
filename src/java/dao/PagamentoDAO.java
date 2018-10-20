@@ -92,12 +92,12 @@ public class PagamentoDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
 
-            pag = new Pagamento();
-                    pag.setId(rs.getLong("id"));
-                    pag.setVencimento(rs.getString("vencimento"));
-                    pag.setNumeroCodBarras(rs.getLong("numero_codigo_barras"));
-                    pag.setValorTotal(rs.getDouble("valor_total"));
-            pag.setIdReserva(rs.getLong("reservas_id"));
+            pag = new Pagamento(
+                    rs.getLong("id"),
+                   rs.getString("vencimento"),
+                    rs.getLong("numero_codigo_barras"),
+                    rs.getDouble("valor_total"),
+            rs.getLong("reservas_id"));
 
         } catch (SQLException e) {
         }finally {
@@ -122,15 +122,16 @@ public class PagamentoDAO {
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {
-                pag = new Pagamento();
-                        pag.setId(rs.getLong("id"));
-                        pag.setVencimento(rs.getString("vencimento"));
-                        pag.setNumeroCodBarras(rs.getLong("numero_codigo_barras"));
-                        pag.setValorTotal(rs.getDouble("valor_total"));
-                pag.setIdReserva(rs.getLong("reservas_id"));
+               pag = new Pagamento(
+                    rs.getLong("id"),
+                   rs.getString("vencimento"),
+                    rs.getLong("numero_codigo_barras"),
+                    rs.getDouble("valor_total"),
+            rs.getLong("reservas_id"));
                 lista.add(pag);
             }
         }catch (SQLException e){
+            e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
             return lista;
