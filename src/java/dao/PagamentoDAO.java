@@ -127,7 +127,7 @@ public class PagamentoDAO {
                    rs.getString("vencimento"),
                     rs.getLong("numero_codigo_barras"),
                     rs.getDouble("valor_total"),
-            rs.getLong("reservas_id"));
+            rs.getLong("reserva_id"));
                 lista.add(pag);
             }
         }catch (SQLException e){
