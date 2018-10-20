@@ -57,7 +57,7 @@ public class Contato {
         return  ContatoDAO.obterContato((long)id);
     }
     public static List<Contato> obterTodosContatos() throws  SQLException, ClassNotFoundException {
-        return  ContatoDAO.obterTodosOsContatos();
+        return  ContatoDAO.obterTodosContatos();
     }
 
     public Long getId() {
