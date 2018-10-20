@@ -1,8 +1,8 @@
 package main;
 
-import dao.TipoDeEspacoDAO;
-import model.ModalidadePredominante;
-import model.TipoDeEspaco;
+import dao.TipoEspacoDAO;
+import model.Modalidade;
+import model.TipoEspaco;
 
 import java.sql.SQLException;
 
