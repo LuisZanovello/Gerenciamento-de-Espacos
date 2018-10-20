@@ -27,5 +27,40 @@
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
         <url-pattern>/PesquisaIrregularidadeController</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisaContatoController</servlet-name>
+        <servlet-class>controller.PesquisaContatoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaContatoController</servlet-name>
+        <url-pattern>/PesquisaContatoController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisaTipoEspacoController</servlet-name>
+        <servlet-class>controller.PesquisaTipoEspacoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaTipoEspacoController</servlet-name>
+        <url-pattern>/PesquisaTipoEspacoController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PesquisaModalidadeController</servlet-name>
+        <servlet-class>controller.PesquisaModalidadeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaModalidadeController</servlet-name>
+        <url-pattern>/PesquisaModalidadeController</url-pattern>
+    </servlet-mapping>
 
+<servlet>
+        <servlet-name>PesquisaPagamentoController</servlet-name>
+        <servlet-class>controller.PesquisaPagamentoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaPagamentoController</servlet-name>
+        <url-pattern>/PesquisaPagamentoController</url-pattern>
+    </servlet-mapping>
 </web-app>
