@@ -3,7 +3,6 @@ import model.Reserva;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ReservaDAO {
     public static void gravar(Reserva resv) throws SQLException, ClassNotFoundException {
@@ -111,14 +110,15 @@ public class ReservaDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
             resv = new Reserva (rs.getLong("id"),
-                    rs.getString    ("dataLocacao"),
-                    rs.getString    ("horaInicioLocacao"),
-                    rs.getString    ("horaFimLocacao"),
-                    rs.getLong      ("qtPessoas"),
-                    rs.getDouble    ("valorLocacao"),
-                    rs.getLong      ("notaAvaliacao"), /*  null ? */
-                    rs.getLong      ("espaco_id"),
-                    rs.getLong("cliente_id"));
+                    rs.getString("data_reserva"),
+                        rs.getString("hora_inicio"),
+                        rs.getString("hora_fim"),
+                        rs.getLong("quantidade_pessoas"),
+                        rs.getDouble("valor_espaco"),
+                        rs.getLong("nota_avaliacao"));
+
+                resv.setId(rs.getLong("espaco_id"));
+                resv.setId(rs.getLong("cliente_id"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -131,7 +131,7 @@ public class ReservaDAO {
     public static ArrayList<Reserva> obterTodasReservas() throws ClassNotFoundException{
         Connection conexao = null;
         Statement comando = null;
-        ArrayList<Reserva> lista = new ArrayList<Reserva>();
+        ArrayList<Reserva> lista = new ArrayList<>();
         Reserva resv = null;
         try{
             conexao = BD.getConexao();
@@ -140,14 +140,15 @@ public class ReservaDAO {
             ResultSet rs = comando.executeQuery(sql);
             while(rs.next()) {
                 resv = new Reserva(rs.getLong("id"),
-                        rs.getString("dataLocacao"),
-                        rs.getString("horaInicioLocacao"),
-                        rs.getString("horaFimLocacao"),
-                        rs.getLong("qtPessoas"),
-                        rs.getDouble("valorLocacao"),
-                        rs.getLong("notaAvaliacao"));
+                        rs.getString("data_reserva"),
+                        rs.getString("hora_inicio"),
+                        rs.getString("hora_fim"),
+                        rs.getLong("quantidade_pessoas"),
+                        rs.getDouble("valor_espaco"),
+                        rs.getLong("nota_avaliacao"));
 
-                resv.setId(rs.getLong("id"));
+                resv.setId(rs.getLong("espaco_id"));
+                resv.setId(rs.getLong("cliente_id"));
                 lista.add(resv);
             }
         }catch (SQLException e){
