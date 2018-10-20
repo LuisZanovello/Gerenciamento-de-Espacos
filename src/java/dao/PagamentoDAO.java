@@ -13,8 +13,7 @@ public class PagamentoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "insert into pagamento(id, vencimento, numero_codigo_barras, valor_total, reserva_id)"
-                    + " values(?,?,?,?,?)";
+            String sql = "insert into pagamento(id, vencimento, numero_codigo_barras, valor_total, reserva_id) values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong     (1, pag.getId());
             comando.setString   (2, pag.getVencimento());
@@ -40,7 +39,7 @@ public class PagamentoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update pagamento set vencimento=?, numero_cododigo_barras=?, valor_total=? where id=?";
+            String sql = "update pagamento set vencimento=?, numero_codigo_barras=?, valor_total=? where id=?";
             comando = conexao.prepareStatement(sql);
 
             comando.setString   (1, pag.getVencimento());
@@ -93,11 +92,11 @@ public class PagamentoDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
 
-            pag = new Pagamento(rs.getLong("id"),
-
-                    rs.getString("vencimento"),
-                    rs.getLong("numero_codigo_barras"),
-                    rs.getDouble("valor_total"));
+            pag = new Pagamento();
+                    pag.setId(rs.getLong("id"));
+                    pag.setVencimento(rs.getString("vencimento"));
+                    pag.setNumeroCodBarras(rs.getLong("numero_codigo_barras"));
+                    pag.setValorTotal(rs.getDouble("valor_total"));
             pag.setIdReserva(rs.getLong("reservas_id"));
 
         } catch (SQLException e) {
@@ -123,17 +122,17 @@ public class PagamentoDAO {
             ResultSet rs = comando.executeQuery(sql);
 
             while(rs.next()) {
-                pag = new Pagamento(rs.getLong("id"),
-                        rs.getString("vencimento"),
-                        rs.getLong("numero_codigo_barras"),
-                        rs.getDouble("valor_total")); /*  null ? */
-                pag.setIdReserva(rs.getLong("reservas"));
+                pag = new Pagamento();
+                        pag.setId(rs.getLong("id"));
+                        pag.setVencimento(rs.getString("vencimento"));
+                        pag.setNumeroCodBarras(rs.getLong("numero_codigo_barras"));
+                        pag.setValorTotal(rs.getDouble("valor_total"));
+                pag.setIdReserva(rs.getLong("reservas_id"));
                 lista.add(pag);
             }
         }catch (SQLException e){
         } finally {
             BD.fecharConexao(conexao, comando);
-
             return lista;
         }
     }
