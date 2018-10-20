@@ -1,7 +1,7 @@
 package dao;
 
 import model.Espaco;
-import model.TipoDeEspaco;
+import model.TipoEspaco;
 
 import java.sql.*;
 import java.util.ArrayList;
