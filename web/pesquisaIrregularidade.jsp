@@ -15,10 +15,10 @@
     <title>Pesquisa de Irregularidade</title>
 </head>
 <body>
-<h1>Pesquisa de Irregularidade</h1>
+
 <table border="1">
     <tr>
-        <th colspan="10">Irregularidades</th>
+        <th colspan="10">Irregularidade</th>
     </tr>
     <tr>
     <th>Código Irregularidade</th>
@@ -29,8 +29,8 @@
         <tr>
             <td><c:out value="${irregularidade.id}" /></td>
             <td><c:out value="${irregularidade.autor}" /></td>
-            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Editar&id= "><c:out value="${irregularidade.id}"/>Editar</a></td>
-            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id= "><c:out value="${irregularidade.id}"/>Excluir</a></td>
+            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Editar&id= <c:out value="${irregularidade.id}"/>">Editar</a></td>
+            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id= <c:out value="${irregularidade.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table>

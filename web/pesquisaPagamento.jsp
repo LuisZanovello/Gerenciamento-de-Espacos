@@ -27,13 +27,13 @@
         <th>Valor</th>
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${pagamento}" var="pag">
+    <c:forEach items="${pagamentos}" var="pagamento">
         <tr>
-            <td><c:out value="${pag.id}" /></td>
-            <td><c:out value="${pag.vencimento}" /></td>
-            <td><c:out value="${pag.valorTotal}" /></td>
-            <td><a href="ManterPagamentoController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${pag.id}"/>Editar</a></td>
-            <td><a href="ManterPagamentoController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${pag.id}"/>Excluir</a></td>
+            <td><c:out value="${pagamento.id}" /></td>
+            <td><c:out value="${pagamento.vencimento}" /></td>
+            <td><c:out value="${pagamento.valorTotal}" /></td>
+            <td><a href="ManterPagamentoController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${pagamento.id}"/>Editar</a></td>
+            <td><a href="ManterPagamentoController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${pagamento.id}"/>Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
