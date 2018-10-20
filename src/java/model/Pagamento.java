@@ -16,7 +16,7 @@ public class Pagamento {    //antiga classe Boleto
     private Long idReserva;
     private Reserva reserva;
 
-    public Pagamento(long id, String vencimento, Long numeroCodBarras, double valorTotal, long idReserva) {
+    public Pagamento(Long id, String vencimento, Long numeroCodBarras, double valorTotal, Long idReserva) {
         this.id = id;
         this.vencimento = vencimento;
         this.numeroCodBarras = numeroCodBarras;
@@ -25,6 +25,14 @@ public class Pagamento {    //antiga classe Boleto
     }
 
     /*Contrutor PagamentoDAO*/
+
+    public Pagamento() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+   
 
     
 
