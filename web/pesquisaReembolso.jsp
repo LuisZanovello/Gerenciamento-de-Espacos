@@ -28,13 +28,13 @@
 
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${reembolso}" var="reembol">
+    <c:forEach items="${reembolsos}" var="reembol">
         <tr>
             <td><c:out value="${reembol.id}" /></td>
             <td><c:out value="${reembol.estado}" /></td>
 
-            <td><a href="ManterReembolsoController?acao=prepararOperacao&operacao=Editar&id="><c:out value="${reembol.id}"/>Editar</a></td>
-            <td><a href="ManterReembolsoController?acao=prepararOperacao&operacao=Excluir&id="><c:out value="${reembol.id}"/>Excluir</a></td>
+            <td><a href="ManterReembolsoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${reembol.id}"/>">Editar</a></td>
+            <td><a href="ManterReembolsoController?acao=prepararOperacao&operacao=Excluir&id<c:out value="${reembol.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
