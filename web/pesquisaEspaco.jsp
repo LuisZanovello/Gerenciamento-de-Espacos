@@ -14,7 +14,6 @@
     <title>Pesquisa de Espaco</title>
 </head>
 <body>
-<h1>Pesquisa de Espaco</h1>
 <table border="1">
     <tr>
         <th colspan="10">Espaços</th>
