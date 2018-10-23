@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Pesquisa Tipo Espaco</title>
+    <title>Tipo Espaco</title>
 </head>
 <body>
     
@@ -22,8 +22,8 @@
         <th colspan="10">Tipo Espaço</th>
     </tr>
     <tr>
-        <th>Código Tipo de Espaco</th>
-        <th>Nome</th>
+        <th>Código</th>
+        <th>Tipo de Espaço</th>
         <th>Modalidade Predominante</th>
         <th colspan=2>Ação</th>
     </tr>
