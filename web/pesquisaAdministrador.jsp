@@ -29,6 +29,7 @@
         <tr>
             <td><c:out value="${admin.id}" /></td>
             <td><c:out value="${admin.nome}" /></td>
+            <td><c:out value="${admin.email}" /></td>
             <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>">Editar</a></td>
             <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>">Excluir</a></td>
         </tr>
