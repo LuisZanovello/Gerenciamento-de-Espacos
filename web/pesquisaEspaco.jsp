@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Pesquisa de Espaco</title>
+    <title>Espaco</title>
 </head>
 <body>
 <table border="1">
