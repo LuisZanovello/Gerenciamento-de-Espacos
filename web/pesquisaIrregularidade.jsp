@@ -34,6 +34,7 @@
         </tr>
     </c:forEach>
 </table>
+        </form>
 <form action="ManterIrregularidadeController?acao=prepararOperacao&operacao=Incluir" method="post">
     <input type="submit" name="btnIncluir" value="Incluir">
 </form>
