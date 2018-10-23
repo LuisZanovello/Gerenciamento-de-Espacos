@@ -5,7 +5,7 @@ import dao.AdministradorDAO;
 
 import java.sql.SQLException;
 import java.util.List;
-
+/*sdsd*/
 public class Administrador {
     private Long id;
     private String nome;
