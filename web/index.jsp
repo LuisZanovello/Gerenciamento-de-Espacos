@@ -3,6 +3,14 @@
 <html>
 <head>
     <title>BancoIsport</title>
+    
+    <style>
+       table{
+          position:absolute; 
+          left: 42%; 
+          top: 25%;
+       }
+       </style>
 </head>
 <body>
 <table border="1">
@@ -52,3 +60,4 @@
 
 </body>
 </html>
+
