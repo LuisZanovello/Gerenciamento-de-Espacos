@@ -51,6 +51,15 @@
         <url-pattern>/ManterReembolsoController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ManterDisponibilidadeController</servlet-name>
+        <servlet-class>controller.ManterDisponibilidadeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManterDisponibilidadeController</servlet-name>
+        <url-pattern>/ManterDisponibilidadeController</url-pattern>
+    </servlet-mapping>
+    
     
     <servlet>
         <servlet-name>PesquisaAdminController</servlet-name>

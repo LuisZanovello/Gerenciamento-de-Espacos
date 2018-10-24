@@ -40,7 +40,7 @@ public class Disponibilidade {
     public void excluir() throws SQLException, ClassNotFoundException {
         DisponibilidadeDAO.excluir(this);
     }
-    public Disponibilidade obterDisponibildiade(Long id) throws SQLException, ClassNotFoundException {
+    public static Disponibilidade obterDisponibildiade(Long id) throws SQLException, ClassNotFoundException {
         return  DisponibilidadeDAO.obterDisponibilidade((long)id);
     }
     public static List<Disponibilidade> obterTodasAsDisponibilidades() throws  SQLException, ClassNotFoundException {
