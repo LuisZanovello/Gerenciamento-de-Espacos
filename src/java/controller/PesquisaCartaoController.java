@@ -28,7 +28,7 @@ public class PesquisaCartaoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request,
             HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
-            request.setAttribute("cartoes", Cartao.obterTodosEspacos());
+            request.setAttribute("cartoes", Cartao.obterTodosCartoes());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaCartao.jsp");
             view.forward(request, response);
         } catch (ClassNotFoundException | SQLException e) {

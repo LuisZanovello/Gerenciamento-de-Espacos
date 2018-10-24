@@ -39,9 +39,7 @@
     <servlet-mapping>
         <servlet-name>ManterContatoController</servlet-name>
         <url-pattern>/ManterContatoController</url-pattern>
-    </servlet-mapping>
-    
-    
+    </servlet-mapping>  
     <servlet>
         <servlet-name>ManterReembolsoController</servlet-name>
         <servlet-class>controller.ManterReembolsoController</servlet-class>
@@ -50,7 +48,6 @@
         <servlet-name>ManterReembolsoController</servlet-name>
         <url-pattern>/ManterReembolsoController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterDisponibilidadeController</servlet-name>
         <servlet-class>controller.ManterDisponibilidadeController</servlet-class>
@@ -58,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>ManterDisponibilidadeController</servlet-name>
         <url-pattern>/ManterDisponibilidadeController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ManterCartaoController</servlet-name>
+        <servlet-class>controller.ManterCartaoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManterCartaoController</servlet-name>
+        <url-pattern>/ManterCartaoController</url-pattern>
     </servlet-mapping>
     
     

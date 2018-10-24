@@ -108,10 +108,10 @@ public class Cartao{
     public void excluir() throws SQLException, ClassNotFoundException {
         CartaoDAO.excluir(this);
     }
-    public Cartao obterEspaco(Long id) throws SQLException, ClassNotFoundException {
+    public static Cartao obterCartao(Long id) throws SQLException, ClassNotFoundException {
         return  CartaoDAO.obterCartao((long)id);
     }
-    public static List<Cartao> obterTodosEspacos() throws  SQLException, ClassNotFoundException {
+    public static List<Cartao> obterTodosCartoes() throws  SQLException, ClassNotFoundException {
         return  CartaoDAO.obterTodosCartoes();
     }
 }

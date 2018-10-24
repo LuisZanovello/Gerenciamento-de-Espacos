@@ -36,7 +36,7 @@
     </c:forEach>
 </table>
 
-<form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
+<form action="ManterCartaoController?acao=prepararOperacao&operacao=Incluir" method="post">
     <input type="submit" name="btnIncluir" value="Incluir">
 </form>
 <a href="index.jsp"><button value="Voltar">Voltar</button></a>
