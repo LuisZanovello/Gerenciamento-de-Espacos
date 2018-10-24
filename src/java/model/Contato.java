@@ -53,7 +53,7 @@ public class Contato {
     public void excluir() throws SQLException, ClassNotFoundException {
         ContatoDAO.excluir(this);
     }
-    public Contato obterContato(Long id) throws SQLException, ClassNotFoundException {
+    public static Contato obterContato(Long id) throws SQLException, ClassNotFoundException {
         return  ContatoDAO.obterContato((long)id);
     }
     public static List<Contato> obterTodosContatos() throws  SQLException, ClassNotFoundException {

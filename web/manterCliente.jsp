@@ -30,6 +30,8 @@
             <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.sobrenome}"></td>
         </tr>
     </table>
+        
+    <input type="submit" name="btnConfirmar" value="Confirmar">
     </form>
 
     </body>
