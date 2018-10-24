@@ -24,6 +24,14 @@
         <servlet-name>ManterPagamentoController</servlet-name>
         <url-pattern>/ManterPagamentoController</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <servlet-name>ManterClienteController</servlet-name>
+        <servlet-class>controller.ManterClienteController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManterClienteController</servlet-name>
+        <url-pattern>/ManterClienteController</url-pattern>
+    </servlet-mapping>
     
     
     <servlet>
