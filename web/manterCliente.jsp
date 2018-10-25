@@ -29,6 +29,18 @@
             <td>Sobrenome: </td>
             <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.sobrenome}"></td>
         </tr>
+         <tr>
+            <td>Data de Nascimento: </td>
+            <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.dataNascimento}"></td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.email}"></td>
+        </tr>
+        <tr>
+            <td>CPF: </td>
+            <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.cpf}"></td>
+        </tr>
     </table>
         
     <input type="submit" name="btnConfirmar" value="Confirmar">
