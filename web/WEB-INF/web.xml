@@ -26,7 +26,6 @@
         <servlet-name>ManterClienteController</servlet-name>
         <url-pattern>/ManterClienteController</url-pattern>
     </servlet-mapping>
-    <servlet>
         
     <servlet>
         <servlet-name>ManterContatoController</servlet-name>
@@ -110,8 +109,6 @@
     </servlet-mapping>
     
     
- 
-    
     <servlet>
         <servlet-name>PesquisaAdminController</servlet-name>
         <servlet-class>controller.PesquisaAdminController</servlet-class>
@@ -120,6 +117,7 @@
         <servlet-name>PesquisaAdminController</servlet-name>
         <url-pattern>/PesquisaAdminController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaCartaoController</servlet-name>
         <servlet-class>controller.PesquisaCartaoController</servlet-class>
@@ -128,6 +126,7 @@
         <servlet-name>PesquisaCartaoController</servlet-name>
         <url-pattern>/PesquisaCartaoController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaClienteController</servlet-name>
         <servlet-class>controller.PesquisaClienteController</servlet-class>
@@ -136,6 +135,7 @@
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaContatoController</servlet-name>
         <servlet-class>controller.PesquisaContatoController</servlet-class>
@@ -144,6 +144,7 @@
         <servlet-name>PesquisaContatoController</servlet-name>
         <url-pattern>/PesquisaContatoController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaDisponibilidadeController</servlet-name>
         <servlet-class>controller.PesquisaDisponibilidadeController</servlet-class>
@@ -152,6 +153,7 @@
         <servlet-name>PesquisaDisponibilidadeController</servlet-name>
         <url-pattern>/PesquisaDisponibilidadeController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaEspacoController</servlet-name>
         <servlet-class>controller.PesquisaEspacoController</servlet-class>
@@ -160,6 +162,7 @@
         <servlet-name>PesquisaEspacoController</servlet-name>
         <url-pattern>/PesquisaEspacoController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
         <servlet-class>controller.PesquisaIrregularidadeController</servlet-class>
@@ -168,6 +171,7 @@
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
         <url-pattern>/PesquisaIrregularidadeController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaModalidadeController</servlet-name>
         <servlet-class>controller.PesquisaModalidadeController</servlet-class>
@@ -176,6 +180,7 @@
         <servlet-name>PesquisaModalidadeController</servlet-name>
         <url-pattern>/PesquisaModalidadeController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <servlet-class>controller.PesquisaPagamentoController</servlet-class>
@@ -184,6 +189,7 @@
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <url-pattern>/PesquisaPagamentoController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaReembolsoController</servlet-name>
         <servlet-class>controller.PesquisaReembolsoController</servlet-class>
@@ -192,6 +198,7 @@
         <servlet-name>PesquisaReembolsoController</servlet-name>
         <url-pattern>/PesquisaReembolsoController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaReservaController</servlet-name>
         <servlet-class>controller.PesquisaReservaController</servlet-class>
@@ -200,6 +207,7 @@
         <servlet-name>PesquisaReservaController</servlet-name>
         <url-pattern>/PesquisaReservaController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
         <servlet-name>PesquisaTipoEspacoController</servlet-name>
         <servlet-class>controller.PesquisaTipoEspacoController</servlet-class>
