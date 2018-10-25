@@ -22,12 +22,16 @@
     <tr>
         <th>Id</th>
         <th>Data disponível</th>
+        <th>Hora Inicial</th>
+        <th>Hora Final</th>
         <th colspan="2">Ação</th>
     </tr>
     <c:forEach items="${disponibilidades}" var="dispon">
         <tr>
             <td><c:out value="${dispon.id}" /></td>
             <td><c:out value="${dispon.dataDisponivel}" /></td>
+            <td><c:out value="${dispon.hora_inicio}" /></td>
+            <td><c:out value="${dispon.hora_fim}" /></td>
             <td><a href="ManterDisponibilidadeController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${dispon.id}"/>">Editar</a></td>
             <td><a href="ManterDisponibilidadeController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${dispon.id}"/>">Excluir</a></td>
         </tr>

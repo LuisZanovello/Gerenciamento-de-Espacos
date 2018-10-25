@@ -25,6 +25,14 @@
             <td>Data Dsponivel: </td>
             <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.dataDisponivel}"></td>
         </tr>
+        <tr>
+            <td>Hora Inicio: </td>
+            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.hora_inicio}"></td>
+        </tr>
+        <tr>
+            <td>Hora Final: </td>
+            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.hora_fim}"></td>
+        </tr>
        
     </table>
         
