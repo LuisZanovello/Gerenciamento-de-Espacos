@@ -19,11 +19,11 @@
         <table>
         <tr>
             <td>Código do contato: </td>
-            <td><input type="text" name="txtIdContato" value="${contato.id}"></td>
+            <td><input type="text" name="txtIdCliente" value="${contato.id}"></td>
         </tr>
         <tr>
             <td>Número de contato: </td>
-            <td><input type="text" name="txtNomeContato" value="${contato.nome}"></td>
+            <td><input type="text" name="txtNomeCliente" value="${contato.numero}"></td>
         </tr>
 
     </table>
