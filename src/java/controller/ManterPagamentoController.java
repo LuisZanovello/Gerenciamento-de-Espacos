@@ -54,7 +54,7 @@ public class ManterPagamentoController extends HttpServlet {
         request.setAttribute("pagamentos", Pagamento.obterTodosPagamentos());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Pagamento pagamentos = Pagamento.obterPagamento((long)id);
             request.setAttribute("pagamentos", pagamentos);
         }

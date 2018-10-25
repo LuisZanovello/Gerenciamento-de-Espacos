@@ -55,7 +55,7 @@ public class ManterReservaController extends HttpServlet {
         request.setAttribute("reservas",Reserva.obterTodasReservas());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Reserva resv = Reserva.obterReserva((long)id);
             request.setAttribute("resv", resv );
         }

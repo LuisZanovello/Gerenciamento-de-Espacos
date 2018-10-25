@@ -55,9 +55,10 @@ public class ManterAdministradorController extends HttpServlet {
         request.setAttribute("administradores", Administrador.obterTodosAdministradores());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Administrador admin = Administrador.obterAdministrador((long)id);
             request.setAttribute("admin", admin);
+        
         }
                 RequestDispatcher view = request.getRequestDispatcher("/manterAdmin.jsp");
                 view.forward(request, response);
