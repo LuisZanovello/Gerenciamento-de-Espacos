@@ -26,12 +26,12 @@
 
         <th colspan="2">Ação</th>
     </tr>
-    <c:forEach items="${cartoes}" var="card">
+    <c:forEach items="${cartoes}" var="cartao">
         <tr>
-            <td><c:out value="${card.id}" /></td>
-            <td><c:out value="${card.bandeira}" /></td>
-            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${card.id}"/>">Editar</a></td>
-            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${card.id}"/>">Excluir</a></td>
+            <td><c:out value="${cartao.id}" /></td>
+            <td><c:out value="${cartao.bandeira}" /></td>
+            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cartao.id}"/>">Editar</a></td>
+            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cartao.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
