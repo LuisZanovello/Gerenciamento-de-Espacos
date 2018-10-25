@@ -20,6 +20,7 @@ import model.Reembolso;
  *
  * @author viict
  */
+/*@WebServlet(name = "ManterReembolsoController", urlPatterns = {"/ManterReembolsoController"})*/
 public class ManterReembolsoController extends HttpServlet {
 
     /**
@@ -57,6 +58,7 @@ public class ManterReembolsoController extends HttpServlet {
             long id = Long.parseLong(request.getParameter("id").trim());
             Reembolso reembol = Reembolso.obterReembolso((long)id);
             request.setAttribute("reembol", reembol);
+        
         }
                 RequestDispatcher view = request.getRequestDispatcher("/manterReembolso.jsp");
                 view.forward(request, response);
@@ -71,7 +73,6 @@ public class ManterReembolsoController extends HttpServlet {
                 throw new ServletException(e);
             }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
