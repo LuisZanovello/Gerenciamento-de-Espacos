@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Irregularidade</title>
     </head>
     <body>
         <h2>Manter Irregularidade - ${operacao}</h2>
@@ -27,7 +27,9 @@
     <td>Descrição</td>
     <td><input type="text" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}"></td> 
     </tr>
+</table>
     <input type="submit" name="btnConfirmar" value="Confirmar">
         </form>
+    
     </body>
 </html>
