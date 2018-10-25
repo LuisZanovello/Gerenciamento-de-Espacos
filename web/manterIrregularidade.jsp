@@ -21,9 +21,12 @@
     </tr>
     <tr>
     <td>Autor</td>
-    <td><input type="text" name="txtIdIrregularidade" value="${irregularidade.autor}"></td> 
+    <td><input type="text" name="txtAutorIrregularidade" value="${irregularidade.autor}"></td> 
     </tr>
-</table>
+    <tr>
+    <td>Descrição</td>
+    <td><input type="text" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}"></td> 
+    </tr>
     <input type="submit" name="btnConfirmar" value="Confirmar">
         </form>
     </body>
