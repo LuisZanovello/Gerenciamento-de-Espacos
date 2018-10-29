@@ -12,6 +12,13 @@ public class Reembolso {
     private Long idPagamento;
     private Pagamento pagamento;
 
+    public Reembolso(Long id, String estado, Long idPagamento, Pagamento pagamento) {
+        this.id = id;
+        this.estado = estado;
+        this.idPagamento = idPagamento;
+        this.pagamento = pagamento;
+    }
+
 /*Construtor da controller Reembolso*/
     public Reembolso(long id, String estado, long idPagamento) {
         this.id = id;
@@ -25,6 +32,10 @@ public class Reembolso {
                 this.estado = estado;
     }
 
+    public Reembolso() {
+    }
+
+        
 
     public void gravar() throws SQLException, ClassNotFoundException{
         ReembolsoDAO.gravar(this);

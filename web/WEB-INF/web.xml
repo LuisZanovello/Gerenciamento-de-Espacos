@@ -9,6 +9,16 @@
         <url-pattern>/ManterAdministradorController</url-pattern>
     </servlet-mapping>
     
+        <servlet>
+        <servlet-name>ManterReembolsoController</servlet-name>
+        <servlet-class>controller.ManterReembolsoController</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ManterReembolsoController</servlet-name>
+        <url-pattern>/ManterReembolsoController</url-pattern>
+    </servlet-mapping>
+  
+    
     <servlet>
         <servlet-name>ManterCartaoController</servlet-name>
         <servlet-class>controller.ManterCartaoController</servlet-class>
@@ -81,14 +91,7 @@
         <url-pattern>/ManterPagamentoController</url-pattern>
     </servlet-mapping>
     
-    <servlet>
-        <servlet-name>ManterReembolsoController</servlet-name>
-        <servlet-class>controller.ManterReembolsoController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ManterReembolsoController</servlet-name>
-        <url-pattern>/ManterReembolsoController</url-pattern>
-    </servlet-mapping>
+    
     
     <servlet>
         <servlet-name>ManterReservaController</servlet-name>
