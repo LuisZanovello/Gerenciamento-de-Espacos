@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Reserva;
+import model.Cliente;
+import model.Espaco;
 
 /**
  *
@@ -38,7 +40,7 @@ public class ManterReservaController extends HttpServlet {
         String acao = request.getParameter("acao");
         
         if(acao.equals("confirmarOperacao")){
-     //       confirmarOperacao(request, response);
+           confirmarOperacao(request, response);
         
         }else{
             if(acao.equals("prepararOperacao")){
@@ -55,7 +57,7 @@ public class ManterReservaController extends HttpServlet {
         request.setAttribute("reservas",Reserva.obterTodasReservas());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Reserva resv = Reserva.obterReserva((long)id);
             request.setAttribute("resv", resv );
         }
@@ -71,6 +73,50 @@ public class ManterReservaController extends HttpServlet {
             }catch(ClassNotFoundException e){
                 throw new ServletException(e);
             }
+    }
+   
+     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+        
+        long id = Long.parseLong("txtCodReserva");
+        String dataLocacao = request.getParameter("txtNomeReserva");
+        String horaInicioLocacao = request.getParameter("txtHrInicio");
+        String horaFimLocacao = request.getParameter("txtHrFim");
+        long cliente = Long.parseLong("ooptCliente");
+        long espaco = Long.parseLong("optEspaco");
+        
+       try {
+           Cliente clit = null;
+           Espaco esp = null;
+          
+            if (cliente != 0 && espaco !=0) {
+           
+                clit = Cliente.obterCliente(cliente);
+                esp = Espaco.obterTodosEspacos(espaco);
+            }
+            Reserva resv = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao);
+            if (operacao.equals("Incluir")) {
+                resv.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    resv.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        resv.excluir();
+                    }
+                }
+            }
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaReservaController");
+            view.forward(request, response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

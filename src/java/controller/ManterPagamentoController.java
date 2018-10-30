@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Pagamento;
+import model.Reserva;
+
 /**
  *
  * @author viict
@@ -31,47 +33,85 @@ public class ManterPagamentoController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String acao = request.getParameter("acao");
-        
-        if(acao.equals("confirmarOperacao")){
-     //       confirmarOperacao(request, response);
-        
-        }else{
-            if(acao.equals("prepararOperacao")){
+
+        if (acao.equals("confirmarOperacao")) {
+            confirmarOperacao(request, response);
+
+        } else {
+            if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
             }
         }
     }
-     
-     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+
+    public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            try{
-        String operacao = request.getParameter("operacao");
-        request.setAttribute("operacao", operacao);
-        request.setAttribute("pagamentos", Pagamento.obterTodosPagamentos());
-        
-        if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
-            Pagamento pagamentos = Pagamento.obterPagamento((long)id);
-            request.setAttribute("pagamentos", pagamentos);
-        }
-                RequestDispatcher view = request.getRequestDispatcher("/manterPagamento.jsp");
-                view.forward(request, response);
-                
-    }catch(ServletException e){
-                throw e;
-            }catch(IOException e){
-                throw new ServletException(e);
-            }catch(SQLException e){
-                throw new ServletException(e);
-            }catch(ClassNotFoundException e){
-                throw new ServletException(e);
+        try {
+            String operacao = request.getParameter("operacao");
+            request.setAttribute("operacao", operacao);
+            request.setAttribute("pagamentos", Pagamento.obterTodosPagamentos());
+
+            if (!operacao.equals("Incluir")) {
+                long id = Long.parseLong(request.getParameter("id").trim());
+                Pagamento pagamentos = Pagamento.obterPagamento((long) id);
+                request.setAttribute("pagamentos", pagamentos);
             }
+            RequestDispatcher view = request.getRequestDispatcher("/manterPagamento.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException e) {
+            throw e;
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        }
     }
-     
+
+    public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+
+        long id = Long.parseLong("txtCodPagamento");
+        String vencimento = request.getParameter("txtVencimentoPagamento");
+        long numeroCodBarras = Long.parseLong("txtCodBarrasPagamento");
+        double valorTotal = Double.parseDouble("txtValorTotalPagamento");
+        long reserva = Long.parseLong("optReserva");
+        try {
+            Reserva resv = null;
+            if (reserva != 0) {
+                resv = Reserva.obterReserva(reserva);
+            }
+
+            Pagamento pagamentos = new Pagamento(id, vencimento, numeroCodBarras, valorTotal);
+            if (operacao.equals("Incluir")) {
+                pagamentos.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    pagamentos.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        pagamentos.excluir();
+                    }
+                }
+            }
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaPagamentoController");
+            view.forward(request, response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

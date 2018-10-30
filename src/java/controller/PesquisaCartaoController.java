@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "PesquisaCartaoController", urlPatterns = {"/PesquisaCartaoController"})
+
 public class PesquisaCartaoController extends HttpServlet {
 
     @Override

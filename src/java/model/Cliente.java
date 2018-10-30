@@ -17,7 +17,7 @@ public class Cliente {
     public Cliente(long id, String nome, String sobrenome, String dataNascimento, String email) {
     }
 
-    public Cliente(Long id, String nome, String sobrenome, String cpf, String dataNascimento, String email) {
+    public Cliente(Long id, String nome, String sobrenome, String dataNascimento, String email, String cpf) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;

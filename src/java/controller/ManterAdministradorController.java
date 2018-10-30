@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Administrador;
 
+
 /**
  *
  * @author viict
@@ -38,7 +39,7 @@ public class ManterAdministradorController extends HttpServlet {
         String acao = request.getParameter("acao");
         
         if(acao.equals("confirmarOperacao")){
-     //       confirmarOperacao(request, response);
+           confirmarOperacao(request, response);
         
         }else{
             if(acao.equals("prepararOperacao")){
@@ -55,9 +56,10 @@ public class ManterAdministradorController extends HttpServlet {
         request.setAttribute("administradores", Administrador.obterTodosAdministradores());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Administrador admin = Administrador.obterAdministrador((long)id);
             request.setAttribute("admin", admin);
+        
         }
                 RequestDispatcher view = request.getRequestDispatcher("/manterAdmin.jsp");
                 view.forward(request, response);
@@ -72,6 +74,42 @@ public class ManterAdministradorController extends HttpServlet {
                 throw new ServletException(e);
             }
     }
+    
+     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+        
+        long id = Long.parseLong("txtCodAdmin");
+        String nome = request.getParameter("txtNomeAdmin");
+        String email = request.getParameter("txtEmailAdmin");
+        
+        
+        try {       
+            
+            Administrador admin = new Administrador(id, nome, email);
+            if (operacao.equals("Incluir")) {
+                admin.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    admin.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        admin.excluir();
+                    }
+                }
+            }
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaAdminController");
+            view.forward(request, response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

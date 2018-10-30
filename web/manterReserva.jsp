@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,22 +21,22 @@
               
               <tr>
               <td>Codigo do reserva: </td>
-              <td> <input type="text" name="txtCodReserva" value="${resv.id}"></td>
+              <td> <input type="text" name="txtCodReserva" value="${resv.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
               </tr>
               
               <tr>
               <td>Data da locação: </td>
-              <td> <input type="text" name="txtNomeReserva" value="${resv.dataLocacao}"></td>
+              <td> <input type="text" name="txtNomeReserva" value="${resv.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr>
               
               <tr>
               <td> Horário de Inicio </td>
-              <td> <input type="text" name="txtHrInicio" value="${resv.horaInicioLocacao}"></td>
+              <td> <input type="text" name="txtHrInicio" value="${resv.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr>
              
               <tr>
               <td> Horário de Fim </td>
-              <td> <input type="text" name="txtHrFim" value="${resv.horaFimLocacao}"></td>
+              <td> <input type="text" name="txtHrFim" value="${resv.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr> 
               
               

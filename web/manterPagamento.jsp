@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,22 +20,22 @@
               
               <tr>
               <td>Codigo do Pagamento: </td>
-              <td> <input type="text" name="txtCodPagamento" value="${pagamento.id}"></td>
+              <td> <input type="text" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
               </tr>
               
               <tr>
               <td>Vencimento: </td>
-              <td> <input type="text" name="txtVencimentoPagamento" value="${pagamento.vencimento}"></td>
+              <td> <input type="text" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
               </tr>
               
                <tr>
               <td>Codigo de Barras: </td>
-              <td> <input type="text" name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"></td>
+              <td> <input type="text" name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr>
               
                <tr>
               <td>Valor Total: </td>
-              <td> <input type="text" name="txtValorTotalPagamento" value="${pagamento.valorTotal}"></td>
+              <td> <input type="text" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr>
               
               

@@ -3,12 +3,20 @@
     <servlet>
         <servlet-name>ManterAdministradorController</servlet-name>
         <servlet-class>controller.ManterAdministradorController</servlet-class>
-    </servlet>    
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManterAdministradorController</servlet-name>
         <url-pattern>/ManterAdministradorController</url-pattern>
     </servlet-mapping>
-    
+    <servlet>
+        
+        <servlet-name>ManterReembolsoController</servlet-name>
+        <servlet-class>controller.ManterReembolsoController</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ManterReembolsoController</servlet-name>
+        <url-pattern>/ManterReembolsoController</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>ManterCartaoController</servlet-name>
         <servlet-class>controller.ManterCartaoController</servlet-class>
@@ -17,7 +25,6 @@
         <servlet-name>ManterCartaoController</servlet-name>
         <url-pattern>/ManterCartaoController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterClienteController</servlet-name>
         <servlet-class>controller.ManterClienteController</servlet-class>
@@ -26,7 +33,6 @@
         <servlet-name>ManterClienteController</servlet-name>
         <url-pattern>/ManterClienteController</url-pattern>
     </servlet-mapping>
-        
     <servlet>
         <servlet-name>ManterContatoController</servlet-name>
         <servlet-class>controller.ManterContatoController</servlet-class>
@@ -34,8 +40,7 @@
     <servlet-mapping>
         <servlet-name>ManterContatoController</servlet-name>
         <url-pattern>/ManterContatoController</url-pattern>
-    </servlet-mapping>  
-    
+    </servlet-mapping>
     <servlet>
         <servlet-name>ManterDisponibilidadeController</servlet-name>
         <servlet-class>controller.ManterDisponibilidadeController</servlet-class>
@@ -44,7 +49,6 @@
         <servlet-name>ManterDisponibilidadeController</servlet-name>
         <url-pattern>/ManterDisponibilidadeController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterEspacoController</servlet-name>
         <servlet-class>controller.ManterEspacoController</servlet-class>
@@ -53,7 +57,6 @@
         <servlet-name>ManterEspacoController</servlet-name>
         <url-pattern>/ManterEspacoController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterIrregularidadeController</servlet-name>
         <servlet-class>controller.ManterIrregularidadeController</servlet-class>
@@ -62,8 +65,7 @@
         <servlet-name>ManterIrregularidadeController</servlet-name>
         <url-pattern>/ManterIrregularidadeController</url-pattern>
     </servlet-mapping>
-    
-     <servlet>
+    <servlet>
         <servlet-name>ManterModalidadeController</servlet-name>
         <servlet-class>controller.ManterModalidadeController</servlet-class>
     </servlet>
@@ -71,7 +73,6 @@
         <servlet-name>ManterModalidadeController</servlet-name>
         <url-pattern>/ManterModalidadeController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterPagamentoController</servlet-name>
         <servlet-class>controller.ManterPagamentoController</servlet-class>
@@ -80,16 +81,6 @@
         <servlet-name>ManterPagamentoController</servlet-name>
         <url-pattern>/ManterPagamentoController</url-pattern>
     </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>ManterReembolsoController</servlet-name>
-        <servlet-class>controller.ManterReembolsoController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ManterReembolsoController</servlet-name>
-        <url-pattern>/ManterReembolsoController</url-pattern>
-    </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterReservaController</servlet-name>
         <servlet-class>controller.ManterReservaController</servlet-class>
@@ -98,7 +89,6 @@
         <servlet-name>ManterReservaController</servlet-name>
         <url-pattern>/ManterReservaController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ManterTipoEspacoController</servlet-name>
         <servlet-class>controller.ManterTipoEspacoController</servlet-class>
@@ -107,8 +97,6 @@
         <servlet-name>ManterTipoEspacoController</servlet-name>
         <url-pattern>/ManterTipoEspacoController</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>PesquisaAdminController</servlet-name>
         <servlet-class>controller.PesquisaAdminController</servlet-class>
@@ -117,7 +105,6 @@
         <servlet-name>PesquisaAdminController</servlet-name>
         <url-pattern>/PesquisaAdminController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaCartaoController</servlet-name>
         <servlet-class>controller.PesquisaCartaoController</servlet-class>
@@ -126,7 +113,6 @@
         <servlet-name>PesquisaCartaoController</servlet-name>
         <url-pattern>/PesquisaCartaoController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaClienteController</servlet-name>
         <servlet-class>controller.PesquisaClienteController</servlet-class>
@@ -135,7 +121,6 @@
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaContatoController</servlet-name>
         <servlet-class>controller.PesquisaContatoController</servlet-class>
@@ -144,7 +129,6 @@
         <servlet-name>PesquisaContatoController</servlet-name>
         <url-pattern>/PesquisaContatoController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaDisponibilidadeController</servlet-name>
         <servlet-class>controller.PesquisaDisponibilidadeController</servlet-class>
@@ -153,7 +137,6 @@
         <servlet-name>PesquisaDisponibilidadeController</servlet-name>
         <url-pattern>/PesquisaDisponibilidadeController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaEspacoController</servlet-name>
         <servlet-class>controller.PesquisaEspacoController</servlet-class>
@@ -162,7 +145,6 @@
         <servlet-name>PesquisaEspacoController</servlet-name>
         <url-pattern>/PesquisaEspacoController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
         <servlet-class>controller.PesquisaIrregularidadeController</servlet-class>
@@ -171,7 +153,6 @@
         <servlet-name>PesquisaIrregularidadeController</servlet-name>
         <url-pattern>/PesquisaIrregularidadeController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaModalidadeController</servlet-name>
         <servlet-class>controller.PesquisaModalidadeController</servlet-class>
@@ -180,7 +161,6 @@
         <servlet-name>PesquisaModalidadeController</servlet-name>
         <url-pattern>/PesquisaModalidadeController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <servlet-class>controller.PesquisaPagamentoController</servlet-class>
@@ -189,16 +169,6 @@
         <servlet-name>PesquisaPagamentoController</servlet-name>
         <url-pattern>/PesquisaPagamentoController</url-pattern>
     </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>PesquisaReembolsoController</servlet-name>
-        <servlet-class>controller.PesquisaReembolsoController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PesquisaReembolsoController</servlet-name>
-        <url-pattern>/PesquisaReembolsoController</url-pattern>
-    </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaReservaController</servlet-name>
         <servlet-class>controller.PesquisaReservaController</servlet-class>
@@ -215,5 +185,14 @@
     <servlet-mapping>
         <servlet-name>PesquisaTipoEspacoController</servlet-name>
         <url-pattern>/PesquisaTipoEspacoController</url-pattern>
+    </servlet-mapping>
+    
+        <servlet>
+        <servlet-name>PesquisaReembolsoController</servlet-name>
+        <servlet-class>controller.PesquisaReembolsoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PesquisaReembolsoController</servlet-name>
+        <url-pattern>/PesquisaReembolsoController</url-pattern>
     </servlet-mapping>
 </web-app>
