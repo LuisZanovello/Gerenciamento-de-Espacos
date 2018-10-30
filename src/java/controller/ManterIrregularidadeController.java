@@ -39,7 +39,7 @@ public class ManterIrregularidadeController extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            confirmarOperacao(request, response);
+  //          confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -95,20 +95,25 @@ public class ManterIrregularidadeController extends HttpServlet {
     }// </editor-fold>
 
     private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, IOException, ServletException {
+        try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
         request.setAttribute("irregularidades", Irregularidade.obterTodasIrregularidades());
+       
         if (!operacao.equals("Incluir")) {
-            long id = Integer.parseInt(request.getParameter("id"));
-            Irregularidade irregularidade = Irregularidade.obterTodasIrregularidades(id);
+              long id = Long.parseLong(request.getParameter("id").trim());
+            Irregularidade irregularidade = Irregularidade.obterIrregularidade((long) id);
             request.setAttribute("irregularidade", irregularidade);
         }
         RequestDispatcher view = request.getRequestDispatcher("/manterIrregularidade.jsp");
         view.forward(request, response);
+        
+     }catch(ServletException e){
+                throw e;
+            }catch(IOException | SQLException | ClassNotFoundException e){
+                throw new ServletException(e);
+            }
     }
-
-    private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+  
 
 }
