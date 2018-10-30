@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +20,6 @@ import model.TipoEspaco;
  *
  * @author luisg
  */
-//@WebServlet(name = "ManterTipoEspacoController_1", urlPatterns = {"/ManterTipoEspacoController_1"})
 public class ManterTipoEspacoController extends HttpServlet {
 
     /**
@@ -36,16 +34,16 @@ public class ManterTipoEspacoController extends HttpServlet {
      * @throws java.lang.ClassNotFoundException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-                     throws ServletException, IOException, SQLException, ClassNotFoundException {
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            confirmarOperacao(request, response);
+            //  confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
             }
         }
-        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -61,9 +59,7 @@ public class ManterTipoEspacoController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterTipoEspacoController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ManterTipoEspacoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -81,9 +77,7 @@ public class ManterTipoEspacoController extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManterTipoEspacoController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ManterTipoEspacoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -99,20 +93,22 @@ public class ManterTipoEspacoController extends HttpServlet {
     }// </editor-fold>
 
     private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, IOException, ServletException {
-        String operacao = request.getParameter("operacao");
-        request.setAttribute("operacao", operacao);
-        request.setAttribute("tiposEspacos", TipoEspaco.obterTodosTiposEspacos());
-        if (!operacao.equals("Incluir")) {
-            long id = Integer.parseInt(request.getParameter("id"));
-            TipoEspaco tipoEspaco = TipoEspaco.obterTodosTiposEspacos(id);
-            request.setAttribute("tipoEspaco", tipoEspaco);
-        }
-        RequestDispatcher view = request.getRequestDispatcher("/manterTipoEspaco.jsp");
-        view.forward(request, response);
-    }
+        try {
+            String operacao = request.getParameter("operacao");
+            request.setAttribute("operacao", operacao);
+            request.setAttribute("tiposEspacos", TipoEspaco.obterTodosTiposEspacos());
+            if (!operacao.equals("Incluir")) {
+                long id = Long.parseLong(request.getParameter("id").trim());
+                TipoEspaco tipoEspaco = TipoEspaco.obterTipoEspaco((long) id);
+                request.setAttribute("tipoEspaco", tipoEspaco);
+            }
+            RequestDispatcher view = request.getRequestDispatcher("/manterTipoEspaco.jsp");
+            view.forward(request, response);
 
-    private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        } catch (ServletException e) {
+            throw e;
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            throw new ServletException((e));
+        }
     }
-    
 }
