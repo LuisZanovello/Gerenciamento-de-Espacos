@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class    PesquisaIrregularidadeController extends HttpServlet {
+public class PesquisaIrregularidadeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,18 +22,14 @@ public class    PesquisaIrregularidadeController extends HttpServlet {
         processRequest(request, response);
     }
 
-    protected void processRequest(HttpServletRequest request,
-                                  HttpServletResponse response) throws SecurityException, IOException, ServletException {
+    protected void processRequest(HttpServletRequest request,  HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
             request.setAttribute("irregularidades", Irregularidade.obterTodasIrregularidades());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaIrregularidade.jsp");
             view.forward(request, response);
-        } catch (ClassNotFoundException e) {
-            throw new ServletException(e);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             throw new ServletException(e);
         } catch (ServletException e) {
-            e.printStackTrace();
         }
     }
 }
