@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class    PesquisaModalidadeController extends HttpServlet {
+public class PesquisaModalidadeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,8 +22,7 @@ public class    PesquisaModalidadeController extends HttpServlet {
         processRequest(request, response);
     }
 
-    protected void processRequest(HttpServletRequest request,
-                                  HttpServletResponse response) throws SecurityException, IOException, ServletException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
             request.setAttribute("modalidades", Modalidade.obterTodasModalidades());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaModalidade.jsp");
