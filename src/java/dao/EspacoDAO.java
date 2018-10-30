@@ -105,7 +105,7 @@ public class EspacoDAO {
             BD.fecharConexao(conexao, comando);
         }
     }
-    public static Espaco obterEspaco (Long id) throws ClassNotFoundException {
+    public static Espaco obterEspaco (long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Espaco espaco = null;
