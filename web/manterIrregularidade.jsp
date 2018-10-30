@@ -29,16 +29,6 @@
     <td>Descrição</td>
     <td><input type="text" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
-    <tr>
-                    <td>Espaco:</td>
-                    <td>
-                        <select name="optIrregularidade" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <c:forEach items="${irregularidades}" var="irregularidade">
-                                <option value="${irregularidade.IdEspaco}" <c:if test="${espaco.id == irregularidade.IdEspaco}"> selected</c:if>>${espaco.nome}</option>  
-                            </c:forEach>
-                        </select>
-                    </td>
-                </tr>
 </table>
     <input type="submit" name="btnConfirmar" value="Confirmar">
         </form>

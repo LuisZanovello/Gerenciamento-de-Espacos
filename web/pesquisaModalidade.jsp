@@ -30,7 +30,7 @@
             <td><c:out value="${modalidade.id}" /></td>
             <td><c:out value="${modalidade.modalidade}" /></td>
             <td><a href="ManterModalidadeController?acao=prepararOperacao&operacao=Editar&id= <c:out value="${modalidade.id}"/>">Editar</a></td>
-            <td><a href="ManterModalidadeeController?acao=prepararOperacao&operacao=Excluir&id= <c:out value="${modalidade.id}"/>">Excluir</a></td>
+            <td><a href="ManterModalidadeController?acao=prepararOperacao&operacao=Excluir&id= <c:out value="${modalidade.id}"/>">Excluir</a></td>
         </tr>
     </c:forEach>
 </table>
