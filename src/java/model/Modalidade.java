@@ -6,9 +6,6 @@ import java.util.List;
 
 public class Modalidade {
 
-    public static Modalidade obterTodasModalidades(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     private Long id;
     private String modalidade;
     private String descricao;
@@ -32,7 +29,7 @@ public class Modalidade {
     public void excluir() throws SQLException, ClassNotFoundException {
         ModalidadeDAO.excluir(this);
     }
-    public Modalidade obterModalidade(Long id) throws SQLException, ClassNotFoundException {
+    public static Modalidade obterModalidade(Long id) throws SQLException, ClassNotFoundException {
         return ModalidadeDAO.obterModalidade((long)id);
     }
     public static List<Modalidade> obterTodasModalidades() throws  SQLException, ClassNotFoundException {

@@ -7,9 +7,7 @@ import java.util.List;
 
 public class TipoEspaco {
 
-    public static TipoEspaco obterTodosTiposEspacos(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     private Long id;
     private String nome;
     private Long modalidadeId;
@@ -33,7 +31,7 @@ public class TipoEspaco {
     public void excluir() throws SQLException, ClassNotFoundException {
         TipoEspacoDAO.excluir(this);
     }
-    public TipoEspaco obterTipoEspaco(Long id) throws SQLException, ClassNotFoundException {
+    public static TipoEspaco obterTipoEspaco(Long id) throws SQLException, ClassNotFoundException {
         return TipoEspacoDAO.obterTipoEspaco((long)id);
     }
     public static List<TipoEspaco> obterTodosTiposEspacos() throws  SQLException, ClassNotFoundException {

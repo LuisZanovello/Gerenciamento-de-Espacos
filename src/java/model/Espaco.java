@@ -7,10 +7,6 @@ import java.util.List;
 
 public class Espaco {
 
-    public static Espaco obterTodosEspacos(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private Long id;
     private String nome;
     private String cnpj;
@@ -61,7 +57,7 @@ public class Espaco {
         EspacoDAO.excluir(this);
     }
 
-    public Espaco obterEspaco(Long id) throws SQLException, ClassNotFoundException {
+    public static Espaco obterEspaco(Long id) throws SQLException, ClassNotFoundException {
         return EspacoDAO.obterEspaco((long) id);
     }
 
