@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,11 +21,11 @@
         <table>
         <tr>
             <td>Código do cartao: </td>
-            <td><input type="text" name="txtIdCartao" value="${cartao.id}"></td>
+            <td><input type="text" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Bandeira do cartao: </td>
-            <td><input type="text" name="txtNomeCartao" value="${cartao.bandeira}"></td>
+            <td><input type="text" name="txtNomeCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
 
     </table>

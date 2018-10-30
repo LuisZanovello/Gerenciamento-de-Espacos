@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,19 +21,19 @@
         <table>
         <tr>
             <td>Código do disponibilidade: </td>
-            <td><input type="text" name="txtIdDisponibilidade" value="${disponibilidade.id}"></td>
+            <td><input type="text" name="txtIdDisponibilidade" value="${disponibilidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Data Dsponivel: </td>
-            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.dataDisponivel}"></td>
+            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.dataDisponivel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Hora Inicio: </td>
-            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.hora_inicio}"></td>
+            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.hora_inicio}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Hora Final: </td>
-            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.hora_fim}"></td>
+            <td><input type="text" name="txtNomeDisponibilidade" value="${disponibilidade.hora_fim}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
        
     </table>
