@@ -61,7 +61,7 @@ public class ModalidadeDAO {
         }
     }
 
-    public static Modalidade obterModalidade(Long id) throws ClassNotFoundException {
+    public static Modalidade obterModalidade(long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Modalidade modalidade = null;
