@@ -74,7 +74,7 @@ public class IrregularidadeDAO {
         }
     }
 
-    public static Irregularidade obterIrregularidade(Long id) throws ClassNotFoundException {
+    public static Irregularidade obterIrregularidade(long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Irregularidade irregularidade = null;
