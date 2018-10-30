@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class    PesquisaTipoEspacoController extends HttpServlet {
+public class PesquisaTipoEspacoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,15 +22,12 @@ public class    PesquisaTipoEspacoController extends HttpServlet {
         processRequest(request, response);
     }
 
-    protected void processRequest(HttpServletRequest request,
-                                  HttpServletResponse response) throws SecurityException, IOException, ServletException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws SecurityException, IOException, ServletException {
         try {
             request.setAttribute("tiposEspacos", TipoEspaco.obterTodosTiposEspacos());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaTipoEspaco.jsp");
             view.forward(request, response);
-        } catch (ClassNotFoundException e) {
-            throw new ServletException(e);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             throw new ServletException(e);
         } catch (ServletException e) {
             e.printStackTrace();
