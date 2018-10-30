@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,7 +20,6 @@ import model.Irregularidade;
  *
  * @author luisg
  */
-//@WebServlet(name = "ManterIrregularidadeController", urlPatterns = {"/ManterIrregularidadeController"})
 public class ManterIrregularidadeController extends HttpServlet {
 
     /**
@@ -99,7 +97,7 @@ public class ManterIrregularidadeController extends HttpServlet {
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
         request.setAttribute("irregularidades", Irregularidade.obterTodasIrregularidades());
-       
+
         if (!operacao.equals("Incluir")) {
               long id = Long.parseLong(request.getParameter("id").trim());
             Irregularidade irregularidade = Irregularidade.obterIrregularidade((long) id);
