@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,16 +19,26 @@
 <table>
     <tr>
     <td>Código Irregularidade</td>
-    <td><input type="text" name="txtIdIrregularidade" value="${irregularidade.id}"></td>
+    <td><input type="text" name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
     </tr>
     <tr>
     <td>Autor</td>
-    <td><input type="text" name="txtAutorIrregularidade" value="${irregularidade.autor}"></td> 
+    <td><input type="text" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
     <tr>
     <td>Descrição</td>
-    <td><input type="text" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}"></td> 
+    <td><input type="text" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
+    <tr>
+                    <td>Espaco:</td>
+                    <td>
+                        <select name="optIrregularidade" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <c:forEach items="${irregularidades}" var="irregularidade">
+                                <option value="${irregularidade.IdEspaco}" <c:if test="${espaco.id == irregularidade.IdEspaco}"> selected</c:if>>${espaco.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
 </table>
     <input type="submit" name="btnConfirmar" value="Confirmar">
         </form>
