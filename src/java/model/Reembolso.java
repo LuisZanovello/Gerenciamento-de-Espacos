@@ -61,61 +61,36 @@ public class Reembolso {
         return ReembolsoDAO.obterTodosReembolsos();
     }
 
-    /**
-     * @return the id
-     */
     public Long getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * @return the estado
-     */
     public String getEstado() {
         return estado;
     }
 
-    /**
-     * @param estado the estado to set
-     */
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    /**
-     * @return the idPagamento
-     */
     public Long getIdPagamento() {
         return idPagamento;
     }
 
-    /**
-     * @param idPagamento the idPagamento to set
-     */
     public void setIdPagamento(Long idPagamento) {
         this.idPagamento = idPagamento;
     }
 
-    /**
-     * @return the pagamento
-     */
     public Pagamento getPagamento() {
         return pagamento;
     }
 
-    /**
-     * @param pagamento the pagamento to set
-     */
     public void setPagamento(Pagamento pagamento) {
         this.pagamento = pagamento;
     }
-    
-    
+
 }

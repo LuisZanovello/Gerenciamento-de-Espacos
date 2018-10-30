@@ -22,15 +22,13 @@
     <tr>
         <th>Id</th>
         <th>Status</th>
-        <th>Pagamento</th>
+        
         <th colspan="2">Ação</th>
     </tr>
     <c:forEach items="${reembolsos}" var="reb">
         <tr>
-            <td><c:out value="${reb.id}" /></td>
-            <td><c:out value="${reb.estado}" /></td>
-            
-            
+            <td><c:out value="${reb.id}"/></td>
+            <td><c:out value="${reb.estado}"/></td>
             <td><a href="ManterReembolsoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${reb.id}"/>">Editar</a></td>
             <td><a href="ManterReembolsoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${reb.id}"/>">Excluir</a></td>
         </tr>

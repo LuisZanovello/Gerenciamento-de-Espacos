@@ -45,7 +45,18 @@ public class Reserva {
         this.notaAvaliacao = notaAvaliacao;
 
     }
+    
+    public Reserva(Long id, String dataLocacao, String horaInicioLocacao, String horaFimLocacao) {
+        this.id = id;
+        this.dataLocacao = dataLocacao;
+        this.horaInicioLocacao = horaInicioLocacao;
+        this.horaFimLocacao = horaFimLocacao;
+    }
 
+    public Reserva() {
+    }
+    
+    
 
     public void gravar() throws SQLException, ClassNotFoundException{
         ReservaDAO.gravar(this);

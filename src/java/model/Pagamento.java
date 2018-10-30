@@ -24,6 +24,16 @@ public class Pagamento {    //antiga classe Boleto
         this.idReserva = idReserva;
     }
 
+    public Pagamento(long id, String vencimento, long numeroCodBarras, double valorTotal) {
+        this.id = id;
+        this.vencimento = vencimento;
+        this.numeroCodBarras = numeroCodBarras;
+        this.valorTotal = valorTotal;
+    }
+
+    public Pagamento() {
+    }
+    
     public void gravar() throws SQLException, ClassNotFoundException{
         PagamentoDAO.gravar(this);
     }

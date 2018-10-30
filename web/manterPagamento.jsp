@@ -20,12 +20,12 @@
               
               <tr>
               <td>Codigo do Pagamento: </td>
-              <td> <input type="text" name="txtCodPagamento" value="${pagamento.id}"></td>
+              <td> <input type="text" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
               </tr>
               
               <tr>
               <td>Vencimento: </td>
-              <td> <input type="text" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+              <td> <input type="text" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
               </tr>
               
                <tr>

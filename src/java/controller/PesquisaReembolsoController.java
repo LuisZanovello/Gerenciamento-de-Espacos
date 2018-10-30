@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-//@WebServlet(name = "PesquisaReembolsoController", urlPatterns = {"/PesquisaReembolsoController"})
+
 public class PesquisaReembolsoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,5 +34,15 @@ public class PesquisaReembolsoController extends HttpServlet {
         } catch (ServletException e) {
         }
     }
+    
+      /** 
+     * Returns a short description of the servlet.
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
 }
 
