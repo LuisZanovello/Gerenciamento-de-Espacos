@@ -7,10 +7,6 @@ import java.util.List;
 
 public class Irregularidade {
 
-    public static Irregularidade obterTodasIrregularidades(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private Long id;
     private String autor;
     private String descricao;
@@ -40,7 +36,7 @@ public class Irregularidade {
         IrregularidadeDAO.excluir(this);
     }
 
-    public Irregularidade obterIrregularidade(Long id) throws SQLException, ClassNotFoundException {
+    public static Irregularidade obterIrregularidade(Long id) throws SQLException, ClassNotFoundException {
         return IrregularidadeDAO.obterIrregularidade((long) id);
     }
 
