@@ -6,11 +6,9 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +20,6 @@ import model.Espaco;
  *
  * @author viict
  */
-//@WebServlet(name = "ManterReservaController", urlPatterns = {"/ManterReservaController"})
 public class ManterReservaController extends HttpServlet {
 
     /**
@@ -92,7 +89,7 @@ public class ManterReservaController extends HttpServlet {
             if (cliente != 0 && espaco !=0) {
            
                 clit = Cliente.obterCliente(cliente);
-                esp = Espaco.obterTodosEspacos(espaco);
+                esp = Espaco.obterEspaco(espaco);
             }
             Reserva resv = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao);
             if (operacao.equals("Incluir")) {
