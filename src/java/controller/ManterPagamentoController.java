@@ -77,7 +77,7 @@ public class ManterPagamentoController extends HttpServlet {
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
 
-        long id = Long.parseLong("txtCodPagamento");
+        long id = Long.parseLong(request.getParameter("txtCodPagamento"));
         String vencimento = request.getParameter("txtVencimentoPagamento");
         long numeroCodBarras = Long.parseLong("txtCodBarrasPagamento");
         double valorTotal = Double.parseDouble("txtValorTotalPagamento");

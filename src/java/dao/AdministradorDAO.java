@@ -10,7 +10,7 @@ public class AdministradorDAO {
     public static void gravar(Administrador admin) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        String stringSQL;
+    
         try {
             conexao = BD.getConexao();
             String sql = "insert into administrador (id, nome, email, senha)"

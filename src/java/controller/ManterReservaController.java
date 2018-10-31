@@ -75,7 +75,7 @@ public class ManterReservaController extends HttpServlet {
      public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
         
-        long id = Long.parseLong("txtCodReserva");
+        long id = Long.parseLong(request.getParameter("txtCodReserva"));
         String dataLocacao = request.getParameter("txtNomeReserva");
         String horaInicioLocacao = request.getParameter("txtHrInicio");
         String horaFimLocacao = request.getParameter("txtHrFim");

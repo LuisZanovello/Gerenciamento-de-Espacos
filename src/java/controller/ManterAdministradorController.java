@@ -78,7 +78,7 @@ public class ManterAdministradorController extends HttpServlet {
      public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
         
-        Long id = Long.parseLong(request.getParameter("txtCodAdmin"));
+        long id = Long.parseLong(request.getParameter("txtCodAdmin"));
         String nome = request.getParameter("txtNomeAdmin");
         String email = request.getParameter("txtEmailAdmin");
         

@@ -83,7 +83,7 @@ public class ReembolsoDAO {
             String sql = "select * from reembolso where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, id);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
 
             reembol = new Reembolso(rs.getLong("id"),

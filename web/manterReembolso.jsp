@@ -29,17 +29,7 @@
               <td> <input type="text" name="txtNomeReembolso" value="${reb.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr>
               
-              <tr>
-                    <td>Pagamento: </td>
-                    <td>
-                        <select name="optPagamento" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${reb.pagamento == null}"> selected</c:if>> </option>  
-                            <c:forEach items="${pagamentos}" var="pag">
-                                <option value="${pag.id}" <c:if test="${reb.id == pag.id}"> selected</c:if>>${pag.valorTotal}</option>  
-                            </c:forEach>
-                        </select>
-                    </td>
-                </tr>
+           
             
         </table>
 
