@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Irregularidade;
+import model.Espaco;
 
 /**
  *
@@ -37,7 +38,7 @@ public class ManterIrregularidadeController extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-  //          confirmarOperacao(request, response);
+            confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -96,7 +97,7 @@ public class ManterIrregularidadeController extends HttpServlet {
         try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("irregularidades", Irregularidade.obterTodasIrregularidades());
+        request.setAttribute("espacos", Espaco.obterTodosEspacos());
 
         if (!operacao.equals("Incluir")) {
               long id = Long.parseLong(request.getParameter("id").trim());
@@ -112,6 +113,37 @@ public class ManterIrregularidadeController extends HttpServlet {
                 throw new ServletException(e);
             }
     }
-  
+   public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
 
+        long id = Long.parseLong(request.getParameter("txtIdIrregularidade"));
+        String autor = request.getParameter("txtAutorIrregularidade");
+        String descricao = request.getParameter("txtDescricaoIrregularidade");
+        long espaco = Long.parseLong(request.getParameter("optEspaco"));
+        try {
+            Espaco esp = null;
+            if (espaco != 0) {
+                esp = Espaco.obterEspaco(espaco);
+            }
+            Irregularidade irregularidade = new Irregularidade(id,autor,descricao,espaco);
+            if (operacao.equals("Incluir")) {
+                irregularidade.gravar();
+            }else {
+                if (operacao.equals("Editar")) {
+                    irregularidade.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        irregularidade.excluir();
+                    }
+                }
+            }
+        
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaIrregularidadeController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
+    }
 }
