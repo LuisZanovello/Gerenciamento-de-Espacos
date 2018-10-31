@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Espaco {
 
+
     private Long id;
     private String nome;
     private String cnpj;
