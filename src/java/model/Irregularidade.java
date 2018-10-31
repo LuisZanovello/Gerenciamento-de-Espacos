@@ -22,6 +22,11 @@ public class Irregularidade {
         this.idEspaco = idEspaco;
     }
 
+     public Irregularidade(Long id, String autor, String descricao) {
+        this.id = id;
+        this.autor = autor;
+        this.descricao = descricao;
+    }
   
 
     public void gravar() throws SQLException, ClassNotFoundException {
