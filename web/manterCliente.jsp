@@ -16,7 +16,7 @@
 
     <body>
         <h1>Manter Cliente- ${operacao}</h1>
-    <form action="ManterClienteController?acao=confirmaOperacao&operacao=${operacao}" method="post" name="frmManterCliente">
+    <form action="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterCliente">
     
         <table>
         <tr>
@@ -33,15 +33,15 @@
         </tr>
          <tr>
             <td>Data de Nascimento: </td>
-            <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td> <input type="text" name="txtDataNascimentoCliente" value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Email: </td>
-            <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td> <input type="text" name="txtEmailCliente" value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>CPF: </td>
-            <td> <input type="text" name="txtSobrenomeCliente" value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td> <input type="text" name="txtCPFCliente" value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
     </table>
         

@@ -110,5 +110,38 @@ public class ManterContatoController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+         public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+        
+        long id = Long.parseLong("txtCodAdmin");
+        String numero = request.getParameter("txtNumeroAdmin");
 
+        
+        
+        try {       
+            
+            Contato admin = new Contato(id, numero);
+            if (operacao.equals("Incluir")) {
+                admin.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    admin.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        admin.excluir();
+                    }
+                }
+            }
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaAdminController");
+            view.forward(request, response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
+    }
 }

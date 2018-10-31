@@ -38,7 +38,7 @@ public class ManterClienteController extends HttpServlet {
         String acao = request.getParameter("acao");
         
         if(acao.equals("confirmarOperacao")){
-     //       confirmarOperacao(request, response);
+            confirmarOperacao(request, response);
         
         }else{
             if(acao.equals("prepararOperacao")){
@@ -55,7 +55,7 @@ public class ManterClienteController extends HttpServlet {
         request.setAttribute("clientes", Cliente.obterTodosOsClientes());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Cliente cliente = Cliente.obterCliente((long)id);
             request.setAttribute("cliente", cliente);
         }
@@ -71,6 +71,42 @@ public class ManterClienteController extends HttpServlet {
             }catch(ClassNotFoundException e){
                 throw new ServletException(e);
             }
+    }
+    
+     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+        
+        long id = Long.parseLong(request.getParameter("txtIdCliente"));
+        String nome = request.getParameter("txtNomeCliente");
+        String sobrenome = request.getParameter("txtSobrenomeCliente");
+        String dataNascimento = request.getParameter("txtDataNascimentoCliente");
+        String email = request.getParameter("txtEmailCliente");
+        String cpf = request.getParameter("txtCPFCliente");
+        
+        try {       
+            Cliente cliente = new Cliente(id, nome, sobrenome, dataNascimento, email, cpf);
+            if (operacao.equals("Incluir")) {
+                cliente.gravar();
+            } /*else {
+                if (operacao.equals("Editar")) {
+                    admin.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        admin.excluir();
+                    }
+                }
+            }*/
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaClienteController");
+            view.forward(request, response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
