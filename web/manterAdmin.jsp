@@ -16,7 +16,7 @@
     <body>
         
          <h1>Manter Admin - ${operacao} </h1>
-         <form action="ManterAdministradorController?acao=prepararOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
+         <form action="ManterAdministradorController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
           <table>
               
               <tr>

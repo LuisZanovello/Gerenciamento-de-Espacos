@@ -3,8 +3,8 @@
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */:root{
-    -blue:#007bff;
+ *//*:root{
+  /* -blue:#007bff;
     -indigo:#6610f2;
     -purple:#6f42c1;
     -pink:#e83e8c;
@@ -128,4 +128,4 @@ a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;backgrou
                                                                                                                                                                                                         .table-bordered th{border:1px solid #dee2e6!important}.table-dark{color:inherit}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#dee2e6}
                                                                                                                                                                                                         .table .thead-dark th{color:inherit;border-color:#dee2e6}}
                                                                                                                                                                                                         /*# sourceMappingURL=bootstrap.min.css.map */
-                                                                                                                                                                                                        @import "bootstrap.min.css";
+                                                                                                                                                                                                        

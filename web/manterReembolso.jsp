@@ -16,7 +16,7 @@
     <body>
    
          <h1>Manter Reembolso - ${operacao} </h1>
-         <form action="ManterReembolsoController?acao=prepararOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
+         <form action="ManterReembolsoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
           <table>
               
               <tr>

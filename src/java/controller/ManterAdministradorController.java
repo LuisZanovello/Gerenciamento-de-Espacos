@@ -57,7 +57,7 @@ public class ManterAdministradorController extends HttpServlet {
         
         if(!operacao.equals("Incluir")){
             long id = Long.parseLong(request.getParameter("id").trim());
-            Administrador admin = Administrador.obterAdministrador((long)id);
+            Administrador admin = Administrador.obterAdministrador(id);
             request.setAttribute("admin", admin);
         
         }
@@ -78,7 +78,7 @@ public class ManterAdministradorController extends HttpServlet {
      public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
         
-        long id = Long.parseLong("txtCodAdmin");
+        Long id = Long.parseLong(request.getParameter("txtCodAdmin"));
         String nome = request.getParameter("txtNomeAdmin");
         String email = request.getParameter("txtEmailAdmin");
         

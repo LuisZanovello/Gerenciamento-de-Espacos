@@ -15,7 +15,7 @@
     </head>
     <body>
         <h1>Manter Pagamento - ${operacao} </h1>
-    <form action="ManterPagamentoController?acao=prepararOperacao&operacao=${operacao}">
+    <form action="ManterPagamentoController?acao=confirmarOperacao&operacao=${operacao}">
           <table>
               
               <tr>

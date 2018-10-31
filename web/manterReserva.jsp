@@ -16,7 +16,7 @@
     <body>
         
         <h1>Manter Reserva - ${operacao}</h1>
-        <form action="ManterReservaController?acao=prepararOperacao&operacao=${operacao}">
+        <form action="ManterReservaController?acao=confirmarOperacao&operacao=${operacao}">
           <table>
               
               <tr>
