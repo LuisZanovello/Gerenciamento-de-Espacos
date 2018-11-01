@@ -35,7 +35,7 @@ public class TipoEspaco {
         return TipoEspacoDAO.obterTipoEspaco((long)id);
     }
     public static List<TipoEspaco> obterTodosTiposEspacos() throws  SQLException, ClassNotFoundException {
-        return TipoEspacoDAO.obterTodosEspacos();
+        return TipoEspacoDAO.obterTodosTiposEspacos();
     }
 
     /**
