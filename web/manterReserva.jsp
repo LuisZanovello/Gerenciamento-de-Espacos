@@ -39,6 +39,25 @@
               <td> <input type="text" name="txtHrFim" value="${resv.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr> 
               
+              <td>CPF do Cliente:</td>
+                    <td>
+                        <select name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <c:forEach items="${clientes}" var="clit">
+                                <option value="${clit.id}" <c:if test="${clit.id == resv.idCliente}"> selected</c:if>>${clit.cpf}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
+                
+                <td>Local de Reserva:</td>
+                    <td>
+                        <select name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <c:forEach items="${espacos}" var="espc">
+                                <option value="${espc.id}" <c:if test="${espc.id == resv.idEspaco}"> selected</c:if>>${espc.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
               
         </table>
 
