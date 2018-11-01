@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Espaco;
+import model.TipoEspaco;
 
 /**
  *
@@ -39,7 +40,7 @@ public class ManterEspacoController extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //   confirmarOperacao(request, response);
+               confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -99,7 +100,7 @@ public class ManterEspacoController extends HttpServlet {
         try {
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            request.setAttribute("espacos", Espaco.obterTodosEspacos());
+            request.setAttribute("tiposEspacos", TipoEspaco.obterTodosTiposEspacos());
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
                 Espaco espaco = Espaco.obterEspaco((long) id);
@@ -115,6 +116,49 @@ public class ManterEspacoController extends HttpServlet {
         
  
     }
-    
+    public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+
+        long id = Long.parseLong(request.getParameter("txtIdEspaco"));
+        String nome = request.getParameter("txtNome");
+        String cnpj = request.getParameter("txtCnpj");
+        String cep = request.getParameter("txtCep");
+        String logradouro = request.getParameter("txtLogradouro");
+        int numero = Integer.parseInt(request.getParameter("txtNumero"));
+        String complemento = request.getParameter("txtComplemento");
+        String bairro = request.getParameter("txtBairro");
+        String cidade = request.getParameter("txtCidade");
+        String uf = request.getParameter("txtUf");
+        double area = Double.parseDouble(request.getParameter("txtArea"));
+        int qtPessoas = Integer.parseInt(request.getParameter("txtQuantidadePessoas"));
+        String horaI = request.getParameter("txtHoraFuncionamentoInicio");
+        String horaF = request.getParameter("txtHoraFuncionamentoFinal");
+        long tipoEspaco = Long.parseLong(request.getParameter("optTipoEspaco"));
+        try {
+            TipoEspaco tipo = null;
+            if (tipoEspaco != 0) {
+                tipo = TipoEspaco.obterTipoEspaco(tipoEspaco);
+            }
+            Espaco espaco = new Espaco(id,nome,cnpj,cep,logradouro,numero,complemento,bairro,cidade,uf,area,qtPessoas,horaI,horaF,tipoEspaco);
+            if (operacao.equals("Incluir")) {
+                espaco.gravar();
+            }else {
+                if (operacao.equals("Editar")) {
+                    espaco.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                       espaco.excluir();
+                    }
+                }
+            }
+        
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaEspacoController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
+    }
     
 }

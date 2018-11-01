@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Modalidade {
 
+
     private Long id;
     private String modalidade;
     private String descricao;

@@ -15,17 +15,25 @@
     </head>
     <body>
        <h2>Manter Irregularidade - ${operacao}</h2>
-         <form action="ManterIrregularidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post">
+         <form action="ManterTipoEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post">
 <table>
     <tr>
     <td>Código Tipo Espaço</td>
-    <td><input type="text" name="txtIdTipoEspaco" value="${tipoEspaco.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+    <td><input type="text" name="txtTipoEspacoId" value="${tipoEspaco.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
     </tr>
      <tr>
     <td>Tipo Espaço</td>
-    <td><input type="text" name="txtTipoEspaco" value="${tipoEspaco.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+    <td><input type="text" name="txtNome" value="${tipoEspaco.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
     </tr>
-    
+     <td>Modalidade:</td>
+                    <td>
+                        <select name="optModalidade" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <c:forEach items="${modalidades}" var="modalidade">
+                                <option value="${modalidade.id}" <c:if test="${modalidade.id == tipoEspaco.modalidadeId}"> selected</c:if>>${modalidade.descricao}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
 </table>
     <input type="submit" name="btnConfirmar" value="Confirmar">
          </form>

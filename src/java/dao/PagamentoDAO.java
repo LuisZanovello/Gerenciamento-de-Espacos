@@ -83,8 +83,7 @@ public class PagamentoDAO {
 
         try {
             conexao = BD.getConexao();
-            String sql = "select * from pagamento where id=?";
-            comando = conexao.prepareStatement(sql);
+            comando = conexao.prepareStatement("select * from pagamento where id=?");
             comando.setLong(1, id);
             ResultSet rs = comando.executeQuery();
             rs.first();
@@ -93,9 +92,10 @@ public class PagamentoDAO {
                     rs.getString("vencimento"),
                     rs.getLong("numero_codigo_barras"),
                     rs.getDouble("valor_total"),
-                    rs.getLong("reservas_id"));
+                    rs.getLong("reserva_id"));
 
         } catch (SQLException e) {
+            e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 

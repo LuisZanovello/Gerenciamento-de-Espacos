@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Modalidade;
 import model.TipoEspaco;
 
 /**
@@ -37,7 +38,7 @@ public class ManterTipoEspacoController extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //  confirmarOperacao(request, response);
+              confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -96,7 +97,8 @@ public class ManterTipoEspacoController extends HttpServlet {
         try {
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            request.setAttribute("tiposEspacos", TipoEspaco.obterTodosTiposEspacos());
+            request.setAttribute("modalidades", Modalidade.obterTodasModalidades());
+            
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
                 TipoEspaco tipoEspaco = TipoEspaco.obterTipoEspaco((long) id);
@@ -109,6 +111,39 @@ public class ManterTipoEspacoController extends HttpServlet {
             throw e;
         } catch (IOException | SQLException | ClassNotFoundException e) {
             throw new ServletException((e));
+        }
+    }
+    
+    public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+
+        long id = Long.parseLong(request.getParameter("txtTipoEspacoId"));
+        String nome = request.getParameter("txtNome");
+        long modalidade = Long.parseLong(request.getParameter("optModalidade"));
+        try {
+               Modalidade modal = null;
+            if (modalidade != 0) {
+                modal = Modalidade.obterModalidade(modalidade);
+            }
+           TipoEspaco tipoEspaco = new TipoEspaco(id,nome,modalidade);
+            if (operacao.equals("Incluir")) {
+                tipoEspaco.gravar();
+            }else {
+                if (operacao.equals("Editar")) {
+                    tipoEspaco.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        tipoEspaco.excluir();
+                    }
+                }
+            }
+        
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaTipoEspacoController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
         }
     }
 }
