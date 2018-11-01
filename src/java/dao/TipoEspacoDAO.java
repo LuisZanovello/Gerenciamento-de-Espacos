@@ -73,7 +73,7 @@ public class TipoEspacoDAO {
     public static TipoEspaco obterTipoEspaco(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        TipoEspaco obterTipoEspaco = null;
+        TipoEspaco tipoEspaco = null;
 
         try {
             conexao = BD.getConexao();
@@ -83,20 +83,20 @@ public class TipoEspacoDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
 
-            obterTipoEspaco = new TipoEspaco();
-            obterTipoEspaco.setId(rs.getLong("id"));
-            obterTipoEspaco.setNome(rs.getString("nome"));
-            obterTipoEspaco.setModalidadeId(rs.getLong("modalidade_Predominante_Id"));
+            tipoEspaco = new TipoEspaco();
+            tipoEspaco.setId(rs.getLong("id"));
+            tipoEspaco.setNome(rs.getString("nome"));
+            tipoEspaco.setModalidadeId(rs.getLong("modalidade_Predominante_Id"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
 
         }
-        return obterTipoEspaco;
+        return tipoEspaco;
     }
 
-    public static ArrayList<TipoEspaco> obterTodosEspacos() throws ClassNotFoundException {
+    public static ArrayList<TipoEspaco> obterTodosTiposEspacos() throws ClassNotFoundException {
 
         Connection conexao = null;
         Statement comando = null;
