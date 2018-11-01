@@ -16,17 +16,26 @@
 
     <body>
         <h1>Manter Contato- ${operacao}</h1>
-    <form action="ManterContatoController?acao=confirmaOperacao&operacao=${operacao}" method="post">
+    <form action="ManterContatoController?acao=confirmarOperacao&operacao=${operacao}" method="post">
     
         <table>
         <tr>
             <td>Código do contato: </td>
-            <td><input type="text" name="txtIdCliente" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+            <td><input type="text" name="txtIdContato" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Número de contato: </td>
-            <td><input type="text" name="txtNomeCliente" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text" name="txtNumeroContato" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
+         <td>Cliente:</td>
+                    <td>
+                        <select name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <c:forEach items="${clientes}" var="cliente">
+                                <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> selected</c:if>>${cliente.nome}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
 
     </table>
         
