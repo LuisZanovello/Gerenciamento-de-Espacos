@@ -84,15 +84,16 @@ public class ManterClienteController extends HttpServlet {
         String cpf = request.getParameter("txtCPFCliente");
         
         try {       
-            Cliente cliente = new Cliente(id, nome, sobrenome, dataNascimento, email, cpf);
+            
+            Cliente cli = new Cliente(id, nome, sobrenome, dataNascimento, email, cpf);
             if (operacao.equals("Incluir")) {
-                cliente.gravar();
+                cli.gravar();
             } else {
                 if (operacao.equals("Editar")) {
-                    cliente.alterar();
+                    cli.alterar();
                 } else {
                     if (operacao.equals("Excluir")) {
-                        cliente.excluir();
+                        cli.excluir();
                     }
                 }
             }

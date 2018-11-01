@@ -29,15 +29,15 @@
         </tr>
                 <tr>
             <td>Validade do cartao: </td>
-            <td><input type="text" name="txtValidadeCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text" name="txtValidadeCartao" value="${cartao.validade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
                 <tr>
             <td>Número do cartao: </td>
-            <td><input type="text" name="txtNumeroCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text" name="txtNumeroCartao" value="${cartao.numeroCartao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
                 <tr>
             <td>Codigo do cartao: </td>
-            <td><input type="text" name="txtCodCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text" name="txtCodCartao" value="${cartao.codigoSeguranca}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
                  <td>Cliente:</td>
                     <td>

@@ -53,7 +53,7 @@ public class ManterCartaoController extends HttpServlet {
             try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("cartoes", Cartao.obterTodosCartoes());
+        request.setAttribute("clientes", Cliente.obterTodosOsClientes());
         
         if(!operacao.equals("Incluir")){
             long id = Long.parseLong(request.getParameter("id"));
@@ -103,7 +103,7 @@ public class ManterCartaoController extends HttpServlet {
                     }
                 }
             }
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaContatoController");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaCartaoController");
             view.forward(request, response);
         } catch (IOException e) {
             throw new ServletException(e);

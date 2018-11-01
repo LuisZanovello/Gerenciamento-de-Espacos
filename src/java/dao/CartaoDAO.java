@@ -52,16 +52,11 @@ public class CartaoDAO {
             comando.setLong     (3, cartao.getNumeroCartao());
             comando.setString      (4, cartao.getCodigoSeguranca());
 
-            comando.setLong     (5, cartao.getId());
+       
 
+                comando.setLong(5, cartao.getIdCliente());
 
-            if(cartao.getCliente() == null){
-                comando.setNull(6, Types.NULL);
-            }
-            else{
-                comando.setLong(6, cartao.getCliente().getId());
-            }
-
+            comando.setLong     (6, cartao.getId());
             comando.execute();
 
         } catch (SQLException e) {
@@ -74,11 +69,13 @@ public class CartaoDAO {
     public static void excluir(Cartao cartao) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
+        
         try {
             conexao = BD.getConexao();
             String sql = "delete from cartao where id=?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cartao.getId());
+           
 
 
             comando.execute();
