@@ -11,11 +11,11 @@ public class Cartao{
     private String bandeira;
     private String validade;
     private Long numeroCartao;
-    private Integer codigoSeguranca;
+    private String codigoSeguranca;
     private  Long idCliente;
     private Cliente cliente;
 
-    public Cartao(Long id, String bandeira, String validade, Long numeroCartao, Integer codigoSeguranca, Long idCliente) {
+    public Cartao(Long id, String bandeira, String validade, Long numeroCartao, String codigoSeguranca, Long idCliente) {
         this.id = id;
         this.bandeira = bandeira;
         this.validade = validade;
@@ -43,7 +43,7 @@ public class Cartao{
         return this;
     }
 
-    public Cartao(Long id, String bandeira, String validade, Long numeroCartao, Integer codigoSeguranca) {
+    public Cartao(Long id, String bandeira, String validade, Long numeroCartao, String codigoSeguranca) {
        this.id = id;
         this.bandeira = bandeira;
         this.validade = validade;
@@ -87,11 +87,11 @@ public class Cartao{
         return this;
     }
 
-    public Integer getCodigoSeguranca() {
+    public String getCodigoSeguranca() {
         return codigoSeguranca;
     }
 
-    public void setCodigoSeguranca(Integer codigoSeguranca) {
+    public void setCodigoSeguranca(String codigoSeguranca) {
         this.codigoSeguranca = codigoSeguranca;
     }
 

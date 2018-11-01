@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Disponibilidade;
+import model.Espaco;
 
 /**
  *
@@ -38,7 +39,7 @@ public class ManterDisponibilidadeController extends HttpServlet {
         String acao = request.getParameter("acao");
         
         if(acao.equals("confirmarOperacao")){
-     //       confirmarOperacao(request, response);
+           confirmarOperacao(request, response);
         
         }else{
             if(acao.equals("prepararOperacao")){
@@ -71,6 +72,41 @@ public class ManterDisponibilidadeController extends HttpServlet {
             }catch(ClassNotFoundException e){
                 throw new ServletException(e);
             }
+    }
+    
+     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+
+        long id = Long.parseLong(request.getParameter("txtIdDisponibilidade"));
+        String data = request.getParameter("txtDataDisponibilidade");
+        String horaInicio = request.getParameter("txtHoraInicioDisponibilidade");
+        String horaFim = request.getParameter("txtHoraFimDisponibilidade");
+        long espaco = Long.parseLong(request.getParameter("optEspaco"));
+        try {
+            Espaco esp = null;
+            if (espaco != 0) {
+                esp = Espaco.obterEspaco(espaco);
+            }
+            Disponibilidade disponibilidade = new Disponibilidade(id,data,horaInicio,horaFim,espaco);
+            if (operacao.equals("Incluir")) {
+                disponibilidade.gravar();
+            }else {
+                if (operacao.equals("Editar")) {
+                    disponibilidade.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        disponibilidade.excluir();
+                    }
+                }
+            }
+        
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaDisponibilidadeController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

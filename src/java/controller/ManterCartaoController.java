@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Cartao;
+import model.Cliente;
 
 /**
  *
@@ -38,7 +39,7 @@ public class ManterCartaoController extends HttpServlet {
         String acao = request.getParameter("acao");
         
         if(acao.equals("confirmarOperacao")){
-     //       confirmarOperacao(request, response);
+           confirmarOperacao(request, response);
         
         }else{
             if(acao.equals("prepararOperacao")){
@@ -71,6 +72,48 @@ public class ManterCartaoController extends HttpServlet {
             }catch(ClassNotFoundException e){
                 throw new ServletException(e);
             }
+    }
+    
+       public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+        
+        long id = Long.parseLong(request.getParameter("txtIdCartao"));
+        long numero = Long.parseLong(request.getParameter("txtNumeroCartao"));
+        String bandeira = request.getParameter("txtBandeiraCartao");
+        String validade = request.getParameter("txtValidadeCartao");
+        String codSeguranca = request.getParameter("txtCodCartao");
+
+        
+         long cliente = Long.parseLong(request.getParameter("optCliente"));
+        try {
+            Cliente esp = null;
+            if (cliente != 0) {
+                esp = Cliente.obterCliente((long)id);
+            }     
+            
+            Cartao cartao = new Cartao(id, bandeira, validade, numero, codSeguranca, cliente);
+            if (operacao.equals("Incluir")) {
+                cartao.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    cartao.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        cartao.excluir();
+                    }
+                }
+            }
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaContatoController");
+            view.forward(request, response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
+        }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
