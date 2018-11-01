@@ -51,7 +51,8 @@ public class ManterReservaController extends HttpServlet {
             try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("reservas",Reserva.obterTodasReservas());
+        request.setAttribute("espacos", Espaco.obterTodosEspacos());
+        request.setAttribute("clientes", Cliente.obterTodosOsClientes());
         
         if(!operacao.equals("Incluir")){
             long id = Long.parseLong(request.getParameter("id").trim());
@@ -79,7 +80,7 @@ public class ManterReservaController extends HttpServlet {
         String dataLocacao = request.getParameter("txtNomeReserva");
         String horaInicioLocacao = request.getParameter("txtHrInicio");
         String horaFimLocacao = request.getParameter("txtHrFim");
-        long cliente = Long.parseLong("ooptCliente");
+        long cliente = Long.parseLong("optCliente");
         long espaco = Long.parseLong("optEspaco");
         
        try {

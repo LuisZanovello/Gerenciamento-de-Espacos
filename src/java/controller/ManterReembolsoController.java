@@ -52,7 +52,7 @@ public class ManterReembolsoController extends HttpServlet {
         try {
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            request.setAttribute("reembolsos", Reembolso.obterTodosReembolsos());
+            request.setAttribute("pagamentos", Pagamento.obterTodosPagamentos());
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
                 Reembolso reb = Reembolso.obterReembolso((long) id);

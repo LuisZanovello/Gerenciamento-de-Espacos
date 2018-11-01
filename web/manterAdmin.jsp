@@ -33,8 +33,11 @@
               <td>Email do admin: </td>
               <td> <input type="text" name="txtEmailAdmin" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
               </tr>
-              
-              
+                
+              <tr>
+              <td>Senha do admin: </td>
+              <td> <input type="text" name="txtSenhaAdmin" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+              </tr>
               
         </table>
 

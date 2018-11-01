@@ -81,11 +81,12 @@ public class ManterAdministradorController extends HttpServlet {
         long id = Long.parseLong(request.getParameter("txtCodAdmin"));
         String nome = request.getParameter("txtNomeAdmin");
         String email = request.getParameter("txtEmailAdmin");
+        String senha = request.getParameter("txtSenhaAdmin"); 
         
         
         try {       
             
-            Administrador admin = new Administrador(id, nome, email);
+            Administrador admin = new Administrador(id, nome, email,senha );
             if (operacao.equals("Incluir")) {
                 admin.gravar();
             } else {
