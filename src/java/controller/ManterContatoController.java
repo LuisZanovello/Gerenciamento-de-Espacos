@@ -54,7 +54,7 @@ public class ManterContatoController extends HttpServlet {
             try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("contatos", Contato.obterTodosContatos());
+        request.setAttribute("clientes", Cliente.obterTodosOsClientes());
         
         if(!operacao.equals("Incluir")){
             long id = Long.parseLong(request.getParameter("id").trim());

@@ -10,7 +10,7 @@ public class MainCartao {
 
     public static void main (String[] args) throws SQLException, ClassNotFoundException {
 
-        Cartao cartao = new Cartao ((long)1,"brrrasdr", "18/08/2004", (long)2, 123, (long)124);
+        Cartao cartao = new Cartao ((long)1,"brrrasdr", "18/08/2004", (long)2, "123", (long)124);
 
         //CartaoDAO.gravar(cartao); //FUNCIONANDO
         //CartaoDAO.alterar(cartao);

@@ -20,7 +20,7 @@ public class CartaoDAO {
             comando.setString   (2, cartao.getBandeira());
             comando.setString   (3, cartao.getValidade());
             comando.setLong     (4, cartao.getNumeroCartao());
-            comando.setInt      (5, cartao.getCodigoSeguranca());
+            comando.setString   (5, cartao.getCodigoSeguranca());
 
 
             if(cartao.getIdCliente() == null){
@@ -50,7 +50,7 @@ public class CartaoDAO {
             comando.setString   (1, cartao.getBandeira());
             comando.setString   (2, cartao.getValidade());
             comando.setLong     (3, cartao.getNumeroCartao());
-            comando.setInt      (4, cartao.getCodigoSeguranca());
+            comando.setString      (4, cartao.getCodigoSeguranca());
 
             comando.setLong     (5, cartao.getId());
 
@@ -107,7 +107,7 @@ public class CartaoDAO {
                     rs.getString    ("bandeira"),
                     rs.getString    ("validade"),
                     rs.getLong      ("numero"),
-                    rs.getInt       ("codigo_seguranca"),
+                    rs.getString       ("codigo_seguranca"),
                     rs.getLong("cliente_id"));
 
         } catch (SQLException e) {
@@ -135,7 +135,7 @@ public class CartaoDAO {
                         rs.getString    ("bandeira"),
                         rs.getString    ("validade"),
                         rs.getLong      ("numero"),
-                        rs.getInt       ("codigo_seguranca"), /*  null ? */
+                        rs.getString       ("codigo_seguranca"), /*  null ? */
                         rs.getLong("cliente_id"))); /* De onde vem o Set ? "SetMatriculaProfessorCoordenador"*/
             }
         }catch (SQLException e){
