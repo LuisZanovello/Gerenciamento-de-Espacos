@@ -37,7 +37,7 @@ public class ManterModalidadeController extends HttpServlet {
             throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //  confirmarOperacao(request, response);
+              confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -108,6 +108,36 @@ public class ManterModalidadeController extends HttpServlet {
             throw e;
         } catch (IOException | SQLException | ClassNotFoundException e) {
             throw new ServletException(e);
+        }
+    }
+     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String operacao = request.getParameter("operacao");
+
+        long id = Long.parseLong(request.getParameter("txtIdModalidade"));
+        String nome = request.getParameter("txtModalidade");
+        String descricao = request.getParameter("txtDescricao");
+
+        try {
+            
+            Modalidade modalidade = new Modalidade(id,nome,descricao);
+            if (operacao.equals("Incluir")) {
+                modalidade.gravar();
+            }else {
+                if (operacao.equals("Editar")) {
+                    modalidade.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        modalidade.excluir();
+                    }
+                }
+            }
+        
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaModalidadeController");
+            view.forward(request, response);
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            throw new ServletException(e);
+        } catch (ServletException e) {
+            throw e;
         }
     }
 }
