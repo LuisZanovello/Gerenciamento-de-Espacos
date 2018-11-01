@@ -121,12 +121,12 @@ public class ManterContatoController extends HttpServlet {
         
          long cliente = Long.parseLong(request.getParameter("optCliente"));
         try {
-            Cliente esp = null;
+            Cliente cli = null;
             if (cliente != 0) {
-                esp = Cliente.obterCliente((long)id);
+                cli = Cliente.obterCliente((long)id);
             }     
             
-            Contato contato = new Contato(id, numero);
+            Contato contato = new Contato(id, numero,cliente);
             if (operacao.equals("Incluir")) {
                 contato.gravar();
             } else {

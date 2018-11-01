@@ -87,15 +87,15 @@ public class ManterClienteController extends HttpServlet {
             Cliente cliente = new Cliente(id, nome, sobrenome, dataNascimento, email, cpf);
             if (operacao.equals("Incluir")) {
                 cliente.gravar();
-            } /*else {
+            } else {
                 if (operacao.equals("Editar")) {
-                    admin.alterar();
+                    cliente.alterar();
                 } else {
                     if (operacao.equals("Excluir")) {
-                        admin.excluir();
+                        cliente.excluir();
                     }
                 }
-            }*/
+            }
             RequestDispatcher view = request.getRequestDispatcher("PesquisaClienteController");
             view.forward(request, response);
         } catch (IOException e) {
