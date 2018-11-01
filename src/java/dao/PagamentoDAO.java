@@ -1,6 +1,5 @@
 package dao;
 
-
 import model.Pagamento;
 
 import java.sql.*;
@@ -15,15 +14,14 @@ public class PagamentoDAO {
             conexao = BD.getConexao();
             String sql = "insert into pagamento(id, vencimento, numero_codigo_barras, valor_total, reserva_id) values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, pag.getId());
-            comando.setString   (2, pag.getVencimento());
-            comando.setLong     (3, pag.getNumeroCodBarras());
-            comando.setDouble   (4, pag.getValorTotal());
+            comando.setLong(1, pag.getId());
+            comando.setString(2, pag.getVencimento());
+            comando.setLong(3, pag.getNumeroCodBarras());
+            comando.setDouble(4, pag.getValorTotal());
 
-            if(pag.getIdReserva()== null){
+            if (pag.getIdReserva() == null) {
                 comando.setNull(5, Types.NULL);
-            }
-            else{
+            } else {
                 comando.setLong(5, pag.getIdReserva());
             }
 
@@ -42,16 +40,17 @@ public class PagamentoDAO {
             String sql = "update pagamento set vencimento=?, numero_codigo_barras=?, valor_total=? where id=?";
             comando = conexao.prepareStatement(sql);
 
-            comando.setString   (1, pag.getVencimento());
-            comando.setLong     (2, pag.getNumeroCodBarras());
-            comando.setDouble   (3, pag.getValorTotal());
+            comando.setString(1, pag.getVencimento());
+            comando.setLong(2, pag.getNumeroCodBarras());
+            comando.setDouble(3, pag.getValorTotal());
 
-            if(pag.getReserva()== null){
+            if (pag.getReserva() == null) {
                 comando.setNull(4, Types.NULL);
-            }
-            else{
+            } else {
                 comando.setLong(4, pag.getReserva().getId());
             }
+
+            comando.execute();
 
         } catch (SQLException e) {
             throw e;
@@ -65,8 +64,7 @@ public class PagamentoDAO {
             conexao = BD.getConexao();
             String sql = "delete from pagamento where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong (1, pag.getId());
-
+            comando.setLong(1, pag.getId());
 
             comando.execute();
 
@@ -77,8 +75,7 @@ public class PagamentoDAO {
         }
     }
 
-
-    public static Pagamento obterPagamento (Long id) throws ClassNotFoundException {
+    public static Pagamento obterPagamento(Long id) throws ClassNotFoundException {
 
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -88,26 +85,25 @@ public class PagamentoDAO {
             conexao = BD.getConexao();
             String sql = "select * from pagamento where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, id);
+            comando.setLong(1, id);
             ResultSet rs = comando.executeQuery();
             rs.first();
 
-            pag = new Pagamento(
-                    rs.getLong("id"),
-                   rs.getString("vencimento"),
+            pag = new Pagamento(rs.getLong("id"),
+                    rs.getString("vencimento"),
                     rs.getLong("numero_codigo_barras"),
                     rs.getDouble("valor_total"),
-            rs.getLong("reservas_id"));
+                    rs.getLong("reservas_id"));
 
         } catch (SQLException e) {
-        }finally {
+        } finally {
             BD.fecharConexao(conexao, comando);
 
         }
         return pag;
     }
 
-    public static ArrayList<Pagamento> obterTodosPagamentos() throws ClassNotFoundException{
+    public static ArrayList<Pagamento> obterTodosPagamentos() throws ClassNotFoundException {
 
         Connection conexao = null;
         Statement comando = null;
@@ -115,22 +111,21 @@ public class PagamentoDAO {
         ArrayList<Pagamento> lista = new ArrayList<>();
         Pagamento pag = null;
 
-        try{
+        try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "select * from pagamento";
             ResultSet rs = comando.executeQuery(sql);
 
-            while(rs.next()) {
-               pag = new Pagamento(
-                    rs.getLong("id"),
-                   rs.getString("vencimento"),
-                    rs.getLong("numero_codigo_barras"),
-                    rs.getDouble("valor_total"),
-            rs.getLong("reserva_id"));
-                lista.add(pag);
+            while (rs.next()) {
+                lista.add(new Pagamento(rs.getLong("id"),
+                        rs.getString("vencimento"),
+                        rs.getLong("numero_codigo_barras"),
+                        rs.getDouble("valor_total"),
+                        rs.getLong("reserva_id")));
+
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);

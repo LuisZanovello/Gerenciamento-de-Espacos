@@ -10,16 +10,16 @@ public class AdministradorDAO {
     public static void gravar(Administrador admin) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-    
+
         try {
             conexao = BD.getConexao();
             String sql = "insert into administrador (id, nome, email, senha)"
                     + " values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, admin.getId());
-            comando.setString   (2, admin.getNome());
-            comando.setString   (3, admin.getEmail());
-            comando.setString   (4, admin.getSenha());
+            comando.setLong(1, admin.getId());
+            comando.setString(2, admin.getNome());
+            comando.setString(3, admin.getEmail());
+            comando.setString(4, admin.getSenha());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -28,26 +28,25 @@ public class AdministradorDAO {
         }
     }
 
-        public static void alterar(Administrador admin) throws SQLException, ClassNotFoundException {
-            Connection conexao = null;
-            PreparedStatement comando = null;
-            try {
-                conexao = BD.getConexao();
-                String sql = "update administrador set nome=?, email=?,senha=? where id=?";
+    public static void alterar(Administrador admin) throws SQLException, ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "update administrador set nome=?, email=?,senha=? where id=?";
 
-                comando = conexao.prepareStatement(sql);
+            comando = conexao.prepareStatement(sql);
 
-                comando.setString   (1, admin.getNome());
-                comando.setString   (2, admin.getEmail());
-                comando.setString   (3, admin.getSenha());
-                comando.setLong     (4, admin.getId());
-                comando.execute();
+            comando.setString(1, admin.getNome());
+            comando.setString(2, admin.getEmail());
+            comando.setString(3, admin.getSenha());
+            comando.setLong(4, admin.getId());
+            comando.execute();
 
-
-            } catch (SQLException e) {
-                throw e;
-            }
+        } catch (SQLException e) {
+            throw e;
         }
+    }
 
     public static void excluir(Administrador admin) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
@@ -56,21 +55,19 @@ public class AdministradorDAO {
             conexao = BD.getConexao();
             String sql = "delete from administrador where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, admin.getId());
-
+            comando.setLong(1, admin.getId());
 
             comando.execute();
 
         } catch (SQLException e) {
             throw e;
-        }finally {
+        } finally {
             BD.fecharConexao(conexao, comando);
 
         }
     }
 
-
-    public static Administrador obterAdministrador (Long id) throws ClassNotFoundException {
+    public static Administrador obterAdministrador(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Administrador admin = null;
@@ -79,49 +76,48 @@ public class AdministradorDAO {
             conexao = BD.getConexao();
             String sql = "select * from administrador where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong     (1, id);
+            comando.setLong(1, id);
             ResultSet rs = comando.executeQuery();
             rs.first();
 
             admin = new Administrador(rs.getLong("id"),
-
-                    rs.getString    ("nome"),
-                    rs.getString    ("email"),
-                    rs.getString    ("senha")); /*  null ? */
+                    rs.getString("nome"),
+                    rs.getString("email"),
+                    rs.getString("senha"));
         } catch (SQLException e) {
-         e.printStackTrace();
-        }finally {
+            e.printStackTrace();
+        } finally {
             BD.fecharConexao(conexao, comando);
         }
         return admin;
     }
 
-    public static ArrayList<Administrador> obterTodosAdministradores() throws ClassNotFoundException{
+    public static ArrayList<Administrador> obterTodosAdministradores() throws ClassNotFoundException {
 
         Connection conexao = null;
         Statement comando = null;
         ArrayList<Administrador> lista = new ArrayList<>();
         Administrador admin = null;
-        try{
+        try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "select * from administrador";
             ResultSet rs = comando.executeQuery(sql);
 
-            while(rs.next()) {
+            while (rs.next()) {
                 admin = new Administrador(rs.getLong("id"),
-                        rs.getString    ("nome"),
-                        rs.getString    ("email"),
-                        rs.getString    ("senha"));
+                        rs.getString("nome"),
+                        rs.getString("email"),
+                        rs.getString("senha"));
 
                 lista.add(admin);
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             BD.fecharConexao(conexao, comando);
             return lista;
         }
-        
+
     }
 }

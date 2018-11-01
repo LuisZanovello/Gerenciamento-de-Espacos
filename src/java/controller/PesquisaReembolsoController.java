@@ -32,6 +32,7 @@ public class PesquisaReembolsoController extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             throw new ServletException(e);
         } catch (ServletException e) {
+            e.printStackTrace();
         }
     }
     

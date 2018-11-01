@@ -14,27 +14,37 @@
         <title>Manter Reembolso</title>
     </head>
     <body>
-   
-         <h1>Manter Reembolso - ${operacao} </h1>
-         <form action="ManterReembolsoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
-          <table>
-              
-              <tr>
-              <td>Codigo do Reembolso: </td>
-              <td><input type="text" name="txtCodReembolso" value="${reb.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-              </tr>
-              
-              <tr>
-              <td>Status: </td>
-              <td> <input type="text" name="txtNomeReembolso" value="${reb.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
-              </tr>
-              
-           
-            
-        </table>
 
-        <input type="submit" name="btnConfirmar" value="Confirmar">
-    </form>
-        
+        <h1>Manter Reembolso - ${operacao} </h1>
+        <form action="ManterReembolsoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
+            <table>
+
+                <tr>
+                    <td>Codigo do Reembolso: </td>
+                    <td><input type="text" name="txtCodReembolso" value="${reb.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    </tr>
+
+                    <tr>
+                        <td>Status: </td>
+                        <td> <input type="text" name="txtNomeReembolso" value="${reb.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                </tr>
+                
+                <td>Valor pago:</td>
+                    <td>
+                        <select name="optPagamento" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <c:forEach items="${pagamentos}" var="pag">
+                                <option value="${pag.id}" <c:if test="${pag.id == reb.idPagamento}"> selected</c:if>>${pag.valorTotal}</option>  
+                            </c:forEach>
+                        </select>
+                    </td>
+                </tr>
+
+
+
+            </table>
+
+            <input type="submit" name="btnConfirmar" value="Confirmar">
+        </form>
+
     </body>
 </html>

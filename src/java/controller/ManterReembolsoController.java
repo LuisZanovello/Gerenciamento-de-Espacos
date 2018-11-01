@@ -71,12 +71,14 @@ public class ManterReembolsoController extends HttpServlet {
         }
     }
 
+    
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
 
         long id = Long.parseLong(request.getParameter("txtCodReembolso"));
         String estado = request.getParameter("txtNomeReembolso");
         long pagamento = Long.parseLong("optPagamento");
+               
         try {
             Pagamento pag = null;
             if (pagamento != 0) {
