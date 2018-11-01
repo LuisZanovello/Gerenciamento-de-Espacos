@@ -14,9 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Cliente;
 import model.Contato;
-
 
 /**
  *
@@ -40,7 +38,7 @@ public class ManterContatoController extends HttpServlet {
         String acao = request.getParameter("acao");
         
         if(acao.equals("confirmarOperacao")){
-           confirmarOperacao(request, response);
+     //       confirmarOperacao(request, response);
         
         }else{
             if(acao.equals("prepararOperacao")){
@@ -57,7 +55,7 @@ public class ManterContatoController extends HttpServlet {
         request.setAttribute("contatos", Contato.obterTodosContatos());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id").trim());
+            long id = Long.parseLong(request.getParameter("id"));
             Contato contato = Contato.obterContato((long)id);
             request.setAttribute("contato", contato);
         }
@@ -115,30 +113,26 @@ public class ManterContatoController extends HttpServlet {
          public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
         
-        long id = Long.parseLong(request.getParameter("txtIdContato"));
-        String numero = request.getParameter("txtNumeroContato");
+        long id = Long.parseLong("txtCodAdmin");
+        String numero = request.getParameter("txtNumeroAdmin");
 
         
-         long cliente = Long.parseLong(request.getParameter("optCliente"));
-        try {
-            Cliente esp = null;
-            if (cliente != 0) {
-                esp = Cliente.obterCliente((long)id);
-            }     
+        
+        try {       
             
-            Contato contato = new Contato(id, numero);
+            Contato admin = new Contato(id, numero);
             if (operacao.equals("Incluir")) {
-                contato.gravar();
+                admin.gravar();
             } else {
                 if (operacao.equals("Editar")) {
-                    contato.alterar();
+                    admin.alterar();
                 } else {
                     if (operacao.equals("Excluir")) {
-                        contato.excluir();
+                        admin.excluir();
                     }
                 }
             }
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaContatoController");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaAdminController");
             view.forward(request, response);
         } catch (IOException e) {
             throw new ServletException(e);
