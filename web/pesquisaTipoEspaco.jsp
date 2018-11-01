@@ -24,14 +24,12 @@
     <tr>
         <th>Código</th>
         <th>Tipo de Espaço</th>
-        <th>Modalidade Predominante</th>
         <th colspan=2>Ação</th>
     </tr>
     <c:forEach items="${tiposEspacos}" var="tipoEspaco">
         <tr>
             <td><c:out value="${tipoEspaco.id}" /></td>
             <td><c:out value="${tipoEspaco.nome}" /></td>
-            <td><c:out value="${tipoEspaco.id}" /></td>
             <td><a href="ManterTipoEspacoController?acao=prepararOperacao&operacao=Editar&id= <c:out value="${tipoEspaco.id}"/>">Editar</a></td>
             <td><a href="ManterTipoEspacoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${tipoEspaco.id}"/> ">Excluir</a></td>
         </tr>
