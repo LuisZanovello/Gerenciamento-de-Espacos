@@ -53,7 +53,7 @@ public class ManterDisponibilidadeController extends HttpServlet {
             try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("disponibilidades", Disponibilidade.obterTodasAsDisponibilidades());
+        request.setAttribute("espacos", Espaco.obterTodosEspacos());
         
         if(!operacao.equals("Incluir")){
             long id = Long.parseLong(request.getParameter("id"));

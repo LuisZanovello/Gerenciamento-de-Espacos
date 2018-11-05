@@ -57,15 +57,16 @@ public class DisponibilidadeDAO {
                 comando.setString(2, disponibilidade.getHora_inicio());
                 comando.setString(3, disponibilidade.getHora_fim());
                 comando.setLong(4, disponibilidade.getId());
+                comando.execute();
 
                 if(disponibilidade.getEspaco() == null){
-                    comando.setNull(2, Types.NULL);
+                    comando.setNull(4, Types.NULL);
                 }
                 else{
-                    comando.setLong(2, disponibilidade.getEspaco().getId());
+                    comando.setLong(4, disponibilidade.getEspaco().getId());
                 }
 
-                comando.execute();
+                
                 BD.fecharConexao(conexao, comando);
             }catch(SQLException e){
                 throw e;
