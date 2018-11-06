@@ -16,7 +16,7 @@
     <body>
         
         <h1>Manter Reserva - ${operacao}</h1>
-        <form action="ManterReservaController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action="ManterReservaController?acao=confirmarOperacao&operacao=${operacao}" method="POST">
           <table>
               
               <tr>
@@ -38,6 +38,22 @@
               <td> Horário de Fim </td>
               <td> <input type="text" name="txtHrFim" value="${resv.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr> 
+              
+              <tr>
+              <td> Quantidade de pessoas </td>
+              <td> <input type="text" name="txtHrFim" value="${resv.qtPessoas}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              </tr> 
+              
+                           <tr>
+              <td> Valor da Locação</td>
+              <td> <input type="text" name="txtHrFim" value="${resv.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              </tr> 
+              
+                                     <tr>
+              <td> Avaliação</td>
+              <td> <input type="text" name="txtHrFim" value="${resv. notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              </tr> 
+              
               
               <td>CPF do Cliente:</td>
                     <td>

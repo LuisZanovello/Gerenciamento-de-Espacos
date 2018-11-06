@@ -80,8 +80,8 @@ public class ManterReservaController extends HttpServlet {
         String dataLocacao = request.getParameter("txtNomeReserva");
         String horaInicioLocacao = request.getParameter("txtHrInicio");
         String horaFimLocacao = request.getParameter("txtHrFim");
-        long cliente = Long.parseLong("optCliente");
-        long espaco = Long.parseLong("optEspaco");
+        long cliente = Long.parseLong(request.getParameter("optCliente"));
+        long espaco = Long.parseLong(request.getParameter("optEspaco"));
         
        try {
            Cliente clit = null;
