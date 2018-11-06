@@ -77,14 +77,15 @@ public class ManterReembolsoController extends HttpServlet {
 
         long id = Long.parseLong(request.getParameter("txtCodReembolso"));
         String estado = request.getParameter("txtNomeReembolso");
-        long pagamento = Long.parseLong("optPagamento");
+        long pagamento = Long.parseLong (request.getParameter("optPagamento"));
+        
                
         try {
             Pagamento pag = null;
             if (pagamento != 0) {
                 pag = Pagamento.obterPagamento(pagamento);
             }
-            Reembolso reb = new Reembolso(id, estado);
+            Reembolso reb = new Reembolso(id, estado, pagamento);
             if (operacao.equals("Incluir")) {
                 reb.gravar();
             } else {
