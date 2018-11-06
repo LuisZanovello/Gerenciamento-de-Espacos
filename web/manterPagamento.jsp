@@ -41,7 +41,7 @@
                     <td>
                         <select name="optReserva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <c:forEach items="${reservas}" var="reserva">
-                                <option value="${reserva.id}" <c:if test="${reserva.id == pagamento.idReserva}"> selected</c:if>>${reserva.nome}</option>  
+                                <option value="${reserva.id}" <c:if test="${reserva.id == pagamento.idReserva}"> selected</c:if>>${reserva.id}</option>  
                             </c:forEach>
                         </select>
                     </td>
