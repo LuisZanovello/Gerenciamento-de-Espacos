@@ -26,7 +26,7 @@
               
               <tr>
               <td>Data da locação: </td>
-              <td> <input type="text" name="txtNomeReserva" value="${resv.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              <td> <input type="text" name="txtDataLocacao" value="${resv.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr>
               
               <tr>
@@ -41,17 +41,17 @@
               
               <tr>
               <td> Quantidade de pessoas </td>
-              <td> <input type="text" name="txtHrFim" value="${resv.qtPessoas}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              <td> <input type="text" name="txtqtPessoas" value="${resv.qtPessoas}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr> 
               
                            <tr>
               <td> Valor da Locação</td>
-              <td> <input type="text" name="txtHrFim" value="${resv.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              <td> <input type="text" name="txtvalorLocacao" value="${resv.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr> 
               
                                      <tr>
               <td> Avaliação</td>
-              <td> <input type="text" name="txtHrFim" value="${resv. notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+              <td> <input type="text" name="txtAvaliacao" value="${resv. notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
               </tr> 
               
               

@@ -31,68 +31,71 @@ public class ManterReservaController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String acao = request.getParameter("acao");
-        
-        if(acao.equals("confirmarOperacao")){
-           confirmarOperacao(request, response);
-        
-        }else{
-            if(acao.equals("prepararOperacao")){
+
+        if (acao.equals("confirmarOperacao")) {
+            confirmarOperacao(request, response);
+
+        } else {
+            if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
             }
         }
     }
 
-   public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
+    public void prepararOperacao(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            try{
-        String operacao = request.getParameter("operacao");
-        request.setAttribute("operacao", operacao);
-        request.setAttribute("espacos", Espaco.obterTodosEspacos());
-        request.setAttribute("clientes", Cliente.obterTodosOsClientes());
-        
-        if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id").trim());
-            Reserva resv = Reserva.obterReserva((long)id);
-            request.setAttribute("resv", resv );
-        }
-                RequestDispatcher view = request.getRequestDispatcher("/manterReserva.jsp");
-                view.forward(request, response);
-                
-    } catch(ServletException e){
-                throw e;
-            }catch(IOException e){
-                throw new ServletException(e);
-            }catch(SQLException e){
-                throw new ServletException(e);
-            }catch(ClassNotFoundException e){
-                throw new ServletException(e);
+        try {
+            String operacao = request.getParameter("operacao");
+            request.setAttribute("operacao", operacao);
+            request.setAttribute("espacos", Espaco.obterTodosEspacos());
+            request.setAttribute("clientes", Cliente.obterTodosOsClientes());
+
+            if (!operacao.equals("Incluir")) {
+                long id = Long.parseLong(request.getParameter("id").trim());
+                Reserva resv = Reserva.obterReserva((long) id);
+                request.setAttribute("resv", resv);
             }
+            RequestDispatcher view = request.getRequestDispatcher("/manterReserva.jsp");
+            view.forward(request, response);
+
+        } catch (ServletException e) {
+            throw e;
+        } catch (IOException e) {
+            throw new ServletException(e);
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        } catch (ClassNotFoundException e) {
+            throw new ServletException(e);
+        }
     }
-   
-     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+
+    public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
-        
+
         long id = Long.parseLong(request.getParameter("txtCodReserva"));
-        String dataLocacao = request.getParameter("txtNomeReserva");
+        String dataLocacao = request.getParameter("txtDataLocacao");
         String horaInicioLocacao = request.getParameter("txtHrInicio");
         String horaFimLocacao = request.getParameter("txtHrFim");
+        Long qtPessoas = Long.parseLong(request.getParameter("txtqtPessoas"));
+        double valorLocacao = Double.parseDouble(request.getParameter("txtvalorLocacao"));
+        long notaAvaliacao = Long.parseLong(request.getParameter("txtAvaliacao"));
         long cliente = Long.parseLong(request.getParameter("optCliente"));
         long espaco = Long.parseLong(request.getParameter("optEspaco"));
-        
-       try {
-           Cliente clit = null;
-           Espaco esp = null;
-          
-            if (cliente != 0 && espaco !=0) {
-           
+
+        try {
+            Cliente clit = null;
+            Espaco esp = null;
+
+            if (cliente != 0 && espaco != 0) {
+
                 clit = Cliente.obterCliente(cliente);
                 esp = Espaco.obterEspaco(espaco);
             }
-            Reserva resv = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao);
+            Reserva resv = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao, qtPessoas, valorLocacao, notaAvaliacao, cliente, espaco);
             if (operacao.equals("Incluir")) {
                 resv.gravar();
             } else {
@@ -116,6 +119,7 @@ public class ManterReservaController extends HttpServlet {
             throw e;
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
