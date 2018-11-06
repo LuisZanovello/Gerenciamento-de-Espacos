@@ -16,7 +16,7 @@ public class PagamentoDAO {
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, pag.getId());
             comando.setString(2, pag.getVencimento());
-            comando.setLong(3, pag.getNumeroCodBarras());
+            comando.setString(3, pag.getNumeroCodBarras());
             comando.setDouble(4, pag.getValorTotal());
 
             if (pag.getIdReserva() == null) {
@@ -41,7 +41,7 @@ public class PagamentoDAO {
             comando = conexao.prepareStatement(sql);
 
             comando.setString(1, pag.getVencimento());
-            comando.setLong(2, pag.getNumeroCodBarras());
+            comando.setString(2, pag.getNumeroCodBarras());
             comando.setDouble(3, pag.getValorTotal());
 
             if (pag.getReserva() == null) {
@@ -90,7 +90,7 @@ public class PagamentoDAO {
 
             pag = new Pagamento(rs.getLong("id"),
                     rs.getString("vencimento"),
-                    rs.getLong("numero_codigo_barras"),
+                    rs.getString("numero_codigo_barras"),
                     rs.getDouble("valor_total"),
                     rs.getLong("reserva_id"));
 
@@ -120,7 +120,7 @@ public class PagamentoDAO {
             while (rs.next()) {
                 lista.add(new Pagamento(rs.getLong("id"),
                         rs.getString("vencimento"),
-                        rs.getLong("numero_codigo_barras"),
+                        rs.getString("numero_codigo_barras"),
                         rs.getDouble("valor_total"),
                         rs.getLong("reserva_id")));
 

@@ -11,12 +11,12 @@ public class Pagamento {    //antiga classe Boleto
 
     private Long id;
     private String vencimento;
-    private Long numeroCodBarras;
+    private String numeroCodBarras;
     private Double valorTotal;
     private Long idReserva;
     private Reserva reserva;
 
-    public Pagamento(long id, String vencimento, long numeroCodBarras, double valorTotal, long idReserva) {
+    public Pagamento(long id, String vencimento, String numeroCodBarras, double valorTotal, long idReserva) {
         this.id = id;
         this.vencimento = vencimento;
         this.numeroCodBarras = numeroCodBarras;
@@ -24,7 +24,7 @@ public class Pagamento {    //antiga classe Boleto
         this.idReserva = idReserva;
     }
 
-    public Pagamento(long id, String vencimento, long numeroCodBarras, double valorTotal) {
+    public Pagamento(long id, String vencimento, String numeroCodBarras, double valorTotal) {
         this.id = id;
         this.vencimento = vencimento;
         this.numeroCodBarras = numeroCodBarras;
@@ -33,7 +33,6 @@ public class Pagamento {    //antiga classe Boleto
 
     public Pagamento() {
     }
-    
     public void gravar() throws SQLException, ClassNotFoundException{
         PagamentoDAO.gravar(this);
     }
@@ -89,14 +88,14 @@ public class Pagamento {    //antiga classe Boleto
     /**
      * @return the numeroCodBarras
      */
-    public Long getNumeroCodBarras() {
+    public String getNumeroCodBarras() {
         return numeroCodBarras;
     }
 
     /**
      * @param numeroCodBarras the numeroCodBarras to set
      */
-    public void setNumeroCodBarras(Long numeroCodBarras) {
+    public void setNumeroCodBarras(String numeroCodBarras) {
         this.numeroCodBarras = numeroCodBarras;
     }
 

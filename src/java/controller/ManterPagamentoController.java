@@ -53,7 +53,7 @@ public class ManterPagamentoController extends HttpServlet {
         try {
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            request.setAttribute("pagamentos", Pagamento.obterTodosPagamentos());
+            request.setAttribute("reservas",Reserva.obterTodasReservas());
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
                 Pagamento pag = Pagamento.obterPagamento((long) id);
@@ -77,9 +77,9 @@ public class ManterPagamentoController extends HttpServlet {
 
         long id = Long.parseLong(request.getParameter("txtCodPagamento"));
         String vencimento = request.getParameter("txtVencimentoPagamento");
-        long numeroCodBarras = Long.parseLong("txtCodBarrasPagamento");
-        double valorTotal = Double.parseDouble("txtValorTotalPagamento");
-        long reserva = Long.parseLong("optReserva");
+        String numeroCodBarras = request.getParameter("txtCodBarrasPagamento");
+        double valorTotal = Double.parseDouble(request.getParameter("txtValorTotalPagamento"));
+        long reserva = Long.parseLong(request.getParameter("optReserva"));
         try {
             Reserva resv = null;
             if (reserva != 0) {
