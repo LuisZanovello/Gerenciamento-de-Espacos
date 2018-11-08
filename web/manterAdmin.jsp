@@ -43,7 +43,7 @@
 
         <input type="submit" name="btnConfirmar" value="Confirmar">
     </form>
-              
+              <a href="PesquisaAdminController"><button value="Voltar">Voltar</button></a>
               
     </body>
 </html>

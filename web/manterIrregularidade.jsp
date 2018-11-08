@@ -41,6 +41,6 @@
 </table>
     <input type="submit" name="btnConfirmar" value="Confirmar">
         </form>
-    
+    <a href="PesquisaIrregularidadeController"><button value="Voltar">Voltar</button></a>
     </body>
 </html>

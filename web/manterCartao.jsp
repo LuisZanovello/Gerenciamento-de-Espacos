@@ -53,6 +53,6 @@
         
     <input type="submit" name="btnConfirmar" value="Confirmar">
     </form>
-
+<a href="PesquisaCartaoController"><button value="Voltar">Voltar</button></a>
     </body>
 </html>
