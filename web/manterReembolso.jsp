@@ -31,7 +31,7 @@
                 
                 <td>Número do Codigo de Barras:</td>
                     <td>
-                        <select name="optPagamento" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <select name="optPagamento" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
                             <c:forEach items="${pagamentos}" var="pag">
                                 <option value="${pag.id}" <c:if test="${pag.id == reb.idPagamento}"> selected</c:if>>${pag.numeroCodBarras}</option>  
                             </c:forEach>

@@ -29,9 +29,9 @@
         </tr>
          <td>Cliente:</td>
                     <td>
-                        <select name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <select name="optCliente"  <c:if test="${operacao == 'Excluir'}" > disabled</c:if>>
                             <c:forEach items="${clientes}" var="cliente">
-                                <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> selected</c:if>>${cliente.nome}</option>  
+                                <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> </c:if>>${cliente.nome}</option>  
                             </c:forEach>
                         </select>
                     </td>

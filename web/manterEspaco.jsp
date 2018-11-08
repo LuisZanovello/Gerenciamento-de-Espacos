@@ -75,7 +75,7 @@
     </tr>
     <td>Tipo Espaco:</td>
                     <td>
-                        <select name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <select name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
                             <c:forEach items="${tiposEspacos}" var="tipoEspaco">
                                 <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> selected</c:if>>${tipoEspaco.nome}</option>  
                             </c:forEach>

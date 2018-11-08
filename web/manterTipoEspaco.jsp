@@ -27,7 +27,7 @@
     </tr>
      <td>Modalidade:</td>
                     <td>
-                        <select name="optModalidade" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <select name="optModalidade" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
                             <c:forEach items="${modalidades}" var="modalidade">
                                 <option value="${modalidade.id}" <c:if test="${modalidade.id == tipoEspaco.modalidadeId}"> selected</c:if>>${modalidade.descricao}</option>  
                             </c:forEach>
