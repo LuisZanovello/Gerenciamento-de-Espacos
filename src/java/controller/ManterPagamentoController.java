@@ -86,7 +86,7 @@ public class ManterPagamentoController extends HttpServlet {
                 resv = Reserva.obterReserva(reserva);
             }
 
-            Pagamento pag = new Pagamento(id, vencimento, numeroCodBarras, valorTotal);
+            Pagamento pag = new Pagamento(id, vencimento, numeroCodBarras, valorTotal,reserva);
             if (operacao.equals("Incluir")) {
                 pag.gravar();
             } else {

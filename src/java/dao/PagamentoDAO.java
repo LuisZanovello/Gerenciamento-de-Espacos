@@ -49,8 +49,10 @@ public class PagamentoDAO {
             } else {
                 comando.setLong(4, pag.getReserva().getId());
             }
-
+            
+            comando.setLong(4, pag.getId());
             comando.execute();
+            BD.fecharConexao(conexao, comando);
 
         } catch (SQLException e) {
             throw e;
