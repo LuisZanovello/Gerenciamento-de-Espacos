@@ -73,6 +73,7 @@ public class ManterReservaController extends HttpServlet {
         }
     }
 
+    
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String operacao = request.getParameter("operacao");
 
