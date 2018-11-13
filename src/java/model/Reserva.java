@@ -5,8 +5,6 @@ import dao.ReservaDAO;
 import java.sql.SQLException;
 import java.util.List;
 
-
-
 public class Reserva {
     private Long id;
     private String dataLocacao;

@@ -62,8 +62,7 @@ public class ReservaDAO {
             } else {
                 comando.setLong(7, resv.getIdEspaco());
             }
-
-            
+      
             
             if (resv.getIdCliente() == null) {
                 comando.setNull(7, Types.NULL);

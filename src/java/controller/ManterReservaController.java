@@ -90,7 +90,6 @@ public class ManterReservaController extends HttpServlet {
         try {
             Cliente clit = null;
             Espaco esp = null;
-
             if (cliente != 0 && espaco != 0) {
 
                 clit = Cliente.obterCliente(cliente);
