@@ -4,62 +4,73 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
- .estrelas1 input[type=radio]{
-	display: none;
+
+.estrelas1 input[type=radio]{
+    display: none;
 }.estrelas1 label i.fa:before{
-	content: '\f005';
-	color: #FC0;
+    content: '\f005';
+    color: #FC0;
 }.estrelas1  input[type=radio]:checked  ~ label i.fa:before{
-	color: #CCC;
+    color: #CCC;
 }
 
 .estrelas2 input[type=radio]{
-	display: none;
+    display: none;
 }.estrelas2 label i.fa:before{
-	content: '\f005';
-	color: #FC0;
+    content: '\f005';
+    color: #FC0;
 }.estrelas2  input[type=radio]:checked  ~ label i.fa:before{
-	color: #CCC;
+    color: #CCC;
 }
 
 .estrelas3 input[type=radio]{
-	display: none;
+    display: none;
 }.estrelas3 label i.fa:before{
-	content: '\f005';
-	color: #FC0;
+    content: '\f005';
+    color: #FC0;
 }.estrelas3  input[type=radio]:checked  ~ label i.fa:before{
-	color: #CCC;
+    color: #CCC;
 }
 
 .checked{
-	color: #FC0;
+    color: #FC0;
 }
 
 body {
-  padding-top: 54px;
+    padding-top: 54px;
 }
 
 @media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+    body {
+        padding-top: 56px;
+    }
 }
 
 .carousel-item {
-  height: 65vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 ul {
-	display: block;
-	list-style-type: none;
+    display: block;
+    list-style-type: none;
 }
+
+footer{
+    bottom: 0;
+    position: fixed; 
+    bottom: 0; 
+    left: 0px; 
+    right: 0px;
+    width: 100%;
+    text-align: center;
+}   
