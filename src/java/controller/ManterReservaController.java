@@ -84,24 +84,24 @@ public class ManterReservaController extends HttpServlet {
         Long qtPessoas = Long.parseLong(request.getParameter("txtqtPessoas"));
         double valorLocacao = Double.parseDouble(request.getParameter("txtvalorLocacao"));
         long notaAvaliacao = Long.parseLong(request.getParameter("txtAvaliacao"));
-        long idCliente = Long.parseLong(request.getParameter("optCliente"));
-        long idEspaco = Long.parseLong(request.getParameter("optEspaco"));
+        long idClientes = Long.parseLong(request.getParameter("optCliente"));
+        long idEspacos = Long.parseLong(request.getParameter("optEspaco"));
 
         try {
             Cliente cliente = null;
             Espaco espaco = null;
 
-            if (idCliente != 0) {
+            if (idClientes != 0) {
 
-                cliente = Cliente.obterCliente(idCliente);
+                cliente = Cliente.obterCliente(idClientes);
                 
             }
             
-            if(idEspaco != 0){
-                espaco = Espaco.obterEspaco(idEspaco);
+            if(idEspacos != 0){
+                espaco = Espaco.obterEspaco(idEspacos);
             }
             
-            Reserva reserva = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao, qtPessoas, valorLocacao, notaAvaliacao, idCliente, idEspaco);
+            Reserva reserva = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao, qtPessoas, valorLocacao, notaAvaliacao, idClientes, idEspacos);
             if (operacao.equals("Incluir")) {
                 reserva.gravar();
             } else {
