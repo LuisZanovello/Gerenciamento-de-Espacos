@@ -10,6 +10,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+         <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Incluir Nova Modalidade</title>
+ 
+    <!-- Bootstrap core CSS -->
+    
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
+        
+        
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Administrador</title>
     </head>

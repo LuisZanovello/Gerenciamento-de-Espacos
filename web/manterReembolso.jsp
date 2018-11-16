@@ -21,19 +21,19 @@
 
                 <tr>
                     <td>Codigo do Reembolso: </td>
-                    <td><input type="text" name="txtCodReembolso" value="${reb.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>
                         <td>Status: </td>
-                        <td> <input type="text" name="txtNomeReembolso" value="${reb.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                        <td> <input type="text" name="txtNomeReembolso" value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                 </tr>
                 
                 <td>Número do Codigo de Barras:</td>
                     <td>
                         <select name="optPagamento" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
-                            <c:forEach items="${pagamentos}" var="pag">
-                                <option value="${pag.id}" <c:if test="${pag.id == reb.idPagamento}"> selected</c:if>>${pag.numeroCodBarras}</option>  
+                            <c:forEach items="${pagamentos}" var="pagamento">
+                                <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> selected</c:if>>${pagamento.numeroCodBarras}</option>  
                             </c:forEach>
                         </select>
                     </td>

@@ -20,22 +20,22 @@
 
                 <tr>
                     <td>Codigo do Pagamento: </td>
-                    <td> <input type="text" name="txtCodPagamento" value="${pag.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td> <input type="text" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>
                         <td>Vencimento: </td>
-                        <td> <input type="text" name="txtVencimentoPagamento" value="${pag.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>
                         <td>Codigo de Barras: </td>
-                        <td> <input type="text" name="txtCodBarrasPagamento" value="${pag.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                        <td> <input type="text" name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                     </tr>
 
                     <tr>
                         <td>Valor Total: </td>
-                        <td> <input type="text" name="txtValorTotalPagamento" value="${pag.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                        <td> <input type="text" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                 </tr>
                 <td>Reserva:</td>
                     <td>

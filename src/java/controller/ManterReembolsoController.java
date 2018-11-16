@@ -55,8 +55,8 @@ public class ManterReembolsoController extends HttpServlet {
             request.setAttribute("pagamentos", Pagamento.obterTodosPagamentos());
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
-                Reembolso reb = Reembolso.obterReembolso((long) id);
-                request.setAttribute("reb", reb);
+                Reembolso reembolso = Reembolso.obterReembolso((long) id);
+                request.setAttribute("reembolso", reembolso);
             }
             RequestDispatcher view = request.getRequestDispatcher("/manterReembolso.jsp");
             view.forward(request, response);
@@ -77,23 +77,23 @@ public class ManterReembolsoController extends HttpServlet {
 
         long id = Long.parseLong(request.getParameter("txtCodReembolso"));
         String estado = request.getParameter("txtNomeReembolso");
-        long pagamento = Long.parseLong (request.getParameter("optPagamento"));
+        long idPagamentos = Long.parseLong (request.getParameter("optPagamento"));
         
                
         try {
-            Pagamento pag = null;
-            if (pagamento != 0) {
-                pag = Pagamento.obterPagamento(pagamento);
+            Pagamento pagamento = null;
+            if (idPagamentos != 0) {
+                pagamento = Pagamento.obterPagamento(idPagamentos);
             }
-            Reembolso reb = new Reembolso(id, estado, pagamento);
+            Reembolso reembolso = new Reembolso(id, estado, idPagamentos);
             if (operacao.equals("Incluir")) {
-                reb.gravar();
+                reembolso.gravar();
             } else {
                 if (operacao.equals("Editar")) {
-                    reb.alterar();
+                    reembolso.alterar();
                 } else {
                     if (operacao.equals("Excluir")) {
-                        reb.excluir();
+                        reembolso.excluir();
                     }
                 }
             }

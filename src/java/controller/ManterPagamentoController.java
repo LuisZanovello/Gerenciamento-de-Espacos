@@ -56,8 +56,8 @@ public class ManterPagamentoController extends HttpServlet {
             request.setAttribute("reservas",Reserva.obterTodasReservas());
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
-                Pagamento pag = Pagamento.obterPagamento((long) id);
-                request.setAttribute("pag", pag);
+                Pagamento pagamento = Pagamento.obterPagamento((long) id);
+                request.setAttribute("pagamento", pagamento);
             }
             RequestDispatcher view = request.getRequestDispatcher("/manterPagamento.jsp");
             view.forward(request, response);
@@ -79,22 +79,22 @@ public class ManterPagamentoController extends HttpServlet {
         String vencimento = request.getParameter("txtVencimentoPagamento");
         String numeroCodBarras = request.getParameter("txtCodBarrasPagamento");
         double valorTotal = Double.parseDouble(request.getParameter("txtValorTotalPagamento"));
-        long reserva = Long.parseLong(request.getParameter("optReserva"));
+        long idReservas = Long.parseLong(request.getParameter("optReserva"));
         try {
-            Reserva resv = null;
-            if (reserva != 0) {
-                resv = Reserva.obterReserva(reserva);
+            Reserva reserva = null;
+            if (idReservas != 0) {
+                reserva = Reserva.obterReserva(idReservas);
             }
 
-            Pagamento pag = new Pagamento(id, vencimento, numeroCodBarras, valorTotal,reserva);
+            Pagamento pagamento = new Pagamento(id, vencimento, numeroCodBarras, valorTotal,idReservas);
             if (operacao.equals("Incluir")) {
-                pag.gravar();
+                pagamento.gravar();
             } else {
                 if (operacao.equals("Editar")) {
-                    pag.alterar();
+                    pagamento.alterar();
                 } else {
                     if (operacao.equals("Excluir")) {
-                        pag.excluir();
+                        pagamento.excluir();
                     }
                 }
             }
