@@ -10,44 +10,46 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
+
+
 <html>
 
-<head>
-    <title>Reserva</title>
-</head>
-<body>
+    <head>
+        <title>Reserva</title>
+    </head>
+    <body>
 
 
-<table border="1">
-    <tr>
-        <th colspan="10">Reserva</th>
-    </tr>
-    <tr>
-        <th>Id</th>
-        <th>Data da Locação</th>
-        <th>Hora inicio</th>
-        <th>Hora fim</th>
+        <table border="1">
+            <tr>
+                <th colspan="10">Reserva</th>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <th>Data da Locação</th>
+                <th>Hora inicio</th>
+                <th>Hora fim</th>
 
 
-        <th colspan="2">Ação</th>
-    </tr>
-    <c:forEach items="${reservas}" var="resv">
-        <tr>
-            <td><c:out value="${resv.id}" /></td>
-            <td><c:out value="${resv.dataLocacao}" /></td>
-            <td><c:out value="${resv.horaInicioLocacao}" /></td>
-            <td><c:out value="${resv.horaFimLocacao}" /></td>
+                <th colspan="2">Ação</th>
+            </tr>
+            <c:forEach items="${reservas}" var="reserva">
+                <tr>
+                    <td><c:out value="${reserva.id}" /></td>
+                    <td><c:out value="${reserva.dataLocacao}" /></td>
+                    <td><c:out value="${reserva.horaInicioLocacao}" /></td>
+                    <td><c:out value="${reserva.horaFimLocacao}" /></td>
 
-            <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${resv.id}"/>">Editar</a></td>
-            <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${resv.id}"/>">Excluir</a></td>
-        </tr>
-    </c:forEach>
-</table>
+                    <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${reserva.id}"/>">Editar</a></td>
+                    <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${reserva.id}"/>">Excluir</a></td>
+                </tr>
+            </c:forEach>
+        </table>
 
-<form action="ManterReservaController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-</form>
-<a href="index.jsp"><button value="Voltar">Voltar</button></a>
+        <form action="ManterReservaController?acao=prepararOperacao&operacao=Incluir" method="post">
+            <input type="submit" name="btnIncluir" value="Incluir">
+        </form>
+        <a href="index.jsp"><button value="Voltar">Voltar</button></a>
 
-</body>
+    </body>
 </html>

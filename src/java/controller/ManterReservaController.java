@@ -56,8 +56,8 @@ public class ManterReservaController extends HttpServlet {
 
             if (!operacao.equals("Incluir")) {
                 long id = Long.parseLong(request.getParameter("id").trim());
-                Reserva resv = Reserva.obterReserva((long) id);
-                request.setAttribute("resv", resv);
+                Reserva reserva = Reserva.obterReserva((long) id);
+                request.setAttribute("reserva", reserva);
             }
             RequestDispatcher view = request.getRequestDispatcher("/manterReserva.jsp");
             view.forward(request, response);
@@ -84,26 +84,32 @@ public class ManterReservaController extends HttpServlet {
         Long qtPessoas = Long.parseLong(request.getParameter("txtqtPessoas"));
         double valorLocacao = Double.parseDouble(request.getParameter("txtvalorLocacao"));
         long notaAvaliacao = Long.parseLong(request.getParameter("txtAvaliacao"));
-        long cliente = Long.parseLong(request.getParameter("optCliente"));
-        long espaco = Long.parseLong(request.getParameter("optEspaco"));
+        long idCliente = Long.parseLong(request.getParameter("optCliente"));
+        long idEspaco = Long.parseLong(request.getParameter("optEspaco"));
 
         try {
-            Cliente clit = null;
-            Espaco esp = null;
-            if (cliente != 0 && espaco != 0) {
+            Cliente cliente = null;
+            Espaco espaco = null;
 
-                clit = Cliente.obterCliente(cliente);
-                esp = Espaco.obterEspaco(espaco);
+            if (idCliente != 0) {
+
+                cliente = Cliente.obterCliente(idCliente);
+                
             }
-            Reserva resv = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao, qtPessoas, valorLocacao, notaAvaliacao, cliente, espaco);
+            
+            if(idEspaco != 0){
+                espaco = Espaco.obterEspaco(idEspaco);
+            }
+            
+            Reserva reserva = new Reserva(id, dataLocacao, horaInicioLocacao, horaFimLocacao, qtPessoas, valorLocacao, notaAvaliacao, idCliente, idEspaco);
             if (operacao.equals("Incluir")) {
-                resv.gravar();
+                reserva.gravar();
             } else {
                 if (operacao.equals("Editar")) {
-                    resv.alterar();
+                    reserva.alterar();
                 } else {
                     if (operacao.equals("Excluir")) {
-                        resv.excluir();
+                        reserva.excluir();
                     }
                 }
             }
