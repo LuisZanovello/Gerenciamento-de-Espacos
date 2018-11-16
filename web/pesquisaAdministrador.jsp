@@ -25,6 +25,8 @@
         <th>Email</th>
         <th colspan="2">Ação</th>
     </tr>
+    
+    
     <c:forEach items="${administradores}" var="admin">
         <tr>
             <td><c:out value="${admin.id}" /></td>
