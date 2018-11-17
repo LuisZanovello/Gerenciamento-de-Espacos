@@ -79,7 +79,7 @@
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="PesquisaAdminController">Administrador</a>
+                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
                             </li>
                         <li>
                             <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
@@ -114,7 +114,7 @@
             <a class="btn btn-dark btn-block" href="PesquisaAdminController" role="button">Lista Administradores</a> <br> <br>
             </div>
             <div class="col">
-            <a class="btn btn-dark btn-block" href="adminIncluirespaco.html" role="button">Incluir Espaço</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Administrador</a> <br> <br>
           </div> 
           <div class="col"> 
             <div class="dropdown">

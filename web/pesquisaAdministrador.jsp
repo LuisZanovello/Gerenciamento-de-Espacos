@@ -57,9 +57,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
                         </li>
-
-
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -163,7 +164,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="index.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
                                                 </td>
                                             </tr>
 
