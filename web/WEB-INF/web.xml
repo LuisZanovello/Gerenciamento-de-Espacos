@@ -4,15 +4,22 @@
         <servlet-name>ManterAdministradorController</servlet-name>
         <servlet-class>controller.ManterAdministradorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterAdminClienteController</servlet-name>
+        <servlet-class>controller.ManterAdminClienteController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PesquisaAdminClienteController</servlet-name>
+        <servlet-class>controller.PesquisaAdminClienteController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManterAdministradorController</servlet-name>
         <url-pattern>/ManterAdministradorController</url-pattern>
     </servlet-mapping>
     <servlet>
-        
         <servlet-name>ManterReembolsoController</servlet-name>
         <servlet-class>controller.ManterReembolsoController</servlet-class>
-    </servlet>    
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManterReembolsoController</servlet-name>
         <url-pattern>/ManterReembolsoController</url-pattern>
@@ -177,7 +184,6 @@
         <servlet-name>PesquisaReservaController</servlet-name>
         <url-pattern>/PesquisaReservaController</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>PesquisaTipoEspacoController</servlet-name>
         <servlet-class>controller.PesquisaTipoEspacoController</servlet-class>
@@ -186,13 +192,20 @@
         <servlet-name>PesquisaTipoEspacoController</servlet-name>
         <url-pattern>/PesquisaTipoEspacoController</url-pattern>
     </servlet-mapping>
-    
-        <servlet>
+    <servlet>
         <servlet-name>PesquisaReembolsoController</servlet-name>
         <servlet-class>controller.PesquisaReembolsoController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaReembolsoController</servlet-name>
         <url-pattern>/PesquisaReembolsoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterAdminClienteController</servlet-name>
+        <url-pattern>/ManterAdminClienteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaAdminClienteController</servlet-name>
+        <url-pattern>/PesquisaAdminClienteController</url-pattern>
     </servlet-mapping>
 </web-app>

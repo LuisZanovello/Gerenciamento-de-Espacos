@@ -122,8 +122,8 @@
                   Gerenciar Cadastros
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="adminExcluircliente.html">Excluir Clientes</a>
-                  <a class="dropdown-item" href="adminExcluirespaco.html">Excluir Espaços</a>
+                  <a class="dropdown-item" href="PesquisaAdminClienteController">Gerenciar Clientes</a>
+                  <a class="dropdown-item" href="adminExcluirespaco.html">Gerenciar Espaços</a>
                 </div> 
                 </div>
               </div>
