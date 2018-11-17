@@ -24,7 +24,7 @@
         <style>
             footer{
                 bottom: 0;
-                position: fixed; 
+                position: absolute; 
                 bottom: 0; 
                 left: 0px; 
                 right: 0px;
@@ -72,7 +72,7 @@
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="PesquisaAdminController">Administrador</a>
+                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
                             </li>
                         <li>
                             <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">

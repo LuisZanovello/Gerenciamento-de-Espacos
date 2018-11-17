@@ -29,10 +29,50 @@
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Administrador</title>
+        
+        
+        	 <style>
+            footer{
+                bottom: 0;
+                position: relative; 
+                bottom: 0; 
+                left: 0px; 
+                right: 0px;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+        
     </head>
     <body>
         
-         <h1>Manter Admin - ${operacao} </h1>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+          <div class="col">
+            <div>
+                <h1 class="text-center"> Administrador - ${operacao} </h1> <hr>  <br><br>
+              
+            </div>
+   
+        
+         
          <form action="ManterAdministradorController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
           <table>
               
