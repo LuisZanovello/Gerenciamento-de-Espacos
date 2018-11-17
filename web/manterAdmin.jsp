@@ -17,19 +17,12 @@
         <meta name="author" content="">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <title>Incluir Nova Modalidade</title>
-
         <!-- Bootstrap core CSS -->
 
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
-
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manter Administrador</title>
-
 
         <style>
             footer{
@@ -43,9 +36,17 @@
             }
         </style>
 
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Manter Administrador - ${operacao}</title>
+
+
+
+
     </head>
     <body>
 
+        <!-- INICIO Navegador superior-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
@@ -67,6 +68,7 @@
                 </div>
             </div>
         </nav>
+        <!-- FIM Navegador superior-->
 
         <br>
         <div class="col">
@@ -111,12 +113,11 @@
                             <td> <input type="text" name="txtSenhaAdmin" size="60" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                     </tr>
                     </tbody>
-
                 </table>
 
 
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                
+
                 </form>
                 <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 

@@ -26,8 +26,6 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
-        <title>Administradores</title>
-
         <style>
             footer{
                 bottom: 0;
@@ -40,10 +38,13 @@
             }
         </style>
 
+        <title>Administradores</title>
+
     </head>
     <body>
 
 
+        <!-- INICIO Navegador superior-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
@@ -60,18 +61,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- FIM Navegador superior-->
 
 
 
 
 
-
-        <!--Inicio Box cliente-->
+        <!--Inicio Box-->
         <div class="row">               
 
 
@@ -100,10 +101,10 @@
 
                                         <tr>
                                             <th colspan="2">
-                                            Detalhes                                      
+                                                Dados do Administrador(a) : <c:out value ="${admin.nome}"/>                                     
                                             </th>
-                                            
                                         </tr>
+                                        
                                         <tr>
                                             <th scope="now"> ID </th>
                                             <td><c:out value="${admin.id}" /></td>
@@ -136,7 +137,7 @@
 
 
 
-                    <!--Inicio Box cliente-->
+                    <!--Inicio DIV -->
                     <div class="row">               
 
                         <!--Inicio Tabela-->
@@ -147,15 +148,15 @@
                         <!-- Distancia entre o botão incluir e voltar-->
                         <div class="col-lg-2"> 
                             <table class="table table-striped">
-                                
+
                                 <br>
 
                                 <!--Tabela-->
                                 <div class="col-lg-12">
                                     <table class="table">
-                                        
+
                                         <tbody>
-                                            
+
                                             <tr>
                                                 <td>
                                                     <form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
@@ -170,16 +171,16 @@
 
                                         </tbody>
                                     </table>
-                                    
+
                                 </div>        
                         </div> 
-                        
+
                         <hr>
-                     
 
 
 
-                        <!-- Footer -->
+
+                        <!-- INICIO Footer -->
                         <footer class="py-5 bg-dark">
                             <div class="container">
                                 <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
@@ -191,7 +192,8 @@
                         <!-- Bootstrap core JavaScript -->
                         <script src="vendor/jquery/jquery.min.js"></script>
                         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+                        <!-- FIM Footer -->
+                        
                         </body>
                         </html>
 

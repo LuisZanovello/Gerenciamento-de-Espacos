@@ -105,7 +105,7 @@ public class ManterAdminEspacoController extends HttpServlet {
                 Espaco espaco = Espaco.obterEspaco((long) id);
                 request.setAttribute("espaco", espaco);
             }
-            RequestDispatcher view = request.getRequestDispatcher("/manterEspaco.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/manterAdminEspaco.jsp");
             view.forward(request, response);
         } catch (ServletException e) {
             throw e;
