@@ -14,7 +14,7 @@
         <title>Tipo de Espaço</title>
     </head>
     <body>
-       <h2>Manter Irregularidade - ${operacao}</h2>
+       <h2>Manter Tipo de Espaco - ${operacao}</h2>
          <form action="ManterTipoEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post">
 <table>
     <tr>
@@ -29,7 +29,7 @@
                     <td>
                         <select name="optModalidade" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
                             <c:forEach items="${modalidades}" var="modalidade">
-                                <option value="${modalidade.id}" <c:if test="${modalidade.id == tipoEspaco.modalidadeId}"> selected</c:if>>${modalidade.descricao}</option>  
+                                <option value="${modalidade.id}" <c:if test="${modalidade.id == tipoEspaco.modalidadeId}"> selected</c:if>>${modalidade.modalidade}</option>  
                             </c:forEach>
                         </select>
                     </td>

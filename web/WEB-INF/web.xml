@@ -12,6 +12,14 @@
         <servlet-name>PesquisaAdminClienteController</servlet-name>
         <servlet-class>controller.PesquisaAdminClienteController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PesquisaAdminEspacoController</servlet-name>
+        <servlet-class>controller.PesquisaAdminEspacoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterAdminEspacoController</servlet-name>
+        <servlet-class>controller.ManterAdminEspacoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManterAdministradorController</servlet-name>
         <url-pattern>/ManterAdministradorController</url-pattern>
@@ -207,5 +215,13 @@
     <servlet-mapping>
         <servlet-name>PesquisaAdminClienteController</servlet-name>
         <url-pattern>/PesquisaAdminClienteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaAdminEspacoController</servlet-name>
+        <url-pattern>/PesquisaAdminEspacoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterAdminEspacoController</servlet-name>
+        <url-pattern>/ManterAdminEspacoController</url-pattern>
     </servlet-mapping>
 </web-app>

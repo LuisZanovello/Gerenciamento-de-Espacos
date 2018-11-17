@@ -123,7 +123,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="PesquisaAdminClienteController">Gerenciar Clientes</a>
-                  <a class="dropdown-item" href="adminExcluirespaco.html">Gerenciar Espaços</a>
+                  <a class="dropdown-item" href="PesquisaAdminEspacoController">Gerenciar Espaços</a>
                 </div> 
                 </div>
               </div>
