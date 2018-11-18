@@ -99,7 +99,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <div><h1 class="my-4">Área do cliente </h1></div>
+      <div><h1 class="my-4">Área do Cartão </h1></div>
       <div><h3><small>Bem vindo(a)!</small></h3></div> <br>
 
       
@@ -112,10 +112,10 @@
           <div class="row">
               <div class="col">
             
-            <a class="btn btn-dark btn-block" href="PesquisaClienteController" role="button">Lista Clientes</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="PesquisaCartaoController" role="button">Lista Cartões</a> <br> <br>
             </div>
             <div class="col">
-            <a class="btn btn-dark btn-block" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Cliente</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="ManterCartaoController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Cartão</a> <br> <br>
           </div> 
           <div class="col"> 
             <div class="dropdown">
