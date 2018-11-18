@@ -59,7 +59,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                                 
                                 <a class="dropdown-item" href="indexCliente.jsp">Cliente</a>                                
-                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
+                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
                                 

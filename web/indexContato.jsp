@@ -67,7 +67,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                                 
                                 <a class="dropdown-item" href="indexCliente.jsp">Cliente</a>                                
-                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
                                 
@@ -99,7 +99,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <div><h1 class="my-4">Área do cliente </h1></div>
+      <div><h1 class="my-4">Área do Contato </h1></div>
       <div><h3><small>Bem vindo(a)!</small></h3></div> <br>
 
       
@@ -112,10 +112,10 @@
           <div class="row">
               <div class="col">
             
-            <a class="btn btn-dark btn-block" href="PesquisaClienteController" role="button">Lista Clientes</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="PesquisaContatoController" role="button">Lista Contatos</a> <br> <br>
             </div>
             <div class="col">
-            <a class="btn btn-dark btn-block" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Cliente</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="ManterContatoController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Contato</a> <br> <br>
           </div> 
           <div class="col"> 
             <div class="dropdown">
