@@ -121,6 +121,7 @@
                                             <th scope="now"> Horário de Fim </th>
                                     <td><c:out value="${reserva.horaFimLocacao}" /></td>
                                         </tr>
+                                     
 
                                     <td><a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${reserva.id}"/>"
                                            class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ReembolsoDAO {
 
-    public static void gravar(Reembolso reembol) throws SQLException, ClassNotFoundException {
+    public static void gravar(Reembolso reembolso) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
@@ -15,13 +15,13 @@ public class ReembolsoDAO {
             String sql = "insert into reembolso(id, estado, pagamento_id)"
                     + " values(?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, reembol.getId());
-            comando.setString(2, reembol.getEstado());
+            comando.setLong(1, reembolso.getId());
+            comando.setString(2, reembolso.getEstado());
 
-            if (reembol.getIdPagamento() == null) {
+            if (reembolso.getIdPagamento() == null) {
                 comando.setNull(3, Types.NULL);
             } else {
-                comando.setLong(3, reembol.getIdPagamento());
+                comando.setLong(3, reembolso.getIdPagamento());
             }
 
             comando.execute();
@@ -31,22 +31,22 @@ public class ReembolsoDAO {
         }
     }
 
-    public static void alterar(Reembolso reembol) throws SQLException, ClassNotFoundException {
+    public static void alterar(Reembolso reembolso) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
             String sql = "update reembolso set estado=? where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setString(1, reembol.getEstado());
+            comando.setString(1, reembolso.getEstado());
 
-            if (reembol.getPagamento() == null) {
+            if (reembolso.getPagamento() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(2, reembol.getPagamento().getId());
+                comando.setLong(2, reembolso.getPagamento().getId());
             }
 
-            comando.setLong(2, reembol.getId());
+            comando.setLong(2, reembolso.getId());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
@@ -55,14 +55,14 @@ public class ReembolsoDAO {
         }
     }
 
-    public static void excluir(Reembolso reembol) throws SQLException, ClassNotFoundException {
+    public static void excluir(Reembolso reembolso) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
             String sql = "delete from reembolso where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, reembol.getId());
+            comando.setLong(1, reembolso.getId());
 
             comando.execute();
 
@@ -77,7 +77,7 @@ public class ReembolsoDAO {
     public static Reembolso obterReembolso(Long id) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
-        Reembolso reembol = null;
+        Reembolso reembolso = null;
         try {
             conexao = BD.getConexao();
             String sql = "select * from reembolso where id=?";
@@ -86,7 +86,7 @@ public class ReembolsoDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
 
-            reembol = new Reembolso(rs.getLong("id"),
+            reembolso = new Reembolso(rs.getLong("id"),
                     rs.getString("estado"),
                     rs.getLong("pagamento_id"));
 
@@ -95,7 +95,7 @@ public class ReembolsoDAO {
         } finally {
             BD.fecharConexao(conexao, comando);
         }
-        return reembol;
+        return reembolso;
     }
 
     public static ArrayList<Reembolso> obterTodosReembolsos() throws ClassNotFoundException {
@@ -103,7 +103,7 @@ public class ReembolsoDAO {
         Statement comando = null;
 
         ArrayList<Reembolso> lista = new ArrayList<>();
-        Reembolso reembol = null;
+        Reembolso reembolso = null;
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();

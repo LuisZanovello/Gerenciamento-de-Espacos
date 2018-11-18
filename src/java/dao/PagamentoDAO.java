@@ -7,22 +7,22 @@ import java.util.ArrayList;
 
 public class PagamentoDAO {
 
-    public static void gravar(Pagamento pag) throws SQLException, ClassNotFoundException {
+    public static void gravar(Pagamento pagamento) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
             String sql = "insert into pagamento(id, vencimento, numero_codigo_barras, valor_total, reserva_id) values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, pag.getId());
-            comando.setString(2, pag.getVencimento());
-            comando.setString(3, pag.getNumeroCodBarras());
-            comando.setDouble(4, pag.getValorTotal());
+            comando.setLong(1, pagamento.getId());
+            comando.setString(2, pagamento.getVencimento());
+            comando.setString(3, pagamento.getNumeroCodBarras());
+            comando.setDouble(4, pagamento.getValorTotal());
 
-            if (pag.getIdReserva() == null) {
+            if (pagamento.getIdReserva() == null) {
                 comando.setNull(5, Types.NULL);
             } else {
-                comando.setLong(5, pag.getIdReserva());
+                comando.setLong(5, pagamento.getIdReserva());
             }
 
             comando.execute();
@@ -32,25 +32,25 @@ public class PagamentoDAO {
         }
     }
 
-    public static void alterar(Pagamento pag) throws SQLException, ClassNotFoundException {
+    public static void alterar(Pagamento pagamento) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update pagamento set vencimento=?, numero_codigo_barras=?, valor_total=? where id=?";
+            String sql = "update pagamento set vencimento=?, numero_codigo_barras=?, valor_total=?, reserva_id=? where id=?";
             comando = conexao.prepareStatement(sql);
 
-            comando.setString(1, pag.getVencimento());
-            comando.setString(2, pag.getNumeroCodBarras());
-            comando.setDouble(3, pag.getValorTotal());
+            comando.setString(1, pagamento.getVencimento());
+            comando.setString(2, pagamento.getNumeroCodBarras());
+            comando.setDouble(3, pagamento.getValorTotal());
 
-            if (pag.getReserva() == null) {
+            if (pagamento.getIdReserva() == null) {
                 comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(4, pag.getReserva().getId());
+                comando.setLong(4, pagamento.getIdReserva());
             }
-            
-            comando.setLong(4, pag.getId());
+
+            comando.setLong(5, pagamento.getId());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -59,14 +59,14 @@ public class PagamentoDAO {
         }
     }
 
-    public static void excluir(Pagamento pag) throws SQLException, ClassNotFoundException {
+    public static void excluir(Pagamento pagamento) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
             String sql = "delete from pagamento where id=?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, pag.getId());
+            comando.setLong(1, pagamento.getId());
 
             comando.execute();
 
@@ -81,7 +81,7 @@ public class PagamentoDAO {
 
         Connection conexao = null;
         PreparedStatement comando = null;
-        Pagamento pag = null;
+        Pagamento pagamento = null;
 
         try {
             conexao = BD.getConexao();
@@ -90,7 +90,7 @@ public class PagamentoDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
 
-            pag = new Pagamento(rs.getLong("id"),
+            pagamento = new Pagamento(rs.getLong("id"),
                     rs.getString("vencimento"),
                     rs.getString("numero_codigo_barras"),
                     rs.getDouble("valor_total"),
@@ -102,7 +102,7 @@ public class PagamentoDAO {
             BD.fecharConexao(conexao, comando);
 
         }
-        return pag;
+        return pagamento;
     }
 
     public static ArrayList<Pagamento> obterTodosPagamentos() throws ClassNotFoundException {
@@ -111,7 +111,7 @@ public class PagamentoDAO {
         Statement comando = null;
 
         ArrayList<Pagamento> lista = new ArrayList<>();
-        Pagamento pag = null;
+        Pagamento pagamento = null;
 
         try {
             conexao = BD.getConexao();
