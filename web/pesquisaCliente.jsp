@@ -1,57 +1,3 @@
-<!--<%--
-  Created by IntelliJ IDEA.
-  User: Iza Ribeiro
-  Date: 09/10/2018
-  Time: 09:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-
-<html>
-<head>
-    <title>Cliente</title>
-</head>
-<body>
-    <table border="1">
-        <tr>
-            <th colspan="10">Cliente</th>
-        </tr>
-    <tr>
-        <th>Código cliente</th>
-        <th>Nome cliente</th>
-        <th>Sobrenome</th>
-        <th>Data de Nascimento</th>
-        <th>Email</th>
-        <th>CPF</th>
-        <th colspan="2">Ação</th>
-    </tr>
-
-    <c:forEach items="${clientes}" var="cliente">
-        <tr>
-        <td><c:out value="${cliente.id}"/></td>
-        <td><c:out value="${cliente.nome}"/></td>
-        <td><c:out value="${cliente.sobrenome}"/></td>
-        <td><c:out value="${cliente.dataNascimento}"/></td>
-        <td><c:out value="${cliente.email}"/></td>
-        <td><c:out value="${cliente.cpf}"/></td>
-        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cliente.id}"/>">Editar</a></td>
-        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>">Excluir</a></td>
-        </tr>
-
-    </c:forEach>
-    </table>
-
-    <form action="ManterClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-    </form>
-    <a href="index.jsp"><button value="Voltar">Voltar</button></a>
-
-</body>
-</html>-->
-
 <%--
   Created by IntelliJ IDEA.
   User: viict
@@ -178,10 +124,10 @@
                                             <td><c:out value="${cliente.cpf}"/></td>
                                         </tr>
 
-                                    <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
+                                    <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cliente.id}"/>" 
                                            class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
 
-                                    <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
+                                    <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>"
                                            class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
                                     <hr>
                                 </c:forEach>
@@ -217,13 +163,13 @@
 
                                             <tr>
                                                 <td>
-                                                    <form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                    <form action="ManterClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
                                                         <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                                     </form>
                                                 </td>
 
                                                 <td>
-                                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                                    <a href="indexContato.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
                                                 </td>
                                             </tr>
 
