@@ -69,7 +69,7 @@
                                 <a class="dropdown-item" href="indexCliente.jsp">Cliente</a>                                
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="indexCartao.jsp">Cartão</a>
-                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+                                <a class="dropdown-item" href="indexDisponibilidade.jsp">Disponibilidade</a>
                                 
                                 <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
                                 <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
