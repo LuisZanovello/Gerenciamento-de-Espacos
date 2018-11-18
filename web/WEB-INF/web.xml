@@ -20,6 +20,14 @@
         <servlet-name>ManterAdminEspacoController</servlet-name>
         <servlet-class>controller.ManterAdminEspacoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterAdminModalidadeController</servlet-name>
+        <servlet-class>controller.ManterAdminModalidadeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PesquisaAdminModalidadeController</servlet-name>
+        <servlet-class>controller.PesquisaAdminModalidadeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ManterAdministradorController</servlet-name>
         <url-pattern>/ManterAdministradorController</url-pattern>
@@ -223,5 +231,13 @@
     <servlet-mapping>
         <servlet-name>ManterAdminEspacoController</servlet-name>
         <url-pattern>/ManterAdminEspacoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterAdminModalidadeController</servlet-name>
+        <url-pattern>/ManterAdminModalidadeController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaAdminModalidadeController</servlet-name>
+        <url-pattern>/PesquisaAdminModalidadeController</url-pattern>
     </servlet-mapping>
 </web-app>

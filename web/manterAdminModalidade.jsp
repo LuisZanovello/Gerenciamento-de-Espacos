@@ -1,11 +1,14 @@
-
+<%-- 
+    Document   : manterAdminModalidade
+    Created on : 18/11/2018, 11:15:51
+    Author     : viict
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html  lang="en, pt-br">
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -23,7 +26,7 @@
         <style>
             footer{
                 bottom: 0;
-                position: relative; 
+                position: absolute; 
                 bottom: 0; 
                 left: 0px; 
                 right: 0px;
@@ -33,7 +36,7 @@
         </style>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Gerencia Cliente - ${operacao}</title>
+        <title>Admin Gerencia Modalidade - ${operacao}</title>
     </head>
 
     <body>
@@ -62,19 +65,15 @@
         </nav>
         <!-- FIM Navegador superior-->
 
-
-
-
         <br>
         <div class="col">
             <div>
-                <h1 class="text-center"> Cliente - ${operacao} </h1> <hr>  <br><br>
+                <h1 class="text-center"> Modalidade - ${operacao} </h1> <hr>  <br><br>
 
             </div>
-        </div>
+        </div>      
 
-        <form action="ManterAdminClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
-
+        <form action="ManterAdminModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminModalidade">
 
             <!--Inicio Tabela-->
 
@@ -90,28 +89,16 @@
 
 
                     <tr>
-                        <td>Código do cliente: </td>
-                        <td><input type="text" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Nome do cliente: </td>
-                            <td><input type="text" name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Sobrenome: </td>
-                            <td> <input type="text" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Data de Nascimento: </td>
-                            <td> <input type="text" name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Email: </td>
-                            <td> <input type="text" name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>CPF: </td>
-                            <td> <input type="text" name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td>Código Modalidade</td>
+                        <td><input type="text" name="txtIdModalidade" size="60" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Modalidade</td>
+                        <td><input type="text" name="txtModalidade" size="60" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Descrição</td>
+                        <td><input type="text" name="txtDescricao" size="60" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     </tbody>
                 </table>
@@ -120,7 +107,7 @@
             <div>
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                 </form>
-                <a href="PesquisaAdminClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+                <a href="PesquisaAdminModalidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
             </div>        
 
