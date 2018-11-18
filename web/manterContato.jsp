@@ -118,7 +118,7 @@
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
 
                 </form>
-                <a href="PesquisaClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+                <a href="PesquisaContatoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
 
                 </body>
