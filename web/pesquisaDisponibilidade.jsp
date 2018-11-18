@@ -1,52 +1,3 @@
-<!--<%--
-  Created by IntelliJ IDEA.
-  User: viict
-  Date: 09/10/2018
-  Time: 09:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<html>
-<head>
-    <title>Disponibilidade</title>
-</head>
-<body>
-
-
-<table border="1">
-    <tr>
-        <th colspan="10">Disponibilidade</th>
-    </tr>
-    <tr>
-        <th>Id</th>
-        <th>Data dispon√≠vel</th>
-        <th>Hora Inicial</th>
-        <th>Hora Final</th>
-        <th colspan="2">A√ß√£o</th>
-    </tr>
-    <c:forEach items="${disponibilidades}" var="dispon">
-        <tr>
-            <td><c:out value="${dispon.id}" /></td>
-            <td><c:out value="${dispon.dataDisponivel}" /></td>
-            <td><c:out value="${dispon.hora_inicio}" /></td>
-            <td><c:out value="${dispon.hora_fim}" /></td>
-            <td><a href="ManterDisponibilidadeController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${dispon.id}"/>">Editar</a></td>
-            <td><a href="ManterDisponibilidadeController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${dispon.id}"/>">Excluir</a></td>
-        </tr>
-    </c:forEach>
-</table>
-
-<form action="ManterDisponibilidadeController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-</form>
-<a href="index.jsp"><button value="Voltar">Voltar</button></a>
-
-</body>
-</html>-->
-
-
 <%--
   Created by IntelliJ IDEA.
   User: viict
@@ -105,10 +56,10 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espa√ßos</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="index.jsp">Gerenciamento de EspaÁos</a> <!-- primeiro link direita superior-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="indexDisponibilidade.jsp">√Årea da Disponibilidade</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="indexDisponibilidade.jsp">¡rea da Disponibilidade</a> <!-- primeiro link direita superior-->
                         </li>
 
                     </ul>
@@ -157,15 +108,15 @@
                                             <td><c:out value="${dispon.id}"/></td>
                                         </tr>
                                                              <tr>
-                                            <th scope="now">N√∫mero</th>
+                                            <th scope="now">N˙mero</th>
                                             <td><c:out value="${dispon.dataDisponivel}"/></td>
                                         </tr>
                                                                                    <tr>
-                                            <th scope="now">N√∫mero</th>
+                                            <th scope="now">N˙mero</th>
                                             <td><c:out value="${dispon.hora_inicio}"/></td>
                                         </tr>
                                                                                    <tr>
-                                            <th scope="now">N√∫mero</th>
+                                            <th scope="now">N˙mero</th>
                                             <td><c:out value="${dispon.hora_fim}"/></td>
                                         </tr>
                      
@@ -196,7 +147,7 @@
                             <!--Div centralizadora-->
                         </div>
 
-                        <!-- Distancia entre o bot√£o incluir e voltar-->
+                        <!-- Distancia entre o bot„o incluir e voltar-->
                         <div class="col-lg-2"> 
                             <table class="table table-striped">
 
@@ -234,7 +185,7 @@
                         <!-- INICIO Footer -->
                         <footer class="py-5 bg-dark">
                             <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espa√ßos 2018</p> 
+                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de EspaÁos 2018</p> 
                                 <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                             </div>
                             <!-- /.container -->

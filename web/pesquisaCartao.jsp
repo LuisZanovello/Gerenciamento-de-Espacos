@@ -1,48 +1,4 @@
-<!--<%--
-  Created by IntelliJ IDEA.
-  User: viict
-  Date: 09/10/2018
-  Time: 09:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<html>
-<head>
-    <title>Cartao</title>
-</head>
-<body>
-
-
-<table border="1">
-    <tr>
-        <th colspan="10">Cartao</th>
-    </tr>
-    <tr>
-        <th>Id</th>
-        <th>Bandeira</th>
-
-        <th colspan="2">A√ß√£o</th>
-    </tr>
-    <c:forEach items="${cartoes}" var="cartao">
-        <tr>
-            <td><c:out value="${cartao.id}" /></td>
-            <td><c:out value="${cartao.bandeira}" /></td>
-            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cartao.id}"/>">Editar</a></td>
-            <td><a href="ManterCartaoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cartao.id}"/>">Excluir</a></td>
-        </tr>
-    </c:forEach>
-</table>
-
-<form action="ManterCartaoController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-</form>
-<a href="index.jsp"><button value="Voltar">Voltar</button></a>
-
-</body>
-</html>-->
 
 <%--
   Created by IntelliJ IDEA.
@@ -84,7 +40,7 @@
             }
         </style>
 
-        <title>Cart√µes</title>
+        <title>Cartıes</title>
 
     </head>
     <body>
@@ -102,10 +58,10 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espa√ßos</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="index.jsp">Gerenciamento de EspaÁos</a> <!-- primeiro link direita superior-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="indexCartao.jsp">√Årea do Cart√£o</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="indexCartao.jsp">¡rea do Cart„o</a> <!-- primeiro link direita superior-->
                         </li>
 
                     </ul>
@@ -134,7 +90,7 @@
                     <br>
                     <div class="col">
                         <div>
-                            <h1 class="text-center">Lista de Cart√µes</h1><hr>  <br><br>
+                            <h1 class="text-center">Lista de Cartıes</h1><hr>  <br><br>
                         </div>
                         <!--Tabela-->
                        
@@ -157,7 +113,7 @@
                                             <td><c:out value="${cartao.id}"/></td>
                                         </tr>
                                                              <tr>
-                                            <th scope="now">N√∫mero</th>
+                                            <th scope="now">N˙mero</th>
                                             <td><c:out value="${cartao.bandeira}"/></td>
                                         </tr>
                                          
@@ -187,7 +143,7 @@
                             <!--Div centralizadora-->
                         </div>
 
-                        <!-- Distancia entre o bot√£o incluir e voltar-->
+                        <!-- Distancia entre o bot„o incluir e voltar-->
                         <div class="col-lg-2"> 
                             <table class="table table-striped">
 
@@ -225,7 +181,7 @@
                         <!-- INICIO Footer -->
                         <footer class="py-5 bg-dark">
                             <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espa√ßos 2018</p> 
+                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de EspaÁos 2018</p> 
                                 <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                             </div>
                             <!-- /.container -->

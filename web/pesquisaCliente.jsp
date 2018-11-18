@@ -169,7 +169,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="indexContato.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                                    <a href="indexCliente.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
                                                 </td>
                                             </tr>
 
