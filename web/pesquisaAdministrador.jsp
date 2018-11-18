@@ -69,7 +69,10 @@
         <!-- FIM Navegador superior-->
 
 
+<div class="container">
 
+    
+    
 
 
         <!--Inicio Box-->
@@ -79,10 +82,8 @@
 
             <!--Inicio Tabela-->
 
-            <div class="col-lg-1">
-                <!--Div centralizadora-->
-            </div>
-            <div class="col-lg-9">
+            
+            <div class="col-lg-12">
                 <table class="table table-striped">
                     <thead>
                     <br>
@@ -174,6 +175,8 @@
 
                                 </div>        
                         </div> 
+                        </div> <!-- Fim da DIV Centralizadora-->
+                     
 
                         <hr>
 

@@ -66,65 +66,67 @@
         <!-- FIM Navegador superior-->
 
         <br>
-        <div class="col">
-            <div>
-                <h1 class="text-center"> Modalidade - ${operacao} </h1> <hr>  <br><br>
+        <div class="container"><!--Div centralizadora-->
+            <div class="col">
+                <div>
+                    <h1 class="text-center"> Modalidade - ${operacao} </h1> <hr>  <br><br>
 
-            </div>
-        </div>      
-
-        <form action="ManterAdminModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminModalidade">
-
-            <!--Inicio Tabela-->
-
-            <div class="col-lg-7">
-
-                <!--Div centralizadora-->
-            </div>
-            <div class="col-lg-9">
-                <table class="table table-striped">
-                    <thead>
-                    <tbody>
-                    <br>
-
-
-                    <tr>
-                        <td>Código Modalidade</td>
-                        <td><input type="text" name="txtIdModalidade" size="60" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Modalidade</td>
-                        <td><input type="text" name="txtModalidade" size="60" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Descrição</td>
-                        <td><input type="text" name="txtDescricao" size="60" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div>
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                </form>
-                <a href="PesquisaAdminModalidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
-
-            </div>        
-
-
-            <hr>
-            <!-- Footer -->
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                 </div>
-                <!-- /.container -->
-            </footer>
+            </div>      
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <form action="ManterAdminModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminModalidade">
+
+                <!--Inicio Tabela-->
+
+                <div class="col-lg-7">
+
+                    <!--Div centralizadora-->
+                </div>
+                <div class="col-lg-9">
+                    <table class="table table-striped">
+                        <thead>
+                        <tbody>
+                        <br>
+
+
+                        <tr>
+                            <td>Código Modalidade</td>
+                            <td><input type="text" name="txtIdModalidade" size="60" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Modalidade</td>
+                                <td><input type="text" name="txtModalidade" size="60" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Descrição</td>
+                                <td><input type="text" name="txtDescricao" size="60" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    </form>
+                    <a href="PesquisaAdminModalidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+
+                </div>
+        </div>        <!--FIM Div centralizadora-->
+
+
+        <hr>
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+            </div>
+            <!-- /.container -->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     </body>
 </html>

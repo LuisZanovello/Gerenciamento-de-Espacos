@@ -57,23 +57,23 @@
                                 Classes
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
+
                                 <a class="dropdown-item" href="indexCliente.jsp">Cliente</a>                                
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="indexCartao.jsp">Cartão</a>
                                 <a class="dropdown-item" href="indexDisponibilidade.jsp">Disponibilidade</a>
-                                
+
                                 <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
                                 <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
                                 <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
+
+
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
+                        </li>
                         <li>
                             <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
                         </li>
@@ -109,64 +109,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <hr>
+       
 
         <!--Fim -->
 
 
-        <!--
-                    <hr>
-                    <div class="row">
-                        
-                        <div class="col">
-                            <div class="col-sm-12">
-                                <h1 class="text-center">Encontre o seu espaço e compare preços</h1><hr> <br><br> 
-                            </div> 
-        
-                            
-                            <div class="col">
-                                <div class="col-sm-12">
-                                    <h1 class="text-center">Gerenciamento de Espaços</h1>  <hr>
-                                </div>
-        
-        
-                                <div class="btn-group col-sm-12">
-                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Encontre o seu espaço e compare preços
-                                    </button>
-                                    <div class="dropdown-menu">
-        
-                                        <span class="dropdown-item-text">Selecione o local desejado</span>
-                                        
-                                      
-                                        <a class="dropdown-item" href="PesquisaAdminController">Administrador</a>
-                                        <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>
-                                        <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
-                                        <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>
-                                        <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
-                                        <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
-                                        <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                        <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
-                                        <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
-                                        <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                        <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
-                                        <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-        
-            </div>
-        
-        
-            
-            <hr>
-        
-            Fim -->
+
 
 
 

@@ -97,6 +97,7 @@
             <li class="breadcrumb-item active">Reserva de Espaço</li>
           </ol>
     
+          <!--
           <div class="row">
             <div class="col-lg-6 portfolio-item">
               <div class="card h-100">
@@ -111,9 +112,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+          
             <div class="row">
-                <div class="col-lg-8 mb-4">
+                <div class="col-lg-10 mb-4">
     
                     <form name="reserva" id="reserva" novalidate>
                         <div class="control-group form-group">
@@ -134,25 +136,28 @@
                             <label>Hora Fim</label>
                             <input type="horaf" class="form-control" id="horaf" placeholder="00:00" required data-validation-required-message="Informe a hora fim.">
                         </div>
-                    </div>
-                    <table>
-                            <tr>
-                                <th>Preço</th>
-                                <th>R$ 00,00</th>
-                            </tr>
-                        </table>
-                        <div class="control-group form-group">
+                            
+                              <div class="control-group form-group">
                             <div class="controls1">
                                 <label>Quantidade Estimada de Pessoas</label>
                                 <input type="qtpessoas" class="form-control" id="qtpessoas" placeholder="00">
                             </div>
                         </div>
-                        <div class="control-group form-group">
-                            <div class="controls">
-                                <label>Informações adicionais:</label>
-                                <textarea rows="10" cols="100" class="form-control" id="message" placeholder="Digite aqui"></textarea>
-                            </div>
+                            
+                            <div class="controls1">
+                            <label>Preço</label>
+                             <input type="text" class="form-control" id="horaf" placeholder="R$ 00,0" required data-validation-required-message="Informe o valor.">
                         </div>
+                            
+                            <div class="controls1">
+                            <label>Avaliação</label>
+                             <input type="text" class="form-control" id="horaf" placeholder="Nota de 1 a 5" required data-validation-required-message="Informe o valor da Nota">
+                        </div>
+                    </div>
+                
+                      
+                   
+                        
                         <div id="success"></div>
                         <!-- For success/fail messages -->
                         <a href="cancelarReservas.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Reservar</a>

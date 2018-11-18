@@ -63,6 +63,7 @@
         <!-- FIM Navegador superior-->
 
         <br>
+         <div class="container"><!--Div centralizadora-->
         <div class="col">
             <div>
                 <h1 class="text-center"> Espaço - ${operacao} </h1> <hr>  <br><br>
@@ -87,59 +88,59 @@
 
                     <tr>
                         <td>Codigo Espaco</td>
-                        <td><input type="text" name="txtIdEspaco"size="60" value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text"  class="form-control"  name="txtIdEspaco"size="60" value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Espaço</td>
-                            <td><input type="text" name="txtNome" size="60" value="${espaco.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" class="form-control"  name="txtNome" size="60" value="${espaco.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>CNPJ</td>
-                            <td><input type="text" name="txtCnpj" size="60" value="${espaco.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtCnpj" size="60" value="${espaco.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Cep</td>
-                            <td><input type="text" name="txtCep" size="60" value="${espaco.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" class="form-control"  name="txtCep" size="60" value="${espaco.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Logradouro</td>
-                            <td><input type="text" name="txtLogradouro" size="60" value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtLogradouro" size="60" value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Numero</td>
-                            <td><input type="text" name="txtNumero" size="60" value="${espaco.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtNumero" size="60" value="${espaco.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Complemento</td>
-                            <td><input type="text" name="txtComplemento" size="60" value="${espaco.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtComplemento" size="60" value="${espaco.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Bairro</td>
-                            <td><input type="text" name="txtBairro" size="60" value="${espaco.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtBairro" size="60" value="${espaco.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Cidade</td>
-                            <td><input type="text" name="txtCidade" size="60" value="${espaco.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtCidade" size="60" value="${espaco.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Uf</td>
-                            <td><input type="text" name="txtUf" size="60" value="${espaco.uf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtUf" size="60" value="${espaco.uf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Area</td>
-                            <td><input type="text" name="txtArea" size="60" value="${espaco.area}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" class="form-control"  name="txtArea" size="60" value="${espaco.area}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Quantidade  de pessoas</td>
-                            <td><input type="text" name="txtQuantidadePessoas" size="60" value="${espaco.quantidadePessoas}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtQuantidadePessoas" size="60" value="${espaco.quantidadePessoas}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Horario de funcionamento - Inicio</td>
-                            <td><input type="text" name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" class="form-control"  name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Horario de funcionamento - Fim</td>
-                            <td><input type="text" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
 
                         </tbody>
@@ -147,7 +148,8 @@
 
                     <td>Tipo Espaco:</td>
                     <td>
-                        <select name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
+                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
+                       <option>Selecione uma opção</option>   
                         <c:forEach items="${tiposEspacos}" var="tipoEspaco">
                             <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> selected</c:if>>${tipoEspaco.nome}</option>  
                         </c:forEach>
@@ -160,7 +162,10 @@
                 </form>
                 <a href="PesquisaAdminEspacoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
-            </div>        
+            </div>
+                        </div> <!--FIM Div centralizadora-->
+        
+                        
 
 
             <hr>

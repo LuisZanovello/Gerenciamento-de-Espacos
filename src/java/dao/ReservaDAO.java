@@ -46,7 +46,7 @@ public class ReservaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update reserva set data_reserva=?, hora_inicio=?, hora_fim=?, quantidade_pessoas=?, valor_espaco=?, nota_avaliacao=? where id=?";
+            String sql = "update reserva set data_reserva=?, hora_inicio=?, hora_fim=?, quantidade_pessoas=?, valor_espaco=?, nota_avaliacao=?, espaco_id=?, cliente_id=? where id=?";
 
             comando = conexao.prepareStatement(sql);
             comando.setString(1, resv.getDataLocacao());
@@ -56,7 +56,7 @@ public class ReservaDAO {
             comando.setDouble(5, resv.getValorLocacao());
             comando.setLong(6, resv.getNotaAvaliacao());
             comando.setLong(7, resv.getId());
-            comando.execute();
+            
             if (resv.getIdEspaco() == null) {
                 comando.setNull(7, Types.NULL);
             } else {
@@ -65,13 +65,13 @@ public class ReservaDAO {
       
             
             if (resv.getIdCliente() == null) {
-                comando.setNull(7, Types.NULL);
+                comando.setNull(8, Types.NULL);
             } else {
-                comando.setLong(7, resv.getIdCliente());
+                comando.setLong(8, resv.getIdCliente());
             }
 
-            comando.setLong(7, resv.getId());
-            
+            comando.setLong(9, resv.getId());
+            comando.execute();
             BD.fecharConexao(conexao, comando);
 
         } catch (SQLException e) {

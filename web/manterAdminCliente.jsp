@@ -62,10 +62,10 @@
         </nav>
         <!-- FIM Navegador superior-->
 
-
-
-
+        
         <br>
+      <br>
+         <div class="container"><!--Div centralizadora-->
         <div class="col">
             <div>
                 <h1 class="text-center"> Cliente - ${operacao} </h1> <hr>  <br><br>
@@ -78,10 +78,7 @@
 
             <!--Inicio Tabela-->
 
-            <div class="col-lg-7">
-
-                <!--Div centralizadora-->
-            </div>
+           
             <div class="col-lg-9">
                 <table class="table table-striped">
                     <thead>
@@ -91,27 +88,27 @@
 
                     <tr>
                         <td>Código do cliente: </td>
-                        <td><input type="text" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Nome do cliente: </td>
-                            <td><input type="text" name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control"  name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Sobrenome: </td>
-                            <td> <input type="text" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td> <input type="text"  class="form-control"  name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Data de Nascimento: </td>
-                            <td> <input type="text" name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td> <input type="text"  class="form-control"  name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Email: </td>
-                            <td> <input type="text" name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td> <input type="text"  class="form-control"  name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>CPF: </td>
-                            <td> <input type="text" name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td> <input type="text" class="form-control"  name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     </tbody>
                 </table>
@@ -124,6 +121,7 @@
 
             </div>        
 
+         </div> <!--FIM da Div centralizadora-->
 
             <hr>
             <!-- Footer -->

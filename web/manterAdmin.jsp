@@ -27,7 +27,7 @@
         <style>
             footer{
                 bottom: 0;
-                position: relative; 
+                position: absolute; 
                 bottom: 0; 
                 left: 0px; 
                 right: 0px;
@@ -71,7 +71,8 @@
         <!-- FIM Navegador superior-->
 
         <br>
-        <div class="col">
+        <div class="container"><!--Div centralizadora-->
+            <div class="col-lg-12">
             <div>
                 <h1 class="text-center"> Administrador - ${operacao} </h1> <hr>  <br><br>
 
@@ -121,6 +122,23 @@
                 </form>
                 <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
+</div>
+               </div>        <!--FIM Div centralizadora-->
 
-                </body>
-                </html>
+
+        <hr>
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+            </div>
+            <!-- /.container -->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

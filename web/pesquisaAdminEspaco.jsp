@@ -60,17 +60,21 @@
         </nav>
         <!-- FIM Navegador superior-->
 
-        <!--Inicio Tabela-->
+          <!-- Corpo da Pagina -->
+        <div class="container">
 
-        <div class="col-lg-4">
-            <!--Div centralizadora-->
-        </div>
-        <div class="col-lg-12">
-            <table class="table table-striped">
-                <thead>
-                <br>
-                <div class="col">
-                    <div>
+        
+
+
+            <!--Inicio Tabela-->
+
+       
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <br>
+                    <div class="col">
+                        <div>
                         <h1 class="text-center">Lista de Espaços</h1><hr>  <br><br>
                     </div>
                     <!--Tabela-->
@@ -111,7 +115,7 @@
                         </table>
                         <hr>
                     </div>        
-                </div> 
+                
 
 
 
@@ -154,6 +158,8 @@
 
                                 </div>        
                         </div> 
+
+                </div><!-- Fim da DIV Centralizadora--> 
 
                         <hr>
 
