@@ -139,7 +139,7 @@
                                         <tr>
                                             <td>
                                                 <form action="ManterAdminEspacoController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                    <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                                    <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir Novo Espaço">
                                                 </form>
                                             </td>
                                             
