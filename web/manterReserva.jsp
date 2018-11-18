@@ -122,12 +122,14 @@
 
                                     </div>
                                 </div>
+                                    
                                 <div class="control-group form-group">
                                     <div class="controls1">
                                         <label>Hora Fim</label>
                                         <input type="horaf" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
 
                                     </div>
+                                </div>
 
                                     <div class="control-group form-group">
                                         <div class="controls1">
@@ -137,13 +139,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="controls1">
+                                     <div class="control-group form-group">
+                                        <div class="controls1">
                                         <label>Preço</label>
                                         <input type="text" class="form-control" placeholder="R$ 00.00" name="txtvalorLocacao" value="${reserva.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
 
                                     </div>
+                                     </div>
 
-                                    <div class="controls1">
+                                        <div class="control-group form-group">
+                                        <div class="controls1">
                                         <label>Avaliação</label>
                                         <input  type="text" class="form-control" id="horaf" placeholder="Nota de 1 a 5" name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> 
 
@@ -163,7 +168,7 @@
                                             </c:forEach>
                                         </select>
                                 </td>
-                                
+
 
                                 <td>Local de Reserva:</td>
                                 <td>
@@ -174,7 +179,7 @@
                                         </c:forEach>
                                     </select>
                                 </td>
-                                
+
                             </div>
 
 
