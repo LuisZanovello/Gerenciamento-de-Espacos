@@ -75,16 +75,6 @@
                     </div>
                     <!--Tabela-->
 
-                    <fieldset>
-                        <div class="col-lg-11">
-                            <input class="form-control " type="text" name="pesquisa"/>
-                        </div>
-                        <div class="col-lg-1">
-                            <input class="btn btn-outline-danger" role="button" aria-pressed="true" type="submit" value="Pesquisar"/>
-                        </div>
-
-                    </fieldset>
-
                     <c:forEach items="${clientes}" var="cliente">
 
                         <div class="col-lg-2">
@@ -103,28 +93,28 @@
                                     </tr>
                                     <tr> 
                                         <th scope="now"> Nome </th>
-                                        <td><c:out value="${cliente.nome}"/></td>
+                                <td><c:out value="${cliente.nome}"/></td>
                                     </tr>
-
+                                    
                                     <tr> 
                                         <th scope="now"> Sobrenome </th>
-                                        <td><c:out value="${cliente.sobrenome}"/></td>
+                                <td><c:out value="${cliente.sobrenome}"/></td>
                                     </tr>
                                     <tr>
                                         <th scope="now"> Nascimento </th>
-                                        <td><c:out value="${cliente.dataNascimento}"/></td>
+                                <td><c:out value="${cliente.dataNascimento}"/></td>
                                     </tr>
-
+                                    
                                     <tr>
                                         <th scope="now"> E-mail </th>
-                                        <td><c:out value="${cliente.email}"/></td>
+                                <td><c:out value="${cliente.email}"/></td>
                                     </tr>
-
+                                    
                                     <tr>
                                         <th scope="now"> CPF </th>
-                                        <td><c:out value="${cliente.cpf}"/></td>
+                                <td><c:out value="${cliente.cpf}"/></td>
                                     </tr>
-
+                                    
                                 <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cliente.id}"/>"
                                        class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
                                 <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>"
@@ -132,69 +122,69 @@
                                 </tr>
 
                             </c:forEach>
-
-                            </tbody>
-                        </table>
-                        <hr>
-                    </div>        
-                </div> 
-
-
-
-
-                <!--Inicio DIV-->
-                <div class="row">               
-
-                    <!--Inicio Tabela-->
-                    <div class="col-lg-1">
-                        <!--Div centralizadora-->
-                    </div>
-
-                    <!-- Distancia entre o botão incluir e voltar-->
-                    <div class="col-lg-2"> 
-                        <table class="table table-striped">
-
-                            <br>
-
-                            <!--Tabela-->
-                            <div class="col-lg-12">
-                                <table class="table">
-
-                                    <tbody>
-
-                                        <tr>
-                                            <td>
-                                                <form action="ManterAdminClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                    <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir Novo Cliente">
-                                                </form>
-                                            </td>
-
-                                            <td>
-                                                <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                            </div>        
+                  
+                                   </tbody>
+                            </table>
+                            <hr>
+                        </div>        
                     </div> 
 
-                    <hr>
 
-                    <!-- INICIO Footer -->
-                    <footer class="py-5 bg-dark">
-                        <div class="container">
-                            <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                            <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+
+
+                    <!--Inicio DIV-->
+                    <div class="row">               
+
+                        <!--Inicio Tabela-->
+                        <div class="col-lg-1">
+                            <!--Div centralizadora-->
                         </div>
-                        <!-- /.container -->
-                    </footer>
 
-                    <!-- Bootstrap core JavaScript -->
-                    <script src="vendor/jquery/jquery.min.js"></script>
-                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <!-- FIM Footer -->
+                        <!-- Distancia entre o botão incluir e voltar-->
+                        <div class="col-lg-2"> 
+                            <table class="table table-striped">
 
-                    </body>
-                    </html>
+                                <br>
+
+                                <!--Tabela-->
+                                <div class="col-lg-12">
+                                    <table class="table">
+
+                                        <tbody>
+
+                                            <tr>
+                                                <td>
+                                                    <form action="ManterAdminClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                                    </form>
+                                                </td>
+
+                                                <td>
+                                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>        
+                        </div> 
+
+                        <hr>
+
+                        <!-- INICIO Footer -->
+                        <footer class="py-5 bg-dark">
+                            <div class="container">
+                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                            </div>
+                            <!-- /.container -->
+                        </footer>
+
+                        <!-- Bootstrap core JavaScript -->
+                        <script src="vendor/jquery/jquery.min.js"></script>
+                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                        <!-- FIM Footer -->
+
+                        </body>
+                        </html>

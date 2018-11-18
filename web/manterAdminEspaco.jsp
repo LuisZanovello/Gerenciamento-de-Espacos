@@ -139,7 +139,7 @@
                         </tr>
                         <tr>
                             <td>Horario de funcionamento - Fim</td>
-                            <td><input type="text" name="txtHoraFuncionamentoFinal" size="60" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
 
                         </tbody>
@@ -154,9 +154,7 @@
                     </select>
                 </td>
                 </tr>
-              
-                
-                
+                </table>
                 <br><br>
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                 </form>

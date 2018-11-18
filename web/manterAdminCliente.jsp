@@ -115,10 +115,9 @@
                     </tr>
                     </tbody>
                 </table>
-            
+            </div>
 
-                    <br><br>
-            
+            <div>
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                 </form>
                 <a href="PesquisaAdminClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
