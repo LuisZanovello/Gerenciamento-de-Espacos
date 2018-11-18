@@ -99,7 +99,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <div><h1 class="my-4">Área do cliente </h1></div>
+      <div><h1 class="my-4">Área do Cliente </h1></div>
       <div><h3><small>Bem vindo(a)!</small></h3></div> <br>
 
       

@@ -1,46 +1,4 @@
-<!--<%--
-  Created by IntelliJ IDEA.
-  User: Iza Ribeiro
-  Date: 11/10/2018
-  Time: 00:10
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<html>
-<head>
-    <title>Contato</title>
-</head>
-<body>
-<table border="1">
-    <tr>
-        <th colspan="10">Contato</th>
-    </tr>
-    <tr>
-        <th>C√≥digo contato</th>
-        <th>Nome contato</th>
-        <th colspan="2">A√ß√£o</th>
-    </tr>
-
-    <c:forEach items="${contatos}" var="contato">
-        <tr>
-            <td><c:out value="${contato.id}"/></td>
-            <td><c:out value="${contato.numero}"/></td>
-            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${contato.id}"/>">Editar</a></td>
-            <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${contato.id}"/>">Excluir</a></td>
-        </tr>
-
-        </c:forEach>
-</table>
-
- <form action="ManterContatoController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-    </form>
-    <a href="index.jsp"><button value="Voltar">Voltar</button></a>
-</body>
-</html>-->
 
 <%--
   Created by IntelliJ IDEA.
@@ -100,10 +58,10 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espa√ßos</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="index.jsp">Gerenciamento de EspaÁos</a> <!-- primeiro link direita superior-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="indexContato.jsp">√Årea do Contato</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="indexContato.jsp">¡rea do Contato</a> <!-- primeiro link direita superior-->
                         </li>
 
                     </ul>
@@ -148,7 +106,7 @@
                                             <td><c:out value="${contato.id}"/></td>
                                         </tr>
                                                              <tr>
-                                            <th scope="now">N√∫mero</th>
+                                            <th scope="now">N˙mero</th>
                                             <td><c:out value="${contato.numero}"/></td>
                                         </tr>
                      
@@ -179,7 +137,7 @@
                             <!--Div centralizadora-->
                         </div>
 
-                        <!-- Distancia entre o bot√£o incluir e voltar-->
+                        <!-- Distancia entre o bot„o incluir e voltar-->
                         <div class="col-lg-2"> 
                             <table class="table table-striped">
 
@@ -217,7 +175,7 @@
                         <!-- INICIO Footer -->
                         <footer class="py-5 bg-dark">
                             <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espa√ßos 2018</p> 
+                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de EspaÁos 2018</p> 
                                 <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                             </div>
                             <!-- /.container -->
