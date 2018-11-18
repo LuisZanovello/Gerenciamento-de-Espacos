@@ -98,7 +98,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <div><h1 class="my-4">Área do administrador </h1></div>
+      <div><h1 class="my-4">Área do cliente </h1></div>
       <div><h3><small>Bem vindo(a)!</small></h3></div> <br>
 
       
@@ -111,10 +111,10 @@
           <div class="row">
               <div class="col">
             
-            <a class="btn btn-dark btn-block" href="PesquisaAdminController" role="button">Lista Administradores</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="PesquisaClienteController" role="button">Lista Clientes</a> <br> <br>
             </div>
             <div class="col">
-            <a class="btn btn-dark btn-block" href="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Administrador</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Cliente</a> <br> <br>
           </div> 
           <div class="col"> 
             <div class="dropdown">
