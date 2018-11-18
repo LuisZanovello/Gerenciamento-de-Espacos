@@ -163,7 +163,7 @@
                                             </c:forEach>
                                         </select>
                                 </td>
-                                </tr>
+                                
 
                                 <td>Local de Reserva:</td>
                                 <td>
@@ -174,7 +174,7 @@
                                         </c:forEach>
                                     </select>
                                 </td>
-                                </tr>
+                                
                             </div>
 
 
