@@ -1,49 +1,3 @@
-<!--<%--
-  Created by IntelliJ IDEA.
-  User: luisg
-  Date: 10/10/2018
-  Time: 18:52
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Tipo Espaco</title>
-</head>
-<body>
-    
-    
-<table border="1">
-    <tr>
-        <th colspan="10">Tipo Espa√ßo</th>
-    </tr>
-    <tr>
-        <th>C√≥digo</th>
-        <th>Tipo de Espa√ßo</th>
-        <th colspan=2>A√ß√£o</th>
-    </tr>
-    <c:forEach items="${tiposEspacos}" var="tipoEspaco">
-        <tr>
-            <td><c:out value="${tipoEspaco.id}" /></td>
-            <td><c:out value="${tipoEspaco.nome}" /></td>
-            <td><a href="ManterTipoEspacoController?acao=prepararOperacao&operacao=Editar&id= <c:out value="${tipoEspaco.id}"/>">Editar</a></td>
-            <td><a href="ManterTipoEspacoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${tipoEspaco.id}"/> ">Excluir</a></td>
-        </tr>
-    </c:forEach>
-</table>
-<form action="ManterTipoEspacoController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-</form>
-<a href="index.jsp"><button value="Voltar">Voltar</button></a>
-</body>
-
-</html>-->
-
-
 
 <%--
   Created by IntelliJ IDEA.
@@ -85,7 +39,7 @@
             }
         </style>
 
-        <title>Tipo Espa√ßo</title>
+        <title>Tipo EspaÁo</title>
 
     </head>
     <body>
@@ -103,10 +57,10 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espa√ßos</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="index.jsp">Gerenciamento de EspaÁos</a> <!-- primeiro link direita superior-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">√Årea do Tipo de Espa√ßo</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="index.jsp">¡rea do Tipo de EspaÁo</a> <!-- primeiro link direita superior-->
                         </li>
 
                     </ul>
@@ -182,7 +136,7 @@
                             <!--Div centralizadora-->
                         </div>
 
-                        <!-- Distancia entre o bot√£o incluir e voltar-->
+                        <!-- Distancia entre o bot„o incluir e voltar-->
                         <div class="col-lg-2"> 
                             <table class="table table-striped">
 
@@ -220,7 +174,7 @@
                         <!-- INICIO Footer -->
                         <footer class="py-5 bg-dark">
                             <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espa√ßos 2018</p> 
+                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de EspaÁos 2018</p> 
                                 <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                             </div>
                             <!-- /.container -->
