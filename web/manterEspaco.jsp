@@ -221,7 +221,7 @@
 
                     <td>Tipo Espaco:</td>
                     <td>
-                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
+                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                        <option>Selecione uma opção</option>   
                         <c:forEach items="${tiposEspacos}" var="tipoEspaco">
                             <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> selected</c:if>>${tipoEspaco.nome}</option>  
