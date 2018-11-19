@@ -9,6 +9,13 @@
 
 <html  lang="en, pt-br">
     <head>
+        
+         <!-- include para pesquisa funcionar -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- fim da nova include -->
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -81,11 +88,26 @@
                     </div>
                     <!--Tabela-->
 
+                    <!-- INICIO TAG para buscar -->
+                        <div class="col-md-12">
+                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                            <script>
+                                $(document).ready(function () {
+                                    $("#myInput").on("keyup", function () {
+                                        var value = $(this).val().toLowerCase();
+                                        $("#myTable ${espaco.id.nome}").filter(function () {
+                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                                        });
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <!-- FIM TAG para buscar -->
 
                     <c:forEach items="${modalidades}" var="modalidade">
 
                         <div class="col-lg-2">
-                            <table class="table table-striped">
+                            <table class="table table-striped"  id="myTable">
                                 </thead>
                                 <tbody>
 
