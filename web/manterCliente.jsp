@@ -117,6 +117,10 @@
             <td>CPF: </td>
             <td> <input type="text" name="txtCPFCliente" value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
+        <tr>
+            <td>Senha: </td>
+            <td> <input type="text" name="txtSenhaCliente" value="${cliente.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+        </tr>
   
                     </tbody>
                 </table>

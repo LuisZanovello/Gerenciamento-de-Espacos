@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
                         session.setAttribute("cliente", cliente);
                         session.setAttribute("usuario", "cliente");
                         request.setAttribute("usuario", "cliente");
-                        RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+                        RequestDispatcher view = request.getRequestDispatcher("indexCliente.jsp");
                         view.forward(request, response);
                     } else {
                         request.setAttribute("mensagemErro", "Usuário não encontrado");

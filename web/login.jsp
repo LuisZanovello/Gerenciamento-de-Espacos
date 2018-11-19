@@ -52,7 +52,7 @@
                             <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="indexCliente.jsp">Login</a> <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="login.jsp">Login</a> <!-- primeiro link direita superior-->
                         </li>
 
                     </ul>
@@ -73,8 +73,15 @@
                         </c:when>    
                     </c:choose>
                     
+                    
+                    
                     <div class="panel panel-primary">
-                        <div class="panel-heading"><h1>Login</h1></div>
+                        <div class="col">
+            <div>
+                <h1 class="text-center" > Login</h1> <hr>  <br><br>
+
+            </div></div>
+                        <!--<div class="panel-heading"><h1>Login</h1></div>-->
                         <div class="panel-body">
                             <form action="LoginController?acao=logar" method="post" name="frmManterAtleta">
                                 <div class="form-group">
