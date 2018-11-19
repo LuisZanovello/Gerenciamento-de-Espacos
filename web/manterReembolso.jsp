@@ -104,18 +104,18 @@
                                 <div class="control-group form-group">
                                     <div class="controls1">
                                         <label>Status: </label>
-                                       <div class="form-group">
-                                         <select class="form-control" name="txtNomeReembolso" 
-                                                 value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
-                                        <option>Selecione uma opção</option> 
-                                        <option>Aprovado</option> 
-                                        <option>Em Analise</option> 
-                                        <option>Recusado</option> 
-                                         </select>
+                                        <div class="form-group">
+                                            <select class="form-control" name="txtNomeReembolso" 
+                                                    value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                                <option>Selecione uma opção</option> 
+                                                <option>Aprovado</option> 
+                                                <option>Em Analise</option> 
+                                                <option>Recusado</option> 
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-      </div>
-                                    
+
                                 <div>
                                     <td>Número do Codigo de Barras:</td>
                                     <td>

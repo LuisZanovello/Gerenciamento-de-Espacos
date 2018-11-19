@@ -101,7 +101,7 @@
                                 <div class="controls1">
                                     <label>Codigo da reserva</label>
 
-                                    <input type="text" class="form-control" placeholder="Digite apenas números" name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                                    <input type="number" class="form-control" placeholder="Digite apenas números" name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                                     <div class="controls1">
                                         <label>Data da locação:</label>
 
-                                        <input type="text" class="form-control" placeholder="00/00/0000" name="txtDataLocacao" value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                        <input type="date" class="form-control" placeholder="00/00/0000" name="txtDataLocacao" value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                 <div class="control-group form-group">
                                     <div class="controls1">
                                         <label>Hora de Início</label>
-                                        <input type="horai" placeholder="00:00" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                        <input type="time" placeholder="00:00" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
 
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                                 <div class="control-group form-group">
                                     <div class="controls1">
                                         <label>Hora Fim</label>
-                                        <input type="horaf" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                        <input type="time" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
 
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                     <div class="control-group form-group">
                                         <div class="controls1">
                                             <label>Quantidade Estimada de Pessoas</label>
-                                            <input type="qtpessoas" class="form-control" id="qtpessoas" placeholder="Digite apenas números" name="txtqtPessoas" value="${reserva.qtPessoas}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                            <input type="number" class="form-control" id="qtpessoas" placeholder="Digite apenas números" name="txtqtPessoas" value="${reserva.qtPessoas}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
 
                                         </div>
                                     </div>
@@ -142,7 +142,7 @@
                                      <div class="control-group form-group">
                                         <div class="controls1">
                                         <label>Preço</label>
-                                        <input type="text" class="form-control" placeholder="R$ 00.00" name="txtvalorLocacao" value="${reserva.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                        <input type="number" class="form-control" placeholder="R$ 00.00" name="txtvalorLocacao" value="${reserva.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
 
                                     </div>
                                      </div>
@@ -150,7 +150,7 @@
                                         <div class="control-group form-group">
                                         <div class="controls1">
                                         <label>Avaliação</label>
-                                        <input  type="text" class="form-control" id="horaf" placeholder="Nota de 1 a 5" name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> 
+                                        <input  type="number" class="form-control" id="horaf" placeholder="Nota de 1 a 5" name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> 
 
                                     </div>
                                 </div>

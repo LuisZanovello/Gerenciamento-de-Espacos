@@ -6,6 +6,13 @@
 
 <html>
     <head>
+
+        <!-- include para pesquisa funcionar -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- fim da nova include -->
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -60,135 +67,154 @@
         </nav>
         <!-- FIM Navegador superior-->
 
-         <!-- Corpo da Pagina -->
+        <!-- Corpo da Pagina -->
         <div class="container">
 
-        
+
 
 
             <!--Inicio Tabela-->
 
-       
+
             <div class="col-lg-12">
                 <table class="table table-striped">
                     <thead>
                     <br>
                     <div class="col">
                         <div>
-                        <h1 class="text-center">Lista de Clientes</h1><hr>  <br><br>
-                    </div>
-                    <!--Tabela-->
-
-                    <c:forEach items="${clientes}" var="cliente">
-
-                        <div class="col-lg-2">
-                            <table class="table table-striped">
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <th colspan="2">
-                                            Dados do Cliente : <c:out value ="${cliente.nome}"/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="now"> ID </th>
-                                        <td><c:out value="${cliente.id}"/></td>
-                                    </tr>
-                                    <tr> 
-                                        <th scope="now"> Nome </th>
-                                <td><c:out value="${cliente.nome}"/></td>
-                                    </tr>
-                                    
-                                    <tr> 
-                                        <th scope="now"> Sobrenome </th>
-                                <td><c:out value="${cliente.sobrenome}"/></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="now"> Nascimento </th>
-                                <td><c:out value="${cliente.dataNascimento}"/></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th scope="now"> E-mail </th>
-                                <td><c:out value="${cliente.email}"/></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th scope="now"> CPF </th>
-                                <td><c:out value="${cliente.cpf}"/></td>
-                                    </tr>
-                                    
-                                <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cliente.id}"/>"
-                                       class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
-                                <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>"
-                                       class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
-                                </tr>
-
-                            </c:forEach>
-                  
-                                   </tbody>
-                            </table>
-                            <hr>
-                        </div>        
-                    
-
-
-
-
-                    <!--Inicio DIV-->
-                    <div class="row">               
-
-                        <!--Inicio Tabela-->
-                        <div class="col-lg-1">
-                            <!--Div centralizadora-->
+                            <h1 class="text-center">Lista de Clientes</h1><hr>  <br><br>
                         </div>
+                        <!--Tabela-->
 
-                        <!-- Distancia entre o botão incluir e voltar-->
-                        <div class="col-lg-2"> 
-                            <table class="table table-striped">
+                        <!-- INICIO TAG para buscar -->
+                        <div class="col-md-12">
+                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                            <script>
+                                $(document).ready(function () {
+                                    $("#myInput").on("keyup", function () {
+                                        var value = $(this).val().toLowerCase();
+                                        $("#myTable ${cliente.id.nome.sobrenome.dataNascimento.email.cpf}").filter(function () {
+                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                                        });
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <!-- FIM TAG para buscar -->
 
-                                <br>
+                        <c:forEach items="${clientes}" var="cliente">
 
-                                <!--Tabela-->
-                                <div class="col-lg-12">
-                                    <table class="table">
-
+                            <div class="search-list">
+                                <div class="col-lg-2">
+                                    <table class="table table-striped" id="myTable">
+                                        <thead>
                                         <tbody>
 
                                             <tr>
-                                                <td>
-                                                    <form action="ManterAdminClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
-                                                    </form>
-                                                </td>
-
-                                                <td>
-                                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                                </td>
+                                                <th colspan="2">
+                                                    Dados do Cliente : <c:out value ="${cliente.nome}"/>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th scope="now"> ID </th>
+                                                <td><c:out value="${cliente.id}"/></td>
+                                            </tr>
+                                            <tr> 
+                                                <th scope="now"> Nome </th>
+                                                <td><c:out value="${cliente.nome}"/></td>
                                             </tr>
 
-                                        </tbody>
-                                    </table>
+                                            <tr> 
+                                                <th scope="now"> Sobrenome </th>
+                                                <td><c:out value="${cliente.sobrenome}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="now"> Nascimento </th>
+                                                <td><c:out value="${cliente.dataNascimento}"/></td>
+                                            </tr>
 
-                                </div>        
-                        </div> 
-</div> <!-- Fim da DIV Centralizadora-->
-                        <hr>
+                                            <tr>
+                                                <th scope="now"> E-mail </th>
+                                                <td><c:out value="${cliente.email}"/></td>
+                                            </tr>
 
-                        <!-- INICIO Footer -->
-                        <footer class="py-5 bg-dark">
-                            <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                                            <tr>
+                                                <th scope="now"> CPF </th>
+                                                <td><c:out value="${cliente.cpf}"/></td>
+                                            </tr>
+
+
+                                        <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cliente.id}"/>"
+                                               class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
+                                        <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>"
+                                               class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
+
+                                </div>
                             </div>
-                            <!-- /.container -->
-                        </footer>
+                        </c:forEach>
 
-                        <!-- Bootstrap core JavaScript -->
-                        <script src="vendor/jquery/jquery.min.js"></script>
-                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                        <!-- FIM Footer -->
+                        </tbody>
+                </table>
+                <hr>
+            </div>        
 
-                        </body>
-                        </html>
+
+
+
+
+            <!--Inicio DIV-->
+            <div class="row">               
+
+                <!--Inicio Tabela-->
+                <div class="col-lg-1">
+                    <!--Div centralizadora-->
+                </div>
+
+                <!-- Distancia entre o botão incluir e voltar-->
+                <div class="col-lg-2"> 
+                    <table class="table table-striped">
+
+                        <br>
+
+                        <!--Tabela-->
+                        <div class="col-lg-12">
+                            <table class="table">
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <form action="ManterAdminClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                            </form>
+                                        </td>
+
+                                        <td>
+                                            <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>        
+                </div> 
+            </div> <!-- Fim da DIV Centralizadora-->
+            <hr>
+
+            <!-- INICIO Footer -->
+            <footer class="py-5 bg-dark">
+                <div class="container">
+                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                </div>
+                <!-- /.container -->
+            </footer>
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- FIM Footer -->
+
+    </body>
+</html>
