@@ -1,5 +1,7 @@
 <%-- Created by IntelliJ IDEA. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html  lang="en, pt-br">
 
     <head>
@@ -62,17 +64,17 @@
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="indexCartao.jsp">Cartão</a>
                                 <a class="dropdown-item" href="indexDisponibilidade.jsp">Disponibilidade</a>
-
                                 <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
                                 <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
                                 <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-
-
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                                <a  class="dropdown-item" href="indexAdmin.jsp" <c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>> Administrador</a>
+                        </li>
+                        <li>
+                            <a class="nav-link"  href="login.jsp">Login</a>
                         </li>
                         <li>
                             <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">

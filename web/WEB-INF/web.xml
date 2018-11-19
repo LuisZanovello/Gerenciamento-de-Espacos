@@ -5,6 +5,10 @@
         <servlet-class>controller.ManterAdministradorController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ManterAdminClienteController</servlet-name>
         <servlet-class>controller.ManterAdminClienteController</servlet-class>
     </servlet>
@@ -28,6 +32,10 @@
         <servlet-name>PesquisaAdminModalidadeController</servlet-name>
         <servlet-class>controller.PesquisaAdminModalidadeController</servlet-class>
     </servlet>
+     <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ManterAdministradorController</servlet-name>
         <url-pattern>/ManterAdministradorController</url-pattern>

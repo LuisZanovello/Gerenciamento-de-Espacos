@@ -13,6 +13,7 @@ public class Cliente {
     private String cpf;
     private String dataNascimento;
     private String email;
+    private String senha;
 
     public Cliente(long id, String nome, String sobrenome, String dataNascimento, String email) {
     }
@@ -25,6 +26,16 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
         this.email = email;
     }
+    public Cliente(Long id, String nome, String sobrenome, String dataNascimento, String email, String cpf,String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.senha = senha;
+    }
+    
 
     public void gravar() throws SQLException, ClassNotFoundException{
         ClienteDAO.gravar(this);
@@ -90,6 +101,18 @@ public class Cliente {
         this.email = email;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
+    
+public static Cliente logar(String email, String senha) throws ClassNotFoundException {
+        return ClienteDAO.logar(email, senha);
+    }
 
 }
 

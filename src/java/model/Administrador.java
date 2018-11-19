@@ -2,11 +2,12 @@ package model;
 
 import dao.AdministradorDAO;
 
-
 import java.sql.SQLException;
 import java.util.List;
+
 /*sdsd*/
 public class Administrador {
+
     private Long id;
     private String nome;
     private String email;
@@ -22,39 +23,37 @@ public class Administrador {
     public Administrador() {
     }
 
-   
-
-      public Administrador(Long id, String nome, String email) {
+    public Administrador(Long id, String nome, String email) {
         this.id = id;
         this.nome = nome;
         this.email = email;
-   
+
     }
 
-
-    public void gravar() throws SQLException, ClassNotFoundException{
+    public void gravar() throws SQLException, ClassNotFoundException {
         AdministradorDAO.gravar(this);
     }
 
-
-    public void alterar() throws SQLException, ClassNotFoundException{
+    public void alterar() throws SQLException, ClassNotFoundException {
         AdministradorDAO.alterar(this);
     }
 
-
-    public void excluir() throws SQLException, ClassNotFoundException{
+    public void excluir() throws SQLException, ClassNotFoundException {
         AdministradorDAO.excluir(this);
     }
 
+    public static Administrador logar(String email, String senha) throws ClassNotFoundException {
+        return AdministradorDAO.logar(email, senha);
+    }
 
-public static Administrador obterAdministrador(Long id) throws SQLException, ClassNotFoundException{
+    public static Administrador obterAdministrador(Long id) throws SQLException, ClassNotFoundException {
 
-       return AdministradorDAO.obterAdministrador((long)id);
-}
+        return AdministradorDAO.obterAdministrador((long) id);
+    }
 
-public static List<Administrador> obterTodosAdministradores() throws SQLException, ClassNotFoundException{
-       return AdministradorDAO.obterTodosAdministradores();
-}
+    public static List<Administrador> obterTodosAdministradores() throws SQLException, ClassNotFoundException {
+        return AdministradorDAO.obterTodosAdministradores();
+    }
 
     /**
      * @return the id

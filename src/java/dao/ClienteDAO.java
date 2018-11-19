@@ -1,12 +1,12 @@
 package dao;
 
-
 import model.Cliente;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class ClienteDAO {
+
     public static void gravar(Cliente cliente) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
@@ -99,7 +99,6 @@ public class ClienteDAO {
                 rs.getString("cpf"));
     }
 
-
     public static ArrayList<Cliente> obterTodosOsClientes() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
@@ -118,8 +117,38 @@ public class ClienteDAO {
             BD.fecharConexao(conexao, comando);
             return clientes;
         }
+    }
+    
 
+    public static Cliente logar(String email, String senha) throws ClassNotFoundException {
+        Connection conexao = null;
+        Cliente cliente = null;
+        PreparedStatement comando = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "SELECT * FROM cliente WHERE email = ? AND senha = ?";
+            comando = conexao.prepareStatement(sql);
+            comando.setString(1, email);
+            comando.setString(2, senha);
+            ResultSet rs = comando.executeQuery();
+            if (rs.first()) {
+                cliente = new Cliente(
+                        rs.getLong("id"),
+                        rs.getString("nome"),
+                        rs.getString("sobrenome"),
+                        rs.getString("data_nascimento"),
+                        rs.getString("email"),
+                        rs.getString("cpf"),
+                        rs.getString("senha"));
+            }
+
+            comando.close();
+            conexao.close();
+        } catch (SQLException e) {
+        } finally {
+            BD.fecharConexao(conexao, comando);
+        }
+        return cliente;
     }
 }
-
 
