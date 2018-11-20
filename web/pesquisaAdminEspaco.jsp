@@ -3,16 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-
 <html>
     <head>    
 
-         <!-- include para pesquisa funcionar -->
+        <!-- include para pesquisa funcionar -->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- fim da nova include -->
-        
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -39,11 +38,12 @@
         </style>
 
         <title>Admin Gerencia de Espaços</title>
+
     </head>
     <body>
 
         <!-- INICIO Navegador superior-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,10 +52,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-                        
-                     
-                            <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
                         </li>
 
@@ -65,148 +62,141 @@
         </nav>
         <!-- FIM Navegador superior-->
 
-          <!-- Corpo da Pagina -->
+        <!-- Corpo da Pagina -->
         <div class="container">
-
-        
-
 
             <!--Inicio Tabela-->
 
-       
             <div class="col-lg-12">
                 <table class="table table-striped">
                     <thead>
                     <br>
                     <div class="col">
                         <div>
-                        <h1 class="text-center">Lista de Espaços</h1><hr>  <br><br>
+                            <h1 class="text-center">Lista de Espaços</h1><hr>  <br><br>
+                        </div>
                     </div>
-                    <!--Tabela-->
+                    </thead>
 
-                    
-                      <!-- INICIO TAG para buscar -->
-                        <div class="col-md-12">
-                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
-                            <script>
-                                $(document).ready(function () {
-                                    $("#myInput").on("keyup", function () {
-                                        var value = $(this).val().toLowerCase();
-                                        $("#myTable ${espaco.id.nome}").filter(function () {
-                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-                                        });
+
+                    <!-- INICIO TAG para buscar -->
+                    <div class="col-md-12">
+                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                        <script>
+                            $(document).ready(function () {
+                                $("#myInput").on("keyup", function () {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#myTable ${espaco.id.nome}").filter(function () {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
                                     });
                                 });
-                            </script>
-                        </div>
-                        <!-- FIM TAG para buscar -->
-                    
-                    <c:forEach items="${espacos}" var="espaco">
-
-
-                        <div class="col-lg-2">
-                            <table class="table table-striped" id="myTable">
-                                </thead>
-                                <tbody>
-
-                                    <tr>
-                                        <th colspan="2">
-                                            Dados do Espaço : <c:out value ="${espaco.nome}"/>
-                                        </th>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="now"> ID </th>
-                                        <td><c:out value="${espaco.id}" /></td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="now"> Nome </th>
-                                        <td><c:out value="${espaco.nome}" /></td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="now"> Cidade </th>
-                                        <td><c:out value="${espaco.cidade}" /></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th scope="now"> Estado </th>
-                                        <td><c:out value="${espaco.uf}" /></td>
-                                    </tr>
-                                    
-                                <td><a href="ManterAdminEspacoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${espaco.id}"/>"
-                                       class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
-                                <td><a href="ManterAdminEspacoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${espaco.id}"/>"
-                                       class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
-                                </tr>
-                            </c:forEach>
-
-
-                            </tbody>
-                        </table>
-                        <hr>
-                    </div>        
-                
-
-
-
-
-                <!--Inicio DIV-->
-                <div class="row">               
-
-                    <!--Inicio Tabela-->
-                    <div class="col-lg-1">
-                        <!--Div centralizadora-->
+                            });
+                        </script>
                     </div>
+                    <!-- FIM TAG para buscar -->
 
-                    <!-- Distancia entre o botão incluir e voltar-->
-                    <div class="col-lg-2"> 
-                        <table class="table table-striped">
+                    <!--INICIO Tabela botoes incluir e voltar-->
 
-                            <br>
+                    <div class="container">
+                        <div class="row">                                   
+                            <div class="col-lg">
+                                <label>
+                                    <form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                    </form>
+                                </label>
+                                <label>
+                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>                            
 
-                            <!--Tabela-->
-                            <div class="col-lg-12">
-                                <table class="table">
+                    <!--FIM Tabela botoes incluir e voltar-->
+
+                    <div clas="card">
+                        <div class="card-body">
+                            <c:forEach items="${espacos}" var="espaco">
+
+                                <table class="table table-striped" id="myTable">
 
                                     <tbody>
 
                                         <tr>
-                                            <td>
-                                                <form action="ManterAdminEspacoController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                    <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
-                                                </form>
-                                            </td>
-                                            
-                                            
-                 <td>
-                                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                                </td>
-                                            </tr>
+                                            <th colspan="2">
+                                                Dados do Espaço : <c:out value ="${espaco.nome}"/>
+                                            </th>
+                                        </tr>
 
-                                        </tbody>
-                                    </table>
+                                        <tr>
+                                            <th scope="now"> ID </th>
+                                            <td><c:out value="${espaco.id}" /></td>
+                                        </tr>
 
-                                </div>        
-                        </div> 
+                                        <tr>
+                                            <th scope="now"> Nome </th>
+                                            <td><c:out value="${espaco.nome}" /></td>
+                                        </tr>
 
-                </div><!-- Fim da DIV Centralizadora--> 
+                                        <tr>
+                                            <th scope="now"> Cidade </th>
+                                            <td><c:out value="${espaco.cidade}" /></td>
+                                        </tr>
 
-                        <hr>
+                                        <tr>
+                                            <th scope="now"> Estado </th>
+                                            <td><c:out value="${espaco.uf}" /></td>
+                                        </tr>
 
-                        <!-- INICIO Footer -->
-                        <footer class="py-5 bg-dark">
+                                    <td><a href="ManterAdminEspacoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${espaco.id}"/>"
+                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
+                                    <td><a href="ManterAdminEspacoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${espaco.id}"/>"
+                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
+                                    <hr>
+
+                                    </tbody>
+
+                                </table>
+                                <hr>
+                                <br>
+                            </c:forEach>
+
+                            <!--INICIO Tabela botoes incluir e voltar-->
+
                             <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-                            </div>
-                            <!-- /.container -->
-                        </footer>
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <label>
+                                            <form action="ManterAdminEspacoController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                            </form>
+                                        </label>
+                                        <label>
+                                            <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> 
 
-                        <!-- Bootstrap core JavaScript -->
-                        <script src="vendor/jquery/jquery.min.js"></script>
-                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                        <!-- FIM Footer -->
-                                    </body>
-                                    </html>
+                            <!--FIM Tabela botoes incluir e voltar-->
+
+                        </div>
+                    </div>
+                    <hr>
+
+                  <!-- INICIO Footer -->
+                    <footer class="py-5 bg-dark">
+                        <div class="container">
+                            <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                            <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                        </div>
+                        <!-- /.container -->
+                    </footer>
+
+                    <!-- Bootstrap core JavaScript -->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <!-- FIM Footer -->
+
+                    </body>
+                    </html>
