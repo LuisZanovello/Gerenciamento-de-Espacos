@@ -129,10 +129,12 @@
     <td>Autor</td>
     <td><input type="text"class="form-control" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
+    
     <tr>
     <td>Descrição</td>
     <td><input type="text"class="form-control" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
+    
      <td>Espaco:</td>
                     <td>
                         <select name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>

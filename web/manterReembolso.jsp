@@ -138,8 +138,8 @@
                                         <label>Status: </label>
                                         <div class="form-group">
                                             <select class="form-control" name="txtNomeReembolso" 
-                                                    value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
-                                                <option>Selecione uma opção</option> 
+                                                    value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">disabled</c:if>>
+                                        <option>${reembolso.estado}</option>
                                                 <option>Aprovado</option> 
                                                 <option>Em Analise</option> 
                                                 <option>Recusado</option> 
