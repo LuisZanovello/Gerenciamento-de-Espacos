@@ -82,15 +82,6 @@
                     <div class="col-sm-12">
                         <h1 class="text-center">Encontre o seu espaço e compare preços</h1><hr> <br><br> 
                     </div> 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-11">
-                                <input class="form-control " type="text" placeholder="Ex: Volei de areia ''TO EDITANDO AINDA ME DEEM IDEIAS HAHA :)'' " aria-label="Pesquisa">     
-                            </div>
-                            <div class="col-lg-1">
-                                <a class="btn btn-danger text-center" href="#" role="button">Buscar</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

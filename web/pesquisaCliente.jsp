@@ -110,7 +110,7 @@
                      
 
                                         <tr>
-                                            <th scope="now">Data de Nascimentol</th>
+                                            <th scope="now">Data de Nascimento</th>
                                             <td><c:out value="${cliente.dataNascimento}"/></td>
                                         </tr>
                                         

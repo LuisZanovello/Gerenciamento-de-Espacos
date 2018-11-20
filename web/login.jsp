@@ -46,13 +46,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.jsp">Login</a> <!-- primeiro link direita superior-->
+                         <li>
+                            <a class="nav-link"  href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Cadastro</a>
                         </li>
 
                     </ul>

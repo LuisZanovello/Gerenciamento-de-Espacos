@@ -56,14 +56,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
+                        <li>
+                            <a class="nav-link"  href="login.jsp">Login</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="indexCliente.jsp">Área do Cliente</a> <!-- primeiro link direita superior-->
-                        </li>
-
                     </ul>
                 </div>
             </div>
@@ -125,11 +120,11 @@
                     </tbody>
                 </table>
 
-
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                <a href="indexCliente.jsp" class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">Confirmar</a>
+               
 
                 </form>
-                <a href="PesquisaClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+                <a href="index.jsp" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
 
                 </body>
