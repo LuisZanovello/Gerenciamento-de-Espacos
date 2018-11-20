@@ -97,7 +97,7 @@
                             <div class="control-group form-group">
                                 <div class="controls1">
                                     <label>Codigo do Reembolso: </label>
-                                    <input type="text" placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                                    <input type="number" placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                                     </div>
                                 </div>
 

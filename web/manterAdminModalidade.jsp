@@ -91,7 +91,7 @@
 
                         <tr>
                             <td>Código Modalidade</td>
-                            <td><input type="text" name="txtIdModalidade" size="60" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number" name="txtIdModalidade" size="60" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Modalidade</td>

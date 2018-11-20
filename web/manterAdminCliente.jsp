@@ -88,7 +88,7 @@
 
                     <tr>
                         <td>Código do cliente: </td>
-                        <td><input type="text"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="number"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Nome do cliente: </td>
@@ -100,7 +100,7 @@
                         </tr>
                         <tr>
                             <td>Data de Nascimento: </td>
-                            <td> <input type="text"  class="form-control"  name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Email: </td>
@@ -108,7 +108,7 @@
                         </tr>
                         <tr>
                             <td>CPF: </td>
-                            <td> <input type="text" class="form-control"  name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td> <input type="number" class="form-control"  name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     </tbody>
                 </table>

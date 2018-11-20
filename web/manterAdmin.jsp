@@ -96,7 +96,7 @@
 
                     <tr>
                         <td>Codigo do admin: </td>
-                        <td><input type="text" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        <td><input type="number" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                         </tr>
 
                         <tr>

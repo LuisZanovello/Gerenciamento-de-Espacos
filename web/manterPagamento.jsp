@@ -102,7 +102,7 @@
                             <div class="control-group form-group">
                                 <div class="controls1">
                                     <label>Codigo do Pagamento: </label>
-                                    <input type="text" class="form-control" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                                    <input type="number" class="form-control" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                                     <div class="controls1">
 
                                         <label>Vencimento: </label>
-                                        <input type="text" class="form-control" placeholder="00/00/0000" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                                        <input type="date" class="form-control" placeholder="00/00/0000" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                 <div class="control-group form-group">
                                     <div class="controls1">
                                         <label>Codigo de Barras: </label>
-                                        <input type="text" class="form-control" placeholder="Digite apenas números"name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                        <input type="number" class="form-control" placeholder="Digite apenas números"name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>>
                                         <p class="help-block"></p>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@
                                 <div class="control-group form-group">                 
                                     <div class="controls1">
                                         <label>Valor Total: </label>
-                                        <input type="text" class="form-control" placeholder="R$ 00" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
+                                        <input type="number" class="form-control" placeholder="R$ 00" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>
                                     </div></div>
 
                                 <div>

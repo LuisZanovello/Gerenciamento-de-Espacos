@@ -126,6 +126,16 @@
                                         <td><c:out value="${espaco.nome}" /></td>
                                     </tr>
 
+                                    <tr>
+                                        <th scope="now"> Cidade </th>
+                                        <td><c:out value="${espaco.cidade}" /></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="now"> Estado </th>
+                                        <td><c:out value="${espaco.uf}" /></td>
+                                    </tr>
+                                    
                                 <td><a href="ManterAdminEspacoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${espaco.id}"/>"
                                        class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
                                 <td><a href="ManterAdminEspacoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${espaco.id}"/>"
