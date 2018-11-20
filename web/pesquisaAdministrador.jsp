@@ -72,44 +72,113 @@
         </nav>
         <!-- FIM Navegador superior-->
 
-      <!-- Corpo da Pagina -->
+        <!-- Corpo da Pagina -->
         <div class="container">
 
-                <!--Inicio Tabela-->
+            <!--Inicio Tabela-->
 
 
-                <div class="col-lg-12">
-                    <table class="table table-striped">
-                        <thead>
-                        <br>
-                        <div class="col">
-                            <div>
-                                <h1 class="text-center">Lista de Administradores</h1><hr>  <br><br>
-
-                                
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <br>
+                    <div class="col">
+                        <div>
+                            <h1 class="text-center">Lista de Administradores</h1><hr>  <br><br>
 
 
-                                <!-- INICIO TAG para buscar -->
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
-                                            <script>
-                                                $(document).ready(function () {
-                                                    $("#myInput").on("keyup", function () {
-                                                        var value = $(this).val().toLowerCase();
-                                                        $("#myTable ${admin.id.nome}").filter(function () {
-                                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-                                                        });
+
+
+                            <!-- INICIO TAG para buscar -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                                        <script>
+                                            $(document).ready(function () {
+                                                $("#myInput").on("keyup", function () {
+                                                    var value = $(this).val().toLowerCase();
+                                                    $("#myTable ${admin.id.nome}").filter(function () {
+                                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
                                                     });
                                                 });
-                                            </script>
-                                        </div>
+                                            });
+                                        </script>
                                     </div>
                                 </div>
-                                <!-- FIM TAG para buscar -->
-                                
-                                <!--INICIO Tabela botoes incluir e voltar-->
+                            </div>
+                            <!-- FIM TAG para buscar -->
+
+                            <!--INICIO Tabela botoes incluir e voltar-->
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <label>
+                                            <form action="ManterAdministradorController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                            </form>
+                                        </label>
+                                        <label>
+                                            <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--FIM Tabela botoes incluir e voltar-->
+
+                            <div clas="card">
+                                <div class="card-body">
+                                    <c:forEach items="${administradores}" var="admin">
+
+
+
+
+                                        <table class="table table-striped" id="myTable">
+
+                                            <tbody>
+
+                                                <tr>
+                                                    <th colspan="2">
+                                                        Dados do Administrador(a) : <c:out value ="${admin.nome}"/>                                     
+                                                    </th>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="now"> ID </th>
+                                                    <td><c:out value="${admin.id}" /></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="now"> Nome </th>
+                                                    <td><c:out value="${admin.nome}" /></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="now"> E-mail</th>
+                                                    <td><c:out value="${admin.email}" /></td>
+                                                </tr>
+
+                                            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
+                                                   class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
+
+                                            <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
+                                                   class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
+                                            <hr>
+
+
+                                            </tbody>
+
+                                        </table>
+                                        <hr>
+                                        <br>
+                                    </c:forEach>
+
+
+
+
+<!--INICIO Tabela botoes incluir e voltar-->
 
                                 <div class="container">
                                     <div class="row">
@@ -128,81 +197,29 @@
 
                                 <!--FIM Tabela botoes incluir e voltar-->
 
-                                     <div clas="card">
-                                        <div class="card-body">
-                                <c:forEach items="${administradores}" var="admin">
+                                </div>         <!-- Fim da DIV Centralizadora-->
 
-                               
-
-                                            
-                                                <table class="table table-striped" id="myTable">
-                                                    
-                                                    <tbody>
-
-                                                        <tr>
-                                                            <th colspan="2">
-                                                                Dados do Administrador(a) : <c:out value ="${admin.nome}"/>                                     
-                                                            </th>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <th scope="now"> ID </th>
-                                                            <td><c:out value="${admin.id}" /></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <th scope="now"> Nome </th>
-                                                            <td><c:out value="${admin.nome}" /></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <th scope="now"> E-mail</th>
-                                                            <td><c:out value="${admin.email}" /></td>
-                                                        </tr>
-                                                        
-                                                    <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
-                                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
-
-                                                    <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
-                                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
-                                                    <hr>
-                                              
-                                                    
-                                                </tbody>
-                                                
-                                            </table>
-                                            <hr>
-                                            <br>
-                                        </c:forEach>
+                            </div>
+                            <hr>
 
 
 
 
-                                                 
 
-                                         </div>         <!-- Fim da DIV Centralizadora-->
+                            <!-- INICIO Footer -->
+                            <footer class="py-5 bg-dark">
+                                <div class="container">
+                                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                                </div>
+                                <!-- /.container -->
+                            </footer>
 
- </div> 
-                                <hr>
-                                
+                            <!-- Bootstrap core JavaScript -->
+                            <script src="vendor/jquery/jquery.min.js"></script>
+                            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                            <!-- FIM Footer -->
 
-     
-                                   
-
-                                <!-- INICIO Footer -->
-                                <footer class="py-5 bg-dark">
-                                    <div class="container">
-                                        <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                                        <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-                                    </div>
-                                    <!-- /.container -->
-                                </footer>
-
-                                <!-- Bootstrap core JavaScript -->
-                                <script src="vendor/jquery/jquery.min.js"></script>
-                                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                                <!-- FIM Footer -->
-
-                                </body>
-                                </html>
+                            </body>
+                            </html>
 
