@@ -206,7 +206,7 @@
                                 <td>Local de Reserva:</td>
                                 <td>
                                     <select class="form-control" name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                                            <option>Selecione uma opção</option>   
+                                            <option>${espaco.nome}</option>   
                                         <c:forEach items="${espacos}" var="espaco">
                                             <option value="${espaco.id}" <c:if test="${espaco.id == reserva.idEspaco}"> selected</c:if>>${espaco.nome}</option>  
                                         </c:forEach>
