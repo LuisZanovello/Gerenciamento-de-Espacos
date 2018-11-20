@@ -123,6 +123,9 @@
 
                 <!--Div centralizadora-->
             </div>
+            
+         
+
             <div class="col-lg-9">
                 <table class="table table-striped">
                     <thead>
@@ -159,7 +162,8 @@
 
 </div>
                </div>        <!--FIM Div centralizadora-->
-
+         
+               
 
         <hr>
         <!-- Footer -->

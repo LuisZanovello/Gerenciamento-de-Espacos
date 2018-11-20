@@ -32,7 +32,7 @@
         <servlet-name>PesquisaAdminModalidadeController</servlet-name>
         <servlet-class>controller.PesquisaAdminModalidadeController</servlet-class>
     </servlet>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
