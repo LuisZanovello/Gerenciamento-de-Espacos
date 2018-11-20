@@ -91,13 +91,14 @@
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
                             </li>
-                       
+                    
 
                     </ul>
-                </div>
+               </div>
                             
                             
                             <!-- FIM DROPDOWN-->
+                             </div>
             </div>
         </nav>
 

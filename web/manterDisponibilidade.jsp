@@ -66,9 +66,35 @@
                             <a class="nav-link" href="indexDisponibilidade.jsp">Área da Disponibilidade</a> <!-- primeiro link direita superior-->
                         </li>
 
+                        
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                
+                                <a class="dropdown-item" href="indexCliente.jsp">Cliente</a>                                
+                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="indexCartao.jsp">Cartão</a>
+                                <a class="dropdown-item" href="indexDisponibilidade.jsp">Disponibilidade</a>
+                                
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+                                
+                                
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                                <a class="dropdown-item" href="indexAdmin.jsp"<c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Administrador</a>
+                            </li>   
                     </ul>
                 </div>
+             
+                
             </div>
+                
         </nav>
         <!-- FIM Navegador superior-->
 
@@ -97,19 +123,19 @@
 
   <tr>
             <td>Código do disponibilidade: </td>
-            <td><input type="text" name="txtIdDisponibilidade" value="${disponibilidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+            <td><input type="text"class="form-control" name="txtIdDisponibilidade" value="${disponibilidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Data Dsponivel: </td>
-            <td><input type="text" name="txtDataDisponibilidade" value="${disponibilidade.dataDisponivel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text" class="form-control" name="txtDataDisponibilidade" value="${disponibilidade.dataDisponivel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Hora Inicio: </td>
-            <td><input type="text" name="txtHoraInicioDisponibilidade" value="${disponibilidade.hora_inicio}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text"class="form-control" name="txtHoraInicioDisponibilidade" value="${disponibilidade.hora_inicio}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <tr>
             <td>Hora Final: </td>
-            <td><input type="text" name="txtHoraFimDisponibilidade" value="${disponibilidade.hora_fim}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            <td><input type="text" class="form-control" name="txtHoraFimDisponibilidade" value="${disponibilidade.hora_fim}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
         </tr>
         <td>Espaco:</td>
                     <td>
@@ -131,9 +157,20 @@
                 <a href="PesquisaDisponibilidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
 
-                </body>
-                </html>
+  </div>      
+            <hr>
+            <!-- Footer -->
+            <footer class="py-5 bg-dark">
+                <div class="container">
+                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                </div>
+                <!-- /.container -->
+            </footer>
 
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-
+    </body>
+</html>

@@ -19,15 +19,15 @@
 <table>
     <tr>
     <td>Código Irregularidade</td>
-    <td><input type="text" name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+    <td><input type="text" class="form-control"name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
     </tr>
     <tr>
     <td>Autor</td>
-    <td><input type="text" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
+    <td><input type="text"class="form-control" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
     <tr>
     <td>Descrição</td>
-    <td><input type="text" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
+    <td><input type="text"class="form-control" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
     </tr>
      <td>Espaco:</td>
                     <td>

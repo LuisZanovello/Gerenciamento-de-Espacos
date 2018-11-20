@@ -52,6 +52,7 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
@@ -77,10 +78,8 @@
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp"<c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Administrador</a>
                             </li>
-                        <li>
-                            <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
-                        </li>
-
+                 
+                            
                     </ul>
                 </div>
             </div>

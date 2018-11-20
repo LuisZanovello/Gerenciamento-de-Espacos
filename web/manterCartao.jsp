@@ -17,6 +17,8 @@
         <meta name="author" content="">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
         <!-- Bootstrap core CSS -->
 
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,6 +49,7 @@
     <body>
 
         <!-- INICIO Navegador superior-->
+
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
@@ -60,20 +63,59 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="indexCartao.jsp">Área do Cartao</a> <!-- primeiro link direita superior-->
-                        </li>
+
+               
+                 
+                        
+                    </ul>
+                </div>
+                
+                <!-- INICIO DROPDOWN-->
+                <div>
+                    
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                
+                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+                                
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+                                
+                                
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                            </li>
+                       
 
                     </ul>
                 </div>
-            </div>
-        </nav>
-        <!-- FIM Navegador superior-->
+                            
+                            
+                            <!-- FIM DROPDOWN-->
 
-        <br>
-        <div class="col">
-            <div>
-                <h1 class="text-center"> Cartao - ${operacao} </h1> <hr>  <br><br>
+
+                            
+                </div>
+                            
+            </nav>
+            <!-- FIM Navegador superior-->
+
+            <br>
+            <div class="col">
+                <div>
+                    <h1 class="text-center"> Cartao - ${operacao} </h1> <hr>  <br><br>
 
             </div>
         </div>
@@ -93,36 +135,36 @@
                     <tbody>
                     <br>
 
- <tr>
-            <td>Código do cartao: </td>
-            <td><input type="text" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-        </tr>
-        <tr>
-            <td>Bandeira do cartao: </td>
-            <td><input type="text" name="txtBandeiraCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-        </tr>
-                <tr>
-            <td>Validade do cartao: </td>
-            <td><input type="text" name="txtValidadeCartao" value="${cartao.validade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-        </tr>
-                <tr>
-            <td>Número do cartao: </td>
-            <td><input type="text" name="txtNumeroCartao" value="${cartao.numeroCartao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-        </tr>
-                <tr>
-            <td>Codigo do cartao: </td>
-            <td><input type="text" name="txtCodCartao" value="${cartao.codigoSeguranca}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-        </tr>
-                 <td>Cliente:</td>
-                    <td>
-                        <select name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    <tr>
+                        <td>Código do cartao: </td>
+                        <td><input type="text" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Bandeira do cartao: </td>
+                            <td><input type="text" name="txtBandeiraCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Validade do cartao: </td>
+                            <td><input type="text" name="txtValidadeCartao" value="${cartao.validade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Número do cartao: </td>
+                            <td><input type="text" name="txtNumeroCartao" value="${cartao.numeroCartao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Codigo do cartao: </td>
+                            <td><input type="text" name="txtCodCartao" value="${cartao.codigoSeguranca}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <td>Cliente:</td>
+                        <td>
+                            <select name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                             <c:forEach items="${clientes}" var="cliente">
                                 <option value="${cliente.id}" <c:if test="${cliente.id == cartao.idCliente}"> selected</c:if>>${cliente.nome}</option>  
                             </c:forEach>
                         </select>
                     </td>
-                </tr>
-  
+                    </tr>
+
                     </tbody>
                 </table>
 

@@ -27,7 +27,7 @@
         <style>
             footer{
                 bottom: 0;
-                position: relative; 
+                position: absolute; 
                 bottom: 0; 
                 left: 0px; 
                 right: 0px;
@@ -60,14 +60,50 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="indexContato.jsp">Área do Contato</a> <!-- primeiro link direita superior-->
-                        </li>
+
 
                     </ul>
+
+
+                    <!-- INICIO DROPDOWN-->
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                        <ul class="navbar-nav ml-auto">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Classes
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+
+                                    <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                    <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                    <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                    <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+
+                                    <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                    <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                    <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                    <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+
+
+                                    <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                    <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                    <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                                    <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                    <!-- FIM DROPDOWN-->
+
+
                 </div>
             </div>
         </nav>
+
         <!-- FIM Navegador superior-->
 
         <br>
@@ -93,24 +129,24 @@
                     <tbody>
                     <br>
 
-        <tr>
-            <td>Código do contato: </td>
-            <td><input type="text" name="txtIdContato" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-        </tr>
-        <tr>
-            <td>Número de contato: </td>
-            <td><input type="text" name="txtNumeroContato" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-        </tr>
-         <td>Cliente:</td>
-                    <td>
-                        <select name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
+                    <tr>
+                        <td>Código do contato: </td>
+                        <td><input  type="number"  class="form-control" name="txtIdContato" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Número de contato: </td>
+                            <td><input type="text" class="form-control" name="txtNumeroContato" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <td>Cliente:</td>
+                        <td>
+                            <select name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
                             <c:forEach items="${clientes}" var="cliente">
                                 <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> </c:if>>${cliente.nome}</option>  
                             </c:forEach>
                         </select>
                     </td>
-                </tr>
-  
+                    </tr>
+
                     </tbody>
                 </table>
 
@@ -121,7 +157,20 @@
                 <a href="PesquisaContatoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
 
-                </body>
-                </html>
+            </div>      
+            <hr>
+            <!-- Footer -->
+            <footer class="py-5 bg-dark">
+                <div class="container">
+                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                </div>
+                <!-- /.container -->
+            </footer>
 
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    </body>
+</html>

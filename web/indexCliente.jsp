@@ -77,10 +77,8 @@
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a> 
                                 <a class="dropdown-item" href="indexAdmin.jsp" <c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Administrador</a>
                             </li>
-                        <li>
-                            <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
-                        </li>
-
+      
+                            
                     </ul>
                 </div>
             </div>
