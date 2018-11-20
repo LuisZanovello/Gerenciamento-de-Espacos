@@ -74,8 +74,8 @@
                                 
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
-                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a> 
+                                <a class="dropdown-item" href="indexAdmin.jsp" <c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Administrador</a>
                             </li>
                         <li>
                             <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">
@@ -110,7 +110,7 @@
             <a class="btn btn-dark btn-block" href="PesquisaClienteController" role="button">Lista Clientes</a> <br> <br>
             </div>
             <div class="col">
-            <a class="btn btn-dark btn-block" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir" role="button">Incluir Cliente</a> <br> <br>
+            <a class="btn btn-dark btn-block" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir" role="button" <c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Incluir Cliente</a> <br> <br>
           </div> 
           <div class="col"> 
             <div class="dropdown">
@@ -118,7 +118,7 @@
                   Gerenciar Cadastros
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="PesquisaAdminClienteController">Gerenciar Clientes</a>
+                  <a class="dropdown-item" href="PesquisaClienteController">Gerenciar Clientes</a>
                   <a class="dropdown-item" href="PesquisaAdminEspacoController">Gerenciar Espaços</a>
                 </div> 
                 </div>

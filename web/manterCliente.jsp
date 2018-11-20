@@ -120,7 +120,7 @@
                     </tbody>
                 </table>
 
-                <a href="indexCliente.jsp" class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">Confirmar</a>
+                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                
 
                 </form>

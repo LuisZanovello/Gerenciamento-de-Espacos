@@ -133,7 +133,7 @@
                     <br>
                     <div class="col">
                         <div>
-                            <h1 class="text-center">Lista de Moalidades</h1><hr>  <br><br>
+                            <h1 class="text-center">Lista de Modalidades</h1><hr>  <br><br>
                         </div>
                         <!--Tabela-->
 

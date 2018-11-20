@@ -55,11 +55,6 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
-                        </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Classes
@@ -80,7 +75,7 @@
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                                <a class="dropdown-item" href="indexAdmin.jsp"<c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Administrador</a>
                             </li>
                         <li>
                             <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Pesquisa">

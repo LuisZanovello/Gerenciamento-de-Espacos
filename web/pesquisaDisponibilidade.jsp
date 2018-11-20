@@ -108,15 +108,15 @@
                                             <td><c:out value="${dispon.id}"/></td>
                                         </tr>
                                                              <tr>
-                                            <th scope="now">Número</th>
+                                            <th scope="now">Data Disponível</th>
                                             <td><c:out value="${dispon.dataDisponivel}"/></td>
                                         </tr>
                                                                                    <tr>
-                                            <th scope="now">Número</th>
+                                            <th scope="now">Hora Início</th>
                                             <td><c:out value="${dispon.hora_inicio}"/></td>
                                         </tr>
                                                                                    <tr>
-                                            <th scope="now">Número</th>
+                                            <th scope="now">Hora Fim</th>
                                             <td><c:out value="${dispon.hora_fim}"/></td>
                                         </tr>
                      
