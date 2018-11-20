@@ -12,6 +12,12 @@
 <html>
     <head>
 
+        <!-- include para pesquisa funcionar -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- fim da nova include -->
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -65,6 +71,44 @@
 
                     </ul>
                 </div>
+                
+                 <!-- INICIO DROPDOWN-->
+                <div>
+                    
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                
+                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+                                
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+                                
+                                
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                            </li>
+                       
+
+                    </ul>
+                </div>
+                            
+                            
+                            <!-- FIM DROPDOWN-->
+                
+                
+                
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -93,24 +137,50 @@
                         </div>
                         <!--Tabela-->
 
+
+                        <!-- INICIO TAG para buscar -->
+                        <div class="col-md-12">
+                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                            <script>
+                                $(document).ready(function () {
+                                    $("#myInput").on("keyup", function () {
+                                        var value = $(this).val().toLowerCase();
+                                        $("#myTable ${espaco.id.nome}").filter(function () {
+                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                                        });
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <!-- FIM TAG para buscar -->
+
                         <c:forEach items="${espacos}" var="espaco">
 
                             <div class="col-lg-2">
-                                <table class="table table-striped">
+                                <table class="table table-striped" id="myTable">
                                     </thead>
                                     <tbody>
-                
-                                                                      <tr>
+
+                                        <tr>
                                             <th scope="now">Id</th>
                                             <td><c:out value="${espaco.id}"/></td>
                                         </tr>
-                                                             <tr>
+                                        <tr>
                                             <th scope="now">Nome</th>
                                             <td><c:out value="${espaco.nome}"/></td>
                                         </tr>
-                     
+                                        
+                                        <tr>
+                                            <th scope="now"> Cidade </th>
+                                            <td><c:out value="${espaco.cidade}" /></td>
+                                        </tr>
 
-                                       
+                                        <tr>
+                                            <th scope="now"> Estado </th>
+                                            <td><c:out value="${espaco.uf}" /></td>
+                                        </tr>
+
+
                                     <td><a href="ManterEspacoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${espaco.id}"/>" 
                                            class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
 
@@ -184,7 +254,7 @@
                         <script src="vendor/jquery/jquery.min.js"></script>
                         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
                         <!-- FIM Footer -->
-                        
+
                         </body>
                         </html>
 
