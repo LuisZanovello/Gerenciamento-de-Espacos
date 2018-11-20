@@ -78,7 +78,9 @@
                                 <a class="dropdown-item" href="indexAdmin.jsp" <c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>>Administrador</a>
                             </li>
       
-                            
+                             <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
                     </ul>
                 </div>
             </div>
