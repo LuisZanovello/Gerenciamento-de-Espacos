@@ -43,7 +43,7 @@
     <body>
 
         <!-- Parte superior -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,9 +53,9 @@
                     <ul class="navbar-nav ml-auto">
 
 
-                        
-                     
-                            <li class="nav-item">
+
+
+                        <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
                         </li>
 
@@ -67,7 +67,7 @@
         <!--Inicio das migalhas do navegador superior-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.jsp">Inicio</a>
+                <a href="indexCliente.jsp">Inicio</a>
             </li>
             <li class="breadcrumb-item"> 
                 <a href="PesquisaReembolsoController">Lista</a>
@@ -104,59 +104,57 @@
                                         <div class="form-group">
                                             <select class="form-control" name="txtNomeReembolso" 
                                                     value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">disabled</c:if>>
-                                        <option>${reembolso.estado}</option>
-                                                <option>Aprovado</option> 
-                                                <option>Em Analise</option> 
-                                                <option>Recusado</option> 
-                                            </select>
-                                        </div>
+                                            <option>${reembolso.estado}</option>
+                                            <option>Aprovado</option> 
+                                            <option>Em Analise</option> 
+                                            <option>Recusado</option> 
+                                        </select>
                                     </div>
                                 </div>
-
-                                <div>
-                                    <td>Número do Codigo de Barras:</td>
-                                    <td>
-                                        <div class="form-group">
-
-                                            <select class="form-control" name="optPagamento" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
-                                                <option>Selecione uma opção</option>     
-                                            <c:forEach items="${pagamentos}" var="pagamento">
-                                                <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> selected</c:if>>${pagamento.numeroCodBarras}</option>  
-                                            </c:forEach>
-                                        </select>
-                                </td>
-
                             </div>
 
-
-                            <br>
+                            <!--INICIO Div Chave estrangeira-->
                             <div>
-                                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                                </form>
-                                <a href="PesquisaReembolsoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
-                            </div>  
+                                <label>Número do Codigo de Barras:</label>
+
+                                <div class="form-group">
+                                    <select class="form-control" name="optPagamento" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
+                                            <option>Selecione uma opção</option>     
+                                        <c:forEach items="${pagamentos}" var="pagamento">
+                                            <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> selected</c:if>>${pagamento.numeroCodBarras}</option>  
+                                        </c:forEach>
+                                    </select>
+                                </div>
+
+                                <br><br>
+
+                                <div>
+                                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                                    </form>
+                                    <a href="PesquisaReembolsoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+                                </div>  
+                            </div>
+
+                            <!--FIM Div Chave estrangeira-->
+                            
                     </div>
                 </div>
         </div>
-    </div>
+                                            
+        <hr>
 
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+            </div>
+            <!-- /.container -->
+        </footer>
 
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-    <hr>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-            <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-        </div>
-        <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    </body>
 </html>

@@ -145,7 +145,7 @@
             </div>
         </div>      
 
-        <form action="ManterEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterEspaco">
+                <form action="ManterEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterEspaco">
 
 
             <!--Inicio Tabela-->

@@ -48,19 +48,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
                         </li>
 
+
+
                     </ul>
                 </div>
+
                 <!-- INICIO DROPDOWN-->
                 <div>
-                    
+
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
@@ -68,108 +67,119 @@
                                 Classes
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
-                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                
+
                                 <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
                                 <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
                                 <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
+
+
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
-                       
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
                     </ul>
                 </div>
-                            
-                            
-                            <!-- FIM DROPDOWN-->
+
+
+                <!-- FIM DROPDOWN-->
+
             </div>
         </nav>
         <!-- FIM Navegador superior-->
+    </div>
+</nav>
+<!-- FIM Navegador superior-->
 
-        
-        <br>
-      <br>
-         <div class="container"><!--Div centralizadora-->
-        <div class="col">
-            <div>
-                <h1 class="text-center"> Cliente - ${operacao} </h1> <hr>  <br><br>
 
-            </div>
+<br>
+<br>
+<div class="container"><!--Div centralizadora-->
+    <div class="col">
+        <div>
+            <h1 class="text-center"> Cliente - ${operacao} </h1> <hr>  <br><br>
+
         </div>
+    </div>
 
-        <form action="ManterAdminClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
+    <form action="ManterAdminClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
 
 
-            <!--Inicio Tabela-->
+        <!--Inicio Tabela-->
 
-           
-            <div class="col-lg-9">
-                <table class="table table-striped">
-                    <thead>
-                    <tbody>
-                    <br>
 
+        <div class="col-lg-12">
+            <table class="table table-striped">
+                <thead>
+                <tbody>
+                <br>
+
+
+                <tr>
+                    <td>Código do cliente: </td>
+                    <td><input type="number"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Nome do cliente: </td>
+                        <td><input type="text"  class="form-control"  name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Sobrenome: </td>
+                        <td> <input type="text"  class="form-control"  name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Data de Nascimento: </td>
+                        <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td> <input type="text"  class="form-control"  name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
+                    <tr>
+                        <td>CPF: </td>
+                        <td> <input type="number" class="form-control"  name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
 
                     <tr>
-                        <td>Código do cliente: </td>
-                        <td><input type="number"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Nome do cliente: </td>
-                            <td><input type="text"  class="form-control"  name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Sobrenome: </td>
-                            <td> <input type="text"  class="form-control"  name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Data de Nascimento: </td>
-                            <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Email: </td>
-                            <td> <input type="text"  class="form-control"  name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>CPF: </td>
-                            <td> <input type="number" class="form-control"  name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <td>Senha do Cliente: </td>
+                        <td> <input type="text" class="form-control" name="txtSenhaCliente" size="6" value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div>
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                </form>
-                <a href="PesquisaAdminClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+        <div>
+            <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+            </form>
+            <a href="PesquisaAdminClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
-            </div>        
+        </div>        
 
-         </div> <!--FIM da Div centralizadora-->
+</div> <!--FIM da Div centralizadora-->
 
-            <hr>
-            <!-- Footer -->
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-                </div>
-                <!-- /.container -->
-            </footer>
+<hr>
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+        <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+    </div>
+    <!-- /.container -->
+</footer>
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+</body>
 </html>

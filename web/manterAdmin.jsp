@@ -56,20 +56,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
                         </li>
 
+
+
                     </ul>
                 </div>
-                
+
                 <!-- INICIO DROPDOWN-->
                 <div>
-                    
+
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
@@ -77,30 +75,32 @@
                                 Classes
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
-                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                
+
                                 <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
                                 <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
                                 <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
+
+
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
-                       
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
                     </ul>
                 </div>
-                            
-                            
-                            <!-- FIM DROPDOWN-->
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -108,62 +108,62 @@
         <br>
         <div class="container"><!--Div centralizadora-->
             <div class="col-lg-12">
-            <div>
-                <h1 class="text-center"> Administrador - ${operacao} </h1> <hr>  <br><br>
+                <div>
+                    <h1 class="text-center"> Administrador - ${operacao} </h1> <hr>  <br><br>
 
+                </div>
             </div>
-        </div>
 
 
-        <form action="ManterAdministradorController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
+            <form action="ManterAdministradorController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
 
-            <!--Inicio Tabela-->
+                <!--Inicio Tabela-->
 
-            <div class="col-lg-7">
+                <div class="col-lg-7">
 
-                <!--Div centralizadora-->
-            </div>
-            
-         
+                    <!--Div centralizadora-->
+                </div>
 
-            <div class="col-lg-9">
-                <table class="table table-striped">
-                    <thead>
-                    <tbody>
-                    <br>
 
-                    <tr>
-                        <td>Codigo do admin: </td>
-                        <td><input type="number" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
-                        </tr>
+
+                <div class="col-lg-9">
+                    <table class="table table-striped">
+                        <thead>
+                        <tbody>
+                        <br>
 
                         <tr>
-                            <td>Nome do admin: </td>
-                            <td> <input type="text" name="txtNomeAdmin" size="60" value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            <td>Codigo do admin: </td>
+                            <td><input type="number" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Nome do admin: </td>
+                                <td> <input type="text" placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" size="60" value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            </tr>
+
+                            <tr>
+                                <td>Email do admin: </td>
+                                <td> <input type="text"  placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin" size="60" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            </tr>
+
+                            <tr>
+                                <td>Senha do admin: </td>
+                                <td> <input type="text"  placeholder="Digite sua senha" class="form-control" name="txtSenhaAdmin" size="60" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                         </tr>
-
-                        <tr>
-                            <td>Email do admin: </td>
-                            <td> <input type="text" name="txtEmailAdmin" size="60" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
-                        </tr>
-
-                        <tr>
-                            <td>Senha do admin: </td>
-                            <td> <input type="text" name="txtSenhaAdmin" size="60" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
-                    </tr>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
 
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
 
-                </form>
-                <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+                    </form>
+                    <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
-</div>
-               </div>        <!--FIM Div centralizadora-->
-         
-               
+                </div>
+        </div>        <!--FIM Div centralizadora-->
+
+
 
         <hr>
         <!-- Footer -->

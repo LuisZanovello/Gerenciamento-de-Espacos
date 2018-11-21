@@ -80,10 +80,11 @@ public class ManterAdminClienteController extends HttpServlet {
         String dataNascimento = request.getParameter("txtDataNascimentoCliente");
         String email = request.getParameter("txtEmailCliente");
         String cpf = request.getParameter("txtCPFCliente");
+        String senha = request.getParameter("txtSenhaCliente");
         
         try {       
             
-            Cliente cli = new Cliente(id, nome, sobrenome, dataNascimento, email, cpf);
+            Cliente cli = new Cliente(id, nome, sobrenome, dataNascimento, email, cpf, senha);
             if (operacao.equals("Incluir")) {
                 cli.gravar();
             } else {

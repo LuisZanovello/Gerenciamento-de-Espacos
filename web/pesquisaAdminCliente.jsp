@@ -44,24 +44,60 @@
     <body>
 
         <!-- INICIO Navegador superior-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-                        
-                     
-                            <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
                         </li>
+
+
 
                     </ul>
                 </div>
+
+                <!-- INICIO DROPDOWN-->
+                <div>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+
+
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -69,11 +105,7 @@
         <!-- Corpo da Pagina -->
         <div class="container">
 
-
-
-
             <!--Inicio Tabela-->
-
 
             <div class="col-lg-12">
                 <table class="table table-striped">
@@ -83,137 +115,144 @@
                         <div>
                             <h1 class="text-center">Lista de Clientes</h1><hr>  <br><br>
                         </div>
-                        <!--Tabela-->
+                    </div>
+                    </thead>
 
-                        <!-- INICIO TAG para buscar -->
-                        <div class="col-md-12">
-                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
-                            <script>
-                                $(document).ready(function () {
-                                    $("#myInput").on("keyup", function () {
-                                        var value = $(this).val().toLowerCase();
-                                        $("#myTable ${cliente.id.nome.sobrenome.dataNascimento.email.cpf}").filter(function () {
-                                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                    <!-- INICIO TAG para buscar -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#myInput").on("keyup", function () {
+                                            var value = $(this).val().toLowerCase();
+                                            $("#myTable ${admin.id.nome}").filter(function () {
+                                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                                            });
                                         });
                                     });
-                                });
-                            </script>
+                                </script>
+                            </div>
                         </div>
-                        <!-- FIM TAG para buscar -->
+                    </div>
+                    <!-- FIM TAG para buscar -->
 
-                        <c:forEach items="${clientes}" var="cliente">
+                    <!--INICIO Tabela botoes incluir e voltar-->
 
-                            <div class="search-list">
-                                <div class="col-lg-2">
-                                    <table class="table table-striped" id="myTable">
-                                        <thead>
-                                        <tbody>
+                    <div class="container">
+                        <div class="row">                                   
+                            <div class="col-lg">
+                                <label>
+                                    <form action="ManterAdminClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                    </form>
+                                </label>
+                                <label>
+                                    <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>                            
 
-                                            <tr>
-                                                <th colspan="2">
-                                                    Dados do Cliente : <c:out value ="${cliente.nome}"/>
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <th scope="now"> ID </th>
-                                                <td><c:out value="${cliente.id}"/></td>
-                                            </tr>
-                                            <tr> 
-                                                <th scope="now"> Nome </th>
-                                                <td><c:out value="${cliente.nome}"/></td>
-                                            </tr>
+                    <!--FIM Tabela botoes incluir e voltar-->
 
-                                            <tr> 
-                                                <th scope="now"> Sobrenome </th>
-                                                <td><c:out value="${cliente.sobrenome}"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="now"> Nascimento </th>
-                                                <td><c:out value="${cliente.dataNascimento}"/></td>
-                                            </tr>
+                    <div clas="card">
+                        <div class="card-body">
+                            <c:forEach items="${clientes}" var="cliente">
 
-                                            <tr>
-                                                <th scope="now"> E-mail </th>
-                                                <td><c:out value="${cliente.email}"/></td>
-                                            </tr>
+                                <table class="table table-striped" id="myTable">
 
-                                            <tr>
-                                                <th scope="now"> CPF </th>
-                                                <td><c:out value="${cliente.cpf}"/></td>
-                                            </tr>
+                                    <tbody>
+
+                                        <tr>
+                                            <th colspan="2">
+                                                Dados do Cliente : <c:out value ="${cliente.nome}"/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="now"> ID </th>
+                                            <td><c:out value="${cliente.id}"/></td>
+                                        </tr>
+                                        <tr> 
+                                            <th scope="now"> Nome </th>
+                                            <td><c:out value="${cliente.nome}"/></td>
+                                        </tr>
+
+                                        <tr> 
+                                            <th scope="now"> Sobrenome </th>
+                                            <td><c:out value="${cliente.sobrenome}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="now"> Nascimento </th>
+                                            <td><c:out value="${cliente.dataNascimento}"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="now"> E-mail </th>
+                                            <td><c:out value="${cliente.email}"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="now"> CPF </th>
+                                            <td><c:out value="${cliente.cpf}"/></td>
+                                        </tr>
+
+                                      
 
 
                                         <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${cliente.id}"/>"
-                                               class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
-                                        <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>"
-                                               class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
+                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
+                                    <td><a href="ManterAdminClienteController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${cliente.id}"/>"
+                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
 
-                                </div>
-                            </div>
-                        </c:forEach>
+                                    </tbody>
 
-                        </tbody>
-                </table>
-                <hr>
-            </div>        
+                                </table>
+                                <hr>
+                                <br><br><br>
+                            </c:forEach>
 
 
+                            <!--INICIO Tabela botoes incluir e voltar-->
 
-
-
-            <!--Inicio DIV-->
-            <div class="row">               
-
-                <!--Inicio Tabela-->
-                <div class="col-lg-1">
-                    <!--Div centralizadora-->
-                </div>
-
-                <!-- Distancia entre o botão incluir e voltar-->
-                <div class="col-lg-2"> 
-                    <table class="table table-striped">
-
-                        <br>
-
-                        <!--Tabela-->
-                        <div class="col-lg-12">
-                            <table class="table">
-
-                                <tbody>
-
-                                    <tr>
-                                        <td>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <label>
                                             <form action="ManterAdminClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
                                                 <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                             </form>
-                                        </td>
-
-                                        <td>
+                                        </label>
+                                        <label>
                                             <a href="indexAdmin.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                        </td>
-                                    </tr>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
 
-                                </tbody>
-                            </table>
+                            <!--FIM Tabela botoes incluir e voltar-->
+                        </div>
+                    </div>
 
-                        </div>        
-                </div> 
-            </div> <!-- Fim da DIV Centralizadora-->
-            <hr>
 
-            <!-- INICIO Footer -->
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-                </div>
-                <!-- /.container -->
-            </footer>
+                    <hr>
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <!-- FIM Footer -->
+                    <!-- INICIO Footer -->
+                    <footer class="py-5 bg-dark">
+                        <div class="container">
+                            <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                            <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                        </div>
+                        <!-- /.container -->
+                    </footer>
 
-    </body>
-</html>
+                    <!-- Bootstrap core JavaScript -->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <!-- FIM Footer -->
+
+                    </body>
+                    </html>
+
+
