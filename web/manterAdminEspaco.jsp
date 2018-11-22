@@ -108,15 +108,15 @@
         </style>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin Gerencia Espaço - ${operacao}</title>
+        <title> Gerencia Espaço - ${operacao}</title>
     </head>
 
     <body>
 
         <!-- INICIO Navegador superior-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -124,50 +124,14 @@
                     <ul class="navbar-nav ml-auto">
 
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Espaços</a> <!-- primeiro link direita superior-->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
+                        
+                     
+                            <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
                         </li>
 
                     </ul>
                 </div>
-                
-                <!-- INICIO DROPDOWN-->
-                <div>
-                    
-                    <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Classes
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
-                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
-                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
-                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
-                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                
-                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
-                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
-                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
-                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
-                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
-                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
-                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
-                       
-
-                    </ul>
-                </div>
-                            
-                            
-                            <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -176,12 +140,12 @@
          <div class="container"><!--Div centralizadora-->
         <div class="col">
             <div>
-                <h1 class="text-center"> Espaço - ${operacao} </h1> <hr>  <br><br>
+                <h1 class="text-center"> Admin ${operacao} - Espaço  </h1> <hr>  <br><br>
 
             </div>
-        </div>      
+        </div>
 
-        <form action="ManterAdminEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminEspaco">
+                <form action="ManterAdminEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterEspaco">
 
 
             <!--Inicio Tabela-->
@@ -191,10 +155,10 @@
                 <!--Div centralizadora-->
             </div>
             <div class="col-lg-9">
-                <table class="table table-striped">
+               <!-- <table class="table table-striped">-->
                     <thead>
                     <tbody>
-                    <br>
+                     <br>
 
                     <tr>
                         <td>Codigo Espaco</td>
@@ -253,26 +217,26 @@
                             <td><input type="time"  class="form-control" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
 
-                        </tbody>
-                    </table>
 
-                    <td>Tipo Espaco:</td>
-                    <td>
-                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
+
+                    <label>Tipo Espaco:</label>
+                    
+                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                        <option>Selecione uma opção</option>   
                         <c:forEach items="${tiposEspacos}" var="tipoEspaco">
                             <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> selected</c:if>>${tipoEspaco.nome}</option>  
                         </c:forEach>
                     </select>
-                </td>
-                </tr>
-                </table>
+                
+                
+                <!--</table>-->
                 <br><br>
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                </form>
+                
                 <a href="PesquisaAdminEspacoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
             </div>
+                       </form>
                         </div> <!--FIM Div centralizadora-->
         
                         

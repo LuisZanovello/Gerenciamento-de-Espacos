@@ -151,7 +151,7 @@ public class ManterAdminEspacoController extends HttpServlet {
                 }
             }
         
-            RequestDispatcher view = request.getRequestDispatcher("PesquisaEspacoController");
+            RequestDispatcher view = request.getRequestDispatcher("PesquisaAdminEspacoController");
             view.forward(request, response);
         } catch (IOException | SQLException | ClassNotFoundException e) {
             throw new ServletException(e);
