@@ -45,15 +45,19 @@
         <!-- INICIO Navegador superior-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> 
+                <button class="navbar-toggler navbar-toggler-right" type="button" 
+                        data-toggle="collapse" data-target="#navbarResponsive" 
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
+                            <!-- primeiro link direita superior-->
+                            <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> 
                         </li>
 
 
@@ -67,10 +71,12 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" 
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Classes
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                            <div class="dropdown-menu dropdown-menu-right" 
+                                 aria-labelledby="navbarDropdownPortfolio">
 
                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
@@ -87,7 +93,8 @@
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                        </li>
+                            </div>
+                            </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
@@ -167,9 +174,20 @@
                                     <tbody>
 
                                         <tr>
-                                            <th colspan="2">
+                                            <th colspan="1">
                                                 Dados do Administrador(a) : <c:out value ="${admin.nome}"/>                                     
                                             </th>
+                                            
+                                            <th colspan="1" >
+                                                
+                                                <a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
+                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
+
+                                    <a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
+                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
+                                            </th>
+                                            
+                                   
                                         </tr>
 
                                         <tr>
@@ -187,11 +205,7 @@
                                             <td><c:out value="${admin.email}" /></td>
                                         </tr>
 
-                                    <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
-                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
-
-                                    <td><a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
-                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
+                                    
                                     <hr>
 
 

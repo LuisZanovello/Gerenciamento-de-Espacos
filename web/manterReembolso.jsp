@@ -28,13 +28,21 @@
         <style>
             footer{
                 bottom: 0;
-                position: relative; 
+                position:absolute; 
                 bottom: 0; 
                 left: 0px; 
                 right: 0px;
                 width: 100%;
                 text-align: center;
             }
+
+            /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
+            select[readonly] {
+                background: #eee;
+                pointer-events: none;
+                touch-action: none;
+            }
+            /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
         </style>    
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -42,7 +50,7 @@
     </head>
     <body>
 
-        <!-- Parte superior -->
+        <!-- INICIO Navegador superior-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
@@ -52,95 +60,127 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="indexAdmin.jsp">Área do Admin</a> <!-- primeiro link direita superior-->
+                        </li>
 
 
+
+                    </ul>
+                </div>
+
+                <!-- INICIO DROPDOWN-->
+                <div>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+
+
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
                         </li>
-
                     </ul>
                 </div>
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
-
-        <!--Inicio das migalhas do navegador superior-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="indexCliente.jsp">Inicio</a>
-            </li>
-            <li class="breadcrumb-item"> 
-                <a href="PesquisaReembolsoController">Lista</a>
-            </li>
-            <li class="breadcrumb-item active">${operacao}</li>
-        </ol>
-        <!--Fim das migalhas do navegador superior-->
-
+        <!-- FIM Navegador superior-->
 
         <br>
+
+        <!--INICIO Div formulario-->
+
         <div class="container">
+
+            <!--INICIO Div Nome da Pagina-->
             <div class="col">
                 <div>
                     <h1 class="text-center"> Reembolso - ${operacao} </h1> <hr>  <br><br>
 
                 </div>
             </div>
+            <!--FIM Div Nome da Pagina-->
+
             <form action="ManterReembolsoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
 
-                <div class="row">
-                    <div class="col-lg-8 mb-4">
+                <!--Inicio Tabela-->
 
-                        <form name="reembolso" id="reembolso" novalidate>
-                            <div class="control-group form-group">
-                                <div class="controls1">
-                                    <label>Codigo do Reembolso: </label>
-                                    <input type="number" placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
-                                    </div>
-                                </div>
+                <div class="col-lg-12">
+                    <table class="table table-striped">
 
-                                <div class="control-group form-group">
-                                    <div class="controls1">
-                                        <label>Status: </label>
-                                        <div class="form-group">
-                                            <select class="form-control" name="txtNomeReembolso" 
-                                                    value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">disabled</c:if>>
-                                            <option>${reembolso.estado}</option>
-                                            <option>Aprovado</option> 
-                                            <option>Em Analise</option> 
-                                            <option>Recusado</option> 
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                        <tbody>
+                        <br>
 
-                            <!--INICIO Div Chave estrangeira-->
-                            <div>
-                                <label>Número do Codigo de Barras:</label>
+                        <tr>
+                            <td>Codigo do Reembolso</td>
+                            <td>    <input type="number" placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            </tr>
 
-                                <div class="form-group">
-                                    <select class="form-control" name="optPagamento" <c:if test="${operacao == 'Excluir'}"> disabled</c:if>>
-                                            <option>Selecione uma opção</option>     
-                                        <c:forEach items="${pagamentos}" var="pagamento">
-                                            <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> selected</c:if>>${pagamento.numeroCodBarras}</option>  
-                                        </c:forEach>
-                                    </select>
-                                </div>
+                            <tr>
 
-                                <br><br>
+                                <td>Status: </td>
+                                <td>
+                                    <select class="form-control" name="txtNomeReembolso" 
+                                            value="${reembolso.estado}" <c:if test="${operacao == 'Excluir'}">disabled</c:if>>
+                                    <option>${reembolso.estado}</option> 
+                                    <option>Aprovado</option> 
+                                    <option>Em Analise</option> 
+                                    <option>Recusado</option> 
+                                </select>
+                            </td>
+                        </tr>
 
-                                <div>
-                                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                                    </form>
-                                    <a href="PesquisaReembolsoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
-                                </div>  
-                            </div>
 
-                            <!--FIM Div Chave estrangeira-->
-                            
-                    </div>
+                        <!--INICIO Div Chave estrangeira-->
+
+                        <tr>
+                            <td>Número do Codigo de Barras:</td>
+
+                            <td>
+                                <select class="form-control" name="optPagamento" <c:if test="${operacao == 'Excluir'}"> readonly</c:if><c:if test="${operacao == 'Editar'}"> readonly</c:if>>
+
+                                    <c:forEach items="${pagamentos}" var="pagamento">                                        
+                                        <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> disabled</c:if>>${pagamento.numeroCodBarras}</option>  
+                                    </c:forEach>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+
+
+                    </table>
+                    <br><br>
+
+                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <a href="PesquisaReembolsoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
                 </div>
+            </form>
         </div>
-                                            
+        <!--FIM Div Chave estrangeira-->
+
         <hr>
 
         <!-- Footer -->
