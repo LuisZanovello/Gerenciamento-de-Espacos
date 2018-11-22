@@ -105,6 +105,12 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            select[readonly] {
+  background: #eee; /*Simular campo inativo - Sugestão @GabrielRodrigues*/
+  pointer-events: none;
+  touch-action: none;
+}
         </style>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -165,7 +171,7 @@
                         <td><input type="number" placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"size="60" value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
-                            <td>Espaço</td>
+                            <td>Nome do Espaço</td>
                             <td><input type="text" placeholder="Nome do Local" class="form-control"  name="txtNome" size="60" value="${espaco.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
@@ -221,10 +227,10 @@
 
                     <td>Tipo Espaco:</td>
                     <td>
-                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly </c:if>>
+                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         
                         <c:forEach items="${tiposEspacos}" var="tipoEspaco">
-                            <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"/>${tipoEspaco.nome}</option>  
+                            <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> disabled</c:if>>${tipoEspaco.nome}</option>  
                         </c:forEach>
                     </select>
                     </td>
