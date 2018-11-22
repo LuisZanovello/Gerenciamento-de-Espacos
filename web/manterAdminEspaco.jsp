@@ -155,8 +155,8 @@
                 <!--Div centralizadora-->
             </div>
             <div class="col-lg-9">
-               <!-- <table class="table table-striped">-->
-                    <thead>
+               <table class="table table-striped">
+                    
                     <tbody>
                      <br>
 
@@ -219,17 +219,19 @@
 
 
 
-                    <label>Tipo Espaco:</label>
-                    
-                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                       <option>Selecione uma opção</option>   
+                    <td>Tipo Espaco:</td>
+                    <td>
+                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly </c:if>>
+                        
                         <c:forEach items="${tiposEspacos}" var="tipoEspaco">
-                            <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> selected</c:if>>${tipoEspaco.nome}</option>  
+                            <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"/>${tipoEspaco.nome}</option>  
                         </c:forEach>
                     </select>
-                
-                
-                <!--</table>-->
+                    </td>
+                </tbody>
+                     
+                    
+                </table>
                 <br><br>
                 <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                 
