@@ -62,10 +62,6 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
-
-
-
                     </ul>
                 </div>
 
@@ -128,7 +124,7 @@
                 <!-- INICIO TABELA-->
 
 
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <table class="table table-striped">
 
                         <tbody>
@@ -202,6 +198,8 @@
 
 
                 </div>
+
+
             </form>
 
         </div>
