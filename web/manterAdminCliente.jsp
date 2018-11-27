@@ -32,6 +32,90 @@
             }
         </style>
 
+
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtIdCliente = form1.txtIdCliente.value;
+                var txtNomeCliente = form1.txtNomeCliente.value;
+                var txtSobrenomeCliente = form1.txtSobrenomeCliente.value;
+                var txtEmailCliente = form1.txtEmailCliente.value;
+                var txtSenhaCliente = form1.txtSenhaCliente.value;
+                var txtDataNascimentoCliente = form1.txtDataNascimentoCliente.value;
+                var txtCPFCliente = form1.txtCPFCliente.value;
+                var rep_senha = form1.rep_senha.value;
+
+                if (txtIdCliente === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtIdCliente.focus();
+                    return false;
+                }
+                if (txtIdCliente <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtIdCliente.focus();
+                    return false;
+                }
+                if (txtNomeCliente === "") {
+                    alert('Preencha o campo com seu nome corretamente');
+                    form1.txtNomeCliente.focus();
+                    return false;
+                }
+                if (txtSobrenomeCliente === "") {
+                    alert('Preencha o campo com seu sobrenome');
+                    form1.txtSobrenomeCliente.focus();
+                    return false;
+                }
+
+
+                if (txtDataNascimentoCliente === "") {
+                    alert('Preencha o campo da data de aniversário');
+                    form1.txtDataNascimentoCliente.focus();
+                    return false;
+                }
+
+
+                if (txtCPFCliente <= 0 ) {
+                    alert('Preencha o campo com seu CPF com números ACIMA DE NEGATIVO');
+                    form1.txtCPFCliente.focus();
+                    return false;
+                }
+
+                if (txtCPFCliente === "") {
+                    alert('Preencha o campo com seu CPF');
+                    form1.txtCPFCliente.focus();
+                    return false;
+                }
+
+
+                if (txtEmailCliente === "") {
+                    alert('Preencha o campo com um e-mail válido');
+                    form1.txtEmailCliente.focus();
+                    return false;
+                }
+
+                if (txtSenhaCliente === "") {
+                    alert('Preencha o campo com seu nome');
+                    form1.txtSenhaCliente.focus();
+                    return false;
+                }
+
+
+                if (txtSenhaCliente !== rep_senha) {
+                    alert('Senhas diferentes');
+                    form1.txtSenhaCliente.focus();
+                    return false;
+                }
+
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Gerencia Cliente - ${operacao}</title>
     </head>
@@ -107,15 +191,16 @@
 <div class="container"><!--Div centralizadora-->
     <div class="col">
         <div>
-            <h1 class="text-center"> Cliente - ${operacao} </h1> <hr>  <br><br>
+            <h1 class="text-center">Admin ${operacao} - Cliente  </h1> <hr>  <br><br>
 
         </div>
     </div>
 
-    <form action="ManterAdminClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
+            <!--Inicio Formulario-->
+    <form name="form1" action="ManterAdminClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
 
 
-        <!--Inicio Tabela-->
+        
 
 
         <div class="col-lg-12">
@@ -124,18 +209,17 @@
                 <tbody>
                 <br>
 
-
                 <tr>
                     <td>Código do cliente: </td>
-                    <td><input type="number"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="number"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome do cliente: </td>
-                        <td><input type="text"  class="form-control"  name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text"  class="form-control"   placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Sobrenome: </td>
-                        <td> <input type="text"  class="form-control"  name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text"  class="form-control"   placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Data de Nascimento: </td>
@@ -143,29 +227,35 @@
                     </tr>
                     <tr>
                         <td>Email: </td>
-                        <td> <input type="text"  class="form-control"  name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text"  class="form-control"  placeholder="Digite seu e-mail"  name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>CPF: </td>
-                        <td> <input type="number" class="form-control"  name="txtCPFCliente" size="60"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="number" class="form-control"   placeholder="Digite seu CPF" name="txtCPFCliente" maxlength="11"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>
                         <td>Senha do Cliente: </td>
-                        <td> <input type="text" class="form-control" name="txtSenhaCliente" size="6" value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                        <td> <input type="password" class="form-control"  placeholder="Digite uma senha de 6 digitos" name="txtSenhaCliente" maxlength="6" value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                    </tr>
+
+                    <tr>
+                        <td>Confirme a Senha</td>
+                        <td> <input type="password"  placeholder="Confirme sua senha" class="form-control" name="rep_senha" maxlength="6"  value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
         <div>
-            <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-            </form>
+            <input type="submit"  onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+
             <a href="PesquisaAdminClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
         </div>        
-
-</div> <!--FIM da Div centralizadora-->
+    </form>
+                <!--FIM formulario-->
+</div> 
 
 <hr>
 <!-- Footer -->
