@@ -55,6 +55,13 @@
                     form1.txtCodAdmin.focus();
                     return false;
                 }
+                
+                   if (txtIdAdmin>= 9) {
+                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
+                    form1.txtIdAdmin.focus();
+                    return false;
+                }
+                
                 if (txtCodAdmin <= 0) {
                     alert('Preencha o campo com um código ACIMA de número NEGATIVO');
                     form1.txtCodAdmin.focus();
@@ -181,22 +188,22 @@
 
                     <tr>
                         <td>Codigo do admin: </td>
-                        <td><input type="number" min="1" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        <td><input type="number" min="1" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                         </tr>
 
                         <tr>
                             <td>Nome do admin: </td>
-                            <td> <input type="text"  placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" size="60" value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            <td> <input type="text"  placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" maxlength="45"value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
                         </tr>
 
                         <tr>
                             <td>Email do admin: </td>
-                            <td> <input type="text"   placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin" size="60" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            <td> <input type="text"   placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin"  maxlength="45" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
                         </tr>
 
                         <tr>
                             <td>Senha do admin: </td>
-                            <td> <input type="password"  placeholder="Digite sua senha" class="form-control" name="txtSenhaAdmin" size="60" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                            <td> <input type="password"  placeholder="Digite uma senha de 6 digitos" class="form-control" name="txtSenhaAdmin" maxlength="6"  value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                     </tr>
 
                     <tr>

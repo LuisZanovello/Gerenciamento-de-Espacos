@@ -20,81 +20,197 @@
         <link href="css/modern-business.css" rel="stylesheet">
 
 
-        
-    <!-- Adicionando JQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
 
-    <!-- Adicionando Javascript -->
-    <script type="text/javascript" >
+        <!-- Adicionando JQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
 
-        $(document).ready(function() {
+        <!-- Adicionando Javascript -->
+        <script type="text/javascript" >
 
-            function limpa_formulário_cep() {
-                // Limpa valores do formulário de cep.
-                $("#rua").val("");
-                $("#bairro").val("");
-                $("#cidade").val("");
-                $("#uf").val("");
-                $("#ibge").val("");
-            }
-            
-            //Quando o campo cep perde o foco.
-            $("#cep").blur(function() {
+            $(document).ready(function () {
 
-                //Nova variável "cep" somente com dígitos.
-                var cep = $(this).val().replace(/\D/g, '');
+                function limpa_formulário_cep() {
+                    // Limpa valores do formulário de cep.
+                    $("#rua").val("");
+                    $("#bairro").val("");
+                    $("#cidade").val("");
+                    $("#uf").val("");
+                    $("#ibge").val("");
+                }
 
-                //Verifica se campo cep possui valor informado.
-                if (cep != "") {
+                //Quando o campo cep perde o foco.
+                $("#cep").blur(function () {
 
-                    //Expressão regular para validar o CEP.
-                    var validacep = /^[0-9]{8}$/;
+                    //Nova variável "cep" somente com dígitos.
+                    var cep = $(this).val().replace(/\D/g, '');
 
-                    //Valida o formato do CEP.
-                    if(validacep.test(cep)) {
+                    //Verifica se campo cep possui valor informado.
+                    if (cep != "") {
 
-                        //Preenche os campos com "..." enquanto consulta webservice.
-                        $("#rua").val("...");
-                        $("#bairro").val("...");
-                        $("#cidade").val("...");
-                        $("#uf").val("...");
-                        $("#ibge").val("...");
+                        //Expressão regular para validar o CEP.
+                        var validacep = /^[0-9]{8}$/;
 
-                        //Consulta o webservice viacep.com.br/
-                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+                        //Valida o formato do CEP.
+                        if (validacep.test(cep)) {
 
-                            if (!("erro" in dados)) {
-                                //Atualiza os campos com os valores da consulta.
-                                $("#rua").val(dados.logradouro);
-                                $("#bairro").val(dados.bairro);
-                                $("#cidade").val(dados.localidade);
-                                $("#uf").val(dados.uf);
-                                $("#ibge").val(dados.ibge);
-                            } //end if.
-                            else {
-                                //CEP pesquisado não foi encontrado.
-                                limpa_formulário_cep();
-                                alert("CEP não encontrado.");
-                            }
-                        });
+                            //Preenche os campos com "..." enquanto consulta webservice.
+                            $("#rua").val("...");
+                            $("#bairro").val("...");
+                            $("#cidade").val("...");
+                            $("#uf").val("...");
+                            $("#ibge").val("...");
+
+                            //Consulta o webservice viacep.com.br/
+                            $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+
+                                if (!("erro" in dados)) {
+                                    //Atualiza os campos com os valores da consulta.
+                                    $("#rua").val(dados.logradouro);
+                                    $("#bairro").val(dados.bairro);
+                                    $("#cidade").val(dados.localidade);
+                                    $("#uf").val(dados.uf);
+                                    $("#ibge").val(dados.ibge);
+                                } //end if.
+                                else {
+                                    //CEP pesquisado não foi encontrado.
+                                    limpa_formulário_cep();
+                                    alert("CEP não encontrado.");
+                                }
+                            });
+                        } //end if.
+                        else {
+                            //cep é inválido.
+                            limpa_formulário_cep();
+                            alert("Formato de CEP inválido.");
+                        }
                     } //end if.
                     else {
-                        //cep é inválido.
+                        //cep sem valor, limpa formulário.
                         limpa_formulário_cep();
-                        alert("Formato de CEP inválido.");
                     }
-                } //end if.
-                else {
-                    //cep sem valor, limpa formulário.
-                    limpa_formulário_cep();
-                }
+                });
             });
-        });
-        
+
+
         </script>
-        
+
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtIdEspaco = form1.txtIdEspaco.value;
+                var txtNome = form1.txtNome.value;
+                var txtCep = form1.txtCep.value;
+                var txtLogradouro = form1.txtLogradouro.value;
+                var txtNumero = form1.txtNumero.value;
+                var txtCnpj = form1.txtCnpj.value;
+                var txtBairro = form1.txtBairro.value;
+                var txtUf = form1.txtUf.value;
+                var txtCidade = form1.txtCidade.value;
+                var txtArea = form1.txtArea.value;
+                var txtHoraFuncionamentoInicio = form1.txtHoraFuncionamentoInicio.value;
+                var txtHoraFuncionamentoFinal = form1.txtHoraFuncionamentoFinal.value;
+                var txtQuantidadePessoas = form1.txtQuantidadePessoas.value;
+                var txtComplemento = form1.txtComplemento.value;
+
+
+
+
+                if (txtIdEspaco === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtIdEspaco.focus();
+                    return false;
+                }
+                if (txtIdEspaco <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtIdEspaco.focus();
+                    return false;
+                }
+                if (txtNome === "") {
+                    alert('Preencha o campo "Nome", não o deixe em branco');
+                    form1.txtNome.focus();
+                    return false;
+                }
+
+
+                if (txtCep === "") {
+                    alert('Preencha o campo do "Cep", não o deixe em branco');
+                    form1.txtCep.focus();
+                    return false;
+                }
+
+
+
+
+                if (txtLogradouro === "") {
+                    alert('Preencha o campo "Logradouro", não o deixe em branco');
+                    form1.txtLogradouro.focus();
+                    return false;
+                }
+
+                if (txtNumero === "") {
+                    alert('Preencha o campo "Nº residencial", não o deixe em branco');
+                    form1.txtNumero.focus();
+                    return false;
+                }
+
+                if (txtCnpj === "") {
+                    alert('Preencha o campo "CNPJ", não o deixe em branco');
+                    form1.txtCnpj.focus();
+                    return false;
+                }
+
+                if (txtBairro === "") {
+                    alert('Preencha o campo "Bairro", não o deixe em branco');
+                    form1.txtBairro.focus();
+                    return false;
+                }
+                if (txtUf === "") {
+                    alert('Preencha o campo "UF", não o deixe em branco');
+                    form1.txtUf.focus();
+                    return false;
+                }
+
+                if (txtCidade === "") {
+                    alert('Preencha o campo "Cidade", não o deixe em branco');
+                    form1.txtCidade.focus();
+                    return false;
+                }
+
+
+
+
+                if (txtArea === "") {
+                    alert('Preencha o campo "Área" , não o deixe em branco');
+                    form1.txtArea.focus();
+                    return false;
+                }
+
+                if (txtHoraFuncionamentoInicio === "") {
+                    alert('Preencha o campo "Inicio de Funcionamento", não o deixe em branco');
+                    form1.txtHoraFuncionamentoInicio.focus();
+                    return false;
+                }
+                if (txtHoraFuncionamentoFinal === "") {
+                    alert('Preencha o campo "Fim  de Funcionamento", não o deixe em branco');
+                    form1.txtHoraFuncionamentoFinal.focus();
+                    return false;
+                }
+                if (txtQuantidadePessoas === "") {
+                    alert('Preencha o campo "Quantidade de Pessoas", não o deixe em branco');
+                    form1.txtQuantidadePessoas.focus();
+                    return false;
+                }
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+
+
         <style>
             footer{
                 bottom: 0;
@@ -105,8 +221,8 @@
                 width: 100%;
                 text-align: center;
             }
-            
-             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
+
+            /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
             select[readonly] {
                 background: #eee;
                 pointer-events: none;
@@ -120,7 +236,7 @@
     </head>
 
     <body>
-         <!-- INICIO Navegador superior-->
+        <!-- INICIO Navegador superior-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
@@ -181,131 +297,131 @@
         <!-- FIM Navegador superior-->
 
         <br>
-        
-        
-        
+
+
+
         <!--INICIO Div formulario-->
-        
-         <div class="container">
-             
-             <!--INICIO Div Nome da Pagina-->
-        <div class="col">
-            <div>
-                <h1 class="text-center"> Admin ${operacao} - Espaço  </h1> <hr>  <br><br>
 
-            </div>
-        </div>
-                <!--FIM Div Nome da Pagina-->
+        <div class="container">
 
-                <form action="ManterAdminEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterEspaco">
+            <!--INICIO Div Nome da Pagina-->
+            <div class="col">
+                <div>
+                    <h1 class="text-center"> Admin ${operacao} - Espaço  </h1> <hr>  <br><br>
 
-
-            <!--Inicio Tabela-->
-
-            <div class="col-lg-12">
-               <table class="table table-striped">
-                    
-                    <tbody>
-                     <br>
-
-                    <tr>
-                        <td>Codigo Espaco</td>
-                        <td><input type="number" placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"size="60" value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Nome do Espaço</td>
-                            <td><input type="text" placeholder="Nome do Local" class="form-control"  name="txtNome" size="60" value="${espaco.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>CNPJ</td>
-                            <td><input type="text"  placeholder="00.000.000/0000-00"class="form-control" name="txtCnpj" size="60" value="${espaco.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Cep</td>
-                            <td><input type="number" placeholder="00000-000" id="cep" class="form-control"  name="txtCep" size="60" value="${espaco.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Logradouro</td>
-                            <td><input type="text" id="rua"  class="form-control" name="txtLogradouro" size="60" value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Numero</td>
-                            <td><input type="number"  class="form-control" name="txtNumero" size="60" value="${espaco.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Complemento</td>
-                            <td><input type="text"  class="form-control" name="txtComplemento" size="60" value="${espaco.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Bairro</td>
-                            <td><input type="text" id="bairro" class="form-control" name="txtBairro" size="60" value="${espaco.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Cidade</td>
-                            <td><input type="text" id="cidade"  class="form-control" name="txtCidade" size="60" value="${espaco.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Uf</td>
-                            <td><input type="text"  id="uf" class="form-control" name="txtUf" size="60" value="${espaco.uf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Area</td>
-                            <td><input type="number" class="form-control"  name="txtArea" size="60" value="${espaco.area}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Quantidade  de pessoas</td>
-                            <td><input type="number"  class="form-control" name="txtQuantidadePessoas" size="60" value="${espaco.quantidadePessoas}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Horario de funcionamento - Inicio</td>
-                            <td><input type="time" class="form-control"  name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-                        <tr>
-                            <td>Horario de funcionamento - Fim</td>
-                            <td><input type="time"  class="form-control" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                        </tr>
-
-
-
-                    <td>Tipo Espaco:</td>
-                    <td>
-                        <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                        
-                        <c:forEach items="${tiposEspacos}" var="tipoEspaco">
-                            <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> disabled</c:if>>${tipoEspaco.nome}</option>  
-                        </c:forEach>
-                    </select>
-                    </td>
-                </tbody>
-                     
-                    
-                </table>
-                <br><br>
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                
-                <a href="PesquisaAdminEspacoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
-
-            </div>
-                       </form>
-                        </div>
-                        
-                        <!--FIM Div formulario-->
-        
-                        
-
-
-            <hr>
-            <!-- Footer -->
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                 </div>
-                <!-- /.container -->
-            </footer>
+            </div>
+            <!--FIM Div Nome da Pagina-->
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <form name="form1"action="ManterAdminEspacoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterEspaco">
+
+
+                <!--Inicio Tabela-->
+
+                <div class="col-lg-12">
+                    <table class="table table-striped">
+
+                        <tbody>
+                        <br>
+
+                     <tr>
+                            <td>Codigo Espaco</td>
+                            <td><input type="number"  min="1" maxlength="9"placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Nome do Espaço</td>
+                                <td><input type="text" maxlength="45" placeholder="Nome do Local" class="form-control"  name="txtNome"value="${espaco.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>CNPJ</td>
+                                <td><input type="text" maxlength="15" placeholder="00.000.000/0000-00"class="form-control" name="txtCnpj"  value="${espaco.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Cep</td>
+                                <td><input type="number" placeholder="00000-000" id="cep" class="form-control"  name="txtCep"  value="${espaco.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Logradouro</td>
+                                <td><input type="text" id="rua"  placeholder="Endereço local" maxlength="45" class="form-control" name="txtLogradouro"  value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>                     
+                                <td>Numero</td>
+                                <td><input type="number"   placeholder="Nº do local" class="form-control" name="txtNumero" value="${espaco.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Complemento</td>
+                                <td><input type="text" placeholder="Complemento"  maxlength="45" class="form-control" name="txtComplemento"  value="${espaco.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Bairro</td>
+                                <td><input type="text" placeholder="Bairro"  id="bairro" maxlength="45" size="60" class="form-control" name="txtBairro" value="${espaco.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Cidade</td>
+                                <td><input type="text" placeholder="Cidade"  id="cidade" maxlength="45" class="form-control" name="txtCidade" value="${espaco.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Uf</td>
+                                <td><input type="text" placeholder="Estado"   id="uf" maxlength="2"class="form-control" name="txtUf"  value="${espaco.uf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Area</td>
+                                <td><input type="number" placeholder="M²(mestro quadrado)"  class="form-control"  name="txtArea" size="60" value="${espaco.area}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Quantidade  de pessoas</td>
+                                <td><input type="number"  placeholder="Quantidade de pessoas suportadas"  class="form-control" name="txtQuantidadePessoas" size="60" value="${espaco.quantidadePessoas}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Horario de funcionamento - Inicio</td>
+                                <td><input type="time" placeholder=""  class="form-control"  name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Horario de funcionamento - Fim</td>
+                                <td><input type="time"  placeholder="" class="form-control" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+
+
+
+                            <td>Tipo Espaco:</td>
+                            <td>
+                                <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+
+                                <c:forEach items="${tiposEspacos}" var="tipoEspaco">
+                                    <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> disabled</c:if>>${tipoEspaco.nome}</option>  
+                                </c:forEach>
+                            </select>
+                        </td>
+                        </tbody>
+
+
+                    </table>
+                    <br><br>
+                    <input type="submit" onclick="return validar()" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+
+                    <a href="PesquisaAdminEspacoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+
+                </div>
+            </form>
+        </div>
+
+        <!--FIM Div formulario-->
+
+
+
+
+        <hr>
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+            </div>
+            <!-- /.container -->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

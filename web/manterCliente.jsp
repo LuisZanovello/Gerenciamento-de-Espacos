@@ -51,6 +51,13 @@
                     form1.txtIdCliente.focus();
                     return false;
                 }
+                
+                if (txtIdCliente>= 9) {
+                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
+                    form1.txtIdCliente.focus();
+                    return false;
+                }
+                
                 if (txtIdCliente <= 0) {
                     alert('Preencha o campo com um código ACIMA de número NEGATIVO');
                     form1.txtIdCliente.focus();
@@ -207,9 +214,10 @@
                 <tbody>
                 <br>
 
+            
                 <tr>
                     <td>Código do cliente: </td>
-                    <td><input type="number"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente" size="60"  value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="number" min="1"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome do cliente: </td>
@@ -221,15 +229,15 @@
                     </tr>
                     <tr>
                         <td>Data de Nascimento: </td>
-                        <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente" size="60"  value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente"  maxlength="8"   value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Email: </td>
-                        <td> <input type="text"  class="form-control"  placeholder="Digite seu e-mail"  name="txtEmailCliente" size="60"  value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text"  class="form-control"  placeholder="Digite seu e-mail"  name="txtEmailCliente"  maxlength="45"   value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>CPF: </td>
-                        <td> <input type="number" class="form-control"   placeholder="Digite seu CPF" name="txtCPFCliente" maxlength="11"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text" class="form-control"   placeholder="Digite seu CPF" name="txtCPFCliente" maxlength="11"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>

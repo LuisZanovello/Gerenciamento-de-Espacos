@@ -35,6 +35,39 @@
             }
         </style>
 
+
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtIdModalidade = form1.txtIdModalidade.value;
+
+
+
+                if (txtIdModalidade === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtIdModalidade.focus();
+                    return false;
+                }
+
+                if (txtIdModalidade <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtIdModalidade.focus();
+                    return false;
+                }
+                
+                 if (txtIdModalidade >= 9) {
+                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
+                    form1.txtIdModalidade.focus();
+                    return false;
+                }
+            }
+
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Gerencia Modalidade - ${operacao}</title>
     </head>
@@ -61,10 +94,10 @@
 
                     </ul>
                 </div>
-                
+
                 <!-- INICIO DROPDOWN-->
                 <div>
-                    
+
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
@@ -72,30 +105,30 @@
                                 Classes
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
-                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
                                 <a class="dropdown-item" href="indexContato.jsp">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                
+
                                 <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
                                 <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
                                 <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
+
+
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                                 <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
-                       
+                        </li>
+
 
                     </ul>
                 </div>
-                            
-                            
-                            <!-- FIM DROPDOWN-->
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -109,7 +142,7 @@
                 </div>
             </div>      
 
-            <form action="ManterAdminModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminModalidade">
+            <form name="form1" action="ManterAdminModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminModalidade">
 
                 <!--Inicio Tabela-->
 
@@ -126,26 +159,27 @@
 
                         <tr>
                             <td>Código Modalidade</td>
-                            <td><input type="number" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" size="60" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Modalidade</td>
-                                <td><input type="text" placeholder="Ex: Volei de praia" class="form-control" name="txtModalidade" size="60" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" placeholder="Ex: Volei de praia" class="form-control" name="txtModalidade" maxlength="45" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Descrição</td>
-                                <td><input type="text"  class="form-control" name="txtDescricao" size="60" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text"  class="form-control" name="txtDescricao" maxlength="45" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div>
-                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                    </form>
+                    <input type="submit" onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                     <a href="PesquisaAdminModalidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
                 </div>
+            </form>
+
         </div>        <!--FIM Div centralizadora-->
 
 
