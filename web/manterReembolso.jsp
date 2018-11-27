@@ -44,6 +44,62 @@
             }
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
         </style>    
+        
+        
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtCodReembolso = form1.txtCodReembolso.value;
+                var txtNomeReembolso = form1.txtNomeReembolso.value;
+                var optPagamento = form1.optPagamento.value;
+          
+          
+            
+            
+
+
+                
+
+                if (txtCodReembolso === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtCodReembolso.focus();
+                    return false;
+                }
+
+                if (txtCodReembolso >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtCodReembolso.focus();
+                    return false;
+                }
+
+                if (txtCodReembolso <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtCodReembolso.focus();
+                    return false;
+                }
+
+                if (txtNomeReembolso === "") {
+                    alert('Preencha o campo "Tipo do Reembolso"');
+                    form1.txtNomeReembolso.focus();
+                    return false;
+                }
+                if (optPagamento === "") {
+                    alert('Preencha o campo "Pagamento"');
+                    form1.optPagamento.focus();
+                    return false;
+                }
+
+             
+             
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+        
+        
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Reembolso - ${operacao}</title>
@@ -119,7 +175,7 @@
             </div>
             <!--FIM Div Nome da Pagina-->
 
-            <form action="ManterReembolsoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
+            <form name="form1" action="ManterReembolsoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterReembolso">
 
                 <!--Inicio Tabela-->
 
@@ -169,7 +225,7 @@
                     </table>
                     <br><br>
 
-                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input onclick="return validar()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                     <a href="PesquisaReembolsoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
                 </div>
             </form>

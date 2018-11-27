@@ -1,6 +1,6 @@
 
 
-                 
+
 <%-- 
     Document   : manterAdmin
     Created on : 23/10/2018, 09:43:17
@@ -38,9 +38,65 @@
             }
         </style>
 
+        
+
+
+        
+        
+ <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtIdModalidade = form1.txtIdModalidade.value;
+                var txtModalidade = form1.txtModalidade.value;
+                var txtDescricao = form1.txtDescricao.value;
+              
+              
+            
+            
+                
+
+                if (txtIdModalidade === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtIdModalidade.focus();
+                    return false;
+                }
+
+                if (txtIdModalidade >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtIdModalidade.focus();
+                    return false;
+                }
+
+                if (txtIdModalidade <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtIdModalidade.focus();
+                    return false;
+                }
+
+                if (txtModalidade === "") {
+                    alert('Preencha o campo "Modalidade"');
+                    form1.txtModalidade.focus();
+                    return false;
+                }
+                if (txtDescricao === "") {
+                    alert('Preencha o campo "Descrição"');
+                    form1.txtDescricao.focus();
+                    return false;
+                }
+
+         
+         
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+        
+        
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manter Contato - ${operacao}</title>
+        <title>Manter Modalidade- ${operacao}</title>
 
 
 
@@ -48,75 +104,104 @@
     </head>
     <body>
 
-        <!-- INICIO Navegador superior-->
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+     <!-- INICIO Navegador superior-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="#">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-
+            
                         
-                     
-                            <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
-                        </li>
+
+
 
                     </ul>
                 </div>
+
+                <!-- INICIO DROPDOWN-->
+                <div>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+
+
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                                
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
-
         <!-- FIM Navegador superior-->
 
-        <br>
-        <div class="col">
-            <div>
-                <h1 class="text-center"> Modalidade - ${operacao} </h1> <hr>  <br><br>
+    <br>
+        <div class="container">
+            <div class="col-lg-12">
+                <div>
+                    <h1 class="text-center"> Modalidade - ${operacao} </h1> <hr>  <br><br>
 
+                </div>
             </div>
-        </div>
 
 
-        <form action="ManterModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterContato">
+        <form name="form1" action="ManterModalidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterContato">
 
-            <!--Inicio Tabela-->
-
-            <div class="col-lg-7">
-
-                <!--Div centralizadora-->
-            </div>
-            <div class="col-lg-9">
+          
                 <table class="table table-striped">
                     <thead>
                     <tbody>
                     <br>
 
-                  <tr>
-    <td>Código Modalidade</td>
-    <td><input type="text" name="txtIdModalidade" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-    </tr>
-    <tr>
-    <td>Modalidade</td>
-    <td><input type="text" name="txtModalidade" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-    </tr>
-    <tr>
-    <td>Descrição</td>
-    <td><input type="text" name="txtDescricao" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-    </tr>
+                    <tr>
+                        <td>Código Modalidade</td>
+                        <td><input  min="1"class="form-control" type="number" name="txtIdModalidade" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Modalidade</td>
+                            <td><input class="form-control"  type="text" name="txtModalidade" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        </tr>
+                        <tr>
+                            <td>Descrição</td>
+                            <td><input class="form-control"  type="text" name="txtDescricao" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                    </tr>
 
                     </tbody>
                 </table>
 
 
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                <input type="submit" onclick="return validar()" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
 
-                </form>
                 <a href="PesquisaModalidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
+                </form>
 
             </div>      
             <hr>

@@ -39,6 +39,74 @@
                 text-align: center;
             }
         </style>    
+        
+        
+            <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtCodPagamento = form1.txtCodPagamento.value;
+                var txtVencimentoPagamento = form1.txtVencimentoPagamento.value;
+                var txtCodBarrasPagamento = form1.txtCodBarrasPagamento.value;
+                var txtValorTotalPagamento = form1.txtValorTotalPagamento.value;
+                var optReserva = form1.optReserva.value;
+       
+        
+            
+
+
+
+
+                
+
+                if (txtCodPagamento === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtCodPagamento.focus();
+                    return false;
+                }
+
+                if (txtCodPagamento >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtCodPagamento.focus();
+                    return false;
+                }
+
+                if (txtCodPagamento <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtCodPagamento.focus();
+                    return false;
+                }
+
+                if (txtVencimentoPagamento === "") {
+                    alert('Preencha o campo "Vencimento"');
+                    form1.txtVencimentoPagamento.focus();
+                    return false;
+                }
+                if (txtCodBarrasPagamento === "") {
+                    alert('Preencha o campo "Cod Barras"');
+                    form1.txtCodBarrasPagamento.focus();
+                    return false;
+                }
+
+                if (txtValorTotalPagamento === "") {
+                    alert('Preencha o campo "Valor de pagamento"');
+                    form1.txtValorTotalPagamento.focus();
+                    return false;
+                }
+
+
+                if (optReserva === "") {
+                    alert('Preencha o campo "Local Reservado"');
+                    form1.optReserva.focus();
+                    return false;
+                }
+
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Pagamento - ${operacao}</title>
@@ -110,7 +178,7 @@
                 </div>
             </div>
 
-            <form action="ManterPagamentoController?acao=confirmarOperacao&operacao=${operacao}" method="post">
+            <form name="form1" action="ManterPagamentoController?acao=confirmarOperacao&operacao=${operacao}" method="post">
 
                 <!-- INICIO TABELA-->
 
@@ -156,7 +224,7 @@
 
                     <br>
 
-                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input onclick="return validar()"  type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
 
                     <a href="PesquisaPagamentoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 

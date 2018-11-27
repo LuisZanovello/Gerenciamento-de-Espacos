@@ -46,6 +46,96 @@
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
         </style>    
 
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtCodReserva = form1.txtCodReserva.value;
+                var txtDataLocacao = form1.txtDataLocacao.value;
+                var txtHrInicio = form1.txtHrInicio.value;
+                var txtHrFim = form1.txtHrFim.value;
+                var txtqtPessoas = form1.txtqtPessoas.value;
+                var txtvalorLocacao = form1.txtvalorLocacao.value;
+                var txtAvaliacao = form1.txtAvaliacao.value;
+                var optCliente = form1.optCliente.value;
+                var optEspaco = form1.optEspaco.value;
+
+
+                if (txtCodReserva === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtCodReserva.focus();
+                    return false;
+                }
+
+                if (txtCodReserva >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtCodReserva.focus();
+                    return false;
+                }
+
+                if (txtCodReserva <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtCodReserva.focus();
+                    return false;
+                }
+
+                if (txtDataLocacao === "") {
+                    alert('Preencha o campo "Data locação"');
+                    form1.txtDataLocacao.focus();
+                    return false;
+                }
+                if (txtHrInicio === "") {
+                    alert('Preencha o campo "Hora inicio"');
+                    form1.txtHrInicio.focus();
+                    return false;
+                }
+
+                if (txtHrFim === "") {
+                    alert('Preencha o campo "Hora fim"');
+                    form1.txtHrFim.focus();
+                    return false;
+                }
+
+
+                if (txtAvaliacao === "") {
+                    alert('Preencha o campo "Avaliação"');
+                    form1.txtAvaliacao.focus();
+                    return false;
+                }
+
+
+                if (txtqtPessoas === "") {
+                    alert('Preencha o campo "Quantidade de Pessoas"');
+                    form1.txtqtPessoas.focus();
+                    return false;
+                }
+
+                if (txtvalorLocacao === "") {
+                    alert('Preencha o campo "Valor de locação"');
+                    form1.txtvalorLocacao.focus();
+                    return false;
+                }
+
+                if (optCliente === "") {
+                    alert('Preencha o campo "Cliente"');
+                    form1.optCliente.focus();
+                    return false;
+                }
+                if (optEspaco === "") {
+                    alert('Preencha o campo "Espaço"');
+                    form1.optEspaco.focus();
+                    return false;
+                }
+
+
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <title>Manter Reserva - ${operacao} </title>
@@ -119,7 +209,7 @@
                 </div>
             </div>
 
-            <form action="ManterReservaController?acao=confirmarOperacao&operacao=${operacao}" method="post">
+            <form name="form1" action="ManterReservaController?acao=confirmarOperacao&operacao=${operacao}" method="post">
 
                 <!-- INICIO TABELA-->
 
@@ -148,7 +238,6 @@
                                 <td><input type="time" placeholder="00:00" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
-
                             <tr>
                                 <td>Hora Fim</td>
                                 <td><input type="time" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
@@ -166,7 +255,7 @@
 
                             <tr>
                                 <td>Avaliação</td>
-                                <td> <input  type="number" class="form-control" id="horaf" placeholder="Nota de 1 a 5" name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> </td>
+                                <td> <input  type="number" class="form-control" id="horaf" placeholder="Nota de 1 a 5" maxlength="1"name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> </td>
                             </tr>
 
                             <td>Nome do Cliente:</td>
@@ -193,7 +282,7 @@
                     </table>
                     <br>
 
-                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input onclick="return validar()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                     <a href="PesquisaReservaController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
 
