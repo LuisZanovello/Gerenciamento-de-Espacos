@@ -128,6 +128,12 @@
                     form1.txtIdEspaco.focus();
                     return false;
                 }
+                    if (txtIdEspaco >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtIdEspaco.focus();
+                    return false;
+                }
+                
                 if (txtNome === "") {
                     alert('Preencha o campo "Nome", não o deixe em branco');
                     form1.txtNome.focus();
@@ -326,7 +332,7 @@
 
                      <tr>
                             <td>Codigo Espaco</td>
-                            <td><input type="number"  min="1" maxlength="9"placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number"min="1"placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Nome do Espaço</td>

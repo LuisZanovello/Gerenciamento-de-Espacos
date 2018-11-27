@@ -47,9 +47,9 @@
 
 
         <!-- INICIO Navegador superior-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="#">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,14 +57,49 @@
                     <ul class="navbar-nav ml-auto">
 
 
-                        
-                     
-                            <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
-                        </li>
+
+
+
 
                     </ul>
                 </div>
+
+                <!-- INICIO DROPDOWN-->
+                <div>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+
+
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -72,18 +107,12 @@
 
 
 
-
-        <!--Inicio Box-->
-        <div class="row">               
-
-
+        <!-- Corpo da Pagina -->
+        <div class="container">
 
             <!--Inicio Tabela-->
 
-            <div class="col-lg-1">
-                <!--Div centralizadora-->
-            </div>
-            <div class="col-lg-9">
+            <div class="col-lg-12">">
                 <table class="table table-striped">
                     <thead>
                     <br>
@@ -93,99 +122,134 @@
                         </div>
                         <!--Tabela-->
 
-                        <c:forEach items="${contatos}" var="contato">
+<!--INICIO Tabela botoes incluir e voltar-->
 
-                            <div class="col-lg-2">
-                                <table class="table table-striped">
-                                    </thead>
-                                    <tbody>
-                
-                                                                      <tr>
-                                            <th scope="now">Id</th>
-                                            <td><c:out value="${contato.id}"/></td>
-                                        </tr>
-                                                             <tr>
-                                            <th scope="now">Número</th>
-                                            <td><c:out value="${contato.numero}"/></td>
-                                        </tr>
-                     
-
-                                       
-                                    <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${contato.id}"/>" 
-                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a></td>
-
-                                    <td><a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${contato.id}"/>"
-                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
-                                    <hr>
-                                </c:forEach>
-
-                                </tbody>
-                            </table>
-                            <hr>
-                        </div>        
-                    </div> 
-
-
-
-
-                    <!--Inicio DIV -->
-                    <div class="row">               
-
-                        <!--Inicio Tabela-->
-                        <div class="col-lg-1">
-                            <!--Div centralizadora-->
+                    <div class="container">
+                        <div class="row">                                   
+                            <div class="col-lg">
+                                <label>
+                                    <form action="ManterContatoController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                    </form>
+                                </label>
+                          
+                                
+                            </div>
                         </div>
+                    </div>                            
 
-                        <!-- Distancia entre o botão incluir e voltar-->
-                        <div class="col-lg-2"> 
-                            <table class="table table-striped">
+                    <!--FIM Tabela botoes incluir e voltar--> 
+                    
+                        <div clas="card">
+                            <div class="card-body">
+                                <c:forEach items="${contatos}" var="contato">
 
-                                <br>
 
-                                <!--Tabela-->
-                                <div class="col-lg-12">
-                                    <table class="table">
-
+                                    <table class="table table-striped">
+                                        </thead>
                                         <tbody>
 
                                             <tr>
-                                                <td>
-                                                    <form action="ManterContatoController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
-                                                    </form>
-                                                </td>
+                                                <th colspan="1">
+                                                    Dados do Contato : <c:out value ="${contato.numero}"/>
+                                                </th>
 
-                                                <td>
-                                                    <a href="indexContato.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                                </td>
+                                                <th colspan="1">
+                                                    <a href="ManterContatoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${contato.id}"/>"
+                                                       class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
+                                                    <a href="ManterContatoController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${contato.id}"/>"
+                                                       class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
+                                                </th>
+
                                             </tr>
 
+                                            <tr>
+                                                <th scope="now">Id</th>
+                                                <td><c:out value="${contato.id}"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="now">Número</th>
+                                                <td><c:out value="${contato.numero}"/></td>
+                                            </tr>
+
+
+
                                         </tbody>
+
                                     </table>
 
-                                </div>        
-                        </div> 
 
-                        <hr>
-
-
+                                    <hr>
+                                    <br><br><br>
+                                </c:forEach>
 
 
-                        <!-- INICIO Footer -->
-                        <footer class="py-5 bg-dark">
-                            <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+
+                            </div>        
+                        </div>
+
+
+
+
+
+                        <!--Inicio DIV -->
+                        <div class="row">               
+
+                            <!--Inicio Tabela-->
+                            <div class="col-lg-1">
+                                <!--Div centralizadora-->
                             </div>
-                            <!-- /.container -->
-                        </footer>
 
-                        <!-- Bootstrap core JavaScript -->
-                        <script src="vendor/jquery/jquery.min.js"></script>
-                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                        <!-- FIM Footer -->
-                        
-                        </body>
-                        </html>
+                            <!-- Distancia entre o botão incluir e voltar-->
+                            <div class="col-lg-2"> 
+                                <table class="table table-striped">
+
+                                    <br>
+
+                                    <!--Tabela-->
+                                    <div class="col-lg-12">
+                                        <table class="table">
+
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>
+                                                        <form action="ManterContatoController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                            <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                                        </form>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="indexContato.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>        
+                            </div> 
+
+                            <hr>
+
+
+
+
+                            <!-- INICIO Footer -->
+                            <footer class="py-5 bg-dark">
+                                <div class="container">
+                                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                                </div>
+                                <!-- /.container -->
+                            </footer>
+
+                            <!-- Bootstrap core JavaScript -->
+                            <script src="vendor/jquery/jquery.min.js"></script>
+                            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                            <!-- FIM Footer -->
+
+                            </body>
+                            </html>
 
 

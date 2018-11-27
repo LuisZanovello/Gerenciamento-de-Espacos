@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-         <meta charset="utf-8">
+
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -36,16 +36,82 @@
                 text-align: center;
             }
         </style>
-        
+
+
+
+
+
+
+
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtIdIrregularidade = form1.txtIdIrregularidade.value;
+                var txtAutorIrregularidade = form1.txtAutorIrregularidade.value;
+                var txtDescricaoIrregularidade = form1.txtDescricaoIrregularidade.value;
+                var optEspaco = form1.optEspaco.value;
+
+
+                if (txtIdIrregularidade === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtIdIrregularidade.focus();
+                    return false;
+                }
+
+                if (txtIdIrregularidade >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtIdIrregularidade.focus();
+                    return false;
+                }
+
+                if (txtIdIrregularidade <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtIdIrregularidade.focus();
+                    return false;
+                }
+
+
+                if (txtAutorIrregularidade <= 0) {
+                    alert('Preencha o campo "Autor"');
+                    form1.txtAutorIrregularidade.focus();
+                    return false;
+                }
+
+                if (txtDescricaoIrregularidade <= 0) {
+                    alert('Preencha o campo "Descrição"');
+                    form1.txtDescricaoIrregularidade.focus();
+                    return false;
+                }
+
+                if (optEspaco <= 0) {
+                    alert('Preencha o campo "Espaço"');
+                    form1.optEspaco.focus();
+                    return false;
+                }
+
+
+
+
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
+
+
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Irregularidade</title>
     </head>
     <body>
-        
-         <!-- INICIO Navegador superior-->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+       <!-- INICIO Navegador superior-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="#">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -53,89 +119,124 @@
                     <ul class="navbar-nav ml-auto">
 
 
-                        
-                     
-                            <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
-                        </li>
+
+
+
 
                     </ul>
                 </div>
+
+                <!-- INICIO DROPDOWN-->
+                <div>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+
+
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
-        
-            <br>
-      <br>
-         <div class="container"><!--Div centralizadora-->
-        <div class="col">
-            <div>
-                <h1 class="text-center">Irregularidade - ${operacao} </h1> <hr>  <br><br>
 
-            </div>
-        </div>
-         <form action="ManterIrregularidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post">
-             
-              <!--Inicio Tabela-->
+        <br>
+        <br>
+        <div class="container"><!--Div centralizadora-->
+            <div class="col">
+                <div>
+                    <h1 class="text-center">Irregularidade - ${operacao} </h1> <hr>  <br><br>
 
-           
-            <div class="col-lg-9">
-                <table class="table table-striped">
-                    <thead>
-                    <tbody>
-                    <br>
-                    
- <tr>
-                       
-    <td>Código Irregularidade</td>
-    <td><input type="number" class="form-control"name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
-    </tr>
-    <tr>
-    <td>Autor</td>
-    <td><input type="text"class="form-control" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
-    </tr>
-    
-    <tr>
-    <td>Descrição</td>
-    <td><input type="text"class="form-control" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
-    </tr>
-    
-     <td>Espaco:</td>
-                    <td>
-                        <select name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <c:forEach items="${espacos}" var="espaco">
-                                <option value="${espaco.id}" <c:if test="${espaco.id == irregularidade.idEspaco}"> selected</c:if>>${espaco.nome}</option>  
-                            </c:forEach>
-                        </select>
-                    </td>
-                </tr>
-              </tbody>
-                </table>
-            </div>
-                            
-    <div>
-                <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-                </form>
-                <a href="PesquisaIrregularidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
-
-         
-         </div> <!--FIM da Div centralizadora-->
-
-            <hr>
-            </div>
-                            
-            <!-- Footer -->
-            <footer class="py-5 bg-dark">
-                <div class="container">
-                    <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                    <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
                 </div>
-                <!-- /.container -->
-            </footer>
+            </div>
+            <form name="form1" action="ManterIrregularidadeController?acao=confirmarOperacao&operacao=${operacao}" method="post">
 
-            <!-- Bootstrap core JavaScript -->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!--Inicio Tabela-->
 
-    </body>
-</html>
+
+                <div class="col-lg-9">
+                    <table class="table table-striped">
+                        <thead>
+                        <tbody>
+                        <br>
+
+                        <tr>
+
+                            <td>Código Irregularidade</td>
+                            <td><input type="number" min="1" class="form-control"name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Autor</td>
+                                <td><input type="text" maxlength="45"class="form-control" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
+                            </tr>
+
+                            <tr>
+                                <td>Descrição</td>
+                                <td><input type="text" maxlength="45" class="form-control" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
+                            </tr>
+
+                            <td>Espaco:</td>
+                            <td>
+                                <select  class="form-control" name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                                <c:forEach items="${espacos}" var="espaco">
+                                    <option value="${espaco.id}" <c:if test="${espaco.id == irregularidade.idEspaco}"> selected</c:if>>${espaco.nome}</option>  
+                                </c:forEach>
+                            </select>
+                        </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <input onclick="return validar()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    </form>
+                    <a href="PesquisaIrregularidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+
+
+                </div> <!--FIM da Div centralizadora-->
+
+                <hr>
+                </div>
+
+                <!-- Footer -->
+                <footer class="py-5 bg-dark">
+                    <div class="container">
+                        <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
+                        <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                    </div>
+                    <!-- /.container -->
+                </footer>
+
+                <!-- Bootstrap core JavaScript -->
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+                </body>
+                </html>

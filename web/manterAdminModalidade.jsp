@@ -56,8 +56,8 @@
                     return false;
                 }
                 
-                 if (txtIdModalidade >= 9) {
-                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
+                 if (txtIdModalidade >= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
                     form1.txtIdModalidade.focus();
                     return false;
                 }
@@ -159,7 +159,7 @@
 
                         <tr>
                             <td>Código Modalidade</td>
-                            <td><input type="number" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number"   min="1" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Modalidade</td>

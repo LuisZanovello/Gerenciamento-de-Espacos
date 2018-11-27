@@ -52,8 +52,8 @@
                     return false;
                 }
                 
-                   if (txtIdCliente>= 9) {
-                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
+                   if (txtIdCliente>= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
                     form1.txtIdCliente.focus();
                     return false;
                 }
@@ -218,7 +218,7 @@
 
                 <tr>
                     <td>Código do cliente: </td>
-                    <td><input type="number" min="1"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="number"  min="1"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome do cliente: </td>

@@ -1,48 +1,3 @@
-<!--<%--
-  Created by IntelliJ IDEA.
-  User: luisg
-  Date: 09/10/2018
-  Time: 09:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Irregularidade</title>
-</head>
-<body>
-
-<table border="1">
-    <tr>
-        <th colspan="10">Irregularidade</th>
-    </tr>
-    <tr>
-    <th>Código Irregularidade</th>
-    <th>Autor</th>
-    <th colspan=2>Ação</th>
-    </tr>
-    <c:forEach items="${irregularidades}" var="irregularidade">
-        <tr>
-            <td><c:out value="${irregularidade.id}" /></td>
-            <td><c:out value="${irregularidade.autor}" /></td>
-            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Editar&id= <c:out value="${irregularidade.id}"/>">Editar</a></td>
-            <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id= <c:out value="${irregularidade.id}"/>">Excluir</a></td>
-        </tr>
-    </c:forEach>
-</table>
-        </form>
-<form action="ManterIrregularidadeController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <input type="submit" name="btnIncluir" value="Incluir">
-</form>
-<a href="index.jsp"><button value="Voltar">Voltar</button></a>
-</body>
-</html>-->
-
-
 <%--
   Created by IntelliJ IDEA.
   User: viict
@@ -88,11 +43,10 @@
     </head>
     <body>
 
-
-        <!-- INICIO Navegador superior-->
+  <!-- INICIO Navegador superior-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
+                <a class="navbar-brand" href="#">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -100,19 +54,16 @@
                     <ul class="navbar-nav ml-auto">
 
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Gerenciamento de Irregularidade</a> <!-- primeiro link direita superior-->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Área da Irregularidade</a> <!-- primeiro link direita superior-->
-                        </li>
+
+
+
 
                     </ul>
                 </div>
-                
+
                 <!-- INICIO DROPDOWN-->
                 <div>
-                    
+
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown">
@@ -120,30 +71,32 @@
                                 Classes
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
-                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
-                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
-                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+
+                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
+                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cart�o</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                
-                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
-                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espa�os</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espa�o</a>
                                 <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
+
+
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
-                       
 
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
+                        </li>
                     </ul>
                 </div>
-                            
-                            
-                            <!-- FIM DROPDOWN-->
+
+
+                <!-- FIM DROPDOWN-->
             </div>
         </nav>
         <!-- FIM Navegador superior-->
@@ -172,13 +125,31 @@
                         </div>
                         <!--Tabela-->
 
+                            <div clas="card">
+                        <div class="card-body">
                         <c:forEach items="${irregularidades}" var="irregularidade">
 
-                            <div class="col-lg-2">
+                            
                                 <table class="table table-striped">
-                                    </thead>
+                                    
                                     <tbody>
                 
+                                        
+                                    
+                                            <tr>
+                                            <th colspan="1">
+                                                Dados Irregularidade : <c:out value ="${irregularidade.autor}"/>
+                                            </th>
+
+                                            <th colspan="1">
+                                                <a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${irregularidade.id}"/>"
+                                                   class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
+                                                <a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${irregularidade.id}"/>"
+                                                   class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
+                                            </th>
+
+                                        </tr>
+                                        
                                                                       <tr>
                                             <th scope="now">Id</th>
                                             <td><c:out value="${irregularidade.id}"/></td>
@@ -195,78 +166,57 @@
 
                                     <td><a href="ManterIrregularidadeController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${irregularidade.id}"/>"
                                            class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a></td>
-                                    <hr>
-                                </c:forEach>
+                          
+                                           
+                                           
+                                    </tbody>
 
-                                </tbody>
-                            </table>
-                            <hr>
-                        </div>        
-                    </div> 
+                                </table>
 
 
+                                <hr>
+                                <br><br><br>
+                            </c:forEach>
 
+                            <!--INICIO Tabela botoes incluir e voltar-->
 
-                    <!--Inicio DIV -->
-                    <div class="row">               
-
-                        <!--Inicio Tabela-->
-                        <div class="col-lg-1">
-                            <!--Div centralizadora-->
-                        </div>
-
-                        <!-- Distancia entre o botão incluir e voltar-->
-                        <div class="col-lg-2"> 
-                            <table class="table table-striped">
-
-                                <br>
-
-                                <!--Tabela-->
-                                <div class="col-lg-12">
-                                    <table class="table">
-
-                                        <tbody>
-
-                                            <tr>
-                                                <td>
-                                                    <form action="ManterIrregularidadeController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
-                                                    </form>
-                                                </td>
-
-                                                <td>
-                                                    <a href="index.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                                </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-
-                                </div>        
-                        </div> 
-
-                        <hr>
-
-
-
-
-                        <!-- INICIO Footer -->
-                        <footer class="py-5 bg-dark">
                             <div class="container">
-                                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <label>
+                                            <form action="ManterIrregularidadeController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                                <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                            </form>
+                                        </label>
+
+
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /.container -->
-                        </footer>
 
-                        <!-- Bootstrap core JavaScript -->
-                        <script src="vendor/jquery/jquery.min.js"></script>
-                        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                        <!-- FIM Footer -->
-                        
-                        </body>
-                        </html>
+                            <!--FIM Tabela botoes incluir e voltar-->
+                        </div>
+                    </div>
 
 
+
+                    <hr>
+
+                    <!-- INICIO Footer -->
+                    <footer class="py-5 bg-dark">
+                        <div class="container">
+                            <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espa�os 2018</p> 
+                            <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
+                        </div>
+                        <!-- /.container -->
+                    </footer>
+
+                    <!-- Bootstrap core JavaScript -->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <!-- FIM Footer -->
+
+                    </body>
+                    </html>
 
 

@@ -56,9 +56,9 @@
                     return false;
                 }
                 
-                   if (txtIdAdmin>= 9) {
-                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
-                    form1.txtIdAdmin.focus();
+                   if (txtIdAdmin>= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
+                    form1.txtCodAdmin.focus();
                     return false;
                 }
                 
@@ -134,7 +134,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
 
                                 <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
-                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
+                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
 

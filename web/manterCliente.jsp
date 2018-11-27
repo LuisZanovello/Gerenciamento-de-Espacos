@@ -52,8 +52,8 @@
                     return false;
                 }
                 
-                if (txtIdCliente>= 9) {
-                    alert('O campo de código foi preenchido acima do suportado (9 dígitos) ');
+                if (txtIdCliente>= 9999999999) {
+                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
                     form1.txtIdCliente.focus();
                     return false;
                 }
