@@ -40,6 +40,56 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Administrador - ${operacao}</title>
 
+        <!-- INICIO JavaScript para o formulario-->
+
+        <script language="javascript" type="text/javascript">
+            function validar() {
+                var txtCodAdmin = form1.txtCodAdmin.value;
+                var txtNomeAdmin = form1.txtNomeAdmin.value;
+                var txtEmailAdmin = form1.txtEmailAdmin.value;
+                var txtSenhaAdmin = form1.txtSenhaAdmin.value;
+                var rep_senha = form1.rep_senha.value;
+
+                if (txtCodAdmin === "") {
+                    alert('Preencha o campo com um código, não permita que seja vazio');
+                    form1.txtCodAdmin.focus();
+                    return false;
+                }
+                if (txtCodAdmin <= 0) {
+                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
+                    form1.txtCodAdmin.focus();
+                    return false;
+                }
+                if (txtNomeAdmin === "") {
+                    alert('Preencha o campo com seu nome');
+                    form1.txtNomeAdmin.focus();
+                    return false;
+                }
+                if (txtEmailAdmin === "") {
+                    alert('Preencha o campo com um e-mail válido');
+                    form1.txtEmailAdmin.focus();
+                    return false;
+                }
+
+                if (txtSenhaAdmin === "") {
+                    alert('Preencha o campo com seu nome');
+                    form1.txtSenhaAdmin.focus();
+                    return false;
+                }
+
+
+                if (txtSenhaAdmin !== rep_senha) {
+                    alert('Senhas diferentes');
+                    form1.txtSenhaAdmin.focus();
+                    return false;
+                }
+
+
+
+            }
+        </script>
+
+        <!-- FIM JavaScript para o formulario-->
 
 
 
@@ -115,52 +165,57 @@
             </div>
 
 
-            <form action="ManterAdministradorController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
 
-                <!--Inicio Tabela-->
 
-                <div class="col-lg-7">
-
-                    <!--Div centralizadora-->
-                </div>
+            <!--Inicio Tabela-->
 
 
 
-                <div class="col-lg-9">
-                    <table class="table table-striped">
-                        <thead>
-                        <tbody>
-                        <br>
+
+
+            <form name="form1" action="ManterAdministradorController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdmin">
+                <table class="table table-striped">
+                    <thead>
+                    <tbody>
+                    <br>
+
+                    <tr>
+                        <td>Codigo do admin: </td>
+                        <td><input type="number" min="1" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        </tr>
 
                         <tr>
-                            <td>Codigo do admin: </td>
-                            <td><input type="number" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin" size="60" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
-                            </tr>
-
-                            <tr>
-                                <td>Nome do admin: </td>
-                                <td> <input type="text" placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" size="60" value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
-                            </tr>
-
-                            <tr>
-                                <td>Email do admin: </td>
-                                <td> <input type="text"  placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin" size="60" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
-                            </tr>
-
-                            <tr>
-                                <td>Senha do admin: </td>
-                                <td> <input type="text"  placeholder="Digite sua senha" class="form-control" name="txtSenhaAdmin" size="60" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                            <td>Nome do admin: </td>
+                            <td> <input type="text"  placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" size="60" value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
                         </tr>
-                        </tbody>
-                    </table>
+
+                        <tr>
+                            <td>Email do admin: </td>
+                            <td> <input type="text"   placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin" size="60" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                        </tr>
+
+                        <tr>
+                            <td>Senha do admin: </td>
+                            <td> <input type="password"  placeholder="Digite sua senha" class="form-control" name="txtSenhaAdmin" size="60" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                    </tr>
+
+                    <tr>
+                        <td>Confirme a Senha</td>
+                        <td> <input type="password"  placeholder="Confirme sua senha" class="form-control" name="rep_senha"  value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                    </tr>
 
 
-                    <input type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    </tbody>
+                </table>
 
-                    </form>
-                    <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
-                </div>
+                <input type="submit" onclick="return validar()" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+
+
+                <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+            </form>
+
+
         </div>        <!--FIM Div centralizadora-->
 
 
