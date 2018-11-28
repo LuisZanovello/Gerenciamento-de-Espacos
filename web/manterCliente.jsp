@@ -21,10 +21,10 @@
 
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
-        
+
         <%@ include file = "Header.jsp" %>
-        
-          <style>
+
+        <style>
             footer{
                 bottom: 0;
                 position: relative; 
@@ -34,24 +34,24 @@
                 width: 100%;
                 text-align: center;
             }
-            
+
         </style>
 
         <script language="javascript" type="text/javascript">
 
- /* inicio javaScript Somente numero para o ID */
-        
-          function somenteNumeros(num) {
-        var er = /[^0-9.]/;
-        er.lastIndex = 0;
-        var campo = num;
-        if (er.test(campo.value)) {
-          campo.value = "";
-        }
-    }
-            
-            /* use onkeyup="somenteNumeros(this);"  no input */
-/* fim javaScript Somente numero para o ID */
+            /* inicio javaScript Somente numero para o ID */
+
+           function validare(dom,tipo){
+	switch(tipo){
+		case'numero':var regex=/[A-Za-z]/g;break;
+		case'texto':var regex=/\d/g;break;
+	}
+	dom.value=dom.value.replace(regex,'');
+                }
+
+            /* use onkeyup="validar(this,'numero')" se for numero  no input */
+            /* use onkeyup="validar(this,'texto')" se for texto  no input */
+            /* fim javaScript Somente numero para o ID */
 
             function validar() {
 
@@ -76,91 +76,91 @@
     <body>
 
         <header>
-            
+
         </header>
-        
-
-
-<br>
-<br>
-<div class="container"><!--Div centralizadora-->
-    <div class="col">
-        <div>
-            <h1 class="text-center">${operacao} - Cliente  </h1> <hr>  <br><br>
-
-        </div>
-    </div>
-
-    <!--Inicio Formulario-->
-    <form name="form1" action="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
 
 
 
+        <br>
+        <br>
+        <div class="container"><!--Div centralizadora-->
+            <div class="col">
+                <div>
+                    <h1 class="text-center">${operacao} - Cliente  </h1> <hr>  <br><br>
 
+                </div>
+            </div>
 
-        <div class="col-lg-12">
-            <table class="table table-striped">
-                <thead>
-                <tbody>
-                <br>
-
-
-                <tr>
-                    <td>Código do cliente: </td>
-                    <td><input type="text" required="required" maxlength="11" min="1" max="9999999999"  onkeyup="somenteNumeros(this);" placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/></td>
-                    </tr>
-                    <tr>
-                        <td>Nome do cliente: </td>
-                        <td><input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Sobrenome: </td>
-                        <td> <input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Data de Nascimento: </td>
-                        <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente"  maxlength="8" min="1900-01-01" max="3000-02-18"  value="${cliente.dataNascimento}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>Email: </td>
-                        <td> <input type="text"  class="form-control" placeholder="exemplo@exemplo.br" name="txtEmailCliente" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]$" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-                    <tr>
-                        <td>CPF: </td>
-                        <td> <input type="text" onBlur="ValidarCPF(form1.txtCPFCliente);" onKeyPress="MascaraCPF(form1.txtCPFCliente);" maxlength="14" class="form-control"   
-                                    placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-                    </tr>
-
-                    <tr>
-                        <td>Senha do Cliente: </td>
-                        <td> <input type="password" class="form-control"  placeholder="Digite uma senha de 6 digitos" name="txtSenhaCliente" maxlength="6" value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
-                    </tr>
-
-                    <tr>
-                        <td>Confirme a Senha</td>
-                        <td> <input type="password"  placeholder="Confirme sua senha" class="form-control" name="rep_senha" maxlength="6"  value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div>
-            <input type="submit" onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
-
-            <a href="PesquisaClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
-
-        </div>        
-    </form>
-    <!--FIM formulario-->
-</div> 
-
-        <hr>
-                
-<!--inicio Footer-->
-<%@ include file = "Footer.jsp" %>
-<!--fim Footer-->
+            <!--Inicio Formulario-->
+            <form name="form1" action="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
 
 
 
-</body>
+
+
+                <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tbody>
+                        <br>
+
+
+                        <tr>
+                            <td>Código do cliente: </td>
+                            <td><input type="text" required="required" maxlength="11" min="1" max="9999999999"  onkeyup="validare(this, 'numero')" placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/></td>
+                            </tr>
+                            <tr>
+                                <td>Nome do cliente: </td>
+                                <td><input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Sobrenome: </td>
+                                <td> <input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Data de Nascimento: </td>
+                                <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente"  maxlength="8" min="1900-01-01" max="3000-02-18"  value="${cliente.dataNascimento}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>Email: </td>
+                                <td> <input type="text"  class="form-control" placeholder="exemplo@exemplo.br" name="txtEmailCliente" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]$" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+                            <tr>
+                                <td>CPF: </td>
+                                <td> <input type="text" onBlur="ValidarCPF(form1.txtCPFCliente);" onKeyPress="MascaraCPF(form1.txtCPFCliente);" maxlength="14" class="form-control"   
+                                            placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            </tr>
+
+                            <tr>
+                                <td>Senha do Cliente: </td>
+                                <td> <input type="password" class="form-control"  placeholder="Digite uma senha de 6 digitos" name="txtSenhaCliente" maxlength="6" value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                            </tr>
+
+                            <tr>
+                                <td>Confirme a Senha</td>
+                                <td> <input type="password"  placeholder="Confirme sua senha" class="form-control" name="rep_senha" maxlength="6"  value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <input type="submit" onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+
+                        <a href="PesquisaClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
+
+                    </div>        
+                </form>
+                <!--FIM formulario-->
+            </div> 
+
+            <hr>
+
+            <!--inicio Footer-->
+        <%@ include file = "Footer.jsp" %>
+        <!--fim Footer-->
+
+
+
+    </body>
 </html>
