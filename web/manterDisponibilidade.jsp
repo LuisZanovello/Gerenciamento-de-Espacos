@@ -25,7 +25,9 @@
 
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
-
+<!--inicio Header-->
+<%@ include file = "Header.jsp" %>
+<!--fim Header-->
         <style>
             footer{
                 bottom: 0;
@@ -106,29 +108,7 @@
     </head>
     <body>
 
-        <!-- INICIO Navegador superior-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-
-
-
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- FIM Navegador superior-->
-
+        
      
         <br>
         <div class="container">
@@ -192,19 +172,17 @@
             </div>      
         </form>
 </div>      
-        <hr>
-        <!-- Footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-            </div>
-            <!-- /.container -->
-        </footer>
+                            
+                            
+                                                            <br>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <hr>
+                
+<!--inicio Footer-->
+<%@ include file = "Footer.jsp" %>
+<!--fim Footer-->
+
+
 
     </body>
 </html>

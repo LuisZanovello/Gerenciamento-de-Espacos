@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>iSport  ${operacao}</title>
+    <title>Administrador - ${operacao}</title>
  
     <!-- Bootstrap core CSS -->
     
@@ -18,12 +18,9 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
 
-            
+   
+    
 
-    
-       
-  
-    
        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -58,7 +55,7 @@
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">iSport</a>
+                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -88,7 +85,7 @@
                                 <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                
+                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
                             </li>
                      
                             <li class="nav-item">
@@ -103,8 +100,5 @@
             </div>
         </nav>	
 
-    
-
-    
 </body>
 </html>

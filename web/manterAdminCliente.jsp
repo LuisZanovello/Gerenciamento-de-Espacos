@@ -19,8 +19,11 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
+<!--inicio Header-->
+<%@ include file = "HeaderAdmin.jsp" %>
+<!--fim Header-->
 
-        <style>
+<style>
             footer{
                 bottom: 0;
                 position: relative; 
@@ -265,18 +268,12 @@
 </div> 
 
 <hr>
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-        <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-    </div>
-    <!-- /.container -->
-</footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            
+<!--inicio Footer-->
+<%@ include file = "Footer.jsp" %>
+<!--fim Footer-->
+
 
 </body>
 </html>

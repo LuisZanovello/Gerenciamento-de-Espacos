@@ -136,18 +136,11 @@
              
 
             
-   <!-- Footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-                <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-            </div>
-            <!-- /.container -->
-        </footer>
+<!--inicio Footer-->
+<%@ include file = "Footer.jsp" %>
+<!--fim Footer-->
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
     </body>
 </html>

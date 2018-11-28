@@ -2,7 +2,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 <!DOCTYPE html>
+
 <html  lang="en, pt-br">
     <head>
 
@@ -19,8 +22,9 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
-
-        <style>
+        <%@ include file = "Header.jsp" %>
+        
+          <style>
             footer{
                 bottom: 0;
                 position: relative; 
@@ -30,96 +34,31 @@
                 width: 100%;
                 text-align: center;
             }
+            
         </style>
 
-
-        <!-- INICIO JavaScript para o formulario-->
-
         <script language="javascript" type="text/javascript">
+
+ /* inicio javaScript Somente numero para o ID */
+        
+        
+            
+            /* use onkeyup="somenteNumeros(this);"  no input */
+/* fim javaScript Somente numero para o ID */
+
             function validar() {
-                var txtIdCliente = form1.txtIdCliente.value;
-                var txtNomeCliente = form1.txtNomeCliente.value;
-                var txtSobrenomeCliente = form1.txtSobrenomeCliente.value;
-                var txtEmailCliente = form1.txtEmailCliente.value;
+
                 var txtSenhaCliente = form1.txtSenhaCliente.value;
-                var txtDataNascimentoCliente = form1.txtDataNascimentoCliente.value;
-                var txtCPFCliente = form1.txtCPFCliente.value;
                 var rep_senha = form1.rep_senha.value;
 
-                if (txtIdCliente === "") {
-                    alert('Preencha o campo com um código, não permita que seja vazio');
-                    form1.txtIdCliente.focus();
-                    return false;
-                }
-                
-                if (txtIdCliente>= 9999999999) {
-                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
-                    form1.txtIdCliente.focus();
-                    return false;
-                }
-                
-                if (txtIdCliente <= 0) {
-                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
-                    form1.txtIdCliente.focus();
-                    return false;
-                }
-                if (txtNomeCliente === "") {
-                    alert('Preencha o campo com seu nome corretamente');
-                    form1.txtNomeCliente.focus();
-                    return false;
-                }
-                if (txtSobrenomeCliente === "") {
-                    alert('Preencha o campo com seu sobrenome');
-                    form1.txtSobrenomeCliente.focus();
-                    return false;
-                }
-
-
-                if (txtDataNascimentoCliente === "") {
-                    alert('Preencha o campo da data de aniversário');
-                    form1.txtDataNascimentoCliente.focus();
-                    return false;
-                }
-
-
-                if (txtCPFCliente <= 0 ) {
-                    alert('Preencha o campo com seu CPF com números ACIMA DE NEGATIVO');
-                    form1.txtCPFCliente.focus();
-                    return false;
-                }
-
-                if (txtCPFCliente === "") {
-                    alert('Preencha o campo com seu CPF');
-                    form1.txtCPFCliente.focus();
-                    return false;
-                }
-
-
-                if (txtEmailCliente === "") {
-                    alert('Preencha o campo com um e-mail válido');
-                    form1.txtEmailCliente.focus();
-                    return false;
-                }
-
                 if (txtSenhaCliente === "") {
-                    alert('Preencha o campo com seu nome');
+
+                    alert('Preencham seu nome');
                     form1.txtSenhaCliente.focus();
                     return false;
                 }
-
-
-                if (txtSenhaCliente !== rep_senha) {
-                    alert('Senhas diferentes');
-                    form1.txtSenhaCliente.focus();
-                    return false;
-                }
-
-
-
             }
         </script>
-
-        <!-- FIM JavaScript para o formulario-->
 
 
 
@@ -129,66 +68,10 @@
 
     <body>
 
-        <!-- INICIO Navegador superior-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">iSport</a> <!-- Nome do site emblema no canto esquerdo superior-->
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-
-                 
-
-
-
-                    </ul>
-                </div>
-
-                <!-- INICIO DROPDOWN-->
-                <div>
-
-                    <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Classes
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-
-                                <a class="dropdown-item" href="PesquisaClienteController">Cliente</a>                                
-                                <a class="dropdown-item" href="indexContato.jsp">Contato</a>
-                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
-                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-
-                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
-                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
-                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
-                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-
-
-                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
-                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
-                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.jsp">Sair</a> <!-- primeiro link direita superior-->
-                        </li>
-                    </ul>
-                </div>
-
-
-                <!-- FIM DROPDOWN-->
-
-            </div>
-        </nav>
-        <!-- FIM Navegador superior-->
-    </div>
-</nav>
-<!-- FIM Navegador superior-->
+        <header>
+            
+        </header>
+        
 
 
 <br>
@@ -201,11 +84,11 @@
         </div>
     </div>
 
-            <!--Inicio Formulario-->
+    <!--Inicio Formulario-->
     <form name="form1" action="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterAdminCliente">
 
 
-        
+
 
 
         <div class="col-lg-12">
@@ -214,30 +97,31 @@
                 <tbody>
                 <br>
 
-            
+
                 <tr>
                     <td>Código do cliente: </td>
-                    <td><input type="number" min="1"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="text" required="required" maxlength="11" min="1" max="9999999999"  onkeyup="somenteNumeros(this);" placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/></td>
                     </tr>
                     <tr>
                         <td>Nome do cliente: </td>
-                        <td><input type="text"  class="form-control"   placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td><input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Sobrenome: </td>
-                        <td> <input type="text"  class="form-control"   placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Data de Nascimento: </td>
-                        <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente"  maxlength="8"   value="${cliente.dataNascimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="date"  class="form-control"  name="txtDataNascimentoCliente"  maxlength="8" min="1900-01-01" max="3000-02-18"  value="${cliente.dataNascimento}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Email: </td>
-                        <td> <input type="text"  class="form-control"  placeholder="Digite seu e-mail"  name="txtEmailCliente"  maxlength="45"   value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text"  class="form-control" placeholder="exemplo@exemplo.br" name="txtEmailCliente" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]$" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>CPF: </td>
-                        <td> <input type="text" class="form-control"   placeholder="Digite seu CPF" name="txtCPFCliente" maxlength="11"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                        <td> <input type="text" onBlur="ValidarCPF(form1.txtCPFCliente);" onKeyPress="MascaraCPF(form1.txtCPFCliente);" maxlength="14" class="form-control"   
+                                    placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     <tr>
@@ -254,28 +138,22 @@
         </div>
 
         <div>
-            <input type="submit"  onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+            <input type="submit" onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
 
             <a href="PesquisaClienteController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
         </div>        
     </form>
-                <!--FIM formulario-->
+    <!--FIM formulario-->
 </div> 
 
-<hr>
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
-        <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
-    </div>
-    <!-- /.container -->
-</footer>
+        <hr>
+                
+<!--inicio Footer-->
+<%@ include file = "Footer.jsp" %>
+<!--fim Footer-->
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>
