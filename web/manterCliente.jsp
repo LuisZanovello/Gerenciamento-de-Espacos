@@ -49,8 +49,8 @@
 	dom.value=dom.value.replace(regex,'');
                 }
 
-            /* use onkeyup="validar(this,'numero')" se for numero  no input */
-            /* use onkeyup="validar(this,'texto')" se for texto  no input */
+            /* use onkeyup="validare(this,'numero')" se for numero  no input */
+            /* use onkeyup="validare(this,'texto')" se for texto  no input */
             /* fim javaScript Somente numero para o ID */
 
             function validar() {
@@ -111,11 +111,11 @@
                             </tr>
                             <tr>
                                 <td>Nome do cliente: </td>
-                                <td><input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" onkeyup="validare(this,'texto')" class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu nome" name="txtNomeCliente" size="60"  value="${cliente.nome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Sobrenome: </td>
-                                <td> <input type="text"  class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td> <input type="text" onkeyup="validare(this,'texto')" class="form-control" data-ls-module="charCounter" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Data de Nascimento: </td>
