@@ -248,4 +248,8 @@
         <servlet-name>PesquisaAdminModalidadeController</servlet-name>
         <url-pattern>/PesquisaAdminModalidadeController</url-pattern>
     </servlet-mapping>
+    <error-page>
+        <exception-code>500</exception-code>
+          <location>/erro500.jsp</location>
+    </error-page>
 </web-app>
