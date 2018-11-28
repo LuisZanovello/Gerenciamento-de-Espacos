@@ -19,17 +19,7 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
-        <style>
-            footer{
-                bottom: 0;
-                position: relative; 
-                bottom: 0; 
-                left: 0px; 
-                right: 0px;
-                width: 100%;
-                text-align: center;
-            }
-        </style>
+
 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -106,14 +96,18 @@
                 </div>
             </div>
         </div>
-
+        <br><br>
+        <br><br>
+        <br><br>
+        <br>
+        
         <!-- Bootstrap JS and jQuery -->
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
         <script type="text/javascript" src="public/bootstrap/js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="public/bootstrap/js/bootstrap.js"></script>
         
-        <!--inicio Header-->
+        <!--inicio Footer-->
 <%@ include file = "Footer.jsp" %>
-<!--fim Header-->
+<!--fim Footer-->
     </body>
 </html>

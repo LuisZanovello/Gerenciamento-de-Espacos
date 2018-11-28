@@ -21,7 +21,7 @@
 
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
-
+        
         <%@ include file = "Header.jsp" %>
         
           <style>
@@ -41,7 +41,14 @@
 
  /* inicio javaScript Somente numero para o ID */
         
-        
+          function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+          campo.value = "";
+        }
+    }
             
             /* use onkeyup="somenteNumeros(this);"  no input */
 /* fim javaScript Somente numero para o ID */
