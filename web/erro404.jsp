@@ -34,6 +34,8 @@
     text-align: center;
     margin: auto;
     margin-top: 10px;
+     font-family: Arial, Helvetica, sans-serif;
+    padding-left: 2%;
     }
     .texto{
         text-align: left;
