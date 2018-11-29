@@ -36,6 +36,7 @@
             }
         </style>
 
+        <script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Administrador - ${operacao}</title>
@@ -108,7 +109,7 @@
 
                     <tr>
                         <td>Codigo do admin: </td>
-                        <td><input type="number" min="1" max="9999999999"placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        <td><input type="number" min="1" max="9999999999" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                         </tr>
 
                         <tr>
