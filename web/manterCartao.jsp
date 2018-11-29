@@ -33,7 +33,7 @@
        
      
 
-
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
         <!-- INICIO JavaScript para o formulario-->
 
         <script language="javascript" type="text/javascript">
@@ -129,7 +129,7 @@
                     <br>
                     <tr>
                         <td>Código do cartao: </td>
-                        <td><input type="text"   min="1"class="form-control" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text"   min="1" onkeyup="validare(this, 'numero')"  class="form-control" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Bandeira do cartao: </td>
