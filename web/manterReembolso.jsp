@@ -30,18 +30,14 @@
         <%@ include file = "Header.jsp" %>
         <!--fim Header-->
 
+          <!-- JavaScript pasta ( js/scriptJSP.js  )-->
+  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+  </script>
+     <!-- Fim JavaScript--> 
+        
 
         <style>
-            footer{
-                bottom: 0;
-                position:absolute; 
-                bottom: 0; 
-                left: 0px; 
-                right: 0px;
-                width: 100%;
-                text-align: center;
-            }
-
+            
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
             select[readonly] {
                 background: #eee;
@@ -50,62 +46,6 @@
             }
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
         </style>    
-
-<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
-        <!-- INICIO JavaScript para o formulario-->
-
-        <script language="javascript" type="text/javascript">
-            function validar() {
-                var txtCodReembolso = form1.txtCodReembolso.value;
-                var txtNomeReembolso = form1.txtNomeReembolso.value;
-                var optPagamento = form1.optPagamento.value;
-
-
-
-
-
-
-
-
-                if (txtCodReembolso === "") {
-                    alert('Preencha o campo com um código, não permita que seja vazio');
-                    form1.txtCodReembolso.focus();
-                    return false;
-                }
-
-                if (txtCodReembolso >= 9999999999) {
-                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
-                    form1.txtCodReembolso.focus();
-                    return false;
-                }
-
-                if (txtCodReembolso <= 0) {
-                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
-                    form1.txtCodReembolso.focus();
-                    return false;
-                }
-
-                if (txtNomeReembolso === "") {
-                    alert('Preencha o campo "Tipo do Reembolso"');
-                    form1.txtNomeReembolso.focus();
-                    return false;
-                }
-                if (optPagamento === "") {
-                    alert('Preencha o campo "Pagamento"');
-                    form1.optPagamento.focus();
-                    return false;
-                }
-
-
-
-
-
-            }
-        </script>
-
-        <!-- FIM JavaScript para o formulario-->
-
-
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Reembolso - ${operacao}</title>
@@ -142,7 +82,7 @@
 
                         <tr>
                             <td>Codigo do Reembolso</td>
-                            <td>    <input type="number" onkeyup="validare(this, 'numero')" placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td>    <input type="number" onkeyup="validare(this,'numero')" min="1"placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
 
                             <tr>
@@ -180,7 +120,7 @@
                     </table>
                     <br><br>
 
-                    <input onclick="return validar()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input onclick="return funcReembolso()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                     <a href="PesquisaReembolsoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
                 </div>
             </form>

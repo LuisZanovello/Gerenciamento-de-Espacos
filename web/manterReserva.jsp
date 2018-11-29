@@ -32,17 +32,15 @@
 <!--fim Header-->
 
 
-        <style>
-            footer{
-                bottom: 0;
-                position: relative; 
-                bottom: 0; 
-                left: 0px; 
-                right: 0px;
-                width: 100%;
-                text-align: center;
-            }
+   <!-- JavaScript pasta ( js/scriptJSP.js  )-->
+  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+  </script>
+     <!-- Fim JavaScript--> 
 
+
+        <style>
+      
+            
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
             select[readonly] {
                 background: #eee;
@@ -52,97 +50,7 @@
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
         </style>    
 
-        <!-- INICIO JavaScript para o formulario-->
-<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
-
-
-        <script language="javascript" type="text/javascript">
-            function validar() {
-                var txtCodReserva = form1.txtCodReserva.value;
-                var txtDataLocacao = form1.txtDataLocacao.value;
-                var txtHrInicio = form1.txtHrInicio.value;
-                var txtHrFim = form1.txtHrFim.value;
-                var txtqtPessoas = form1.txtqtPessoas.value;
-                var txtvalorLocacao = form1.txtvalorLocacao.value;
-                var txtAvaliacao = form1.txtAvaliacao.value;
-                var optCliente = form1.optCliente.value;
-                var optEspaco = form1.optEspaco.value;
-
-
-                if (txtCodReserva === "") {
-                    alert('Preencha o campo com um código, não permita que seja vazio');
-                    form1.txtCodReserva.focus();
-                    return false;
-                }
-
-                if (txtCodReserva >= 9999999999) {
-                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
-                    form1.txtCodReserva.focus();
-                    return false;
-                }
-
-                if (txtCodReserva <= 0) {
-                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
-                    form1.txtCodReserva.focus();
-                    return false;
-                }
-
-                if (txtDataLocacao === "") {
-                    alert('Preencha o campo "Data locação"');
-                    form1.txtDataLocacao.focus();
-                    return false;
-                }
-                if (txtHrInicio === "") {
-                    alert('Preencha o campo "Hora inicio"');
-                    form1.txtHrInicio.focus();
-                    return false;
-                }
-
-                if (txtHrFim === "") {
-                    alert('Preencha o campo "Hora fim"');
-                    form1.txtHrFim.focus();
-                    return false;
-                }
-
-
-                if (txtAvaliacao === "") {
-                    alert('Preencha o campo "Avaliação"');
-                    form1.txtAvaliacao.focus();
-                    return false;
-                }
-
-
-                if (txtqtPessoas === "") {
-                    alert('Preencha o campo "Quantidade de Pessoas"');
-                    form1.txtqtPessoas.focus();
-                    return false;
-                }
-
-                if (txtvalorLocacao === "") {
-                    alert('Preencha o campo "Valor de locação"');
-                    form1.txtvalorLocacao.focus();
-                    return false;
-                }
-
-                if (optCliente === "") {
-                    alert('Preencha o campo "Cliente"');
-                    form1.optCliente.focus();
-                    return false;
-                }
-                if (optEspaco === "") {
-                    alert('Preencha o campo "Espaço"');
-                    form1.optEspaco.focus();
-                    return false;
-                }
-
-
-
-
-            }
-        </script>
-
-        <!-- FIM JavaScript para o formulario-->
-
+ 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -168,7 +76,7 @@
                 <!-- INICIO TABELA-->
 
 
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <table class="table table-striped">
 
                         <tbody>
@@ -176,14 +84,14 @@
 
                         <tr>
                             <td>Codigo da reserva</td>
-                            <td><input type="number" class="form-control" onkeyup="validare(this, 'numero')" placeholder="Digite apenas números" name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="99999999" placeholder="Digite apenas numeros" class="form-control"  name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             <p class="help-block"></p>
                             </tr>
 
                             <tr>
                                 <td>Data da locação:</td>
 
-                                <td><input type="date" class="form-control"  placeholder="00/00/0000" name="txtDataLocacao" value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="date" class="form-control" placeholder="00/00/0000" name="txtDataLocacao" value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
 
@@ -236,7 +144,7 @@
                     </table>
                     <br>
 
-                    <input onclick="return validar()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input onclick="return funcReserva()" type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                     <a href="PesquisaReservaController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
 

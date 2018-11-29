@@ -33,86 +33,15 @@
 <%@ include file = "Header.jsp" %>
 <!--fim Header-->
 
+ <!-- JavaScript pasta ( js/scriptJSP.js  )-->
+  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+  </script>
+     <!-- Fim JavaScript--> 
 
-        <style>
-            footer{
-                bottom: 0;
-                position: relative; 
-                bottom: 0; 
-                left: 0px; 
-                right: 0px;
-                width: 100%;
-                text-align: center;
-            }
-        </style>    
+  
+     
+      
         
-        <script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
-            <!-- INICIO JavaScript para o formulario-->
-
-        <script language="javascript" type="text/javascript">
-            function validar() {
-                var txtCodPagamento = form1.txtCodPagamento.value;
-                var txtVencimentoPagamento = form1.txtVencimentoPagamento.value;
-                var txtCodBarrasPagamento = form1.txtCodBarrasPagamento.value;
-                var txtValorTotalPagamento = form1.txtValorTotalPagamento.value;
-                var optReserva = form1.optReserva.value;
-       
-        
-            
-
-
-
-
-                
-
-                if (txtCodPagamento === "") {
-                    alert('Preencha o campo com um código, não permita que seja vazio');
-                    form1.txtCodPagamento.focus();
-                    return false;
-                }
-
-                if (txtCodPagamento >= 9999999999) {
-                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
-                    form1.txtCodPagamento.focus();
-                    return false;
-                }
-
-                if (txtCodPagamento <= 0) {
-                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
-                    form1.txtCodPagamento.focus();
-                    return false;
-                }
-
-                if (txtVencimentoPagamento === "") {
-                    alert('Preencha o campo "Vencimento"');
-                    form1.txtVencimentoPagamento.focus();
-                    return false;
-                }
-                if (txtCodBarrasPagamento === "") {
-                    alert('Preencha o campo "Cod Barras"');
-                    form1.txtCodBarrasPagamento.focus();
-                    return false;
-                }
-
-                if (txtValorTotalPagamento === "") {
-                    alert('Preencha o campo "Valor de pagamento"');
-                    form1.txtValorTotalPagamento.focus();
-                    return false;
-                }
-
-
-                if (optReserva === "") {
-                    alert('Preencha o campo "Local Reservado"');
-                    form1.optReserva.focus();
-                    return false;
-                }
-
-
-
-            }
-        </script>
-
-        <!-- FIM JavaScript para o formulario-->
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Pagamento - ${operacao}</title>
@@ -137,7 +66,7 @@
                 <!-- INICIO TABELA-->
 
 
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <table class="table table-striped">
 
                         <tbody>
@@ -145,7 +74,7 @@
 
                         <tr>                            
                             <td>Codigo do Pagamento: </td>
-                            <td><input type="number" class="form-control" onkeyup="validare(this, 'numero')" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                            <td><input  type="number" onkeyup="validare(this,'numero')" min="1"  class="form-control" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                             </tr>
                             <tr>
                                 <td>Vencimento: </td>
@@ -153,10 +82,10 @@
                             </tr>      
                             <tr>  
                                 <td>Codigo de Barras: </td>
-                                <td><input type="number" class="form-control" placeholder="Digite apenas números"name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="number" onkeyup="validare(this,'numero')" class="form-control" placeholder="Digite apenas números"name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             <tr>
                                 <td>Valor Total: </td>
-                                <td><input type="number" class="form-control" placeholder="R$ 00" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="number"onkeyup="validare(this,'numero')"  class="form-control" placeholder="R$ 00" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr> 
 
                             <tr>
@@ -178,7 +107,7 @@
 
                     <br>
 
-                    <input onclick="return validar()"  type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input onclick="return funcPagamento()"  type="submit" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
 
                     <a href="PesquisaPagamentoController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 

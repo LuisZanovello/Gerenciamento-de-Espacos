@@ -24,55 +24,21 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
-        <style>
-            footer{
-                bottom: 0;
-                position: absolute; 
-                bottom: 0; 
-                left: 0px; 
-                right: 0px;
-                width: 100%;
-                text-align: center;
-            }
-        </style>
+       
 
-        <script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Manter Administrador - ${operacao}</title>
 
-        <!-- INICIO JavaScript para o formulario-->
-
-        <script language="javascript" type="text/javascript">
-            function validar() {
-
-
-                var txtSenhaAdmin = form1.txtSenhaAdmin.value;
-                var rep_senha = form1.rep_senha.value;
-
-
-
-
-                if (txtSenhaAdmin === "") {
-
-                    alert('Preencham seu nome');
-                    form1.txtSenhaAdmin.focus();
-                    return false;
-                }
-
-
-                if (txtSenhaAdmin !== rep_senha) {
-                    alert('Senhas diferentes');
-                    form1.txtSenhaAdmin.focus();
-                    return false;
-                }
-
-
-
-            }
-        </script>
-
-        <!-- FIM JavaScript para o formulario-->
+        
+        
+  <!-- JavaScript pasta ( js/scriptJSP.js  )-->
+  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+  </script>
+     <!-- Fim JavaScript--> 
+     
+     
+     
 
     <!--inicio Header-->
 <%@ include file = "HeaderAdmin.jsp" %>
@@ -109,12 +75,12 @@
 
                     <tr>
                         <td>Codigo do admin: </td>
-                        <td><input type="number" min="1" max="9999999999" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="9999999999" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                         </tr>
 
                         <tr>
                             <td>Nome do admin: </td>
-                            <td> <input type="text" data-ls-module="charCounter" maxlength="45"    placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" maxlength="45"value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            <td> <input type="text" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45"    placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" maxlength="45"value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
                         </tr>
 
                         <tr>
@@ -137,7 +103,7 @@
                 </table>
 
 
-                <input type="submit" onclick="return validar()" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                <input type="submit" onclick="return funcAdmin()" name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar"/>
 
 
                 <a href="PesquisaAdminController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
@@ -145,8 +111,8 @@
 
 
         </div>        <!--FIM Div centralizadora-->
-
-            
+        <hr>
+        <br>
 <!--inicio Footer-->
 <%@ include file = "Footer.jsp" %>
 <!--fim Footer-->

@@ -26,49 +26,13 @@
 <%@ include file = "HeaderAdmin.jsp" %>
 <!--fim Header-->
 
-        <style>
-            footer{
-                bottom: 0;
-                position: absolute; 
-                bottom: 0; 
-                left: 0px; 
-                right: 0px;
-                width: 100%;
-                text-align: center;
-            }
-        </style>
-<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
+ 
+ <!-- JavaScript pasta ( js/scriptJSP.js  )-->
+  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+  </script>
+     <!-- Fim JavaScript--> 
 
-        <!-- INICIO JavaScript para o formulario-->
-
-        <script language="javascript" type="text/javascript">
-            function validar() {
-                var txtIdModalidade = form1.txtIdModalidade.value;
-
-
-
-                if (txtIdModalidade === "") {
-                    alert('Preencha o campo com um código, não permita que seja vazio');
-                    form1.txtIdModalidade.focus();
-                    return false;
-                }
-
-                if (txtIdModalidade <= 0) {
-                    alert('Preencha o campo com um código ACIMA de número NEGATIVO');
-                    form1.txtIdModalidade.focus();
-                    return false;
-                }
-                
-                 if (txtIdModalidade >= 9999999999) {
-                    alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
-                    form1.txtIdModalidade.focus();
-                    return false;
-                }
-            }
-
-        </script>
-
-        <!-- FIM JavaScript para o formulario-->
+      
 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -105,11 +69,11 @@
 
                         <tr>
                             <td>Código Modalidade</td>
-                            <td><input type="number"   min="1" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number" onkeyup="validare(this,'numero')" min="1" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Modalidade</td>
-                                <td><input type="text" placeholder="Ex: Volei de praia" class="form-control" name="txtModalidade" maxlength="45" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" onkeyup="validare(this,'texto')" min="1" placeholder="Ex: Volei de praia" class="form-control" name="txtModalidade" maxlength="45" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Descrição</td>
@@ -120,7 +84,7 @@
                 </div>
 
                 <div>
-                    <input type="submit" onclick="return validar()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
+                    <input type="submit" onclick="return funcAdminModalidade()"  name="btnConfirmar"  class="btn btn-outline-primary" role="button" aria-pressed="true" value="Confirmar">
                     <a href="PesquisaAdminModalidadeController" class="btn btn-outline-danger" role="button" aria-pressed="true" value="Voltar">Voltar</a>
 
                 </div>
