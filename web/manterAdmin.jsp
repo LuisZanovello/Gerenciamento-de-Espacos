@@ -75,27 +75,27 @@
 
                     <tr>
                         <td>Codigo do admin: </td>
-                        <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="9999999999" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        <td><input type="text" onkeyup="validare(this,'numero')" min="1" maxlength="11" required="required" autocomplete="off" max="9999999999" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                         </tr>
 
                         <tr>
                             <td>Nome do admin: </td>
-                            <td> <input type="text" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45"    placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" maxlength="45"value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            <td> <input type="text" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45" autocomplete="off"   placeholder="Digite seu nome" class="form-control"  name="txtNomeAdmin" maxlength="45"value="${admin.nome}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
                         </tr>
 
                         <tr>
                             <td>Email do admin: </td>
-                            <td> <input type="text"   placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin"  maxlength="45" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
+                            <td> <input type="text"   placeholder="Digite seu e-mail" class="form-control" name="txtEmailAdmin" autocomplete="off" maxlength="45" value="${admin.email}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>>  </td>
                         </tr>
 
                         <tr>
                             <td>Senha do admin: </td>
-                            <td> <input type="password"  placeholder="Digite uma senha de 6 digitos" class="form-control" name="txtSenhaAdmin" maxlength="6"  value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                            <td> <input type="password"  placeholder="Digite uma senha de 6 digitos" class="form-control" autocomplete="off" name="txtSenhaAdmin" maxlength="6"  value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                         </tr>
 
                         <tr>
                             <td>Confirme a Senha</td>
-                            <td> <input type="password"  placeholder="Confirme sua senha" class="form-control" name="rep_senha"  value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                            <td> <input type="password"  placeholder="Confirme sua senha" class="form-control" name="rep_senha" autocomplete="off" value="${admin.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                     </tr>
 
 

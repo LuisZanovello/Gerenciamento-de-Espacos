@@ -128,11 +128,11 @@
 
                     <tr>
                         <td>Código Tipo Espaço</td>
-                        <td><input type="text"  class="form-control"  min="1" onkeyup="validare(this, 'numero')" name="txtTipoEspacoId" value="${tipoEspaco.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text"  class="form-control" required="required" max="9999999999" maxlength="11" placeholder="Digite apenas numeros" min="1" required="required" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtTipoEspacoId" value="${tipoEspaco.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Tipo Espaço</td>
-                            <td><input type="text"  class="form-control" name="txtNome" value="${tipoEspaco.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45"    placeholder="Digite o tipo de espaço" autocomplete="off"  maxlength="45"   class="form-control" name="txtNome" autocomplete="off" value="${tipoEspaco.nome}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <td>Modalidade:</td>
                         <td>

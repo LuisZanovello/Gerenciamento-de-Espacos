@@ -129,23 +129,23 @@
                     <br>
                     <tr>
                         <td>Código do cartao: </td>
-                        <td><input type="text"   min="1" onkeyup="validare(this, 'numero')"  class="form-control" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text"   min="1" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros"  required="required" maxlength="11" required="required" autocomplete="off" max="9999999999"  class="form-control" name="txtIdCartao" value="${cartao.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Bandeira do cartao: </td>
-                            <td><input type="text" class="form-control"  name="txtBandeiraCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" class="form-control"  maxlength="45" placeholder="Bandeira" required="required" data-ls-module="charCounter"autocomplete="off"  name="txtBandeiraCartao" value="${cartao.bandeira}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Validade do cartao: </td>
-                            <td><input type="text"  class="form-control" name="txtValidadeCartao" value="${cartao.validade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  class="form-control" maxlength="4" placeholder="00/00"class="form-control" required="required" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtValidadeCartao" value="${cartao.validade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Número do cartao: </td>
-                            <td><input type="text"  class="form-control" name="txtNumeroCartao" value="${cartao.numeroCartao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" maxlength="16" placeholder="0000.0000.0000.0000" required="required" onkeyup="validare(this, 'numero')" autocomplete="off"  class="form-control" name="txtNumeroCartao" value="${cartao.numeroCartao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Codigo do cartao: </td>
-                            <td><input type="text" class="form-control"  name="txtCodCartao" value="${cartao.codigoSeguranca}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="text" class="form-control" maxlength="3" placeholder="000" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtCodCartao" required="required" value="${cartao.codigoSeguranca}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <td>Cliente:</td>
                         <td>

@@ -34,6 +34,8 @@
     text-align: center;
     margin: auto;
     margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 2%;
     }
     .texto{
         text-align: left;
@@ -43,11 +45,10 @@
 
  <div class="painel">
   <p class="erro"><h1>Erro 500</h1></p>
-    <p class="texto" >Erro interno do servidor, Esta mensagem indica um erro do servidor ao Processar uma solicitação. Na grande
+    <p class="texto" ><br>Erro interno do servidor, Esta mensagem indica um erro do servidor ao Processar uma solicitação. Na grande
         maioria dos casos está relacionada as permissões dos arquivos ou pastas do software ou script que você está
         tentando acessar e não foram bem configuradas na hora de programar seu site ou aplicação. Para corrigir,
-        Certifique-Se de que uma pasta onde está tentando acessar o arquivo, e este arquivo (BEM COMO TODOS
-        OS OUTROS), obedeçam as regras seguintes:</p>
+        Certifique-Se de que uma pasta onde está tentando acessar o arquivo.<br></p>
 </div> 
    
 

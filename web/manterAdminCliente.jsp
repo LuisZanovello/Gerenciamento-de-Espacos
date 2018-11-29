@@ -72,7 +72,7 @@
 
                 <tr>
                     <td>Código do cliente: </td>
-                    <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="9999999999" placeholder="Digite apenas numeros" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="9999999999" autocomplete="off" placeholder="Digite apenas numeros" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome do cliente: </td>

@@ -136,16 +136,16 @@
                         <tr>
 
                             <td>Código Irregularidade</td>
-                            <td><input type="number" min="1" class="form-control" onkeyup="validare(this, 'numero')" name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="text" min="1" class="form-control" placeholder="Digite apenas numeros"  maxlength="11" required="required" autocomplete="off" max="9999999999" onkeyup="validare(this, 'numero')" name="txtIdIrregularidade" value="${irregularidade.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Autor</td>
-                                <td><input type="text" maxlength="45"class="form-control" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
+                                <td><input type="text" maxlength="45" data-ls-module="charCounter" placeholder="Autor" class="form-control" autocomplete="off" onkeyup="validare(this,'texto')" name="txtAutorIrregularidade" value="${irregularidade.autor}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
                             </tr>
 
                             <tr>
                                 <td>Descrição</td>
-                                <td><input type="text" maxlength="45" class="form-control" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
+                                <td><input type="text" maxlength="45" data-ls-module="charCounter" placeholder="Descrição da Irregularidade" class="form-control" autocomplete="off" onkeyup="validare(this,'texto')" name="txtDescricaoIrregularidade" value="${irregularidade.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td> 
                             </tr>
 
                             <td>Espaco:</td>

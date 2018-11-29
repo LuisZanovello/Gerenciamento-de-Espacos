@@ -74,18 +74,18 @@
 
                         <tr>                            
                             <td>Codigo do Pagamento: </td>
-                            <td><input  type="number" onkeyup="validare(this,'numero')" min="1"  class="form-control" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                            <td><input  type="text" onkeyup="validare(this,'numero')" required="required" min="1" max="9999999999" autocomplete="off" maxlength="11"  class="form-control" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                             </tr>
                             <tr>
                                 <td>Vencimento: </td>
-                                <td><input type="date" class="form-control" placeholder="00/00/0000" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="date" class="form-control" placeholder="00/00/0000" required="required"  maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" autocomplete="off" min="1500-01-01" max="3000-12-31" name="txtVencimentoPagamento" value="${pagamento.vencimento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>      
                             <tr>  
                                 <td>Codigo de Barras: </td>
-                                <td><input type="number" onkeyup="validare(this,'numero')" class="form-control" placeholder="Digite apenas números"name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="text" onkeyup="validare(this,'numero')" class="form-control" required="required" maxlength="20" autocomplete="off" placeholder="Digite apenas números"name="txtCodBarrasPagamento" value="${pagamento.numeroCodBarras}"<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             <tr>
                                 <td>Valor Total: </td>
-                                <td><input type="number"onkeyup="validare(this,'numero')"  class="form-control" placeholder="R$ 00" name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="text"onkeyup="validare(this,'numero')" required="required"  class="form-control" maxlength="7" placeholder="R$ 00"  autocomplete="off"name="txtValorTotalPagamento" value="${pagamento.valorTotal}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr> 
 
                             <tr>

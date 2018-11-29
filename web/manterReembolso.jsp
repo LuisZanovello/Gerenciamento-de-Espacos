@@ -82,7 +82,7 @@
 
                         <tr>
                             <td>Codigo do Reembolso</td>
-                            <td>    <input type="number" onkeyup="validare(this,'numero')" min="1"placeholder="Digite apenas números" class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td>    <input type="text" onkeyup="validare(this,'numero')"required="required" min="1" max="9999999999" autocomplete="off" placeholder="Digite apenas numeros" maxlength="10"  class="form-control" name="txtCodReembolso" value="${reembolso.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
 
                             <tr>

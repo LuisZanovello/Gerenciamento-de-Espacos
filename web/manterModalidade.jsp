@@ -44,6 +44,8 @@
             }
         </style>
 
+  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+  </script>
         
 
 <script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
@@ -132,15 +134,15 @@
 
                     <tr>
                         <td>Código Modalidade</td>
-                        <td><input  min="1"class="form-control"onkeyup="validare(this, 'numero')"  type="number" name="txtIdModalidade" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input  min="1"  class="form-control" placeholder="Digite apenas numeros" onkeyup="validare(this, 'numero')" required="required"  maxlength="11" autocomplete="off"  max="9999999999" class="form-control" type="text" name="txtIdModalidade" value="${modalidade.id}"required<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Modalidade</td>
-                            <td><input class="form-control"  type="text" name="txtModalidade" value="${modalidade.modalidade}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input class="form-control" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45"    placeholder="Digite a modalidade" autocomplete="off" class="form-control" maxlength="45" type="text" name="txtModalidade" value="${modalidade.modalidade}"required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Descrição</td>
-                            <td><input class="form-control"  type="text" name="txtDescricao" value="${modalidade.descricao}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input class="form-control" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45"    placeholder="Descreva" autocomplete="off"  class="form-control" maxlength="45" type="text" name="txtDescricao" value="${modalidade.descricao}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                     </tr>
 
                     </tbody>

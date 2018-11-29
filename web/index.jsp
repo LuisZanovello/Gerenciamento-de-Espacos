@@ -33,11 +33,18 @@
                 width: 100%;
                 text-align: center;
             }
+            body{
+                width: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 500px;
+            }
         </style>
 
     </head>
 
-    <body>
+    <body background="https://static1.squarespace.com/static/54f7c0bae4b090c744f071d1/t/55fcf0c6e4b049077ee9a980/1442640140269/">
 
         <!-- Parte superior -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">

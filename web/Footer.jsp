@@ -27,11 +27,10 @@
 
        <style>
             footer{
-                bottom: 0;
-                position: static; 
-                bottom: 0; 
-                width: 100%;
                 text-align: center;
+                 position:absolute;
+                 bottom:0;
+                  width:100%;
             }
         </style>
        
@@ -77,7 +76,7 @@
         <!-- Footer -->
         <footer class="py-5 bg-dark">
             <div class="container">
-                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 201888</p> 
+                <p class="m-0 text-center text-white">LP2 - professor Marco Antonio &copy; Gerenciamento de Espaços 2018</p> 
                 <p class="m-0 text-center text-gray"> Izabella R. - Luis G. - Victor W. </p>
             </div>
             <!-- /.container -->
