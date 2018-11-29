@@ -40,7 +40,7 @@
             }
         </style>
 
-
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
 
         <!-- INICIO JavaScript para o formulario-->
 
@@ -126,7 +126,7 @@
 
                         <tr>
                             <td>Código do contato: </td>
-                            <td><input  type="number"  min="1" class="form-control" name="txtIdContato" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input  type="number"  min="1" onkeyup="validare(this, 'numero')" class="form-control" name="txtIdContato" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Número de contato: </td>
