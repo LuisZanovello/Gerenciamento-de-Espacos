@@ -96,6 +96,7 @@
 
         </script>
 
+        <script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
         <!-- INICIO JavaScript para o formulario-->
 
         <script language="javascript" type="text/javascript">
@@ -279,7 +280,7 @@
 
                      <tr>
                             <td>Codigo Espaco</td>
-                            <td><input type="number"min="1"placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number"min="1" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Nome do Espaço</td>

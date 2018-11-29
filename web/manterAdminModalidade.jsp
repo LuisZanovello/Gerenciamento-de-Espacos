@@ -37,7 +37,7 @@
                 text-align: center;
             }
         </style>
-
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
 
         <!-- INICIO JavaScript para o formulario-->
 
@@ -105,7 +105,7 @@
 
                         <tr>
                             <td>Código Modalidade</td>
-                            <td><input type="number"   min="1" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number"   min="1" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros" class="form-control" name="txtIdModalidade" maxlength="9" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Modalidade</td>

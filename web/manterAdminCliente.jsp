@@ -35,7 +35,7 @@
             }
         </style>
 
-
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
         <!-- INICIO JavaScript para o formulario-->
 
         <script language="javascript" type="text/javascript">
@@ -221,7 +221,7 @@
 
                 <tr>
                     <td>Código do cliente: </td>
-                    <td><input type="number"  min="1"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                    <td><input type="number"  min="1" onkeyup="validare(this, 'numero')"  placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                     </tr>
                     <tr>
                         <td>Nome do cliente: </td>
