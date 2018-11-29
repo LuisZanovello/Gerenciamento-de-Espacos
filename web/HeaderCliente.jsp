@@ -65,28 +65,7 @@
 
                         
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Classes
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                                
-                                <a class="dropdown-item" href="PesquisaAdminClienteController">Cliente</a>                                
-                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
-                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
-                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
-                                
-                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
-                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
-                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
-                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
-                                
-                                
-                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
-                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
-                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
-                                <a class="dropdown-item" href="indexAdmin.jsp">Administrador</a>
-                            </li>
+                                      
                      
                             <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Sair</a>
