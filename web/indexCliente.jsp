@@ -134,8 +134,10 @@
                 <!-- Fim Menu -->
 
              
-
-                  
+<hr>
+ <br><br>           
+ <br><br>           
+ <br><br>           
 <!--inicio Footer-->
 <%@ include file = "Footer.jsp" %>
 <!--fim Footer-->

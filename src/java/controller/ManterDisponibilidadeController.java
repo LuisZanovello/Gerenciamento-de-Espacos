@@ -56,7 +56,7 @@ public class ManterDisponibilidadeController extends HttpServlet {
         request.setAttribute("espacos", Espaco.obterTodosEspacos());
         
         if(!operacao.equals("Incluir")){
-            long id = Long.parseLong(request.getParameter("id"));
+            long id = Long.parseLong(request.getParameter("id").trim());
             Disponibilidade disponibilidade = Disponibilidade.obterDisponibildiade((long)id);
             request.setAttribute("disponibilidade", disponibilidade);
         }
@@ -85,7 +85,7 @@ public class ManterDisponibilidadeController extends HttpServlet {
         try {
             Espaco esp = null;
             if (espaco != 0) {
-                esp = Espaco.obterEspaco(espaco);
+                esp = Espaco.obterEspaco((long)espaco);
             }
             Disponibilidade disponibilidade = new Disponibilidade(id,data,horaInicio,horaFim,espaco);
             if (operacao.equals("Incluir")) {
