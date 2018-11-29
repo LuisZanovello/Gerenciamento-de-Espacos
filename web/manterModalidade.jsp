@@ -46,7 +46,7 @@
 
         
 
-
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
         
         
  <!-- INICIO JavaScript para o formulario-->
@@ -132,7 +132,7 @@
 
                     <tr>
                         <td>Código Modalidade</td>
-                        <td><input  min="1"class="form-control" type="number" name="txtIdModalidade" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input  min="1"class="form-control"onkeyup="validare(this, 'numero')"  type="number" name="txtIdModalidade" value="${modalidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Modalidade</td>

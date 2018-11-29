@@ -53,6 +53,8 @@
         </style>    
 
         <!-- INICIO JavaScript para o formulario-->
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
+
 
         <script language="javascript" type="text/javascript">
             function validar() {
@@ -174,14 +176,14 @@
 
                         <tr>
                             <td>Codigo da reserva</td>
-                            <td><input type="number" class="form-control" placeholder="Digite apenas números" name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number" class="form-control" onkeyup="validare(this, 'numero')" placeholder="Digite apenas números" name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             <p class="help-block"></p>
                             </tr>
 
                             <tr>
                                 <td>Data da locação:</td>
 
-                                <td><input type="date" class="form-control" placeholder="00/00/0000" name="txtDataLocacao" value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="date" class="form-control"  placeholder="00/00/0000" name="txtDataLocacao" value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
 

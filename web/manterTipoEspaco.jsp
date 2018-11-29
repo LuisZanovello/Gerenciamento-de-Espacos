@@ -41,7 +41,7 @@
                 text-align: center;
             }
         </style>
-
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
 
         <!-- INICIO JavaScript para o formulario-->
 
@@ -128,7 +128,7 @@
 
                     <tr>
                         <td>Código Tipo Espaço</td>
-                        <td><input type="text"  class="form-control"  min="1" name="txtTipoEspacoId" value="${tipoEspaco.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text"  class="form-control"  min="1" onkeyup="validare(this, 'numero')" name="txtTipoEspacoId" value="${tipoEspaco.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Tipo Espaço</td>

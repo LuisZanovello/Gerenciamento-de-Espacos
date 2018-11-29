@@ -27,6 +27,8 @@
         <link href="css/modern-business.css" rel="stylesheet">
 <!--inicio Header-->
 <%@ include file = "Header.jsp" %>
+
+<script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
 <!--fim Header-->
         <style>
             footer{
@@ -136,7 +138,7 @@
 
                     <tr>
                         <td>Código do disponibilidade: </td>
-                        <td><input type="number" min="1" class="form-control" name="txtIdDisponibilidade" value="${disponibilidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="number" min="1" class="form-control" onkeyup="validare(this, 'numero')" name="txtIdDisponibilidade" value="${disponibilidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Data Dsponivel: </td>

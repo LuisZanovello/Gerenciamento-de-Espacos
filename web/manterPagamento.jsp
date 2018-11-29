@@ -46,7 +46,7 @@
             }
         </style>    
         
-        
+        <script language="javascript"  type="text/javascript" src="js/scriptJSP.js"></script>
             <!-- INICIO JavaScript para o formulario-->
 
         <script language="javascript" type="text/javascript">
@@ -145,7 +145,7 @@
 
                         <tr>                            
                             <td>Codigo do Pagamento: </td>
-                            <td><input type="number" class="form-control" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                            <td><input type="number" class="form-control" onkeyup="validare(this, 'numero')" placeholder="Digite apenas números" name="txtCodPagamento" value="${pagamento.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                             </tr>
                             <tr>
                                 <td>Vencimento: </td>
