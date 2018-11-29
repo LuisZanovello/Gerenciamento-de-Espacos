@@ -23,14 +23,13 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
 
-            
-
-       <style>
+   <style>
             footer{
+                bottom: 0;
+                position: static; 
+                bottom: 0; 
+                width: 100%;
                 text-align: center;
-                 position:absolute;
-                 bottom:0;
-                  width:100%;
             }
         </style>
        
