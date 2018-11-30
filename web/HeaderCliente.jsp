@@ -52,10 +52,9 @@
 
   </head>
 </head>
-<body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+<body><nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="indexAdmin.jsp">iSport</a>
+                <a class="navbar-brand" href="#">iSport</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -65,7 +64,26 @@
 
                         
 
-                                      
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Classes
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                
+                                <a class="dropdown-item" href="PesquisaAdminContatoController">Contato</a>
+                                <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
+                                <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
+                                
+                                <a class="dropdown-item" href="PesquisaEspacoController">Espaços</a>
+                                <a class="dropdown-item" href="PesquisaTipoEspacoController">Tipo de Espaço</a>
+                                <a class="dropdown-item" href="PesquisaModalidadeController">Modalidade</a>
+                                <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
+                                
+                                
+                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
+                                <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
+                            </li>
                      
                             <li class="nav-item">
                             <a class="nav-link" href="index.jsp">Sair</a>
@@ -78,6 +96,7 @@
                 </div>
             </div>
         </nav>	
+
 
 </body>
 </html>

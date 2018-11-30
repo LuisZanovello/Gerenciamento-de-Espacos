@@ -72,7 +72,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
                                 
                                 <a class="dropdown-item" href="PesquisaAdminClienteController">Cliente</a>                                
-                                <a class="dropdown-item" href="PesquisaContatoController">Contato</a>
+                                <a class="dropdown-item" href="PesquisaAdminContatoController">Contato</a>
                                 <a class="dropdown-item" href="PesquisaCartaoController">Cartão</a>
                                 <a class="dropdown-item" href="PesquisaDisponibilidadeController">Disponibilidade</a>
                                 
