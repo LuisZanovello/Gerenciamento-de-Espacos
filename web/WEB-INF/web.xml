@@ -154,7 +154,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>PesquisaContatoController</servlet-name>
-        <servlet-class>controller.PesquisaAdminContatoController</servlet-class>
+        <servlet-class>controller.PesquisaContatoController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaContatoController</servlet-name>
