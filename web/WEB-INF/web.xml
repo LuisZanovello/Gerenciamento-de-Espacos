@@ -250,10 +250,10 @@
     </servlet-mapping>
     <error-page>
         <error-code>500</error-code>
-          <location>/erro500.jsp</location>
+        <location>/erro500.jsp</location>
     </error-page>
-        <error-page>
+    <error-page>
         <error-code>404</error-code>
-          <location>/erro404.jsp</location>
+        <location>/erro404.jsp</location>
     </error-page>
 </web-app>

@@ -51,23 +51,20 @@ public class DisponibilidadeDAO {
             try{
                 conexao = BD.getConexao();
                 String sql = "update disponibilidade set  data_disponivel = ?, hora_inicio = ?,"
-                        + "hora_fim = ? where id = ?";
+                        + "hora_fim = ?, espaco_id = ? where id = ?";
                 comando = conexao.prepareStatement(sql);
                 comando.setString(1, disponibilidade.getDataDisponivel());
                 comando.setString(2, disponibilidade.getHora_inicio());
                 comando.setString(3, disponibilidade.getHora_fim());
-                comando.setLong(4, disponibilidade.getId());
-                comando.execute();
+        
+               
 
-                if(disponibilidade.getEspaco() == null){
-                    comando.setNull(4, Types.NULL);
-                }
-                else{
-                    comando.setLong(4, disponibilidade.getEspaco().getId());
-                }
-
+     
+                    comando.setLong(4, disponibilidade.getIdEspaco());
+        comando.setLong(5, disponibilidade.getId());
                 
-                BD.fecharConexao(conexao, comando);
+         comando.execute();
+                
             }catch(SQLException e){
                 throw e;
             }

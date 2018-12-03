@@ -82,7 +82,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="PesquisaClienteController">Gerenciar Clientes</a>
-                  <a class="dropdown-item" href="PesquisaAdminEspacoController">Gerenciar Espaços</a>
+                  <a class="dropdown-item" href="PesquisaEspacoController">Gerenciar Espaços</a>
                   <a class="dropdown-item" href="PesquisaContatoController">Gerenciar Contatos</a>
                 </div> 
                 </div>
