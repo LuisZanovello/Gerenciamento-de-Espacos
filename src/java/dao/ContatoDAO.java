@@ -37,15 +37,14 @@ public class ContatoDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "update contato set  numero = ?, idCliente = ?"
-                    + "where id = ?";
+            String sql = "update contato set  numero = ?, cliente_id = ? where id = ?";
+            
             comando = conexao.prepareStatement(sql);
+            
             comando.setString(1, contato.getNumero());
-           
-        
-
-                comando.setLong(2, contato.getIdCliente());
-                 comando.setLong(3, contato.getId());
+             comando.setLong(2, contato.getIdCliente());
+               
+             comando.setLong(3, contato.getId());
 
 
                 comando.execute();
