@@ -131,11 +131,6 @@
                                         
 
                                         <tr>
-                                            <th scope="now"> ID </th>
-                                            <td><c:out value="${espaco.id}" /></td>
-                                        </tr>
-
-                                        <tr>
                                             <th scope="now"> Nome </th>
                                             <td><c:out value="${espaco.nome}" /></td>
                                         </tr>
@@ -145,10 +140,6 @@
                                             <td><c:out value="${espaco.cidade}" /></td>
                                         </tr>
 
-                                        <tr>
-                                            <th scope="now"> Estado </th>
-                                            <td><c:out value="${espaco.uf}" /></td>
-                                        </tr>
 
                                     
                                     <hr>

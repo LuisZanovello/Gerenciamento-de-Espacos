@@ -119,7 +119,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados da reserva : <c:out value ="${reserva.idEspaco}"/>
+                                                Dados do pagamento : <c:out value ="${pagamento.numeroCodBarras}"/>
                                             </th>
                                             
                                             <th colspan="1" >
@@ -132,18 +132,12 @@
                                     </th>
                                             
                                         </tr>
-                                        <tr>
-                                            <th scope="now"> ID </th>
-                                            <td><c:out value="${pagamento.id}" /></td>
-                                        </tr>
+
                                         <tr>
                                             <th scope="now"> Data de Vencimento </th>
                                             <td><c:out value="${pagamento.vencimento}" /></td>
                                         </tr>
-                                        <tr>
-                                            <th scope="now"> Número Cod. Barras </th>
-                                            <td><c:out value="${pagamento.numeroCodBarras}" /></td>
-                                        </tr>
+
                                         <tr>
                                             <th scope="now"> Valor Total </th>
                                             <td><c:out value="${pagamento.valorTotal}" /></td>

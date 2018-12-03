@@ -117,39 +117,22 @@
                                             </th>
                                             
                                         </tr>
-                                        <tr>
-                                            <th scope="now"> ID </th>
-                                            <td><c:out value="${cliente.id}"/></td>
-                                        </tr>
-                                        <tr> 
-                                            <th scope="now"> Nome </th>
-                                            <td><c:out value="${cliente.nome}"/></td>
-                                        </tr>
+                        
+              
 
                                         <tr> 
                                             <th scope="now"> Sobrenome </th>
                                             <td><c:out value="${cliente.sobrenome}"/></td>
                                         </tr>
-                                        <tr>
-                                            <th scope="now"> Nascimento </th>
-                                            <td><c:out value="${cliente.dataNascimento}"/></td>
-                                        </tr>
+                 
 
                                         <tr>
                                             <th scope="now"> E-mail </th>
                                             <td><c:out value="${cliente.email}"/></td>
                                         </tr>
 
-                                        <tr>
-                                            <th scope="now"> CPF </th>
-                                            <td><c:out value="${cliente.cpf}"/></td>
-                                        </tr>
 
-                                      
-
-
-                                 
-
+                                               
                                     </tbody>
 
                                 </table>

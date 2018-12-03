@@ -109,10 +109,7 @@
 
                                         </tr>
 
-                                        <tr>
-                                            <th scope="now">Id</th>
-                                            <td><c:out value="${dispon.id}"/></td>
-                                        </tr>
+               
                                         <tr>
                                             <th scope="now">Data Disponível</th>
                                             <td><c:out value="${dispon.dataDisponivel}"/></td>
