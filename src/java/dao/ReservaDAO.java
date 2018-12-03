@@ -55,24 +55,25 @@ public class ReservaDAO {
             comando.setLong(4, reserva.getQtPessoas());
             comando.setDouble(5, reserva.getValorLocacao());
             comando.setLong(6, reserva.getNotaAvaliacao());
-            comando.setLong(7, reserva.getId());
-            
-            if (reserva.getIdEspaco() == null) {
+           
+                        if (reserva.getIdCliente() == null) {
                 comando.setNull(7, Types.NULL);
             } else {
-                comando.setLong(7, reserva.getIdEspaco());
+                comando.setLong(7, reserva.getIdCliente());
+            }
+                        
+                        
+            if (reserva.getIdEspaco() == null) {
+                comando.setNull(8, Types.NULL);
+            } else {
+                comando.setLong(8, reserva.getIdEspaco());
             }
       
             
-            if (reserva.getIdCliente() == null) {
-                comando.setNull(8, Types.NULL);
-            } else {
-                comando.setLong(8, reserva.getIdCliente());
-            }
+
 
             comando.setLong(9, reserva.getId());
             comando.execute();
-            BD.fecharConexao(conexao, comando);
 
         } catch (SQLException e) {
             throw e;
