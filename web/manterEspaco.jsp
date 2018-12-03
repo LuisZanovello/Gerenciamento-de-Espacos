@@ -272,7 +272,7 @@
                             </tr>
                             <tr>
                                 <td>Logradouro</td>
-                                <td><input type="text" id="rua"  placeholder="Endereço local" maxlength="45" class="form-control" name="txtLogradouro" autocomplete="off" value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" id="rua"  inputmode="latin-prose" placeholder="Endereço local" maxlength="45" class="form-control" name="txtLogradouro" autocomplete="off" value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>                     
                                 <td>Numero</td>
@@ -318,7 +318,7 @@
                                 <select class="form-control" name="optTipoEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
 
                                 <c:forEach items="${tiposEspacos}" var="tipoEspaco">
-                                    <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> disabled</c:if>>${tipoEspaco.nome}</option>  
+                                    <option value="${tipoEspaco.id}" <c:if test="${tipoEspaco.id == espaco.idTipoEspaco}"> selected</c:if>>${tipoEspaco.nome}</option>  
                                 </c:forEach>
                             </select>
                         </td>
