@@ -138,10 +138,7 @@
                                             </th>
 
                                         </tr>
-                                        <tr>
-                                            <th scope="now"> ID </th>
-                                            <td><c:out value="${reserva.id}" /></td>
-                                        </tr>
+              
                                         <tr>
                                             <th scope="now"> Data da Reserva</th>
                                             <td><c:out value="${reserva.dataLocacao}" /></td>

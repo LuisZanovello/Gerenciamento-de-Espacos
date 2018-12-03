@@ -130,10 +130,7 @@
                                    
                                         </tr>
 
-                                        <tr>
-                                            <th scope="now"> ID </th>
-                                            <td><c:out value="${admin.id}" /></td>
-                                        </tr>
+  
 
                                         <tr>
                                             <th scope="now"> Nome </th>
