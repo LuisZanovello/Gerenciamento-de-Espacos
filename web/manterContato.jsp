@@ -134,9 +134,9 @@
                             </tr>
                             <td>Cliente:</td>
                             <td>
-                                <select class="form-control" name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
+                                <select class="form-control" id=" atleta" name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
                                 <c:forEach items="${clientes}" var="cliente">
-                                    <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> </c:if>>${cliente.nome}</option>  
+                                    <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> selected</c:if>>${cliente.nome}</option>  
                                 </c:forEach>
                             </select>
                         </td>
