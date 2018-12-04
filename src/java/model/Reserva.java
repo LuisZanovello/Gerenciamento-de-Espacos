@@ -32,25 +32,6 @@ public class Reserva {
         this.idCliente = idCliente;
     }
 
-    /*Construtor DAO*/
-    public Reserva(Long id, String dataLocacao, String horaInicioLocacao, String horaFimLocacao,
-                   Long qtPessoas, Double valorLocacao, Long notaAvaliacao) {
-        this.id = id;
-        this.dataLocacao = dataLocacao;
-        this.horaInicioLocacao = horaInicioLocacao;
-        this.horaFimLocacao = horaFimLocacao;
-        this.qtPessoas = qtPessoas;
-        this.valorLocacao = valorLocacao;
-        this.notaAvaliacao = notaAvaliacao;
-
-    }
-    
-    public Reserva(Long id, String dataLocacao, String horaInicioLocacao, String horaFimLocacao) {
-        this.id = id;
-        this.dataLocacao = dataLocacao;
-        this.horaInicioLocacao = horaInicioLocacao;
-        this.horaFimLocacao = horaFimLocacao;
-    }
 
     public Reserva() {
     }

@@ -124,7 +124,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados da reserva : <c:out value ="${reserva.dataLocacao}"/>
+                                                Dados da reserva - Codigo: <c:out value ="${reserva.id}"/>
                                             </th>
 
 
@@ -160,7 +160,7 @@
                                 <div class="row">
                                     <div class="col-lg">
                                         <label>
-                                            <form action="ManterReembolsoController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                            <form action="ManterReservaController?acao=prepararOperacao&operacao=Incluir" method="post">
                                                 <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                             </form>
                                         </label>

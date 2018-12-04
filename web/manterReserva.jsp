@@ -97,12 +97,12 @@
 
                             <tr>
                                 <td>Hora de Início</td>
-                                <td><input type="time" placeholder="00:00" maxlength="8" name="hour" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="time" placeholder="00:00" maxlength="8"pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
                             <tr>
                                 <td>Hora Fim</td>
-                                <td><input type="time" maxlength="8" name="hour" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="time" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
                             <tr>
@@ -117,7 +117,7 @@
 
                             <tr>
                                 <td>Avaliação</td>
-                                <td> <input  type="number" class="form-control" id="horaf" maxlength="1" required="required" autocomplete="off" min="0" max="5" placeholder="Nota de 1 a 5" maxlength="1"name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> </td>
+                                <td> <input  type="number" class="form-control" max="5" maxlength="1" id="horaf" maxlength="1" required="required" autocomplete="off" min="0"  placeholder="Nota de 1 a 5" maxlength="1"name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> </td>
                             </tr>
 
                             <td>Local de Reserva:</td>

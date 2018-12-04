@@ -68,7 +68,7 @@
 
                         
 
-                        <li class="nav-item dropdown" <c:if test="${tipoLogin != 'administrador'}"> hidden </c:if>>
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Classes
                             </a>

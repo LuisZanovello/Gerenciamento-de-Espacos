@@ -100,7 +100,7 @@
                             </tr>
                             <tr>
                                 <td>CPF: </td>
-                                <td> <input type="number" autocomplete="off" onkeyup="validare(this,'texto')"  maxlength="14" class="form-control"
+                                <td> <input type="number" autocomplete="off" onkeyup="validare(this,'numero')"  maxlength="14" class="form-control"
                                             placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
 

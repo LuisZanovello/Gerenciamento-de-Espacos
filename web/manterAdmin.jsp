@@ -75,7 +75,7 @@
 
                     <tr>
                         <td>Codigo do admin: </td>
-                        <td><input type="text" onkeyup="validare(this,'numero')" min="1" maxlength="11" required="required" autocomplete="off" max="9999999999" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
+                        <td><input type="number" onkeyup="validare(this,'numero')" min="1" maxlength="11" required="required" autocomplete="off" max="9999999999" placeholder="Digite apenas numeros" class="form-control" name="txtCodAdmin"  maxlength="9" value="${admin.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>> </td>
                         </tr>
 
                         <tr>
