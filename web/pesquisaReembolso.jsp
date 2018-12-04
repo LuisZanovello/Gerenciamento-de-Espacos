@@ -129,15 +129,6 @@
                                            class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <th scope="now"> ID </th>
-                                    <td><c:out value="${reembolso.id}"/></td>
-                                </tr>
-                                <tr>
-                                    <th scope="now"> Status </th>
-
-                                    <td><c:out value="${reembolso.estado}"/></td>
-                                </tr>
                             </tbody>
                         </table>
                         <hr>
