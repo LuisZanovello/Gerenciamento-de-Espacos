@@ -40,11 +40,12 @@
                 background-position: center;
                 height: 500px;
             }
+
         </style>
 
     </head>
 
-    <body background="https://static1.squarespace.com/static/54f7c0bae4b090c744f071d1/t/55fcf0c6e4b049077ee9a980/1442640140269/">
+    <body background="https://www.setaswall.com/wp-content/uploads/2017/12/Basketball-Court-Wallpaper-29-1600x1066.jpg">
 
         <!-- Parte superior -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -82,7 +83,7 @@
         <!-- Corpo da Pagina -->
         <div class="container">
 
-            <div><h1 class="my-4">iSport </h1></div> <br>
+            <div><h1 class="my-4" style="color: white; text-shadow: 3px 2px black">iSport </h1></div> <br>
 
 
             <hr>
@@ -90,7 +91,7 @@
                 <!--Inicio -->
                 <div class="col">
                     <div class="col-sm-12">
-                        <h1 class="text-center">Encontre o seu espaço e compare preços</h1><hr> <br><br> 
+                        <h1 class="text-center"  style="color: white; text-shadow: 3px 2px black">Encontre o seu espaço e compare preços</h1><hr> <br><br> 
                     </div> 
                     </div>
                 </div>
