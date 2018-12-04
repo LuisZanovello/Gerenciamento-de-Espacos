@@ -78,7 +78,7 @@
                                 <a class="dropdown-item" href="PesquisaIrregularidadeController">Irregularidade</a>
                                 
                                 
-                                <a class="dropdown-item" href="PesquisaReservaController">Reservas</a>
+                                <!--<a class="dropdown-item" href="PesquisaReservaController">Reservas</a>-->
                                 <a class="dropdown-item" href="PesquisaPagamentoController">Pagamento</a>
                                 <a class="dropdown-item" href="PesquisaReembolsoController">Reembolso</a>    
                             </li>

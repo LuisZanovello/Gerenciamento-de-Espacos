@@ -130,7 +130,7 @@
                             </tr>
                             <tr>
                                 <td>Número de contato: </td>
-                                <td><input type="text" class="form-control" onkeyup="validare(this, 'numero')" required="required"  maxlength="11" autocomplete="off"  max="99999999" name="txtNumeroContato" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" class="form-control" onkeyup="validare(this, 'numero')"  maxlength="11" autocomplete="off"  max="99999999" name="txtNumeroContato" value="${contato.numero}"   required="required" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <td>Cliente:</td>
                             <td>
