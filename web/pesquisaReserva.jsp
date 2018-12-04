@@ -124,7 +124,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados da reserva : <c:out value ="${cliente.nome}"/>
+                                                Dados da reserva : <c:out value ="${reserva.dataLocacao}"/>
                                             </th>
 
 
@@ -138,18 +138,9 @@
                                             </th>
 
                                         </tr>
-              
                                         <tr>
-                                            <th scope="now"> Data da Reserva</th>
-                                            <td><c:out value="${reserva.dataLocacao}" /></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="now"> Horário de Inicio </th>
-                                            <td><c:out value="${reserva.horaInicioLocacao}" /></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="now"> Horário de Fim </th>
-                                            <td><c:out value="${reserva.horaFimLocacao}" /></td>
+                                            <th scope="now"> Horário Inicio / término </th>
+                                            <td><c:out value="${reserva.horaInicioLocacao} / ${reserva.horaFimLocacao}" /></td>
                                         </tr>
 
 
