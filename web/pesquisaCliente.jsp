@@ -87,9 +87,7 @@
                                         <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                     </form>
                                 </label>
-                                <label>
-                                    <a href="indexCliente.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                </label>
+      
                             </div>
                         </div>
                     </div>                            
@@ -144,9 +142,7 @@
                                                 <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                             </form>
                                         </label>
-                                        <label>
-                                            <a href="indexCliente.jsp"><button class="btn btn-outline-dark btn-sm" value="Voltar">Voltar</button></a>
-                                        </label>
+
                                     </div>
                                 </div>
                             </div>

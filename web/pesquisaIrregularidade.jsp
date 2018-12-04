@@ -62,6 +62,19 @@
                         </div>
                         <!--Tabela-->
 
+                              <div class="container">
+                        <div class="row">                                   
+                            <div class="col-lg">
+                                <label>
+                                    <form action="ManterContatoController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                    </form>
+                                </label>
+                          
+                                
+                            </div>
+                        </div>
+                    </div>                         
                             <div clas="card">
                         <div class="card-body">
                         <c:forEach items="${irregularidades}" var="irregularidade">
