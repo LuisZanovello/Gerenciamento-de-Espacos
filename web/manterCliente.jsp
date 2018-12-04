@@ -88,7 +88,7 @@
                             </tr>
                             <tr>
                                 <td>Sobrenome: </td>
-                                <td> <input type="text" onkeyup="validare(this,'texto')" class="form-control" data-ls-module="charCounter" autocomplete="off" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td> <input type="text" onkeyup="validare(this,'texto')" class="form-control" data-ls-module="charCounter" autocomplete="off" maxlength="45"  placeholder="Digite seu Sobrenome" name="txtSobrenomeCliente" size="60"  value="${cliente.sobrenome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Data de Nascimento: </td>
@@ -96,11 +96,11 @@
                             </tr>
                             <tr>
                                 <td>Email: </td>
-                                <td> <input type="text"  class="form-control" placeholder="exemplo@exemplo.br" autocomplete="off" name="txtEmailCliente" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td> <input type="text"  class="form-control" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45" placeholder="exemplo@exemplo.br" autocomplete="off" name="txtEmailCliente" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>CPF: </td>
-                                <td> <input type="text" autocomplete="off"  maxlength="14" class="form-control"
+                                <td> <input type="number" autocomplete="off" onkeyup="validare(this,'texto')"  maxlength="14" class="form-control"
                                             placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
 
