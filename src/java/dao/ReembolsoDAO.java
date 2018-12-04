@@ -36,18 +36,16 @@ public class ReembolsoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update reembolso set estado=? where id=?";
+            String sql = "update reembolso set estado=?, pagamento_id = ? where id=?";
             
             comando = conexao.prepareStatement(sql);
             comando.setString(1, reembolso.getEstado());
 
-            if (reembolso.getPagamento() == null) {
-                comando.setNull(2, Types.NULL);
-            } else {
-                comando.setLong(2, reembolso.getIdPagamento());
-            }
 
-            comando.setLong(2, reembolso.getId());
+                comando.setLong(2, reembolso.getIdPagamento());
+  
+
+            comando.setLong(3, reembolso.getId());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {

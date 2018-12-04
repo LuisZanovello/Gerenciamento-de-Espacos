@@ -106,12 +106,13 @@
                             <td>Número do Codigo de Barras:</td>
 
                             <td>
-                                <select class="form-control" name="optPagamento" <c:if test="${operacao == 'Excluir'}"> readonly</c:if><c:if test="${operacao == 'Editar'}"> selected</c:if>>
-
-                                    <c:forEach items="${pagamentos}" var="pagamento">                                        
-                                        <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> selected</c:if>>${pagamento.numeroCodBarras}</option>  
-                                    </c:forEach>
-                                </select>
+                                
+                                                       <select class="form-control" id="pagamento" name="optPagamento"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
+                                <c:forEach items="${pagamentos}" var="pagamento">
+                                    <option value="${pagamento.id}" <c:if test="${pagamento.id == reembolso.idPagamento}"> selected</c:if>>${pagamento.numeroCodBarras}</option>  
+                                </c:forEach>
+                            </select>
+            
                             </td>
                         </tr>
                         </tbody>
