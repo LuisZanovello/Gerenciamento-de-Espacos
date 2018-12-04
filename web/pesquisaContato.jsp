@@ -99,7 +99,7 @@
 
                                             <tr>
                                                 <th colspan="1">
-                                                    Dados do Contato : <c:out value ="${contato.numero}"/>
+                                                    Número do Contato : <c:out value ="${contato.numero}"/>
                                                 </th>
 
                                                 <th colspan="1">
@@ -109,15 +109,6 @@
                                                        class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                                 </th>
 
-                                            </tr>
-
-                                            <tr>
-                                                <th scope="now">Id</th>
-                                                <td><c:out value="${contato.id}"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="now">Número</th>
-                                                <td><c:out value="${contato.numero}"/></td>
                                             </tr>
 
 

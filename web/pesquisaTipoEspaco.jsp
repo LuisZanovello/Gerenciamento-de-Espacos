@@ -99,7 +99,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados dos Tipos de Espaço : <c:out value ="${tipoEspaco.nome}"/>
+                                                Tipo de Espaço : <c:out value ="${tipoEspaco.nome}"/>
                                             </th>
 
                                             <th colspan="1">
@@ -110,16 +110,6 @@
                                             </th>
 
                                         </tr>
-
-                                        <tr>
-                                            <th scope="now">Id</th>
-                                            <td><c:out value="${tipoEspaco.id}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="now">Nome</th>
-                                            <td><c:out value="${tipoEspaco.nome}"/></td>
-                                        </tr>
-
 
                                         
                                     <hr>

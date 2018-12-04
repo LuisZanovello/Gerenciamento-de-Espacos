@@ -130,13 +130,6 @@
                                    
                                         </tr>
 
-  
-
-                                        <tr>
-                                            <th scope="now"> Nome </th>
-                                            <td><c:out value="${admin.nome}" /></td>
-                                        </tr>
-
                                         <tr>
                                             <th scope="now"> E-mail</th>
                                             <td><c:out value="${admin.email}" /></td>

@@ -97,7 +97,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados Disponibilidade : <c:out value ="${dispon.dataDisponivel}"/>
+                                                Data disponível : <c:out value ="${dispon.dataDisponivel}"/>
                                             </th>
 
                                             <th colspan="1">
@@ -108,19 +108,9 @@
                                             </th>
 
                                         </tr>
-
-               
                                         <tr>
-                                            <th scope="now">Data Disponível</th>
-                                            <td><c:out value="${dispon.dataDisponivel}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="now">Hora Início</th>
-                                            <td><c:out value="${dispon.hora_inicio}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="now">Hora Fim</th>
-                                            <td><c:out value="${dispon.hora_fim}"/></td>
+                                            <th scope="now">Hora Início / Término</th>
+                                            <td><c:out value="${dispon.hora_inicio} / ${dispon.hora_fim} "/></td>
                                         </tr>
 
 

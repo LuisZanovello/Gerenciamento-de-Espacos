@@ -99,7 +99,7 @@
                 
                                           <tr>
                                             <th colspan="1">
-                                                Dados da Modalidade : <c:out value ="${modalidade.modalidade}"/>
+                                                Tipo de Modalidade : <c:out value ="${modalidade.modalidade}"/>
                                             </th>
 
                                             <th colspan="1">
@@ -109,15 +109,6 @@
                                                    class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                             </th>
 
-                                        </tr>
-                                        
-                                                                      <tr>
-                                            <th scope="now">Id</th>
-                                            <td><c:out value="${modalidade.id}"/></td>
-                                        </tr>
-                                                             <tr>
-                                            <th scope="now">Modalidade</th>
-                                            <td><c:out value="${modalidade.modalidade}"/></td>
                                         </tr>
                      
 

@@ -124,7 +124,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados da reserva : <c:out value ="${reserva.idEspaco}"/>
+                                                Dados da reserva : <c:out value ="${cliente.nome}"/>
                                             </th>
 
 

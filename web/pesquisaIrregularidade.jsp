@@ -88,12 +88,8 @@
                                         </tr>
                                         
                                                                       <tr>
-                                            <th scope="now">Id</th>
-                                            <td><c:out value="${irregularidade.id}"/></td>
-                                        </tr>
-                                                             <tr>
-                                            <th scope="now">Autor</th>
-                                            <td><c:out value="${irregularidade.autor}"/></td>
+                                            <th scope="now">Descrição</th>
+                                            <td><c:out value="${irregularidade.descricao}"/></td>
                                         </tr>
                      
 

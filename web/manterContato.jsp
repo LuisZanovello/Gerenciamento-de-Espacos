@@ -130,11 +130,11 @@
                             </tr>
                             <tr>
                                 <td>Número de contato: </td>
-                                <td><input type="text" class="form-control" name="txtNumeroContato" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" class="form-control" max="11" name="txtNumeroContato" value="${contato.numero}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <td>Cliente:</td>
                             <td>
-                                <select class="form-control" id=" atleta" name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
+                                <select class="form-control" id="cliente" name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
                                 <c:forEach items="${clientes}" var="cliente">
                                     <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> selected</c:if>>${cliente.nome}</option>  
                                 </c:forEach>

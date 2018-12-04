@@ -106,7 +106,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados do Cliente : <c:out value ="${cliente.nome}"/>
+                                                Dados do Cliente : <c:out value ="${cliente.nome} ${cliente.sobrenome}"/>
                                             </th>
                                             
                                             <th colspan="1">
@@ -116,13 +116,6 @@
                                            class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                             </th>
                                             
-                                        </tr>
-                        
-              
-
-                                        <tr> 
-                                            <th scope="now"> Sobrenome </th>
-                                            <td><c:out value="${cliente.sobrenome}"/></td>
                                         </tr>
                  
 

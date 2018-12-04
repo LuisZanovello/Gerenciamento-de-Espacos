@@ -119,7 +119,7 @@
 
                                         <tr>
                                             <th colspan="1" >
-                                                Dados do Espaço : <c:out value ="${espaco.nome}"/>
+                                                Nome do Espaço : <c:out value ="${espaco.nome}"/>
                                             </th>
                                             <th>
                                             <a href="ManterEspacoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${espaco.id}"/>"
@@ -128,16 +128,10 @@
                                            class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                         </th>
                                         </tr>
-                                        
 
                                         <tr>
-                                            <th scope="now"> Nome </th>
-                                            <td><c:out value="${espaco.nome}" /></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="now"> Cidade </th>
-                                            <td><c:out value="${espaco.cidade}" /></td>
+                                            <th scope="now"> Local </th>
+                                            <td><c:out value="${espaco.logradouro} -${espaco.bairro}, ${espaco.cidade} / ${espaco.uf}" /></td>
                                         </tr>
 
 

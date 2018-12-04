@@ -115,15 +115,6 @@
 
                                         </tr>
 
-                                        <tr>
-                                            <th scope="now">Id</th>
-                                            <td><c:out value="${cartao.id}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="now">Bandeira do Cartão</th>
-                                            <td><c:out value="${cartao.bandeira}"/></td>
-                                        </tr>
-
                                     </tbody>
 
                                 </table>
