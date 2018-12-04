@@ -304,11 +304,11 @@
                             </tr>
                             <tr>
                                 <td>Horario de funcionamento - Inicio</td>
-                                <td><input type="time" placeholder=""  class="form-control" maxlength="8" name="hour" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="time" placeholder=""  class="form-control" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Horario de funcionamento - Fim</td>
-                                <td><input type="time"  placeholder="" class="form-control" maxlength="8" name="hour" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="time"  placeholder="" class="form-control" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
 
 

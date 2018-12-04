@@ -119,7 +119,7 @@
 
                                         <tr>
                                             <th colspan="1" >
-                                                Nome do Espaço : <c:out value ="${espaco.nome}"/>
+                                                Nome do Espaço : <c:out value ="${espaco.nome} --- ${espaco.logradouro} -${espaco.bairro}, ${espaco.cidade} / ${espaco.uf}"/>
                                             </th>
                                             <th>
                                             <a href="ManterEspacoController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${espaco.id}"/>"
@@ -129,20 +129,12 @@
                                         </th>
                                         </tr>
 
-                                        <tr>
-                                            <th scope="now"> Local </th>
-                                            <td><c:out value="${espaco.logradouro} -${espaco.bairro}, ${espaco.cidade} / ${espaco.uf}" /></td>
-                                        </tr>
-
-
-                                    
-                                    <hr>
 
                                     </tbody>
 
                                 </table>
                                 <hr>
-                                <br>
+
                             </c:forEach>
 
                             <!--INICIO Tabela botoes incluir e voltar-->
