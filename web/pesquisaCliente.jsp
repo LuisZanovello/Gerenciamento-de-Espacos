@@ -104,7 +104,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados do Cliente : <c:out value ="${cliente.nome} ${cliente.sobrenome}"/>
+                                                Dados do Cliente : <c:out value ="${cliente.nome} ${cliente.sobrenome} "/>
                                             </th>
                                             
                                             <th colspan="1">
@@ -117,10 +117,6 @@
                                         </tr>
                  
 
-                                        <tr>
-                                            <th scope="now"> E-mail </th>
-                                            <td><c:out value="${cliente.email}"/></td>
-                                        </tr>
 
 
                                                
