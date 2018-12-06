@@ -71,7 +71,7 @@
                             <form action="LoginController?acao=logar" method="post" name="frmManterAtleta">
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" required class="form-control" placeholder="email@gmail.com" id="email" name="email" data-dismiss="alert" aria-label="close">
+                                    <input type="email" required class="form-control" placeholder="email@gmail.com" id="email" name="email" data-dismiss="alert" aria-label="close" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <label for="senha">Senha:</label>
