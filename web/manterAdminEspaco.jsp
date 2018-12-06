@@ -96,7 +96,7 @@
 
                      <tr>
                             <td>Codigo Espaco</td>
-                            <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="9999999999" placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="number" onkeyup="validare(this,'numero')" min="1" max="9999999999" placeholder="Digite apenas numeros" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" autofocus<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Nome do Espaço</td>
