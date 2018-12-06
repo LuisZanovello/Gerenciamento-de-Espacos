@@ -124,7 +124,6 @@
 
                                 </table>
                                 <hr>
-                                <br><br><br>
                             </c:forEach>
 
 
