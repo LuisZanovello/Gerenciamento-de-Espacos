@@ -12,6 +12,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
     <head>
+        
+        <!-- include para pesquisa funcionar -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- fim da nova include -->
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -71,6 +77,26 @@
                         </div>
                     </div>
                     </thead>
+                    
+                     <!-- INICIO TAG para buscar -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Pesquisa">
+                                <script>
+                                    $(document).ready(function () {
+                                        $("#myInput").on("keyup", function () {
+                                            var value = $(this).val().toLowerCase();
+                                            $("#myTable ${cartao.bandeira}").filter(function () {
+                                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                                            });
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIM TAG para buscar -->
 
  <!--INICIO Tabela botoes incluir e voltar-->
 
@@ -96,7 +122,7 @@
                             <c:forEach items="${cartoes}" var="cartao">
 
 
-                                <table class="table table-striped">
+                                <table class="table table-striped" id="myTable">
                                     </thead>
                                     <tbody>
 
@@ -121,7 +147,6 @@
 
 
                                 <hr>
-                                <br><br><br>
                             </c:forEach>
 
                             <!--INICIO Tabela botoes incluir e voltar-->
