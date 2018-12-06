@@ -20,7 +20,7 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Home Admin</title>
+    <title>Home Cliente</title>
  
     <!-- Bootstrap core CSS -->
     
