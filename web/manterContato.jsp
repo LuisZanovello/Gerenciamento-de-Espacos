@@ -59,7 +59,7 @@
                     return false;
                 }
 
-                if (txtIdContato >= 999999999999) {
+                if (txtIdContato >= 999999999) {
                     alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
                     form1.txtIdContato.focus();
                     return false;
@@ -126,11 +126,11 @@
 
                         <tr>
                             <td>Código do contato: </td>
-                            <td><input  type="text"  min="1" onkeyup="validare(this, 'numero')" class="form-control" name="txtIdContato" required="required"  maxlength="11" autocomplete="off"  max="99999999" value="${contato.id}"  <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="text"   min="1" onkeyup="validare(this, 'numero')" placeholder="Digite apenas numeros"  required="required" maxlength="9" autocomplete="off" max="999999999"  class="form-control" name="txtIdContato" value="${contato.id}"  required autofocus<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Número de contato: </td>
-                                <td><input type="text" class="form-control" onkeyup="validare(this, 'numero')"  maxlength="11" autocomplete="off"  max="99999999" name="txtNumeroContato" value="${contato.numero}"   required="required" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" class="form-control" data-ls-module="charCounter" placeholder="Digite apenas numeros" onkeyup="validare(this, 'numero')" maxlength="9" autocomplete="off" min="1" max="999999999" name="txtNumeroContato" value="${contato.numero}"   required="required" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <td>Cliente:</td>
                             <td>
