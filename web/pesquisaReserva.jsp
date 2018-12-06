@@ -124,7 +124,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados da reserva - Codigo: <c:out value ="${reserva.id}"/>
+                                                Dados da reserva: <c:out value ="${reserva.dataLocacao} -> ${reserva.horaInicioLocacao} / ${reserva.horaFimLocacao}"/>
                                             </th>
 
 
@@ -137,19 +137,11 @@
                                                    class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                             </th>
 
-                                        </tr>
-                                        <tr>
-                                            <th scope="now"> Horário Inicio / término </th>
-                                            <td><c:out value="${reserva.horaInicioLocacao} / ${reserva.horaFimLocacao}" /></td>
-                                        </tr>
 
 
                                     </tbody>
                                 </table>
                                 <hr>
-                                <br>
-                                <br>
-                                <br>
 
                             </c:forEach>
                         
