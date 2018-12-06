@@ -80,7 +80,7 @@
 
                         <tr>
                             <td>Código do cliente: </td>
-                            <td><input type="text" required="required" maxlength="11" min="1" max="9999999999"  onkeyup="validare(this, 'numero')" autocomplete="off" placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>/></td>
+                            <td><input type="text" required="required" maxlength="10" min="1" max="9999999999" data-ls-module="charCounter"  onkeyup="validare(this, 'numero')" autocomplete="off" placeholder="Digite um codigo"  class="form-control" name="txtIdCliente"   value="${cliente.id}"  required autofocus<c:if test="${operacao != 'Incluir'}"> readonly</c:if>/></td>
                             </tr>
                             <tr>
                                 <td>Nome do cliente: </td>
@@ -96,22 +96,21 @@
                             </tr>
                             <tr>
                                 <td>Email: </td>
-                                <td> <input type="text"  class="form-control" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45" placeholder="exemplo@exemplo.br" autocomplete="off" name="txtEmailCliente" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td> <input type="email"  class="form-control" onkeyup="validare(this,'texto')" data-ls-module="charCounter" maxlength="45" placeholder="exemplo@exemplo.br" autocomplete="off" name="txtEmailCliente" size="60"  value="${cliente.email}" required <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>CPF: </td>
-                                <td> <input type="number" autocomplete="off" onkeyup="validare(this,'numero')"  maxlength="14" class="form-control"
-                                            placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td> <input type="text" autocomplete="off" onkeyup="validare(this,'numero')" required="required"  maxlength="10"    class="form-control" min="1" max="9999999999" placeholder="Digite seu CPF" name="txtCPFCliente"  value="${cliente.cpf}"  required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
 
                             <tr>
                                 <td>Senha do Cliente: </td>
-                                <td> <input type="password" class="form-control" autocomplete="off"  placeholder="Digite uma senha de 6 digitos" name="txtSenhaCliente" maxlength="6" value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                                <td> <input type="password" class="form-control" autocomplete="off" min=""  placeholder="Desejável senha de 6 digitos" name="txtSenhaCliente" maxlength="6" value="${cliente.senha}"  required<c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                             </tr>
 
                             <tr>
-                                <td>Confirme a Senha</td>
-                                <td> <input type="password" autocomplete="off" placeholder="Confirme sua senha" class="form-control" name="rep_senha" maxlength="6"  value="${cliente.senha}" <c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
+                                <td>Confirme a Senha: </td>
+                                <td> <input type="password" autocomplete="off" placeholder="Confirme sua senha" class="form-control" name="rep_senha" maxlength="6"  value="${cliente.senha}"  required<c:if test="${operacao == 'Excluir' }">readonly</c:if>>  </td>
                             </tr>
                             </tbody>
                         </table>
