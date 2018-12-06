@@ -25,22 +25,22 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
- 
-<!--inicio Header-->
-<!--inicio Header-->
-<%@ include file = "Header.jsp" %>
-<!--fim Header-->
+
+        <!--inicio Header-->
+        <!--inicio Header-->
+        <%@ include file = "Header.jsp" %>
+        <!--fim Header-->
 
 
-   <!-- JavaScript pasta ( js/scriptJSP.js  )-->
-  <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
-  </script>
-     <!-- Fim JavaScript--> 
+        <!-- JavaScript pasta ( js/scriptJSP.js  )-->
+        <script language="javascript"  type="text/javascript" src="js/scriptJSP.js">
+        </script>
+        <!-- Fim JavaScript--> 
 
 
         <style>
-      
-            
+
+
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
             select[readonly] {
                 background: #eee;
@@ -50,7 +50,7 @@
             /*  FIM TAG PARA BARRAR A SELECT NO EXCLUIR*/
         </style>    
 
- 
+
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -58,7 +58,7 @@
     </head>
     <body>
 
-        
+
 
 
         <div class="container">
@@ -84,62 +84,62 @@
 
                         <tr>
                             <td>Codigo da reserva</td>
-                            <td><input type="text" onkeyup="validare(this,'numero')" maxlength="11" required="required" autocomplete="off" max="9999999999"  placeholder="Digite apenas numeros" class="form-control"  name="txtCodReserva" value="${reserva.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="text" onkeyup="validare(this, 'numero')" data-ls-module="charCounter" maxlength="9" required="required" autocomplete="off" max="999999999"  placeholder="Digite apenas numeros" class="form-control"  name="txtCodReserva" value="${reserva.id}" required autofocus<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             <p class="help-block"></p>
                             </tr>
 
                             <tr>
                                 <td>Data da locação:</td>
 
-                                <td><input type="date" class="form-control" placeholder="00/00/0000" name="txtDataLocacao" required="required"  maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" autocomplete="off" min="1500-01-01" max="3000-12-31"  value="${reserva.dataLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="date" class="form-control" placeholder="00/00/0000" name="txtDataLocacao" required="required"  maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" autocomplete="off" min="1500-01-01" max="3000-12-31"  value="${reserva.dataLocacao}" required<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
 
                             <tr>
                                 <td>Hora de Início</td>
-                                <td><input type="time" placeholder="00:00" maxlength="8"pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="time" placeholder="00:00" maxlength="8"pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" type=horai class="form-control" name="txtHrInicio" value="${reserva.horaInicioLocacao}" required<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
                             <tr>
                                 <td>Hora Fim</td>
-                                <td><input type="time" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td><input type="time" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" class="form-control" id="horaf" placeholder="00:00" name="txtHrFim" value="${reserva.horaFimLocacao}" required<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
                             <tr>
                                 <td>Quantidade Estimada de Pessoas</td>
-                                <td>    <input type="text" class="form-control" onkeyup="validare(this,'numero')" maxlength="11" required="required" autocomplete="off" max="9999999999" id="qtpessoas" placeholder="Digite apenas números" name="txtqtPessoas" value="${reserva.qtPessoas}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td>    <input type="text" class="form-control" data-ls-module="charCounter" onkeyup="validare(this, 'numero')" maxlength="9" required="required" autocomplete="off" max="999999999" id="qtpessoas" placeholder="Digite apenas números" name="txtqtPessoas" value="${reserva.qtPessoas}" required<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
                             <tr>
                                 <td>Preço</td>
-                                <td> <input type="number" class="form-control" placeholder="R$ 00.00" name="txtvalorLocacao" value="${reserva.valorLocacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
+                                <td> <input type="text" class="form-control" data-ls-module="charCounter" min="1" maxlength="9" autocomplete="off" max="999999999" placeholder="R$ 00.00" name="txtvalorLocacao" value="${reserva.valorLocacao}" required<c:if test="${operacao == 'Excluir'}">readonly</c:if>></td>
                             </tr>
 
                             <tr>
                                 <td>Avaliação</td>
-                                <td> <input  type="number" class="form-control" max="5" maxlength="1" id="horaf" maxlength="1" required="required" autocomplete="off" min="0"  placeholder="Nota de 1 a 5" maxlength="1"name="txtAvaliacao" value="${reserva.notaAvaliacao}" <c:if test="${operacao == 'Excluir'}">readonly</c:if>> </td>
+                                <td> <input  type="text" class="form-control" max="5" pattern="[0-5]{1}" onkeyup="validare(this, 'numero')" id="horaf" required="required" autocomplete="off" min="0"  placeholder="Nota de 1 a 5" maxlength="1"name="txtAvaliacao" value="${reserva.notaAvaliacao}" required<c:if test="${operacao == 'Excluir'}">readonly</c:if>> </td>
                             </tr>
 
                             <td>Local de Reserva:</td>
-                        <td>
-                            <select class="form-control" name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>                                            
+                            <td>
+                                <select class="form-control" name="optEspaco" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>                                            
                                 <c:forEach items="${espacos}" var="espaco">
                                     <option value="${espaco.id}" <c:if test="${espaco.id == reserva.idEspaco}"> selected</c:if>>${espaco.nome}</option>  
                                 </c:forEach>
                             </select>
                         </td> 
                         </tr>
-                            <td>Nome do Cliente:</td>
-                            <td>
-                                <select class="form-control" name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <td>Nome do Cliente:</td>
+                        <td>
+                            <select class="form-control" name="optCliente" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                                 <c:forEach items="${clientes}" var="cliente">
                                     <option value="${cliente.id}" <c:if test="${cliente.id == reserva.idCliente}"> selected</c:if>>${cliente.nome}</option>  
                                 </c:forEach>
                             </select>
                         </td>
-                        
 
-                        
+
+
                         </tbody>
 
 
@@ -161,13 +161,13 @@
 
 
 
-                            
-                            
-      <hr>
-                
-<!--inicio Footer-->
-<%@ include file = "Footer.jsp" %>
-<!--fim Footer-->
+
+
+        <hr>
+
+        <!--inicio Footer-->
+        <%@ include file = "Footer.jsp" %>
+        <!--fim Footer-->
 
 
 
