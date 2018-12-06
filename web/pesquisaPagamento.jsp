@@ -119,7 +119,7 @@
 
                                         <tr>
                                             <th colspan="1">
-                                                Dados do pagamento : <c:out value ="${pagamento.numeroCodBarras}"/>
+                                                Dados do pagamento : <c:out value ="${pagamento.vencimento} R$ ${pagamento.valorTotal}"/>
                                             </th>
                                             
                                             <th colspan="1" >
@@ -132,22 +132,9 @@
                                     </th>
                                             
                                         </tr>
-
-                                        <tr>
-                                            <th scope="now"> Data de Vencimento </th>
-                                            <td><c:out value="${pagamento.vencimento}" /></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="now"> Valor Total </th>
-                                            <td><c:out value="${pagamento.valorTotal}" /></td>
-                                         </tr>
                             </tbody>
                         </table>
                         <hr>
-                        <br>
-                        <br>
-                        <br>
                                 </c:forEach>
                            
                          <!--INICIO Tabela botoes incluir-->
