@@ -256,59 +256,59 @@
 
                         <tr>
                             <td>Codigo Espaco</td>
-                            <td><input type="text"  min="1" placeholder="Digite apenas numeros"  maxlength="11" required="required" autocomplete="off" max="9999999999" onkeyup="validare(this, 'numero')" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                            <td><input type="text"  min="1" placeholder="Digite apenas numeros"  maxlength="9" required="required" autocomplete="off" max="999999999" onkeyup="validare(this, 'numero')" class="form-control"  name="txtIdEspaco"  value="${espaco.id}" required autofocus<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Nome do Espaço</td>
-                                <td><input type="text" maxlength="45" placeholder="Nome do Local" data-ls-module="charCounter" class="form-control" autocomplete="off" name="txtNome"value="${espaco.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" maxlength="45" placeholder="Nome do Local" data-ls-module="charCounter" class="form-control" autocomplete="off" name="txtNome"value="${espaco.nome}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>CNPJ</td>
-                                <td><input type="text" maxlength="15" placeholder="00.000.000/0000-00"class="form-control" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtCnpj"  value="${espaco.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" maxlength="9" placeholder="00.000.000"class="form-control" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtCnpj"  value="${espaco.cnpj}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Cep</td>
-                                <td><input type="number" placeholder="00000-000" id="cep" class="form-control" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtCep"  value="${espaco.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="number" placeholder="00000-000" id="cep" class="form-control" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtCep"  value="${espaco.cep}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Logradouro</td>
-                                <td><input type="text" id="rua"  inputmode="latin-prose" placeholder="Endereço local" maxlength="45" class="form-control" name="txtLogradouro" autocomplete="off" value="${espaco.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" id="rua" placeholder="Endereço local" data-ls-module="charCounter" maxlength="45" class="form-control"  name="txtLogradouro" autocomplete="off" value="${espaco.logradouro}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>                     
                                 <td>Numero</td>
-                                <td><input type="number"   placeholder="Nº do local" class="form-control" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtNumero" value="${espaco.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" data-ls-module="charCounter" min="1" max="999999999" placeholder="Nº do local" maxlength="9" class="form-control" onkeyup="validare(this, 'numero')" autocomplete="off" name="txtNumero" value="${espaco.numero}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Complemento</td>
-                                <td><input type="text" placeholder="Complemento"  maxlength="45" class="form-control" name="txtComplemento" autocomplete="off"  value="${espaco.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" placeholder="Complemento" data-ls-module="charCounter"  maxlength="45" class="form-control" name="txtComplemento" autocomplete="off"  value="${espaco.complemento}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Bairro</td>
-                                <td><input type="text" placeholder="Bairro"  id="bairro" maxlength="45" size="60" onkeyup="validare(this,'texto')" class="form-control" autocomplete="off" name="txtBairro" value="${espaco.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" placeholder="Bairro"  id="bairro"  data-ls-module="charCounter"  maxlength="45" size="60" onkeyup="validare(this,'texto')" class="form-control" autocomplete="off" name="txtBairro" value="${espaco.bairro}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Cidade</td>
-                                <td><input type="text" placeholder="Cidade"  id="cidade" maxlength="45" onkeyup="validare(this,'texto')" class="form-control" autocomplete="off" name="txtCidade" value="${espaco.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" placeholder="Cidade"  id="cidade"  data-ls-module="charCounter" maxlength="45" onkeyup="validare(this,'texto')" class="form-control" autocomplete="off" name="txtCidade" value="${espaco.cidade}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Uf</td>
-                                <td><input type="text" placeholder="Estado"   id="uf" maxlength="2" onkeyup="validare(this,'texto')" class="form-control" autocomplete="off" name="txtUf"  value="${espaco.uf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" placeholder="Estado" data-ls-module="charCounter"  id="uf" maxlength="2" onkeyup="validare(this,'texto')" class="form-control" autocomplete="off" name="txtUf"  value="${espaco.uf}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Area</td>
-                                <td><input type="number" placeholder="M²(mestro quadrado)" onkeyup="validare(this, 'numero')" class="form-control"  autocomplete="off" name="txtArea" size="60" value="${espaco.area}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" data-ls-module="charCounter" maxlength="9" min="1" max="999999999" placeholder="M²(mestro quadrado)" onkeyup="validare(this, 'numero')" class="form-control"  autocomplete="off" name="txtArea" size="60" value="${espaco.area}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Quantidade  de pessoas</td>
-                                <td><input type="number"  placeholder="Quantidade de pessoas suportadas" onkeyup="validare(this, 'numero')" autocomplete="off" class="form-control" name="txtQuantidadePessoas" size="60" value="${espaco.quantidadePessoas}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="text" data-ls-module="charCounter" maxlength="9" min="1" max="999999999"  placeholder="Quantidade de pessoas suportadas" onkeyup="validare(this, 'numero')" autocomplete="off" class="form-control" name="txtQuantidadePessoas" size="60" value="${espaco.quantidadePessoas}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Horario de funcionamento - Inicio</td>
-                                <td><input type="time" placeholder=""  class="form-control" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="time"   class="form-control" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"  autocomplete="off" name="txtHoraFuncionamentoInicio" size="60" value="${espaco.horaFuncionamentoInicio}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
                             <tr>
                                 <td>Horario de funcionamento - Fim</td>
-                                <td><input type="time"  placeholder="" class="form-control" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                                <td><input type="time"   class="form-control" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" name="txtHoraFuncionamentoFinal" value="${espaco.horaFuncionamentoFinal}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                             </tr>
 
 
