@@ -62,7 +62,7 @@
                     return false;
                 }
 
-                if (txtIdDisponibilidade >= 9999999999) {
+                if (txtIdDisponibilidade >= 999999999) {
                     alert('O campo de código foi preenchido acima do suportado (10 dígitos) ');
                     form1.txtIdDisponibilidade.focus();
                     return false;
@@ -138,19 +138,19 @@
 
                     <tr>
                         <td>Código do disponibilidade: </td>
-                        <td><input type="text" min="1"  class="form-control" onkeyup="validare(this, 'numero')" name="txtIdDisponibilidade" required="required" min="1" max="9999999999" autocomplete="off" placeholder="Digite apenas numeros" maxlength="11" value="${disponibilidade.id}"<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                        <td><input type="text" class="form-control" onkeyup="validare(this, 'numero')" name="txtIdDisponibilidade" required="required" min="1" max="999999999" autocomplete="off" placeholder="Digite apenas numeros" maxlength="9" value="${disponibilidade.id}" required autofocus<c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Data Disponivel: </td>
-                            <td><input type="date" class="form-control" name="txtDataDisponibilidade" required="required"  maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" autocomplete="off" min="1500-01-01" max="3000-12-31" value="${disponibilidade.dataDisponivel}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="date" class="form-control" name="txtDataDisponibilidade" required="required"  maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" autocomplete="off" min="1500-01-01" max="3000-12-31" value="${disponibilidade.dataDisponivel}" required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Hora Inicio: </td>
-                            <td><input type="time"class="form-control" name="txtHoraInicioDisponibilidade" required="required" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" value="${disponibilidade.hora_inicio}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="time"class="form-control" name="txtHoraInicioDisponibilidade" required="required" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" value="${disponibilidade.hora_inicio}"  required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <tr>
                             <td>Hora Final: </td>
-                            <td><input type="time" class="form-control" name="txtHoraFimDisponibilidade" required="required" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" value="${disponibilidade.hora_fim}"  <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                            <td><input type="time" class="form-control" name="txtHoraFimDisponibilidade" required="required" maxlength="8" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$" autocomplete="off" value="${disponibilidade.hora_fim}"  required<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
                         </tr>
                         <td>Espaco:</td>
                         <td>
