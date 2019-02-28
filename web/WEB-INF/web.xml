@@ -32,6 +32,18 @@
         <servlet-name>PesquisaAdminModalidadeController</servlet-name>
         <servlet-class>controller.PesquisaAdminModalidadeController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReportCliente</servlet-name>
+        <servlet-class>relatorio.ReportCliente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportPagamento</servlet-name>
+        <servlet-class>relatorio.ReportPagamento</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportCartao</servlet-name>
+        <servlet-class>relatorio.ReportCartao</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -247,6 +259,38 @@
     <servlet-mapping>
         <servlet-name>PesquisaAdminModalidadeController</servlet-name>
         <url-pattern>/PesquisaAdminModalidadeController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ReportCliente</servlet-name>
+        <servlet-class>relatorio.ReportCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportCliente</servlet-name>
+        <url-pattern>/ReportCliente</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ReportContato</servlet-name>
+        <servlet-class>relatorio.ReportContato</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportContato</servlet-name>
+        <url-pattern>/ReportContato</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>ReportCartao</servlet-name>
+        <servlet-class>relatorio.ReportCartao</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportCartao</servlet-name>
+        <url-pattern>/ReportCartao</url-pattern>
+    </servlet-mapping>
+            <servlet>
+        <servlet-name>ReportDisponibilidade</servlet-name>
+        <servlet-class>relatorio.ReportDisponibilidade</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportDisponibilidade</servlet-name>
+        <url-pattern>/ReportDisponibilidade</url-pattern>
     </servlet-mapping>
     <error-page>
         <error-code>500</error-code>

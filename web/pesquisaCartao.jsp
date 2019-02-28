@@ -108,6 +108,12 @@
                                         <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                     </form>
                                 </label>
+                                
+                                <label>
+                                    <form action="ReportCartao" method="post">
+                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Gerar Relatório">
+                                    </form>
+                                </label>
                           
                                 
                             </div>
