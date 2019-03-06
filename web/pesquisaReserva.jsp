@@ -13,6 +13,7 @@
 
 
 
+
 <html>
 
     <head>
@@ -35,11 +36,11 @@
 
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
- 
-        
-<!--inicio Header-->
-<%@ include file = "Header.jsp" %>
-<!--fim Header-->
+
+
+        <!--inicio Header-->
+        <%@ include file = "Header.jsp" %>
+        <!--fim Header-->
 
 
         <style>
@@ -57,7 +58,7 @@
         <title>Reserva</title>
     </head>
     <body>
-        
+
         <!-- Corpo da Pagina -->
         <div class="container">
 
@@ -106,75 +107,107 @@
                                         </form>
                                     </label>
 
+
+                                    <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalReserva">Relatório com parametro</a>
+
+                                    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+
+
+                                                <div class="modal-body">
+                                                    <h5>
+                                                        Selecione o nome da cidade desejada
+                                                    </h5>
+                                                    <form action="ReportReservaController" method="POST" autofocus>
+                                                        <select class="form-control" required name="paramReserva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                                                            <option required value="0" <c:if test="${espaco.cidade == null}"> selected</c:if>> </option>  
+                                                            <c:forEach items="${espacos}" var="espaco">
+                                                                <option value="${espaco.id}" <c:if test="${espaco.id == reserva.idEspaco}"> selected</c:if>>${espaco.cidade}</option>
+                                                            </c:forEach>
+                                                        </select>
+                                                        <input type="submit" class="btn btn-outline-primary btn-sm"/>
+
+                                                    </form>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>                            
 
+
                         <!--FIM Tabela botoes incluir-->
- 
-                        
-                       
+
+
+
 
                         <c:forEach items="${reservas}" var="reserva">
 
-                            
-                                <table class="table table-striped" id="myTable">
 
-                                    <tbody>
+                            <table class="table table-striped" id="myTable">
 
-                                        <tr>
-                                            <th colspan="1">
-                                                Dados da reserva: <c:out value ="${reserva.dataLocacao} -> ${reserva.horaInicioLocacao} / ${reserva.horaFimLocacao}"/>
-                                            </th>
+                                <tbody>
 
-
-                                            <th colspan="1" >
-
-                                                <a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${reserva.id}"/>" 
-                                                   class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
-
-                                                <a href="ManterReservaController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${reserva.id}"/>"
-                                                   class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
-                                            </th>
+                                    <tr>
+                                        <th colspan="1">
+                                            Dados da reserva: <c:out value ="${reserva.dataLocacao} -> ${reserva.horaInicioLocacao} / ${reserva.horaFimLocacao}"/>
+                                        </th>
 
 
+                                        <th colspan="1" >
 
-                                    </tbody>
-                                </table>
-                                <hr>
+                                            <a href="ManterReservaController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${reserva.id}"/>" 
+                                               class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
 
-                            </c:forEach>
-                        
+                                            <a href="ManterReservaController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${reserva.id}"/>"
+                                               class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
+                                        </th>
 
-                            <!--INICIO Tabela botoes incluir-->
 
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg">
-                                        <label>
-                                            <form action="ManterReservaController?acao=prepararOperacao&operacao=Incluir" method="post">
-                                                <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
-                                            </form>
-                                        </label>
 
-                                    </div>
+                                </tbody>
+                            </table>
+                            <hr>
+
+                        </c:forEach>
+
+
+                        <!--INICIO Tabela botoes incluir-->
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg">
+                                    <label>
+                                        <form action="ManterReservaController?acao=prepararOperacao&operacao=Incluir" method="post">
+                                            <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
+                                        </form>
+                                    </label>
+
                                 </div>
                             </div>
-
-                            <!--FIM Tabela botoes incluir-->
-
                         </div>
+
+                        <!--FIM Tabela botoes incluir-->
+
                     </div>
-                 
-                            
-                            
-      <hr>
-                
-<!--inicio Footer-->
-<%@ include file = "Footer.jsp" %>
-<!--fim Footer-->
+            </div>
 
 
 
-                    </body>
-                    </html>
+
+
+            <hr>
+
+            <!--inicio Footer-->
+            <%@ include file = "Footer.jsp" %>
+            <!--fim Footer-->
+
+
+
+            </body>
+            </html>

@@ -36,6 +36,7 @@ public class ReportReservaController extends HttpServlet {
 
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
+            parametros.put("PAR_Cidade", request.getParameter("paramReserva"));
             String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportReservasCliente.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);
