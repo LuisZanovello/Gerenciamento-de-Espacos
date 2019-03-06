@@ -24,10 +24,10 @@
 
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
-        
-<!--inicio Header-->
-<%@ include file = "HeaderAdmin.jsp" %>
-<!--fim Header-->
+
+        <!--inicio Header-->
+        <%@ include file = "HeaderAdmin.jsp" %>
+        <!--fim Header-->
 
         <style>
             footer{
@@ -46,8 +46,8 @@
     </head>
     <body>
 
-    
-        
+
+
 
         <!-- Corpo da Pagina -->
         <div class="container">
@@ -96,7 +96,11 @@
                                         <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                     </form>
                                 </label>
-        
+                                <label>
+                                    <form action="ReportAdministradorController" method="post">
+                                        <input type="submit" name="btnReport" class="btn btn-outline-primary btn-sm" value="Relatório">
+                                    </form>
+                                </label>
                             </div>
                         </div>
                     </div>                            
@@ -115,17 +119,17 @@
                                             <th colspan="1">
                                                 Dados do Administrador(a) : <c:out value ="${admin.nome}"/>                                     
                                             </th>
-                                            
-                                            <th colspan="1" >
-                                                
-                                                <a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
-                                           class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
 
-                                    <a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
-                                           class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
+                                            <th colspan="1" >
+
+                                                <a href="ManterAdministradorController?acao=prepararOperacao&operacao=Editar&id=<c:out value="${admin.id}"/>" 
+                                                   class="btn btn-outline-success" role="button" aria-pressed="true">Editar</a>
+
+                                                <a href="ManterAdministradorController?acao=prepararOperacao&operacao=Excluir&id=<c:out value="${admin.id}"/>"
+                                                   class="btn btn-outline-danger" role="button" aria-pressed="true">Excluir</a>
                                             </th>
-                                            
-                                   
+
+
                                         </tr>
 
                                         <tr>
@@ -133,7 +137,7 @@
                                             <td><c:out value="${admin.email}" /></td>
                                         </tr>
 
-                                    
+
                                     <hr>
 
 
@@ -154,7 +158,7 @@
                                                 <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                             </form>
                                         </label>
-                      
+
                                     </div>
                                 </div>
                             </div>
@@ -164,14 +168,14 @@
                         </div>
                     </div>
 
-          
-                            
-                            
-      <hr>
-                
-<!--inicio Footer-->
-<%@ include file = "Footer.jsp" %>
-<!--fim Footer-->
+
+
+
+                    <hr>
+
+                    <!--inicio Footer-->
+                    <%@ include file = "Footer.jsp" %>
+                    <!--fim Footer-->
 
 
 

@@ -79,10 +79,10 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="radio-inline">
-                                        <label><input type="radio" name="optUsuario" value="administrador">Administrador</label>
+                                        <label><input type="radio" name="optUsuario" checked="checked" value="administrador">Administrador</label>
                                     </div>
                                     <div class="radio-inline">
-                                        <label><input type="radio" name="optUsuario" checked="checked" value="cliente">Cliente</label>
+                                        <label><input type="radio" name="optUsuario"  value="cliente">Cliente</label>
                                     </div>
                                 </div>
                                 <div class="row">

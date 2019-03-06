@@ -44,6 +44,22 @@
         <servlet-name>ReportCartao</servlet-name>
         <servlet-class>relatorio.ReportCartao</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReportAdministradorController</servlet-name>
+        <servlet-class>relatorio.ReportAdministradorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportPagamentoController</servlet-name>
+        <servlet-class>relatorio.ReportPagamentoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportReembolsoController</servlet-name>
+        <servlet-class>relatorio.ReportReembolsoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportReservaController</servlet-name>
+        <servlet-class>relatorio.ReportReservaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -276,7 +292,7 @@
         <servlet-name>ReportContato</servlet-name>
         <url-pattern>/ReportContato</url-pattern>
     </servlet-mapping>
-        <servlet>
+    <servlet>
         <servlet-name>ReportCartao</servlet-name>
         <servlet-class>relatorio.ReportCartao</servlet-class>
     </servlet>
@@ -284,13 +300,29 @@
         <servlet-name>ReportCartao</servlet-name>
         <url-pattern>/ReportCartao</url-pattern>
     </servlet-mapping>
-            <servlet>
+    <servlet>
         <servlet-name>ReportDisponibilidade</servlet-name>
         <servlet-class>relatorio.ReportDisponibilidade</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ReportDisponibilidade</servlet-name>
         <url-pattern>/ReportDisponibilidade</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportAdministradorController</servlet-name>
+        <url-pattern>/ReportAdministradorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportPagamentoController</servlet-name>
+        <url-pattern>/ReportPagamentoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportReembolsoController</servlet-name>
+        <url-pattern>/ReportReembolsoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportReservaController</servlet-name>
+        <url-pattern>/ReportReservaController</url-pattern>
     </servlet-mapping>
     <error-page>
         <error-code>500</error-code>
