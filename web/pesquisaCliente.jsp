@@ -88,11 +88,36 @@
                                     </form>
                                 </label>
                                 
-                                  <label>
-                                    <form action="ReportCliente" method="post">
-                                        <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Gerar Relatório">
-                                    </form>
-                                </label>
+                                               <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalReserva">Relatório com parametro</a>
+
+                                    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+
+
+                                                <div class="modal-body">
+                                                    <h5>
+                                                        Selecione o nome da cidade desejada
+                                                    </h5>
+                                                    <form action="ReportReservaController" method="POST" autofocus>
+                                                              <select class="form-control" id="cliente" name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
+                                                             <c:forEach items="${clientes}" var="cliente">
+                                                          <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> selected</c:if>>${cliente.nome}</option>  
+                                                      </c:forEach>
+                                                    </select>
+                                                        <input type="submit" class="btn btn-outline-primary btn-sm"/>
+
+                                                    </form>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>                            
       
                             </div>
                         </div>
