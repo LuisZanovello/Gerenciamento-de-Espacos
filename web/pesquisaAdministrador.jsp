@@ -96,40 +96,40 @@
                                         <input type="submit" name="btnIncluir" class="btn btn-outline-primary btn-sm" value="Incluir">
                                     </form>
                                 </label>
-                                <label>
-                                    <form action="ReportAdministradorController" method="post">
-                                        <input type="submit" name="btnReport" class="btn btn-outline-primary btn-sm" value="Relatório">
-                                    </form>
-                                </label>
-                           
+      
                                 
                                 <!--  Inicio Botão de relatório -->
-                                    <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalReserva">Relatório com parametro</a>
+                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalAdmin">Relatorios</a>
+                    </div>
+                    <div class="modal fade" id="modalAdmin" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5>
+                                        Relatorio completo
+                                    </h5>
+                                    <div>
+                                        <a href="ReportAdministradorController" class="btn btn-outline-primary btn-sm">Emitir Relatório</a>
+                                    </div> 
+                                </div>
+                                <div class="modal-body">
+                                    <h5>
+                                        Escolha a cidade desejada
+                                    </h5>
+                                    <form action="ReportAdminParametro" method="POST" autofocus>
+                                        <select class="form-control" name="paramAdmin">
 
-                                    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <h5>
-                                                        Selecione o nome do administrador
-                                                    </h5>
-                                                    <form action="ReportAdminParametro" method="POST" autofocus>
-                                                        <select class="form-control"  required name="paramAdmin" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                                                            <c:forEach items="${administradores}" var="administrador">
-                                                                <option value="${administrador.id}" <c:if test="${administrador.id == administrador.id}"> selected</c:if>>${administrador.nome}</option>
-                                                            </c:forEach>
-                                                        </select>
-                                                            
-                                           
-                                                        <input type="submit" class="btn btn-outline-primary btn-sm"/>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            <c:forEach items="${administradores}" var="admin">
+                                                <option value="${admin.nome}">${admin.nome}</option>  
+                                            </c:forEach>
+                                        </select>
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Emitir Relatório com Parâmetro"/>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
                                 </div>
                             </div>
-                        </div>                            
+                        </div>                         
                         <!--  Fim Botão de relatório -->
 
                     <!--FIM Tabela botoes incluir e voltar-->

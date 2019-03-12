@@ -107,10 +107,10 @@
                                         </form>
                                     </label>
 
-                                    <!--  Inicio Botão de relatório -->
-                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalMovel">Relatorios</a>
+                                <!--  Inicio Botão de relatório -->
+                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalReserva">Relatorios</a>
                     </div>
-                    <div class="modal fade" id="modalMovel" tabindex="-1" role="dialog">
+                    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -118,21 +118,21 @@
                                         Relatorio completo
                                     </h5>
                                     <div>
-                                        <a href="ReportReservaController" class="btn btn-outline-primary btn-sm">Emitir relatorio</a>
+                                        <a href="ReportReservaController" class="btn btn-outline-primary btn-sm">Emitir Relatório</a>
                                     </div> 
                                 </div>
                                 <div class="modal-body">
                                     <h5>
                                         Escolha a cidade desejada
                                     </h5>
-                                    <form action="ReportReservasCliente" method="POST" autofocus>
+                                    <form action="ReportReservaParam" method="POST" autofocus>
                                         <select class="form-control" name="paramReserva">
 
-                                            <c:forEach items="${espacos}" var="espaco">
-                                                <option value="${espaco.cidade}">${espaco.cidade}</option>  
+                                            <c:forEach items="${clientes}" var="cliente">
+                                                <option value="${cliente.id==reserva.idCliente}">${cliente.nome}</option>  
                                             </c:forEach>
                                         </select>
-                                        <input class="btn btn-outline-primary btn-sm" type="submit"/>
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Emitir Relatório com Parâmetro"/>
                                     </form>
                                 </div>
                                 <div class="modal-footer">

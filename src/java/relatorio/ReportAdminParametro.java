@@ -36,7 +36,7 @@ public class ReportAdminParametro extends HttpServlet {
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
             parametros.put("PAR_Nome", request.getParameter("paramAdmin"));
-            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportAdministrador.jasper";
+            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportAdminParam.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);
             response.setHeader("Content-Disposition", "attachment;filename=relatorioAdministradorLP3.pdf");

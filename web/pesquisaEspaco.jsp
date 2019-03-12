@@ -103,9 +103,9 @@
                                 </label>
                            
                                      <!--  Inicio Botão de relatório -->
-                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalMovel">Relatorios</a>
+                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalEspaco">Relatorios</a>
                     </div>
-                    <div class="modal fade" id="modalMovel" tabindex="-1" role="dialog">
+                    <div class="modal fade" id="modalEspaco" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -113,7 +113,7 @@
                                         Relatorio completo
                                     </h5>
                                     <div>
-                                        <a href="ReportReservaController" class="btn btn-outline-primary btn-sm">Emitir relatorio</a>
+                                        <a href="ReportReservaController" class="btn btn-outline-primary btn-sm">Emitir Relatório</a>
                                     </div> 
                                 </div>
                                 <div class="modal-body">
@@ -127,7 +127,7 @@
                                                 <option value="${espaco.cidade}">${espaco.cidade}</option>  
                                             </c:forEach>
                                         </select>
-                                        <input class="btn btn-outline-primary btn-sm" type="submit"/>
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Emitir Relatório com Parâmetro"/>
                                     </form>
                                 </div>
                                 <div class="modal-footer">

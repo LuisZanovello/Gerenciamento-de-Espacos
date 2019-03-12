@@ -27,7 +27,7 @@
         <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
 
-        
+
         <style>
             footer{
                 bottom: 0;
@@ -103,7 +103,7 @@
                                     <a class="dropdown-item" href="ReportReembolsoController">Relatório de Clientes</a>
                                     <a class="dropdown-item" href="ReportReembolsoController">Relatório de Espaços</a>
                                     <a class="dropdown-item" href="ReportReembolsoController">Relatório de Irregularidades</a>
-         
+
 
                                 </div> 
                             </div>
