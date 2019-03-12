@@ -24,7 +24,7 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author viict
  */
-public class ReportReservaController extends HttpServlet {
+public class ReportReservaParam extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
@@ -36,8 +36,8 @@ public class ReportReservaController extends HttpServlet {
 
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
-            /*parametros.put("PAR_Cidade", request.getParameter("paramReserva"));*/
-            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportReservaCliente.jasper";
+            parametros.put("PAR_Cidade", request.getParameter("paramReserva"));
+            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportReservasCliente.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);
             response.setHeader("Content-Disposition", "attachment;filename=relatorioReservaLP3.pdf");

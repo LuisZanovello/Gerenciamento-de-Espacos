@@ -11,7 +11,7 @@
 
   
   
-    <title>Home Admin</title>
+    <title>Erro 500 :(</title>
  
     <!-- Bootstrap core CSS -->
     

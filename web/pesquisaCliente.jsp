@@ -97,10 +97,10 @@
 
                                                 <div class="modal-body">
                                                     <h5>
-                                                        Selecione o nome da cidade desejada
+                                                        Selecione o nome do cliente desejado
                                                     </h5>
-                                                    <form action="ReportReservaController" method="POST" autofocus>
-                                                              <select class="form-control" id="cliente" name="optCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
+                                                    <form action="ReportCliente" method="POST" autofocus>
+                                                              <select class="form-control" id="cliente" name="paramCliente"  <c:if test="${operacao == 'Excluir'}" > readonly </c:if>>
                                                              <c:forEach items="${clientes}" var="cliente">
                                                           <option value="${cliente.id}" <c:if test="${cliente.id == contato.idCliente}"> selected</c:if>>${cliente.nome}</option>  
                                                       </c:forEach>

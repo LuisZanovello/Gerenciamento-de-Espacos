@@ -101,9 +101,36 @@
                                         <input type="submit" name="btnReport" class="btn btn-outline-primary btn-sm" value="Relatório">
                                     </form>
                                 </label>
+                           
+                                
+                                <!--  Inicio Botão de relatório -->
+                                    <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalReserva">Relatório com parametro</a>
+
+                                    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <h5>
+                                                        Selecione o nome do administrador
+                                                    </h5>
+                                                    <form action="ReportAdminParametro" method="POST" autofocus>
+                                                        <select class="form-control"  required name="paramAdmin" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                                                            <c:forEach items="${administradores}" var="administrador">
+                                                                <option value="${administrador.id}" <c:if test="${administrador.id == administrador.id}"> selected</c:if>>${administrador.nome}</option>
+                                                            </c:forEach>
+                                                        </select>
+                                                            
+                                           
+                                                        <input type="submit" class="btn btn-outline-primary btn-sm"/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>                            
+                        </div>                            
+                        <!--  Fim Botão de relatório -->
 
                     <!--FIM Tabela botoes incluir e voltar-->
 

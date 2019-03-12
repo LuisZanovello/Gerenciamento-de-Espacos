@@ -1,12 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package relatorio;
 
 import dao.BD;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,27 +24,25 @@ import net.sf.jasperreports.engine.JasperPrint;
  *
  * @author viict
  */
-public class ReportReservaController extends HttpServlet {
-
+public class ReportAdminParametro extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
         Connection conexao = null;
         try {
             /*Class.forName("com.mysql.jdbc.Driver");
             conexao = DriverManager.getConnection("jdbc:mysql://localhost/sca", "root", "123");*/
- /*parametros.put("PAR_bancoisport.espaco.cidade", Integer.parseInt(request.getParameter("btnReport")));*/
+ /*  parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtCodCurso")));*/
 
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
-            /*parametros.put("PAR_Cidade", request.getParameter("paramReserva"));*/
-            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportReservaCliente.jasper";
+            parametros.put("PAR_Nome", request.getParameter("paramAdmin"));
+            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio") + "/ReportAdministrador.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);
-            response.setHeader("Content-Disposition", "attachment;filename=relatorioReservaLP3.pdf");
+            response.setHeader("Content-Disposition", "attachment;filename=relatorioAdministradorLP3.pdf");
             response.setContentType("application/pdf");
             response.getOutputStream().write(relat);
 
-  
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         } catch (JRException ex) {

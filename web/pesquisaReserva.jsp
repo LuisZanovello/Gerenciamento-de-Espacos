@@ -107,41 +107,46 @@
                                         </form>
                                     </label>
 
+                                    <!--  Inicio Botão de relatório -->
+                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalMovel">Relatorios</a>
+                    </div>
+                    <div class="modal fade" id="modalMovel" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5>
+                                        Relatorio completo
+                                    </h5>
+                                    <div>
+                                        <a href="ReportReservaController" class="btn btn-outline-primary btn-sm">Emitir relatorio</a>
+                                    </div> 
+                                </div>
+                                <div class="modal-body">
+                                    <h5>
+                                        Escolha a cidade desejada
+                                    </h5>
+                                    <form action="ReportReservasCliente" method="POST" autofocus>
+                                        <select class="form-control" name="paramReserva">
 
-                                    <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalReserva">Relatório com parametro</a>
-
-                                    <div class="modal fade" id="modalReserva" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-
-
-                                                <div class="modal-body">
-                                                    <h5>
-                                                        Selecione o nome da cidade desejada
-                                                    </h5>
-                                                    <form action="ReportReservaController" method="POST" autofocus>
-                                                        <select class="form-control" required name="paramReserva" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                                                            <option required value="0" <c:if test="${espaco.cidade == null}"> selected</c:if>> </option>  
-                                                            <c:forEach items="${espacos}" var="espaco">
-                                                                <option value="${espaco.id}" <c:if test="${espaco.id == reserva.idEspaco}"> selected</c:if>>${espaco.cidade}</option>
-                                                            </c:forEach>
-                                                        </select>
-                                                        <input type="submit" class="btn btn-outline-primary btn-sm"/>
-
-                                                    </form>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                            <c:forEach items="${espacos}" var="espaco">
+                                                <option value="${espaco.cidade}">${espaco.cidade}</option>  
+                                            </c:forEach>
+                                        </select>
+                                        <input class="btn btn-outline-primary btn-sm" type="submit"/>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
                                 </div>
                             </div>
-                        </div>                            
-
+                        </div>                         
+                        <!--  Fim Botão de relatório -->
 
                         <!--FIM Tabela botoes incluir-->
+
+
+
+                     
+
 
 
 

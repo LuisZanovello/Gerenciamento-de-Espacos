@@ -102,12 +102,41 @@
                                     </form>
                                 </label>
                            
-                                
-                            </div>
-                        </div>
-                    </div>                            
+                                     <!--  Inicio Botão de relatório -->
+                        <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modalMovel">Relatorios</a>
+                    </div>
+                    <div class="modal fade" id="modalMovel" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5>
+                                        Relatorio completo
+                                    </h5>
+                                    <div>
+                                        <a href="ReportReservaController" class="btn btn-outline-primary btn-sm">Emitir relatorio</a>
+                                    </div> 
+                                </div>
+                                <div class="modal-body">
+                                    <h5>
+                                        Escolha a cidade desejada
+                                    </h5>
+                                    <form action="ReportReservaParam" method="POST" autofocus>
+                                        <select class="form-control" name="paramReserva">
 
-                   <!--FIM Tabela botoes incluir e voltar-->
+                                            <c:forEach items="${espacos}" var="espaco">
+                                                <option value="${espaco.cidade}">${espaco.cidade}</option>  
+                                            </c:forEach>
+                                        </select>
+                                        <input class="btn btn-outline-primary btn-sm" type="submit"/>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                            </div>
+                        </div>                         
+                        <!--  Fim Botão de relatório -->
+
+                        <!--FIM Tabela botoes incluir-->
 
                     <div clas="card">
                         <div class="card-body">
